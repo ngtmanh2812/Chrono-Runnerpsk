@@ -15,9 +15,6 @@ import chronorunner.world.CombatWorld;
 /** Minor enemy summoned by bosses. Walks toward the nearest player. */
 public abstract class Enemy extends Character {
 
-    /** Enemies are authored 20px wide and drawn at 2x to fill their 40px box. */
-    private static final int SCALE = 2;
-
     protected double moveSpeed;
 
     protected Enemy(String name, double x, double y, double w, double h,
@@ -78,7 +75,7 @@ public abstract class Enemy extends Character {
 
         PixelSprite.Mode mode = hurtFlash > 0 ? PixelSprite.Mode.FLASH
                 : (slow > 0 ? PixelSprite.Mode.SLOW : PixelSprite.Mode.NORMAL);
-        Art.enemy(name).frame(step)
-                .drawAnchored(g, cx, feetY, SCALE, facing < 0, mode, 1f);
+        PixelSprite art = Art.enemy(name).frame(step);
+        art.drawAnchored(g, cx, feetY, art.scaleFor((int) width), facing < 0, mode, 1f);
     }
 }

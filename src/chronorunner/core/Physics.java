@@ -37,17 +37,21 @@ public final class Physics {
         body.y += body.vy * dt;
 
         boolean grounded = false;
+        double landingY = Double.POSITIVE_INFINITY;
         for (Platform p : world.platforms()) {
             boolean overlapsX = body.x + body.width > p.x && body.x < p.x + p.width;
             if (!overlapsX) continue;
             boolean movingDown = body.vy >= 0;
-            boolean wasAbove = previousBottom <= p.y + 2;
+            boolean wasAbove = previousBottom <= p.y + 1e-7;
             boolean nowBelow = body.y + body.height >= p.y;
-            if (movingDown && wasAbove && nowBelow) {
-                body.y = p.y - body.height;
-                body.vy = 0;
-                grounded = true;
-            }
+            // Select the first surface crossed, regardless of list order or
+            // fall speed. Upward and side crossings never block a one-way cap.
+            if (movingDown && wasAbove && nowBelow) landingY = Math.min(landingY, p.y);
+        }
+        if (Double.isFinite(landingY)) {
+            body.y = landingY - body.height;
+            body.vy = 0;
+            grounded = true;
         }
         body.grounded = grounded;
         return grounded;

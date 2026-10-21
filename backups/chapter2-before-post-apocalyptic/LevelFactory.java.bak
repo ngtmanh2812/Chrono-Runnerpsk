@@ -1,0 +1,53 @@
+package chronorunner.world;
+
+import chronorunner.entity.boss.TimeGuardian;
+import chronorunner.entity.boss.TheVoidCore;
+import chronorunner.core.Game;
+
+/** Builds one of the two campaign chapter arenas. */
+public final class LevelFactory {
+
+    private static final double GROUND_Y = 656;
+
+    private LevelFactory() {
+    }
+
+    public static Level create(int chapter) {
+        return chapter == 2 ? future() : past();
+    }
+
+    private static Level past() {
+        ArenaBackdrop art = new ArenaBackdrop("assets/backgrounds/chapter_1.png", Game.HEIGHT);
+        // Measured on the unmodified 1920x819 PNG, in source-image pixels.
+        // Each rectangle covers the flat stone/grass cap, not the hanging rock.
+        int[][] caps = {
+                {0, 290, 314}, {438, 348, 177}, {253, 435, 141},
+                {582, 466, 174}, {0, 536, 350},
+                {1607, 290, 313}, {1307, 348, 177}, {1535, 435, 139},
+                {1166, 466, 175}, {1572, 536, 348}
+        };
+        double ground = art.toWorld(638);
+        TimeGuardian boss = new TimeGuardian(art.toWorld(1440), 0);
+        boss.y = ground - boss.height;
+        boss.grounded = true;
+        LevelBuilder builder = new LevelBuilder().chapter(1).backdrop(art)
+                .groundY(ground).addGround().boss(boss)
+                .spawns(art.toWorld(420), art.toWorld(510));
+        for (int[] cap : caps) {
+            builder.addPlatform(art.toWorld(cap[0]), art.toWorld(cap[1]),
+                    art.toWorld(cap[2]), art.toWorld(12));
+        }
+        return builder.build();
+    }
+
+    private static Level future() {
+        return new LevelBuilder().chapter(2).groundY(GROUND_Y).addGround()
+                .addPlatform(420, 480, 200, 24)
+                .addPlatform(820, 390, 220, 24)
+                .addPlatform(1240, 460, 220, 24)
+                .addPlatform(1580, 340, 190, 24)
+                .boss(new TheVoidCore(1640, 500))
+                .spawns(360, 520)
+                .build();
+    }
+}

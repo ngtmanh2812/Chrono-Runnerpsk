@@ -5,16 +5,15 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import chronorunner.ui.CharacterSelectScreen;
+import chronorunner.ui.CreditsScreen;
 import chronorunner.ui.GameOverScreen;
 import chronorunner.ui.GamePanel;
 import chronorunner.ui.GameWindow;
 import chronorunner.ui.LevelSelectScreen;
 import chronorunner.ui.MainMenuScreen;
-import chronorunner.ui.ModeSelectScreen;
 import chronorunner.ui.PauseScreen;
 import chronorunner.ui.PlayScreen;
 import chronorunner.ui.SettingsScreen;
-import chronorunner.ui.StoryScreen;
 import chronorunner.ui.VictoryScreen;
 import chronorunner.util.Progress;
 import chronorunner.util.SaveManager;
@@ -48,10 +47,9 @@ public class Game {
 
     private void registerScreens() {
         screens.put(GameState.MAIN_MENU, new MainMenuScreen(this));
-        screens.put(GameState.MODE_SELECT, new ModeSelectScreen(this));
+        screens.put(GameState.CREDITS, new CreditsScreen(this));
         screens.put(GameState.LEVEL_SELECT, new LevelSelectScreen(this));
         screens.put(GameState.SETTINGS, new SettingsScreen(this));
-        screens.put(GameState.STORY, new StoryScreen(this));
         screens.put(GameState.CHARACTER_SELECT, new CharacterSelectScreen(this));
         screens.put(GameState.PLAYING, new PlayScreen(this));
         screens.put(GameState.PAUSED, new PauseScreen(this));

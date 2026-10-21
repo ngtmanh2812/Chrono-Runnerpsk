@@ -1,7 +1,5 @@
 package chronorunner.ui;
 
-import java.awt.Color;
-import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
@@ -58,21 +56,22 @@ public class Menu {
         return items[index];
     }
 
+    /**
+     * Draws the rows in the shared arcade voice: the current row is cream with
+     * a gold triangle beside it, the rest recede to dim.
+     */
     public void render(Graphics2D g, int centerX, int topY, int spacing) {
-        g.setFont(UiKit.H2);
-        FontMetrics fm = g.getFontMetrics();
+        int scale = UiKit.ARC_H2_SCALE;
         for (int i = 0; i < items.length; i++) {
-            String label = (i == index ? "> " : "  ") + items[i];
-            int w = fm.stringWidth(label);
-            int y = topY + i * spacing;
-            if (i == index) {
-                UiKit.panel(g, centerX - w / 2 - 26, y - 30, w + 52, 44,
-                        new Color(60, 120, 200, 120), UiKit.ACCENT);
-                g.setColor(Color.WHITE);
-            } else {
-                g.setColor(UiKit.MUTED);
+            boolean selected = i == index;
+            int baseline = topY + i * spacing;
+            int left = centerX - UiKit.pixelWidth(items[i], scale, UiKit.ITEM_TRACKING) / 2;
+            if (selected) {
+                UiKit.arcadeArrow(g, left - UiKit.arrowWidth(scale) - 24,
+                        baseline - 2 * scale, scale, UiKit.GOLD_TOP);
             }
-            g.drawString(label, centerX - w / 2, y);
+            UiKit.pixelLeft(g, items[i], scale,
+                    selected ? UiKit.CREAM : UiKit.ARC_DIM, left, baseline, UiKit.ITEM_TRACKING);
         }
     }
 }

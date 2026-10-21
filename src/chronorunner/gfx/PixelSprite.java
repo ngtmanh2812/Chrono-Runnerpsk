@@ -71,12 +71,42 @@ public final class PixelSprite {
         return new PixelSprite(w, h, px);
     }
 
+    /**
+     * Wraps an image as a sprite, one image pixel per sprite pixel. Fully
+     * transparent pixels collapse to 0 exactly like a '.' in a grid, so the
+     * baked FLASH/SLOW variants keep treating them as empty.
+     */
+    public static PixelSprite fromImage(BufferedImage img) {
+        if (img == null) {
+            throw new IllegalArgumentException("sprite image is null");
+        }
+        int w = img.getWidth();
+        int h = img.getHeight();
+        if (w <= 0 || h <= 0) {
+            throw new IllegalArgumentException("sprite image is empty: " + w + "x" + h);
+        }
+        int[] px = img.getRGB(0, 0, w, h, null, 0, w);
+        for (int i = 0; i < px.length; i++) {
+            if ((px[i] >>> 24) == 0) px[i] = 0;
+        }
+        return new PixelSprite(w, h, px);
+    }
+
     public int width() {
         return w;
     }
 
     public int height() {
         return h;
+    }
+
+    /**
+     * Integer scale that fills {@code targetWidth} as closely as possible, never
+     * below 1. Art authored at the collision size (44x62 for players) lands on 1
+     * automatically, while the built-in half-size grids still land on 2.
+     */
+    public int scaleFor(int targetWidth) {
+        return Math.max(1, (int) Math.round(targetWidth / (double) w));
     }
 
     public void draw(Graphics2D g, int left, int top, int scale, boolean flip) {

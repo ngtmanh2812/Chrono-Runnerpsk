@@ -16,9 +16,16 @@ public class StaticPlatform extends Platform {
     private final Color lit;
     private final Color body;
     private final Color dark;
+    private final boolean visible;
 
     public StaticPlatform(double x, double y, double w, double h, Color color) {
+        this(x, y, w, h, color, true);
+    }
+
+    /** Image arenas already contain their stone surfaces; only collide there. */
+    public StaticPlatform(double x, double y, double w, double h, Color color, boolean visible) {
         super(x, y, w, h, color);
+        this.visible = visible;
         this.lit = color;
         this.body = color.darker();
         this.dark = color.darker().darker();
@@ -26,6 +33,7 @@ public class StaticPlatform extends Platform {
 
     @Override
     public void render(Graphics2D g) {
+        if (!visible) return;
         int ix = (int) x;
         int iy = (int) y;
         int iw = (int) width;

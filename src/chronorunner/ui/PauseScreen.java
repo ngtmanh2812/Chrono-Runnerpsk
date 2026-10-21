@@ -46,12 +46,18 @@ public class PauseScreen extends Screen {
             play.render(g);
         }
         Composite old = g.getComposite();
-        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.68f));
-        g.setColor(new Color(4, 6, 14));
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.72f));
+        g.setColor(new Color(0x14, 0x11, 0x26));
         g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
         g.setComposite(old);
 
-        UiKit.centered(g, "TẠM DỪNG", UiKit.TITLE, UiKit.ACCENT, Game.WIDTH / 2, 220);
+        // The overlay keeps the arcade frame's panel and gold display type so
+        // pausing reads as part of the same front end, not a system dialog.
+        UiKit.panel(g, 350, 150, 580, 400, UiKit.ARC_PANEL, UiKit.ARC_EDGE);
+        UiKit.arcadeGold(g, "TẠM DỪNG", UiKit.ARC_H1_SCALE,
+                Game.WIDTH / 2, 250, UiKit.TITLE_TRACKING);
         menu.render(g, Game.WIDTH / 2, 340, 68);
+        UiKit.arcade(g, "ESC để tiếp tục", UiKit.ARC_SMALL_SCALE,
+                UiKit.ARC_DIM, Game.WIDTH / 2, 516, 2);
     }
 }

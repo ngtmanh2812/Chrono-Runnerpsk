@@ -1,9 +1,9 @@
 package chronorunner.entity.boss;
 
 import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics2D;
 
+import chronorunner.animation.Animation;
 import chronorunner.combat.DamageInfo;
 import chronorunner.combat.Hitbox;
 import chronorunner.core.Physics;
@@ -32,7 +32,6 @@ public abstract class Boss extends Character {
 
     private double dashTimer;
     private double dashVX;
-    private double phaseFlash;
 
     protected Boss(String name, double x, double y, double w, double h,
                    int maxHealth, int contactDamage, double baseSpeed,
@@ -43,11 +42,29 @@ public abstract class Boss extends Character {
     }
 
     @Override
+    protected void setupAnimations() {
+        anim.add("idle", new Animation(Art.bossAnimation(name, "idle").count(), 0.16, true));
+        anim.add("run", new Animation(Art.bossAnimation(name, "run").count(), 0.085, true));
+        anim.add("jump", new Animation(Art.bossAnimation(name, "jump").count(), 0.11, true));
+        anim.add("attack", new Animation(Art.bossAnimation(name, "attack").count(), 0.075, false));
+        anim.add("hurt", new Animation(Art.bossAnimation(name, "hurt").count(), 0.07, false));
+        anim.add("death", new Animation(Art.bossAnimation(name, "death").count(), 0.13, false));
+        anim.add("walk", new Animation(Art.bossAnimation(name, "walk").count(), 0.13, true));
+        anim.add("special", new Animation(Art.bossAnimation(name, "special").count(), 0.09, false));
+    }
+
+    @Override
+    public void takeDamage(DamageInfo info) {
+        boolean aliveBeforeHit = !isDead();
+        super.takeDamage(info);
+        if (aliveBeforeHit && isDead()) anim.play("death");
+    }
+
+    @Override
     protected void updateBehavior(double dt, CombatWorld world) {
         updatePhase();
         if (attackTimer > 0) attackTimer -= dt;
         if (specialTimer > 0) specialTimer -= dt;
-        if (phaseFlash > 0) phaseFlash -= dt;
 
         if (dashTimer > 0) {
             dashTimer -= dt;
@@ -70,7 +87,6 @@ public abstract class Boss extends Character {
         int next = ratio > 0.7 ? 1 : (ratio > 0.4 ? 2 : 3);
         if (next != phase) {
             phase = next;
-            phaseFlash = 0.6;
             onPhaseChange();
         }
     }
@@ -168,42 +184,49 @@ public abstract class Boss extends Character {
     }
 
     protected void updateAnimationState() {
+        if (isDead()) {
+            anim.play("death");
+            return;
+        }
         if (hurtFlash > 0) {
             anim.play("hurt");
-        } else if (Math.abs(vx) > 12) {
-            anim.play("run");
-        } else {
-            anim.play("idle");
+            return;
         }
-    }
 
-    /** Boss art is authored 24-28px wide and drawn at 4x to fill its big box. */
-    private static final int SCALE = 4;
+        String current = anim.currentName();
+        if ("attack".equals(current) || "special".equals(current) || "hurt".equals(current)) {
+            Animation active = anim.current();
+            if (active != null && !active.finished()) return;
+        }
+
+        if (!grounded) anim.play("jump");
+        else if (Math.abs(vx) >= baseSpeed * 1.12) anim.play("run");
+        else if (Math.abs(vx) > 12) anim.play("walk");
+        else anim.play("idle");
+    }
 
     @Override
     public void render(Graphics2D g) {
-        int bx = (int) x;
-        int by = (int) y;
         int cx = (int) centerX();
         int cy = (int) centerY();
         int feetY = (int) (y + height);
-        int auraRadius = (int) (Math.max(width, height) * (0.72 + phase * 0.05));
-        // A phase change flares the aura instead of recolouring the sprite, so
-        // the transition still reads without a second set of baked art.
-        int auraAlpha = phaseFlash > 0 ? 90 : 30 + phase * 18;
-
-        PixelArt.disc(g, cx, cy, auraRadius,
-                new Color(secondary.getRed(), secondary.getGreen(), secondary.getBlue(), auraAlpha));
-
         PixelArt.shadow(g, cx, feetY, (int) width, new Color(0, 0, 0, 100));
 
         PixelSprite.Mode mode = hurtFlash > 0 ? PixelSprite.Mode.FLASH
                 : (slow > 0 ? PixelSprite.Mode.SLOW : PixelSprite.Mode.NORMAL);
-        Art.boss(name).frame(0)
-                .drawAnchored(g, cx, feetY, SCALE, facing < 0, mode, 1f);
+        Animation current = anim.current();
+        String animation = anim.currentName();
+        PixelSprite art = Art.bossAnimation(name, animation)
+                .frame(current == null ? 0 : current.frame());
+        // Give bosses more screen presence while leaving their combat hitboxes
+        // and world coordinates untouched.
+        int scale = art.scaleFor((int) width) + 1;
+        if ("The Void Core".equals(name)) {
+            art.draw(g, cx - art.width() * scale / 2, cy - art.height() * scale / 2,
+                    scale, facing < 0, mode, 1f);
+        } else {
+            art.drawAnchored(g, cx, feetY, scale, facing < 0, mode, 1f);
+        }
 
-        g.setColor(new Color(255, 255, 255, 180));
-        g.setFont(new Font("Dialog", Font.BOLD, 13));
-        g.drawString("PHASE " + phase, bx + (int) width / 2 - 26, by - 8);
     }
 }

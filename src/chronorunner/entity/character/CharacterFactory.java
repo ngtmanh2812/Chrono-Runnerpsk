@@ -33,7 +33,7 @@ public final class CharacterFactory {
             case 1:
                 return "Tốc độ - HP thấp, dash nhanh";
             case 2:
-                return "Tank - HP cao, damage cao, chậm";
+                return "Tank - HP cao, tầm đánh rộng, chậm";
             default:
                 return "Cân bằng - dash + đánh xa";
         }
@@ -54,9 +54,9 @@ public final class CharacterFactory {
     public static int[] statsOf(int index) {
         switch (index) {
             case 1:
-                return new int[]{4, 5, 10};
+                return new int[]{4, 6, 10};
             case 2:
-                return new int[]{10, 9, 3};
+                return new int[]{10, 6, 3};
             default:
                 return new int[]{6, 6, 6};
         }

@@ -32,9 +32,24 @@ public class Animation {
         return Math.min(frames - 1, (int) (time / frameDuration));
     }
 
+    /** Number of frames this animation was authored with. */
+    public int frameCount() {
+        return frames;
+    }
+
     /** 0..1 progress through the whole animation. */
     public double progress() {
         return Math.min(1, time / total());
+    }
+
+    /**
+     * Pins the animation to a 0..1 progress mark. Used by states whose sprite
+     * frame must follow gameplay instead of wall-clock time, such as the attack
+     * animation following {@link chronorunner.combat.Attack#progress()}.
+     */
+    public void setProgress(double progress) {
+        double clamped = Math.max(0, Math.min(1, progress));
+        time = clamped * total();
     }
 
     public boolean finished() {

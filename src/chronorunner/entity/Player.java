@@ -7,28 +7,31 @@ import java.awt.event.KeyEvent;
 
 import chronorunner.animation.Animation;
 import chronorunner.combat.Attack;
+import chronorunner.combat.DamageInfo;
+import chronorunner.combat.PlayerDefense;
 import chronorunner.core.InputHandler;
 import chronorunner.core.Physics;
 import chronorunner.gfx.Art;
 import chronorunner.gfx.PixelArt;
 import chronorunner.gfx.PixelSprite;
-import chronorunner.util.Rect;
 import chronorunner.world.CombatWorld;
 
 /**
  * Base class for the three playable characters. Handles movement, double jump,
- * dash, attack/skill dispatch and rendering. Subclasses only supply stats and
- * the actual attack/skill payloads.
+ * dash, attack/skill dispatch and rendering. Subclasses supply stats, attack
+ * configuration and signature skills; PlayerDefense owns the guard timers.
  */
 public abstract class Player extends Character {
 
+    public static final int PLAYER_BASE_ATTACK_DAMAGE = 30;
+
     public static final int[] P1_KEYS = {
             KeyEvent.VK_A, KeyEvent.VK_D, KeyEvent.VK_W,
-            KeyEvent.VK_J, KeyEvent.VK_K, KeyEvent.VK_L
+            KeyEvent.VK_J, KeyEvent.VK_K, KeyEvent.VK_L, KeyEvent.VK_S
     };
     public static final int[] P2_KEYS = {
             KeyEvent.VK_LEFT, KeyEvent.VK_RIGHT, KeyEvent.VK_UP,
-            KeyEvent.VK_NUMPAD1, KeyEvent.VK_NUMPAD2, KeyEvent.VK_NUMPAD3
+            KeyEvent.VK_NUMPAD1, KeyEvent.VK_NUMPAD2, KeyEvent.VK_NUMPAD3, KeyEvent.VK_DOWN
     };
 
     public static int[] keysFor(int playerIndex) {
@@ -38,7 +41,8 @@ public abstract class Player extends Character {
     public final int playerIndex;
 
     private final InputHandler input;
-    private final int kLeft, kRight, kJump, kAttack, kDash, kSkill;
+    private final int kLeft, kRight, kJump, kAttack, kDash, kSkill, kBlock;
+    private final PlayerDefense defense = new PlayerDefense();
 
     protected double moveSpeed;
     protected double jumpSpeed;
@@ -47,17 +51,27 @@ public abstract class Player extends Character {
     protected double dashCooldown;
     protected double skillCooldown;
     protected int maxJumps;
-    protected int attackPower;
 
     protected Attack basicAttack;
     protected Color accentColor = Color.WHITE;
+    /** Shared temporal-energy hue sampled from the player sprite effects. */
+    protected Color skillEffectColor = new Color(68, 205, 255);
     protected String skillName = "Skill";
+
+    /** How long the one-shot skill animation stays on screen. */
+    private static final double SPECIAL_ANIM_SECONDS = 0.54;
+    /** Minimum time the hurt animation is held after a successful hit. */
+    private static final double HURT_ANIM_SECONDS = 0.30;
+    /** Two-pixel rows forming a small shield, placed beside the original sprite. */
+    private static final int[] GUARD_HALF_WIDTHS = {6, 10, 12, 12, 12, 12, 12, 12, 10, 10, 8, 8, 6, 4, 2, 2};
 
     private int jumpsLeft;
     private double dashTimer;
     private double dashCooldownTimer;
     private double skillTimer;
     private double skillFlash;
+    private double specialAnimTimer;
+    private double hurtAnimTimer;
 
     protected Player(int playerIndex, InputHandler input, String name,
                      double x, double y, int[] keys) {
@@ -70,20 +84,77 @@ public abstract class Player extends Character {
         this.kAttack = keys[3];
         this.kDash = keys[4];
         this.kSkill = keys[5];
+        this.kBlock = keys[6];
+    }
+
+    /**
+     * Player frame counts match the sprite sets sliced from the supplied sheet.
+     * The frame index is all that matters to rendering; the durations only drive
+     * the looping states, because attack and jump are pinned by gameplay.
+     */
+    @Override
+    protected void setupAnimations() {
+        anim.add("idle", new Animation(10, 0.12, true));
+        anim.add("walk", new Animation(10, 0.08, true));
+        anim.add("run", new Animation(10, 0.055, true));
+        anim.add("jump", new Animation(10, 0.5, false));
+        anim.add("dash", new Animation(10, 0.02, false));
+        anim.add("attack", new Animation(10, 0.3, false));
+        anim.add("special", new Animation(9, 0.06, false));
+        anim.add("hurt", new Animation(10, 0.03, false));
+        anim.add("death", new Animation(10, 0.09, false));
     }
 
     @Override
     protected void updateTimers(double dt) {
         super.updateTimers(dt);
+        if (hurtAnimTimer > 0) hurtAnimTimer -= dt;
+        // A hit interrupts the one-shot skill clip; do not resume an old cast
+        // after Hurt has taken priority.
+        if (specialAnimTimer > 0) specialAnimTimer -= dt;
         // Death skips updateBehavior, so a swing in flight would otherwise stay
-        // frozen mid-window and keep its attacker/world references alive.
-        if (isDead() && basicAttack.isBusy()) {
-            basicAttack.reset();
+        // frozen mid-window and keep its attacker/world references alive. The
+        // death pose is latched here too, so it cannot be restarted per frame.
+        if (isDead()) {
+            defense.cancel();
+            specialAnimTimer = 0;
+            if (basicAttack.isBusy()) {
+                basicAttack.reset();
+            }
+            anim.play("death");
+        }
+    }
+
+    /**
+     * Adds the hurt/death animation windows on top of the shared damage logic.
+     * All combat hits enter here. A guard consumes one valid hit before the
+     * shared health, knockback, stun, invulnerability and hurt logic runs.
+     */
+    @Override
+    public void takeDamage(DamageInfo info) {
+        if (info == null || info.amount <= 0 || invuln > 0 || isDead()) return;
+        if (defense.absorb(info)) return;
+        super.takeDamage(info);
+        if (isDead()) {
+            defense.cancel();
+            hurtAnimTimer = 0;
+            specialAnimTimer = 0;
+            // Cancel the in-flight swing immediately: a dead attacker should
+            // not keep a committed attack (or its pending hitbox) alive.
+            if (basicAttack.isBusy()) basicAttack.reset();
+            anim.play("death");
+        } else {
+            hurtAnimTimer = HURT_ANIM_SECONDS;
         }
     }
 
     @Override
     protected void updateBehavior(double dt, CombatWorld world) {
+        // Pause does not update the player; end-of-round gameplay explicitly
+        // cancels guard. Tick before input so a new stance gets its full window.
+        boolean combatActive = world.isCombatActive();
+        if (combatActive) defense.update(dt);
+        else defense.cancel();
         // Advance the attack state machine before reading input so an attack
         // started this frame keeps its full startup window.
         basicAttack.update(dt);
@@ -112,6 +183,9 @@ public abstract class Player extends Character {
 
         if (controllable) {
             if (input.wasPressed(kJump)) tryJump();
+            // Keep committed swings intact. On a simultaneous S + J press,
+            // guard wins and prevents a new normal attack for this stance.
+            if (combatActive && basicAttack.isReady() && input.wasPressed(kBlock)) defense.activate();
             // A committed attack owns the character: no dash, no skill and no
             // second swing until its recovery window has finished. Each check
             // reads isReady() live rather than a snapshot taken before the
@@ -123,6 +197,7 @@ public abstract class Player extends Character {
                 performSkill(world);
                 skillTimer = skillCooldown;
                 skillFlash = 0.25;
+                specialAnimTimer = SPECIAL_ANIM_SECONDS;
             }
         }
 
@@ -166,31 +241,80 @@ public abstract class Player extends Character {
 
     private void spawnDashTrail(CombatWorld world) {
         world.addParticle(new Particle(centerX() - width / 2, y + Math.random() * height,
-                -facing * 70, (Math.random() - 0.5) * 50, 6, accentColor, 0.28, 0));
+                -facing * 70, (Math.random() - 0.5) * 50, 6, skillEffectColor, 0.28, 0));
     }
 
+    /**
+     * One state machine, in priority order:
+     * death &gt; hurt &gt; attack/special &gt; dash &gt; jump/fall &gt; run/walk &gt; idle.
+     * Physics is never read back from the animation: only the frame index is
+     * chosen here, so animation changes cannot alter movement.
+     */
     private void updateAnimationState() {
-        if (hurtFlash > 0) {
+        if (isDead()) {
+            anim.play("death");
+            return;
+        }
+        if (hurtAnimTimer > 0) {
             anim.play("hurt");
-        } else if (basicAttack.isBusy()) {
+            return;
+        }
+        if (basicAttack.isBusy()) {
             anim.play("attack");
-        } else if (dashTimer > 0) {
+            Animation attack = anim.current();
+            if (attack != null) {
+                // Pin the strike frame to the hitbox window instead of letting
+                // elapsed animation time drift away from the damage event.
+                attack.setProgress(basicAttack.progress());
+            }
+            return;
+        }
+        if (specialAnimTimer > 0) {
+            anim.play("special");
+            return;
+        }
+        if (dashTimer > 0) {
             anim.play("dash");
-        } else if (!grounded) {
+            return;
+        }
+        if (!grounded) {
             anim.play("jump");
-        } else if (Math.abs(vx) > 12) {
-            anim.play("run");
+            syncJumpFrame();
+            return;
+        }
+        if (Math.abs(vx) > 12) {
+            // The game has one movement speed, so "walk" is what a slowed
+            // character plays; normal movement is the run cycle.
+            boolean running = Math.abs(vx) >= moveSpeed * 0.7;
+            anim.play(running ? "run" : "walk");
         } else {
             anim.play("idle");
         }
     }
 
-    /** Spawns particles + floating text for a successful skill; used by subclasses. */
-    protected void announceSkill(CombatWorld world) {
-        world.addFloatingText(new FloatingText(centerX() - 30, y - 24, skillName, accentColor, 22, 1.0));
+    /** Rising uses the first half of the jump row, falling the second half. */
+    private void syncJumpFrame() {
+        Animation jump = anim.current();
+        if (jump == null || !"jump".equals(anim.currentName())) return;
+        double progress;
+        if (vy < 0) {
+            double rising = Math.min(1.0, -vy / Math.max(1.0, jumpSpeed));
+            progress = 0.5 * (1.0 - rising);
+        } else {
+            progress = 0.5 + 0.5 * Math.min(1.0, vy / Physics.MAX_FALL);
+        }
+        jump.setProgress(progress);
     }
 
-    protected abstract void performAttack(CombatWorld world);
+    /** Spawns particles + floating text for a successful skill; used by subclasses. */
+    protected void announceSkill(CombatWorld world) {
+        world.addFloatingText(new FloatingText(centerX() - 30, y - 24, skillName, skillEffectColor, 22, 1.0));
+    }
+
+    /** Shared normal-attack dispatch for every playable character. */
+    protected final void performAttack(CombatWorld world) {
+        if (!defense.isBlocking()) basicAttack.start(this, facing, true, world);
+    }
 
     protected abstract void performSkill(CombatWorld world);
 
@@ -208,13 +332,23 @@ public abstract class Player extends Character {
         return dashCooldown <= 0 ? 1 : 1 - Math.max(0, dashCooldownTimer) / dashCooldown;
     }
 
-    /** Player art is 22x31; two of those tiles exactly fill the 44x62 hitbox. */
-    private static final int SCALE = 2;
+    public boolean isBlocking() { return defense.isBlocking(); }
+    public double getBlockCooldownRemaining() { return defense.cooldownRemaining(); }
+    public double getBlockCooldownRatio() { return defense.cooldownRatio(); }
+    public String getBlockKeyLabel() { return KeyEvent.getKeyText(kBlock); }
+    public void cancelBlock() { defense.cancel(); }
 
     @Override
     public void render(Graphics2D g) {
         boolean dead = isDead();
-        float alpha = dead ? 0.35f : 1f;
+        String animName = anim.currentName() == null ? "idle" : anim.currentName();
+        Animation current = anim.current();
+        // The supplied death sheet fades the body out over its last frames, so
+        // the sprite stays fully opaque while the fall plays and only dims once
+        // the pose has settled.
+        boolean deathSettled = dead && "death".equals(animName)
+                && current != null && current.finished();
+        float alpha = dead ? (deathSettled ? 0.45f : 1f) : 1f;
         if (!dead && invuln > 0 && ((int) (invuln * 22)) % 2 == 0) {
             alpha = 0.5f;
         }
@@ -224,53 +358,57 @@ public abstract class Player extends Character {
         int cx = (int) centerX();
         int feetY = (int) (y + height);
 
-        Animation a = anim.current();
-        int step = a == null ? 0 : a.frame();
-        // The run cycle keeps the old vertical bob on odd steps so the stride
-        // reads even though the two sprite frames are not a full walk cycle.
-        int bob = "run".equals(anim.currentName()) && step % 2 != 0 ? -3 : 0;
+        int step = current == null ? 0 : current.frame();
 
         PixelArt.shadow(g, cx, feetY, (int) width, new Color(0, 0, 0, 80));
 
         if (skillFlash > 0) {
             int radius = (int) (Math.max(width, height) * 0.6);
-            PixelArt.disc(g, cx, (int) (y + height / 2) + bob, radius,
-                    new Color(accentColor.getRed(), accentColor.getGreen(), accentColor.getBlue(), 90));
+            PixelArt.disc(g, cx, (int) (y + height / 2), radius,
+                    new Color(skillEffectColor.getRed(), skillEffectColor.getGreen(),
+                            skillEffectColor.getBlue(), 90));
         }
 
         PixelSprite.Mode mode = hurtFlash > 0 ? PixelSprite.Mode.FLASH
                 : (slow > 0 ? PixelSprite.Mode.SLOW : PixelSprite.Mode.NORMAL);
-        Art.player(characterId()).frame(step)
-                .drawAnchored(g, cx, feetY + bob, SCALE, facing < 0, mode, alpha);
+        // Each state reads its own sprite set; the frames are already authored
+        // at the 48x48 target, so scaleFor keeps them at 1x against the 44px
+        // hitbox and the feet-anchored draw keeps the pivot stable.
+        PixelSprite art = Art.playerAnim(characterId(), animName).frame(step);
+        art.drawAnchored(g, cx, feetY, art.scaleFor((int) width), facing < 0, mode, alpha);
 
-        drawSwing(g);
+        if (!dead && (defense.isBlocking() || defense.isImpactVisible())) renderGuard(g, cx, by);
 
         g.setFont(new Font("Dialog", Font.BOLD, 12));
         g.setColor(new Color(255, 255, 255, 200));
-        g.drawString("P" + (playerIndex + 1), bx + (int) width / 2 - 8, by + bob - 6);
+        g.drawString("P" + (playerIndex + 1), bx + (int) width / 2 - 8, by - 6);
     }
 
-    /** Outlines the startup wind-up, then fills the region that deals damage. */
-    private void drawSwing(Graphics2D g) {
-        Rect region = basicAttack.region();
-        if (region == null) return;
-
-        int rx = (int) region.x;
-        int ry = (int) region.y;
-        int rw = (int) region.w;
-        int rh = (int) region.h;
-        Color accent = accentColor;
-
-        if (basicAttack.isStartup()) {
-            g.setColor(new Color(accent.getRed(), accent.getGreen(), accent.getBlue(), 45));
-            g.fillRect(rx, ry, rw, rh);
-            g.setColor(new Color(255, 255, 255, 120));
-            g.drawRect(rx, ry, rw, rh);
-        } else if (basicAttack.isActive()) {
-            g.setColor(new Color(accent.getRed(), accent.getGreen(), accent.getBlue(), 170));
-            g.fillRect(rx, ry, rw, rh);
-            g.setColor(Color.WHITE);
-            g.drawRect(rx, ry, rw, rh);
+    /** Temporary pixel shield; it never changes the sprite or hurtbox. */
+    private void renderGuard(Graphics2D g, int cx, int top) {
+        boolean impact = defense.isImpactVisible();
+        Color color = impact ? new Color(235, 255, 255) : new Color(95, 225, 255, 210);
+        Color fill = new Color(65, 200, 255, impact ? 100 : 40);
+        int sx = cx + facing * ((int) width / 2 + 5);
+        int sy = top + (int) height - 40;
+        for (int row = 0; row < GUARD_HALF_WIDTHS.length; row++) {
+            int half = GUARD_HALF_WIDTHS[row];
+            int yy = sy + row * 2;
+            if (row == 0 || half <= 2) {
+                PixelArt.rect(g, sx - half, yy, half * 2, 2, color);
+            } else {
+                PixelArt.rect(g, sx - half, yy, 2, 2, color);
+                PixelArt.rect(g, sx + half - 2, yy, 2, 2, color);
+                PixelArt.rect(g, sx - half + 2, yy, half * 2 - 4, 2, fill);
+            }
+        }
+        PixelArt.rect(g, sx - 1, sy + 8, 2, 14, color);
+        PixelArt.rect(g, sx - 5, sy + 12, 10, 2, color);
+        if (impact) {
+            PixelArt.rect(g, sx - 22, sy + 14, 6, 2, color);
+            PixelArt.rect(g, sx + 16, sy + 14, 6, 2, color);
+            PixelArt.rect(g, sx - 1, sy - 10, 2, 6, color);
         }
     }
+
 }

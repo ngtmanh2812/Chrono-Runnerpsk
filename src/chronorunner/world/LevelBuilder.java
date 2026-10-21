@@ -21,6 +21,14 @@ public class LevelBuilder {
     private Boss boss;
     private final List<Enemy> enemies = new ArrayList<>();
     private double[] playerSpawns = {360, 500};
+    private ArenaBackdrop backdrop;
+
+    public LevelBuilder backdrop(ArenaBackdrop value) {
+        this.backdrop = value;
+        this.width = value.width();
+        this.height = value.height();
+        return this;
+    }
 
     public LevelBuilder chapter(int value) {
         this.chapter = value;
@@ -39,14 +47,15 @@ public class LevelBuilder {
     }
 
     public LevelBuilder addPlatform(double x, double y, double w, double h) {
-        Color color = (tile == null ? TileType.BROKEN_CITY : tile).platformColor;
-        platforms.add(new StaticPlatform(x, y, w, h, color));
+        Color color = (tile == null ? TileType.PAST : tile).platformColor;
+        platforms.add(new StaticPlatform(x, y, w, h, color, backdrop == null));
         return this;
     }
 
     public LevelBuilder addGround() {
-        Color color = (tile == null ? TileType.BROKEN_CITY : tile).platformColor;
-        platforms.add(new StaticPlatform(0, groundY, width, height - groundY + 80, color));
+        Color color = (tile == null ? TileType.PAST : tile).platformColor;
+        platforms.add(new StaticPlatform(0, groundY, width, height - groundY + 80,
+                color, backdrop == null));
         return this;
     }
 
@@ -70,6 +79,6 @@ public class LevelBuilder {
             tile = TileType.of(chapter);
         }
         return new Level(chapter, tile, width, height, groundY,
-                new ArrayList<>(platforms), boss, new ArrayList<>(enemies), playerSpawns);
+                new ArrayList<>(platforms), boss, new ArrayList<>(enemies), playerSpawns, backdrop);
     }
 }

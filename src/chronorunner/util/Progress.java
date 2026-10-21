@@ -3,7 +3,7 @@ package chronorunner.util;
 /** Persistent player progress and options. */
 public class Progress {
 
-    public static final int TOTAL_CHAPTERS = 5;
+    public static final int TOTAL_CHAPTERS = 2;
 
     private int unlockedChapters = 1;
     private boolean screenShake = true;

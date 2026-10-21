@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import chronorunner.core.Game;
 import chronorunner.core.GameState;
 import chronorunner.core.Screen;
+import chronorunner.util.Progress;
 import chronorunner.world.TileType;
 
 /** Shown after the boss is defeated. Offers the next chapter. */
@@ -21,7 +22,7 @@ public class VictoryScreen extends Screen {
     @Override
     public void onEnter() {
         chapter = game.getSession().chapter;
-        if (chapter >= 5) {
+        if (chapter >= Progress.TOTAL_CHAPTERS) {
             menu = new Menu("VỀ MENU CHÍNH");
         } else {
             menu = new Menu("CHAPTER TIẾP THEO", "VỀ MENU CHÍNH");
@@ -36,9 +37,9 @@ public class VictoryScreen extends Screen {
             return;
         }
         if (!menu.confirmed()) return;
-        if (chapter < 5 && menu.index() == 0) {
+        if (chapter < Progress.TOTAL_CHAPTERS && menu.index() == 0) {
             game.getSession().chapter = chapter + 1;
-            game.setState(GameState.STORY);
+            game.setState(GameState.LEVEL_SELECT);
         } else {
             game.setState(GameState.MAIN_MENU);
         }
@@ -55,7 +56,7 @@ public class VictoryScreen extends Screen {
         UiKit.centered(g, tile.bossName + " đã bị đánh bại.", UiKit.BODY, UiKit.MUTED,
                 Game.WIDTH / 2, 280);
 
-        if (chapter >= 5) {
+        if (chapter >= Progress.TOTAL_CHAPTERS) {
             UiKit.centered(g, "Chrono Core đã được khôi phục. Phan Sĩ Kiên trở về dòng thời gian của mình.",
                     UiKit.H2, UiKit.ACCENT_WARM, Game.WIDTH / 2, 360);
             UiKit.centered(g, "Cảm ơn bạn đã chơi Chrono Runner!", UiKit.BODY, UiKit.TEXT,
@@ -65,6 +66,6 @@ public class VictoryScreen extends Screen {
                     Game.WIDTH / 2, 350);
         }
 
-        menu.render(g, Game.WIDTH / 2, chapter >= 5 ? 470 : 450, 66);
+        menu.render(g, Game.WIDTH / 2, chapter >= Progress.TOTAL_CHAPTERS ? 470 : 450, 66);
     }
 }

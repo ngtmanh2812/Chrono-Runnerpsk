@@ -1,0 +1,18 @@
+Boss: The Time Guardian
+Source: Dual Boss Pixel Art Sprite Sheet-2.png (1536x1024, RGBA)
+Output frame: 48x62 px
+Sprite sheet: 384x496 px
+Grid: 8 columns x 8 animation rows
+Row order: idle, run, jump, attack, hurt, death, walk, special
+Frame anchor: center-x; feet for Time Guardian, center for Void Core
+Scale: nearest-neighbour; pale checkerboard matte removed to alpha 0
+
+Animation frame counts:
+  1. idle: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=22:180; frame=48x62 px
+  2. run: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=185:291; frame=48x62 px
+  3. jump: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=296:416; frame=48x62 px
+  4. attack: 4 frames; source x=[(30, 121), (125, 225), (229, 327), (442, 539)], y=421:539; frame=48x62 px
+  5. hurt: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=544:647; frame=48x62 px
+  6. death: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=653:750; frame=48x62 px
+  7. walk: 7 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539), (543, 640), (645, 738)], y=756:857; frame=48x62 px
+  8. special: 5 frames; source x=[(30, 121), (125, 225), (229, 327), (332, 438), (442, 539)], y=863:996; frame=48x62 px

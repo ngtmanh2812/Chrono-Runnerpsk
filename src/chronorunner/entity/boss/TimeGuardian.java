@@ -9,8 +9,8 @@ import chronorunner.world.CombatWorld;
 public class TimeGuardian extends Boss {
 
     public TimeGuardian(double x, double y) {
-        super("Time Guardian", x, y, 96, 124, 700, 12, 150,
-                new Color(150, 205, 255));
+        super("The Time Guardian", x, y, 96, 124, 700, 12, 150,
+                new Color(255, 170, 52));
     }
 
     @Override
@@ -30,6 +30,7 @@ public class TimeGuardian extends Boss {
         }
 
         if (attackTimer <= 0) {
+            anim.play("attack");
             if (distance < 150) {
                 melee(world, 110, 96, scaleDamage(14), 340);
                 attackTimer = 1.2 * cooldownScale();
@@ -47,6 +48,7 @@ public class TimeGuardian extends Boss {
 
     @Override
     public void specialAttack(CombatWorld world) {
+        anim.play("special");
         Player target = nearestPlayer(world);
         if (target == null) return;
         faceTarget(target);

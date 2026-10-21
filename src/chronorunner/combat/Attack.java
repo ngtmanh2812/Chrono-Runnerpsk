@@ -31,6 +31,8 @@ public class Attack {
     private final AttackData data;
     private Phase phase = Phase.READY;
     private double elapsed;
+    /** Seconds finished by earlier windows of the current swing. */
+    private double completed;
 
     private GameObject attacker;
     private int facing;
@@ -78,6 +80,17 @@ public class Attack {
     }
 
     /**
+     * 0..1 progress through startup + active + recovery. The attack animation
+     * is pinned to this value so its strike frame lands on the active window.
+     */
+    public double progress() {
+        double total = data.totalSeconds();
+        if (total <= 0) return 0;
+        double done = completed + (phase == Phase.READY ? 0 : elapsed);
+        return Math.max(0, Math.min(1, done / total));
+    }
+
+    /**
      * Winds the attack up in front of {@code attacker}. The hitbox is spawned
      * later, once {@link AttackData#startupFrames} have elapsed.
      *
@@ -91,6 +104,7 @@ public class Attack {
         this.world = world;
         this.phase = Phase.STARTUP;
         this.elapsed = 0;
+        this.completed = 0;
         return true;
     }
 
@@ -100,7 +114,9 @@ public class Attack {
         // Carry surplus time into the next window so a dropped frame does not
         // stretch the attack.
         while (phase != Phase.READY && elapsed >= phaseSeconds() - EPS) {
-            elapsed -= phaseSeconds();
+            double consumed = phaseSeconds();
+            elapsed -= consumed;
+            completed += consumed;
             advance();
         }
     }
@@ -123,6 +139,7 @@ public class Attack {
     public void reset() {
         phase = Phase.READY;
         elapsed = 0;
+        completed = 0;
         attacker = null;
         world = null;
         activeRect = null;

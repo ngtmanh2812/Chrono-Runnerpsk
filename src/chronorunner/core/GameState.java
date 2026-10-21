@@ -3,10 +3,9 @@ package chronorunner.core;
 /** All top level screens the game can be in. Used as the State Pattern key. */
 public enum GameState {
     MAIN_MENU,
-    MODE_SELECT,
+    CREDITS,
     LEVEL_SELECT,
     SETTINGS,
-    STORY,
     CHARACTER_SELECT,
     PLAYING,
     PAUSED,

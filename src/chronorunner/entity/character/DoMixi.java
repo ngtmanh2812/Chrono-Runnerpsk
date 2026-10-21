@@ -25,17 +25,11 @@ public class DoMixi extends Player {
         this.dashDuration = 0.18;
         this.dashCooldown = 0.9;
         this.maxJumps = 2;
-        this.attackPower = 16;
         this.skillCooldown = 2.0;
         this.accentColor = new Color(255, 205, 70);
         this.skillName = "Alo Vũ à Vũ";
         // Heaviest: 14f wind-up, 10f active (frames 14-23), 18f recovery.
-        this.basicAttack = new Attack(new AttackData("Heavy Swing", 16, 72, 66, 14, 10, 18, 380));
-    }
-
-    @Override
-    protected void performAttack(CombatWorld world) {
-        basicAttack.start(this, facing, true, world);
+        this.basicAttack = new Attack(new AttackData("Heavy Swing", PLAYER_BASE_ATTACK_DAMAGE, 72, 66, 14, 10, 18, 380));
     }
 
     @Override
@@ -46,7 +40,7 @@ public class DoMixi extends Player {
         for (int i = 0; i < 20; i++) {
             double angle = Math.PI * 2 * i / 20.0;
             world.addParticle(new Particle(centerX(), centerY(),
-                    Math.cos(angle) * 260, Math.sin(angle) * 260, 8, accentColor, 0.4, 0));
+                    Math.cos(angle) * 260, Math.sin(angle) * 260, 8, skillEffectColor, 0.4, 0));
         }
     }
 

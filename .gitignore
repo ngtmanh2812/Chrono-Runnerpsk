@@ -1,4 +1,26 @@
-out/
-saves/
+# Java
 *.class
-sources.txt
+
+# Build
+out/
+build/
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+*.iml
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.log

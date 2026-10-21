@@ -7,14 +7,14 @@ import chronorunner.entity.enemy.ChronoBat;
 import chronorunner.util.Collision;
 import chronorunner.world.CombatWorld;
 
-/** Chapter 5: the final boss. Teleports, radial bursts and clone summons. */
-public class TheParadox extends Boss {
+/** Future chapter boss. Keeps the existing temporal AI combat behavior. */
+public class TheVoidCore extends Boss {
 
     private int cycle;
 
-    public TheParadox(double x, double y) {
-        super("The Paradox", x, y, 116, 140, 1600, 16, 160,
-                new Color(245, 150, 255));
+    public TheVoidCore(double x, double y) {
+        super("The Void Core", x, y, 116, 140, 1600, 16, 160,
+                new Color(105, 112, 255));
     }
 
     @Override
@@ -34,6 +34,7 @@ public class TheParadox extends Boss {
         }
 
         if (attackTimer <= 0) {
+            anim.play("attack");
             if (distance < 160) {
                 melee(world, 120, 110, scaleDamage(13), 340);
                 attackTimer = 1.1 * cooldownScale();
@@ -51,11 +52,12 @@ public class TheParadox extends Boss {
 
     @Override
     public void specialAttack(CombatWorld world) {
+        anim.play("special");
         cycle++;
         Player target = nearestPlayer(world);
         switch (cycle % 3) {
             case 0:
-                // Clone summons: bats mirror the Paradox across the arena.
+                // Keep the existing clone-summon pattern without changing its AI.
                 summon(world, new ChronoBat(centerX() - 260, centerY() - 120));
                 summon(world, new ChronoBat(centerX() + 260, centerY() - 120));
                 if (getPhase() >= 3) {

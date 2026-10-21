@@ -21,9 +21,9 @@ public class Hud {
 
         Boss boss = level.boss();
         if (boss != null) {
-            int barW = 720;
+            int barW = 560;
             int x = (Game.WIDTH - barW) / 2;
-            int y = 52;
+            int y = 62;
             UiKit.bar(g, x, y, barW, 22, boss.healthRatio(),
                     new Color(220, 70, 90), new Color(24, 16, 26, 210));
             g.setColor(new Color(255, 255, 255, 130));
@@ -31,14 +31,28 @@ public class Hud {
                 int mx = x + (int) (barW * marker);
                 g.drawLine(mx, y, mx, y + 22);
             }
-            UiKit.centered(g, boss.getName() + "   •   PHASE " + boss.getPhase(),
-                    UiKit.H2, Color.WHITE, Game.WIDTH / 2, y - 8);
+            UiKit.centered(g, boss.getName(), UiKit.H2, Color.WHITE,
+                    Game.WIDTH / 2, y - 8);
+            UiKit.centered(g, "PHASE " + boss.getPhase(), UiKit.SMALL, UiKit.MUTED,
+                    x + barW - 44, y - 8);
         }
 
         for (int i = 0; i < players.size(); i++) {
             Player p = players.get(i);
             int px = i == 0 ? 24 : Game.WIDTH - 324;
             int py = Game.HEIGHT - 98;
+            // A separate thin strip leaves HP and the existing skill row intact.
+            UiKit.panel(g, px, py - 26, 300, 22, new Color(8, 12, 26, 205), new Color(255, 255, 255, 45));
+            Color guardColor = p.isDead() ? UiKit.MUTED : p.isBlocking() ? Color.WHITE : UiKit.ACCENT;
+            g.setFont(UiKit.SMALL);
+            g.setColor(guardColor);
+            g.drawString("Block [" + p.getBlockKeyLabel() + "]", px + 14, py - 10);
+            String guardStatus = p.isDead() ? "—" : p.isBlocking() ? "ĐANG ĐỠ"
+                    : p.getBlockCooldownRemaining() > 0
+                    ? String.format(java.util.Locale.ROOT, "%.1fs", p.getBlockCooldownRemaining()) : "SẴN SÀNG";
+            g.drawString(guardStatus, px + 126, py - 10);
+            UiKit.bar(g, px + 216, py - 18, 70, 10, p.isDead() ? 0 : p.getBlockCooldownRatio(),
+                    guardColor, new Color(0, 0, 0, 160));
             UiKit.panel(g, px, py, 300, 74, new Color(8, 12, 26, 205), new Color(255, 255, 255, 45));
 
             Art.player(p.characterId()).frame(0)

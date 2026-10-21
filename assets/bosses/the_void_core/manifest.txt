@@ -1,0 +1,18 @@
+Boss: The Void Core
+Source: Dual Boss Pixel Art Sprite Sheet-2.png (1536x1024, RGBA)
+Output frame: 58x70 px
+Sprite sheet: 464x560 px
+Grid: 8 columns x 8 animation rows
+Row order: idle, run, jump, attack, hurt, death, walk, special
+Frame anchor: center-x; feet for Time Guardian, center for Void Core
+Scale: nearest-neighbour; pale checkerboard matte removed to alpha 0
+
+Animation frame counts:
+  1. idle: 5 frames; source x=[(802, 963), (969, 1110), (1117, 1242), (1251, 1381), (1392, 1507)], y=22:186; frame=58x70 px
+  2. run: 6 frames; source x=[(802, 892), (900, 995), (1004, 1110), (1118, 1242), (1251, 1381), (1392, 1507)], y=193:298; frame=58x70 px
+  3. jump: 6 frames; source x=[(802, 892), (900, 995), (1004, 1110), (1118, 1242), (1251, 1381), (1392, 1507)], y=304:426; frame=58x70 px
+  4. attack: 2 frames; source x=[(802, 892), (1004, 1110)], y=432:550; frame=58x70 px
+  5. hurt: 6 frames; source x=[(802, 892), (900, 995), (1004, 1110), (1118, 1242), (1251, 1381), (1392, 1507)], y=556:659; frame=58x70 px
+  6. death: 6 frames; source x=[(802, 892), (900, 995), (1004, 1110), (1118, 1242), (1251, 1381), (1392, 1507)], y=666:755; frame=58x70 px
+  7. walk: 6 frames; source x=[(802, 892), (900, 995), (1004, 1110), (1118, 1242), (1251, 1381), (1392, 1507)], y=761:859; frame=58x70 px
+  8. special: 2 frames; source x=[(802, 892), (900, 995)], y=866:996; frame=58x70 px

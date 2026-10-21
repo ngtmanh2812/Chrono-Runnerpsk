@@ -6,7 +6,11 @@ import java.awt.Composite;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.IdentityHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import chronorunner.combat.DamageInfo;
 import chronorunner.combat.Hitbox;
@@ -25,11 +29,13 @@ import chronorunner.entity.boss.Boss;
 import chronorunner.entity.character.CharacterFactory;
 import chronorunner.entity.enemy.Enemy;
 import chronorunner.gfx.PixelArt;
+import chronorunner.gfx.CollisionDebug;
 import chronorunner.obstacle.Platform;
 import chronorunner.world.CombatWorld;
 import chronorunner.world.Level;
 import chronorunner.world.LevelFactory;
 import chronorunner.world.TileType;
+import chronorunner.util.Progress;
 
 /**
  * The boss arena. Owns the entity lists, runs collisions/combat resolution and
@@ -52,6 +58,8 @@ public class PlayScreen extends Screen implements CombatWorld {
     private final List<Hitbox> hitboxes = new ArrayList<>();
     private final List<Particle> particles = new ArrayList<>();
     private final List<FloatingText> texts = new ArrayList<>();
+    /** A blocked body contact remains consumed until that pair separates. */
+    private final Map<Character, Set<Player>> blockedContacts = new IdentityHashMap<>();
 
     private double endTimer = -1;
     private boolean victory;
@@ -73,13 +81,19 @@ public class PlayScreen extends Screen implements CombatWorld {
         hitboxes.clear();
         particles.clear();
         texts.clear();
+        blockedContacts.clear();
         endTimer = -1;
         victory = false;
         defeat = false;
 
         for (int i = 0; i < session.playerCount; i++) {
-            players.add(CharacterFactory.create(session.characterIndex[i], i, input,
-                    level.playerSpawn(i), level.groundY() - 90));
+            Player player = CharacterFactory.create(session.characterIndex[i], i, input,
+                    level.playerSpawn(i), level.groundY() - 90);
+            if (level.backdrop() != null) {
+                player.y = level.groundY() - player.height;
+                player.grounded = true;
+            }
+            players.add(player);
         }
         enemies.addAll(level.enemies());
 
@@ -157,6 +171,7 @@ public class PlayScreen extends Screen implements CombatWorld {
                 defeat = true;
                 endTimer = 1.8;
             }
+            if (endTimer >= 0) for (Player p : players) p.cancelBlock();
             return;
         }
 
@@ -164,7 +179,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         if (endTimer > 0) return;
 
         if (victory) {
-            int unlocked = Math.min(game.getSession().chapter + 1, 5);
+            int unlocked = Math.min(game.getSession().chapter + 1, Progress.TOTAL_CHAPTERS);
             game.getProgress().unlockThrough(unlocked);
             game.saveProgress();
             game.setState(GameState.VICTORY);
@@ -260,6 +275,11 @@ public class PlayScreen extends Screen implements CombatWorld {
     }
 
     private void resolveContact() {
+        blockedContacts.entrySet().removeIf(entry -> {
+            Character source = entry.getKey();
+            entry.getValue().removeIf(p -> p.isDead() || !p.bounds().intersects(source.bounds()));
+            return source.isDead() || entry.getValue().isEmpty();
+        });
         Boss boss = level.boss();
         if (boss != null && !boss.isDead() && boss.getContactDamage() > 0) {
             contactDamage(boss, boss.getContactDamage());
@@ -274,19 +294,25 @@ public class PlayScreen extends Screen implements CombatWorld {
     private void contactDamage(Character source, int damage) {
         for (Player p : players) {
             if (p.isDead() || p.isInvulnerable()) continue;
+            Set<Player> consumed = blockedContacts.get(source);
+            if (consumed != null && consumed.contains(p)) continue;
             if (p.bounds().intersects(source.bounds())) {
                 double dir = p.centerX() < source.centerX() ? -1 : 1;
-                applyDamage(p, new DamageInfo(damage, dir * 260, -260, false));
+                if (applyDamage(p, new DamageInfo(damage, dir * 260, -260, false))) {
+                    blockedContacts.computeIfAbsent(source, key -> new HashSet<>()).add(p);
+                }
             }
         }
     }
 
-    private void applyDamage(Character target, DamageInfo info) {
-        if (target == null || info == null || target.isDead() || target.isInvulnerable()) return;
+    /** Returns true only when this hit was consumed by a player's guard. */
+    private boolean applyDamage(Character target, DamageInfo info) {
+        if (target == null || info == null || info.amount <= 0 || target.isDead() || target.isInvulnerable()) return false;
+        boolean guarding = target instanceof Player && ((Player) target).isBlocking();
         int before = target.getHealth();
         target.takeDamage(info);
         int dealt = before - target.getHealth();
-        if (dealt <= 0) return;
+        if (dealt <= 0) return guarding && !((Player) target).isBlocking();
 
         if (info.slowSeconds > 0) {
             target.applySlow(info.slowSeconds);
@@ -305,6 +331,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         } else {
             shake(0.22);
         }
+        return false;
     }
 
     private void burst(Projectile pr) {
@@ -318,10 +345,12 @@ public class PlayScreen extends Screen implements CombatWorld {
     @Override
     public void render(Graphics2D g) {
         UiKit.background(g, level.tile().bgTop, level.tile().bgBottom);
-        drawBackdrop(g);
+        if (level.backdrop() == null) drawBackdrop(g);
 
         Graphics2D world = (Graphics2D) g.create();
         world.translate(-camera.offsetX(), -camera.offsetY());
+
+        if (level.backdrop() != null) level.backdrop().render(world);
 
         for (Platform p : level.platforms()) p.render(world);
         for (Enemy e : enemies) e.render(world);
@@ -333,6 +362,8 @@ public class PlayScreen extends Screen implements CombatWorld {
         for (Projectile p : projectiles) p.render(world);
         for (Particle p : particles) p.render(world);
         for (FloatingText t : texts) t.render(world);
+
+        CollisionDebug.render(world, level, players);
 
         world.dispose();
 
@@ -374,20 +405,11 @@ public class PlayScreen extends Screen implements CombatWorld {
             int x = i * SKYLINE_STEP - shift;
             int h = 80 + hash(index * 37 + layer * 1013) % 170;
             switch (theme) {
-                case FORGOTTEN_FOREST:
-                    drawTree(g, x, baseY, h, body, edge);
-                    break;
-                case ANCIENT_RUINS:
+                case PAST:
                     drawRuins(g, x, baseY, h, body, edge, lit);
                     break;
-                case FROZEN_FUTURE:
-                    drawSpire(g, x, baseY, h, body, edge);
-                    break;
-                case CHRONO_CORE:
+                case FUTURE:
                     drawMonolith(g, x, baseY, h, body, edge, lit);
-                    break;
-                default:
-                    drawTower(g, x, baseY, h, body, edge, lit, index);
                     break;
             }
         }
@@ -519,6 +541,13 @@ public class PlayScreen extends Screen implements CombatWorld {
     }
 
     // ----- CombatWorld -----
+
+    @Override
+    public boolean isCombatActive() {
+        Boss boss = level.boss();
+        return game.getState() == GameState.PLAYING && endTimer < 0
+                && boss != null && !boss.isDead();
+    }
 
     @Override
     public List<Player> players() {

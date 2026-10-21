@@ -16,6 +16,9 @@ import chronorunner.obstacle.Platform;
  */
 public interface CombatWorld {
 
+    /** False while the round is over; paused screens do not tick entities. */
+    default boolean isCombatActive() { return true; }
+
     List<Player> players();
 
     List<Platform> platforms();

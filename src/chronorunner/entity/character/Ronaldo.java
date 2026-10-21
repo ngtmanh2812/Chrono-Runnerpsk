@@ -25,17 +25,11 @@ public class Ronaldo extends Player {
         this.dashDuration = 0.13;
         this.dashCooldown = 0.38;
         this.maxJumps = 2;
-        this.attackPower = 9;
         this.skillCooldown = 1.1;
         this.accentColor = new Color(250, 240, 90);
         this.skillName = "Siuu";
         // Fastest: 5f wind-up, 6f active (frames 5-10), 7f recovery.
-        this.basicAttack = new Attack(new AttackData("Quick Jab", 9, 48, 46, 5, 6, 7, 180));
-    }
-
-    @Override
-    protected void performAttack(CombatWorld world) {
-        basicAttack.start(this, facing, true, world);
+        this.basicAttack = new Attack(new AttackData("Quick Jab", PLAYER_BASE_ATTACK_DAMAGE, 48, 46, 5, 6, 7, 180));
     }
 
     @Override
@@ -49,9 +43,12 @@ public class Ronaldo extends Player {
         world.addHitbox(new Hitbox(rect, new DamageInfo(22, 430 * facing, -220, true),
                 0.22, true, this, true));
         for (int i = 0; i < 12; i++) {
-            world.addParticle(new Particle(centerX(), centerY(),
-                    (Math.random() - 0.5) * 320, (Math.random() - 0.5) * 320, 6,
-                    accentColor, 0.35, 0));
+            double trailX = facing >= 0 ? x - 8 - Math.random() * 18
+                    : right() + 8 + Math.random() * 18;
+            double trailY = y + height * (0.25 + Math.random() * 0.5);
+            world.addParticle(new Particle(trailX, trailY,
+                    -facing * (90 + Math.random() * 180), (Math.random() - 0.5) * 70,
+                    6, skillEffectColor, 0.35, 0));
         }
     }
 

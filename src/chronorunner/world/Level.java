@@ -18,9 +18,11 @@ public class Level {
     private final Boss boss;
     private final List<Enemy> enemies;
     private final double[] playerSpawns;
+    private final ArenaBackdrop backdrop;
 
     Level(int chapter, TileType tile, double width, double height, double groundY,
-          List<Platform> platforms, Boss boss, List<Enemy> enemies, double[] playerSpawns) {
+          List<Platform> platforms, Boss boss, List<Enemy> enemies, double[] playerSpawns,
+          ArenaBackdrop backdrop) {
         this.chapter = chapter;
         this.tile = tile;
         this.width = width;
@@ -30,6 +32,7 @@ public class Level {
         this.boss = boss;
         this.enemies = enemies;
         this.playerSpawns = playerSpawns;
+        this.backdrop = backdrop;
     }
 
     public int chapter() { return chapter; }
@@ -41,6 +44,8 @@ public class Level {
     public double height() { return height; }
 
     public double groundY() { return groundY; }
+
+    public ArenaBackdrop backdrop() { return backdrop; }
 
     public List<Platform> platforms() { return platforms; }
 
