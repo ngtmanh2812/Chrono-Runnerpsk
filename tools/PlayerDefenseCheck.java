@@ -43,7 +43,11 @@ public final class PlayerDefenseCheck {
     }
     static Object get(Object object, String name) throws Exception { return field(object, name).get(object); }
     static void call(Object object, String name) throws Exception {
-        Method m = object.getClass().getDeclaredMethod(name); m.setAccessible(true); m.invoke(object);
+        for (Class<?> type = object.getClass(); type != null; type = type.getSuperclass()) {
+            try { Method m = type.getDeclaredMethod(name); m.setAccessible(true); m.invoke(object); return; }
+            catch (NoSuchMethodException ignored) { }
+        }
+        throw new NoSuchMethodException(name);
     }
     static Attack attack(Player p) throws Exception { return (Attack) get(p, "basicAttack"); }
     static String animation(Player p) throws Exception { return ((AnimationController) get(p, "anim")).currentName(); }
@@ -53,8 +57,10 @@ public final class PlayerDefenseCheck {
         if (down) input.keyPressed(event); else input.keyReleased(event);
     }
 
+    static class NoSaveGame extends Game { @Override public void saveProgress() { } }
+
     static final class Fixture {
-        final Game game = new Game();
+        final Game game = new NoSaveGame();
         final InputHandler input = game.getInput();
         final PlayScreen screen;
         final Level level;
@@ -264,15 +270,12 @@ public final class PlayerDefenseCheck {
                         "Guard must block new attack and preserve move/jump");
                 check(!p2.isBlocking() && near(p2.getBlockCooldownRemaining(), 0), "S affected P2");
                 f.press(KeyEvent.VK_DOWN); check(p2.isBlocking(), "P2 Down key failed");
-                f.press(KeyEvent.VK_L); check(p.getSkillCooldownRatio() < 1, "Existing ability blocked by guard");
-                if (character == 0) {
-                    List<?> orbs = (List<?>) get(f.screen, "projectiles");
-                    check(orbs.size() == 1 && ((Projectile) orbs.get(0)).damage().amount == 20, "Chrono Shot damage changed");
-                } else {
-                    List<?> hits = (List<?>) get(f.screen, "hitboxes");
-                    check(hits.size() == 1 && ((Hitbox) hits.get(0)).damage.amount == (character == 1 ? 22 : 26),
-                            "Signature skill damage changed");
-                }
+                f.press(KeyEvent.VK_U); check(p.getSkillCooldownRatio() < 1, "U ability blocked by guard");
+                check(near(p.getEnergy(), 80), "Accepted U did not pay 20 energy");
+                f.tick(8);
+                List<?> orbs = (List<?>) get(f.screen, "projectiles");
+                check(orbs.size() == 1 && ((Projectile) orbs.get(0)).damage().amount == 40,
+                        "Identity U projectile must deal 40");
 
                 Fixture swing = new Fixture(chapter, character, 1); swing.press(KeyEvent.VK_J); swing.press(KeyEvent.VK_S);
                 check(!swing.p().isBlocking() && attack(swing.p()).isBusy(), "Guard interrupted committed attack");

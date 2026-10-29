@@ -1,0 +1,102 @@
+[
+  {
+    "file": "do-mixi-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "visible_bbox_alpha128": [
+      117,
+      140,
+      1019,
+      1194
+    ],
+    "status": "concept-idle-preview-only",
+    "bytes": 741614
+  },
+  {
+    "file": "phan-si-kien-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "visible_bbox_alpha128": [
+      166,
+      245,
+      1087,
+      1176
+    ],
+    "status": "concept-idle-preview-only",
+    "bytes": 513752
+  },
+  {
+    "file": "ronaldo-v2.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "visible_bbox_alpha128": [
+      172,
+      268,
+      1119,
+      1164
+    ],
+    "status": "concept-idle-preview-only",
+    "bytes": 525279
+  },
+  {
+    "file": "time-guardian-v2.png",
+    "size": [
+      1230,
+      1278
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "visible_bbox_alpha128": [
+      13,
+      74,
+      1213,
+      1218
+    ],
+    "status": "concept-idle-preview-only",
+    "bytes": 1102787
+  },
+  {
+    "file": "void-core-v2.png",
+    "size": [
+      1402,
+      1122
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "visible_bbox_alpha128": [
+      221,
+      16,
+      1182,
+      1065
+    ],
+    "status": "concept-idle-preview-only",
+    "bytes": 1041403
+  }
+]

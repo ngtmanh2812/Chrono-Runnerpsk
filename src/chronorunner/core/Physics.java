@@ -1,5 +1,7 @@
 package chronorunner.core;
 
+import java.util.function.Predicate;
+
 import chronorunner.entity.GameObject;
 import chronorunner.obstacle.Platform;
 import chronorunner.world.CombatWorld;
@@ -22,6 +24,12 @@ public final class Physics {
      * lands it on top of one-way platforms. Returns true when grounded.
      */
     public static boolean moveAndCollide(GameObject body, CombatWorld world, double dt) {
+        return moveAndCollide(body, world, dt, platform -> true);
+    }
+
+    /** A committed dive can pass upper one-way caps and retain its landing plane. */
+    public static boolean moveAndCollide(GameObject body, CombatWorld world, double dt,
+                                         Predicate<Platform> collidesWith) {
         body.x += body.vx * dt;
         if (body.x < 0) {
             body.x = 0;
@@ -39,6 +47,7 @@ public final class Physics {
         boolean grounded = false;
         double landingY = Double.POSITIVE_INFINITY;
         for (Platform p : world.platforms()) {
+            if (!collidesWith.test(p)) continue;
             boolean overlapsX = body.x + body.width > p.x && body.x < p.x + p.width;
             if (!overlapsX) continue;
             boolean movingDown = body.vy >= 0;

@@ -276,7 +276,7 @@ public final class UiKit {
             int cx = right - (spriteIds.length - 1 - i) * pitch;
             PixelArt.shadow(g, cx, feet + 2, 40, new Color(0, 0, 0, 120));
             Art.player(spriteIds[i]).frame(0)
-                    .drawAnchored(g, cx, feet, 1, false, PixelSprite.Mode.NORMAL, 1f);
+                    .drawPreview(g, cx, feet, 56, 48);
         }
     }
 

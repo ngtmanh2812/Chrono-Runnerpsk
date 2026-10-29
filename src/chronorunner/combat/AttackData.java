@@ -35,10 +35,17 @@ public class AttackData {
     public final int activeFrames;
     public final int recoveryFrames;
     public final double knockback;
+    public final double knockbackY;
 
     public AttackData(String name, int damage, double reach, double height,
                       int startupFrames, int activeFrames, int recoveryFrames,
                       double knockback) {
+        this(name, damage, reach, height, startupFrames, activeFrames, recoveryFrames, knockback, -260);
+    }
+
+    public AttackData(String name, int damage, double reach, double height,
+                      int startupFrames, int activeFrames, int recoveryFrames,
+                      double knockback, double knockbackY) {
         this.name = name;
         this.damage = damage;
         this.reach = reach;
@@ -47,6 +54,7 @@ public class AttackData {
         this.activeFrames = Math.max(1, activeFrames);
         this.recoveryFrames = Math.max(0, recoveryFrames);
         this.knockback = knockback;
+        this.knockbackY = knockbackY;
     }
 
     public int totalFrames() {

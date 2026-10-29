@@ -1,0 +1,11 @@
+ronaldo/reaction 1374x1145 cutsY=[0, 254, 496, 739, 925, 1145] bodyRef=210.00000000
+  air_attack cutsX=[0, 229, 458, 733, 977, 1145, 1374] heights=[190, 217, 163, 213, 187, 184]
+  block cutsX=[0, 229, 458, 687, 924, 1145, 1374] heights=[217, 197, 212, 205, 202, 210]
+  hurt cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[210, 217, 205, 169, 158, 213]
+  death cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[177, 136, 95, 66, 54, 51]
+  charge cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[193, 184, 187, 188, 187, 188]
+air_attack: 6 unique; fits128x128 at64px calibration; output body heights=[58, 66, 49, 65, 57, 56]
+block: 6 unique; fits128x128 at64px calibration; output body heights=[66, 60, 65, 62, 62, 64]
+hurt: 6 unique; fits128x128 at64px calibration; output body heights=[64, 66, 62, 52, 48, 65]
+death: 6 unique; fits128x128 at64px calibration; output body heights=[54, 41, 29, 20, 16, 16]
+charge: 6 unique; fits128x128 at64px calibration; output body heights=[59, 56, 57, 57, 57, 57]

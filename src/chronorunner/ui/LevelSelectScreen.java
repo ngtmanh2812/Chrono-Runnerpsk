@@ -20,7 +20,7 @@ import chronorunner.core.Screen;
 /** Two-chapter selection screen matching the supplied chapter-select artwork. */
 public class LevelSelectScreen extends Screen {
 
-    private static final String ART_PATH = "Chrono Runner_ Chapter Selection.png";
+    private static final String ART_PATH = "assets/ui/chapter_select.png";
     private static final int ART_W = 1585;
     private static final int ART_H = 992;
     private static final int[][] CARD_BOUNDS = {{179, 294, 545, 500}, {760, 294, 562, 500}};

@@ -1,9 +1,9 @@
 package chronorunner.ui;
 
-import java.awt.AlphaComposite;
 import java.awt.Color;
-import java.awt.Composite;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -103,7 +103,22 @@ public class PlayScreen extends Screen implements CombatWorld {
     }
 
     @Override
+    public void onExit() {
+        for (Player player : players) player.pauseCombatInput();
+    }
+
+    @Override
     public void update(double dt) {
+        if (endTimer >= 0) {
+            updateEnding(dt);
+            updateEnd(dt);
+            return;
+        }
+        if (level.boss() == null || level.boss().isDead() || !hasLivingPlayers()) {
+            updateEnd(0);
+            updateEnding(dt);
+            return;
+        }
         if (endTimer < 0 && input.wasPressed(KeyEvent.VK_ESCAPE)) {
             game.setState(GameState.PAUSED);
             return;
@@ -113,7 +128,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         for (Enemy e : enemies) e.update(dt, this);
 
         Boss boss = level.boss();
-        if (boss != null && !boss.isDead()) boss.update(dt, this);
+        if (boss != null) boss.update(dt, this);
 
         for (Projectile p : projectiles) p.update(dt, this);
         resolveProjectiles();
@@ -126,16 +141,42 @@ public class PlayScreen extends Screen implements CombatWorld {
 
         resolveContact();
 
-        for (Particle p : particles) p.update(dt, this);
-        particles.removeIf(p -> !p.alive);
-        for (FloatingText t : texts) t.update(dt, this);
-        texts.removeIf(t -> !t.alive);
+        updateEffects(dt);
 
         projectiles.removeIf(p -> !p.alive);
         enemies.removeIf(e -> e.isDead());
 
         updateCamera(dt);
         updateEnd(dt);
+    }
+
+    private boolean hasLivingPlayers() {
+        for (Player player : players) if (!player.isDead()) return true;
+        return false;
+    }
+
+    private void updateEnding(double dt) {
+        for (Player player : players) player.updateAfterCombat(dt, this);
+        if (level.boss() != null) level.boss().updateAfterCombat(dt, this);
+        updateEffects(dt);
+        updateCamera(dt);
+    }
+
+    private void updateEffects(double dt) {
+        for (Particle p : particles) p.update(dt, this);
+        particles.removeIf(p -> !p.alive);
+        for (FloatingText t : texts) t.update(dt, this);
+        texts.removeIf(t -> !t.alive);
+    }
+
+    private void finishCombat() {
+        for (Hitbox hitbox : hitboxes) hitbox.cancel();
+        hitboxes.clear();
+        projectiles.clear();
+        enemies.clear();
+        blockedContacts.clear();
+        for (Player player : players) player.endCombat();
+        if (level.boss() != null) level.boss().endCombat();
     }
 
     private void updateCamera(double dt) {
@@ -171,7 +212,9 @@ public class PlayScreen extends Screen implements CombatWorld {
                 defeat = true;
                 endTimer = 1.8;
             }
-            if (endTimer >= 0) for (Player p : players) p.cancelBlock();
+            // Preserve the existing boss-down priority if both sides are
+            // already dead, then latch this outcome and disable combat.
+            if (endTimer >= 0) finishCombat();
             return;
         }
 
@@ -202,7 +245,9 @@ public class PlayScreen extends Screen implements CombatWorld {
     private void resolveHitboxes() {
         Boss boss = level.boss();
         for (Hitbox h : hitboxes) {
+            if (!isCombatActive()) return;
             if (!h.isAlive()) continue;
+            h.syncOwner();
             if (h.friendly) {
                 if (boss != null && !boss.isDead() && !h.hasHit(boss)
                         && h.rect.intersects(boss.hurtbox().rect())) {
@@ -231,6 +276,7 @@ public class PlayScreen extends Screen implements CombatWorld {
     private void resolveProjectiles() {
         Boss boss = level.boss();
         for (Projectile pr : projectiles) {
+            if (!isCombatActive()) return;
             if (!pr.alive) continue;
 
             boolean blocked = false;
@@ -275,13 +321,14 @@ public class PlayScreen extends Screen implements CombatWorld {
     }
 
     private void resolveContact() {
+        if (!isCombatActive()) return;
         blockedContacts.entrySet().removeIf(entry -> {
             Character source = entry.getKey();
             entry.getValue().removeIf(p -> p.isDead() || !p.bounds().intersects(source.bounds()));
             return source.isDead() || entry.getValue().isEmpty();
         });
         Boss boss = level.boss();
-        if (boss != null && !boss.isDead() && boss.getContactDamage() > 0) {
+        if (boss != null && boss.isContactDamageEnabled() && boss.getContactDamage() > 0) {
             contactDamage(boss, boss.getContactDamage());
         }
         for (Enemy e : enemies) {
@@ -307,7 +354,8 @@ public class PlayScreen extends Screen implements CombatWorld {
 
     /** Returns true only when this hit was consumed by a player's guard. */
     private boolean applyDamage(Character target, DamageInfo info) {
-        if (target == null || info == null || info.amount <= 0 || target.isDead() || target.isInvulnerable()) return false;
+        if (!isCombatActive()) return false;
+        if (target == null || info == null || info.amount <= 0 || target.isDead() || target.isInvulnerableTo(info)) return false;
         boolean guarding = target instanceof Player && ((Player) target).isBlocking();
         int before = target.getHealth();
         target.takeDamage(info);
@@ -356,7 +404,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         for (Enemy e : enemies) e.render(world);
 
         Boss boss = level.boss();
-        if (boss != null && !boss.isDead()) boss.render(world);
+        if (boss != null) boss.render(world);
 
         for (Player p : players) p.render(world);
         for (Projectile p : projectiles) p.render(world);
@@ -368,7 +416,19 @@ public class PlayScreen extends Screen implements CombatWorld {
         world.dispose();
 
         hud.render(g, level, players);
-        drawEndOverlay(g);
+    }
+
+    /** The live arena and HUD only, captured once when an overlay takes over. */
+    public BufferedImage captureGameplayFrame() {
+        if (level == null) return null;
+        BufferedImage frame = new BufferedImage(Game.WIDTH, Game.HEIGHT, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g = frame.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g.setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE);
+        render(g);
+        g.dispose();
+        return frame;
     }
 
     /** Column pitch of the parallax skyline, in pixels. */
@@ -520,33 +580,13 @@ public class PlayScreen extends Screen implements CombatWorld {
         return n & 0x7fffffff;
     }
 
-    private void drawEndOverlay(Graphics2D g) {
-        if (!victory && !defeat) return;
-        Composite old = g.getComposite();
-        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.55f));
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
-        g.setComposite(old);
-
-        if (victory) {
-            UiKit.centered(g, "VICTORY", UiKit.TITLE, UiKit.OK, Game.WIDTH / 2, Game.HEIGHT / 2);
-            Boss boss = level.boss();
-            UiKit.centered(g, (boss == null ? "" : boss.getName()) + " đã bị đánh bại!",
-                    UiKit.H2, Color.WHITE, Game.WIDTH / 2, Game.HEIGHT / 2 + 44);
-        } else {
-            UiKit.centered(g, "GAME OVER", UiKit.TITLE, UiKit.WARN, Game.WIDTH / 2, Game.HEIGHT / 2);
-            UiKit.centered(g, "Tất cả người chơi đã bị hạ.", UiKit.H2, Color.WHITE,
-                    Game.WIDTH / 2, Game.HEIGHT / 2 + 44);
-        }
-    }
-
     // ----- CombatWorld -----
 
     @Override
     public boolean isCombatActive() {
         Boss boss = level.boss();
         return game.getState() == GameState.PLAYING && endTimer < 0
-                && boss != null && !boss.isDead();
+                && boss != null && !boss.isDead() && hasLivingPlayers();
     }
 
     @Override
@@ -561,12 +601,12 @@ public class PlayScreen extends Screen implements CombatWorld {
 
     @Override
     public void addHitbox(Hitbox hitbox) {
-        hitboxes.add(hitbox);
+        if (isCombatActive()) hitboxes.add(hitbox);
     }
 
     @Override
     public void addProjectile(Projectile projectile) {
-        projectiles.add(projectile);
+        if (isCombatActive()) projectiles.add(projectile);
     }
 
     @Override
@@ -584,7 +624,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         // Runtime summon budget only: level-authored enemies are appended by
         // LevelBuilder and never come through here. Kept generous so a boss
         // summon is not silently swallowed mid-fight.
-        if (enemies.size() < MAX_SUMMONED_ENEMIES) {
+        if (isCombatActive() && enemies.size() < MAX_SUMMONED_ENEMIES) {
             enemies.add(enemy);
         }
     }

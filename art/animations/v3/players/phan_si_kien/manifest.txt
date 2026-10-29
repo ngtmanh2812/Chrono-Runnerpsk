@@ -1,0 +1,6 @@
+V3 identity animation bank: phan_si_kien
+128x128px; pivot 64,116; feet; scale 1; alpha 0/255; nearest-neighbour.
+Authored PNGs only. Shared 64-colour palette for new art. Phan retained V2 frames are unchanged.
+Row order: idle, run, jump, attack, hurt, death, walk, special, block, dash, fall, land, light_1, light_2, light_3, heavy, launcher, air_attack, charge, skill_u, skill_i, ultimate
+Aliases: attack=light_1; special=skill_u; fall=jump_3,4; land=jump_5,6.
+Source coordinates, source dimensions, per-frame visible/body bounds and measured roots are in manifest.json.

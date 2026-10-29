@@ -159,6 +159,21 @@ public final class PixelSprite {
         drawAnchored(g, cx, feetY, scale, flip, Mode.NORMAL, 1f);
     }
 
+    /** Fits visible art into a UI portrait; transparent atlas padding is excluded. */
+    public void drawPreview(Graphics2D g, int cx, int feetY, int maxWidth, int maxHeight) {
+        int x0=w, y0=h, x1=0, y1=0;
+        for (int y=0; y<h; y++) for (int x=0; x<w; x++) if ((pixels[y*w+x]>>>24)!=0) {
+            x0=Math.min(x0,x); y0=Math.min(y0,y); x1=Math.max(x1,x+1); y1=Math.max(y1,y+1);
+        }
+        if (x1<=x0 || y1<=y0) return;
+        double ratio=Math.min(maxWidth/(double)(x1-x0), maxHeight/(double)(y1-y0));
+        int dw=Math.max(1,(int)Math.round((x1-x0)*ratio)), dh=Math.max(1,(int)Math.round((y1-y0)*ratio));
+        Graphics2D preview=(Graphics2D)g.create();
+        preview.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+        preview.drawImage(image(Mode.NORMAL),cx-dw/2,feetY-dh,cx-dw/2+dw,feetY,x0,y0,x1,y1,null);
+        preview.dispose();
+    }
+
     private BufferedImage image(Mode mode) {
         switch (mode) {
             case FLASH:

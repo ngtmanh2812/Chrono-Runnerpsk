@@ -1,0 +1,163 @@
+[
+  {
+    "file": "air_attack.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "all-animations.gif",
+    "frames": 124,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "attack.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "block.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "charge.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "dash.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "death.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "fall.gif",
+    "frames": 2,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "heavy.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "hurt.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "idle.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "jump.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "land.gif",
+    "frames": 2,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "launcher.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "light_1.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "light_2.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "light_3.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "run.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "skill_i.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "skill_u.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "special.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "ultimate.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  },
+  {
+    "file": "walk.gif",
+    "frames": 6,
+    "width": 1152,
+    "height": 376,
+    "status": "PASS"
+  }
+]

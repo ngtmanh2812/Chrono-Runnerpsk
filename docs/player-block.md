@@ -1,5 +1,19 @@
 # Player base và Block — 21/10/2026
 
+> Tài liệu ghi lại đợt triển khai Block. Bộ phím/kỹ năng đã được cập nhật: W nhảy, K dash, J nối thường → Heavy → Launcher; U/I/O dùng năng lượng. Dùng [runtime v3](identity-runtime-v3.md) cho cấu hình hiện tại; các số damage kỹ năng cũ bên dưới mang tính lịch sử.
+
+## Lệnh bất tử để test — bổ sung 22/10/2026
+
+Chạy `run-godmode.cmd` ở thư mục project (hoặc nhấp đúp file). Lệnh tự build rồi mở game với `-Dchronorunner.godMode=true`. Cả P1 và P2 miễn sát thương combat, knockback, stun và Hurt do trúng đòn. Block vẫn tiêu hao và lóe sáng khi đỡ được hit hợp lệ. HUD hiện `TEST: GOD MODE`.
+
+Nếu đã build, có thể chạy trực tiếp trong CMD tại thư mục project:
+
+```bat
+java -Dchronorunner.godMode=true -cp out chronorunner.Main
+```
+
+Đóng phiên game này và chạy `run.bat` để trở lại nhận damage bình thường. Cờ bất tử không lưu vào save; tiến trình thắng chương vẫn được lưu theo cơ chế hiện có.
+
 ## Hành vi và cấu hình
 
 - `Player.PLAYER_BASE_ATTACK_DAMAGE = 30`: nguồn duy nhất cho damage đánh thường của Phan Sĩ Kiên, Ronaldo và Độ Mixi, ở cả P1/P2.

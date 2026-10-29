@@ -1,0 +1,11 @@
+do_mixi/reaction 1374x1145 cutsY=[0, 243, 465, 687, 910, 1145] bodyRef=190.00000000
+  air_attack cutsX=[0, 229, 446, 687, 922, 1145, 1374] heights=[190, 196, 170, 177, 189, 168]
+  block cutsX=[0, 229, 454, 679, 918, 1145, 1374] heights=[189, 193, 190, 193, 193, 184]
+  hurt cutsX=[0, 232, 458, 693, 916, 1145, 1374] heights=[190, 186, 172, 150, 135, 190]
+  death cutsX=[0, 229, 458, 681, 903, 1123, 1374] heights=[179, 137, 104, 91, 72, 75]
+  charge cutsX=[0, 229, 449, 687, 916, 1145, 1374] heights=[196, 196, 195, 200, 202, 194]
+air_attack: 6 unique; fits128x128 at64px calibration; output body heights=[64, 66, 56, 59, 63, 57]
+block: 6 unique; fits128x128 at64px calibration; output body heights=[63, 65, 64, 61, 65, 62]
+hurt: 6 unique; fits128x128 at64px calibration; output body heights=[64, 63, 58, 51, 45, 64]
+death: 6 unique; fits128x128 at64px calibration; output body heights=[60, 46, 35, 31, 24, 25]
+charge: 6 unique; fits128x128 at64px calibration; output body heights=[66, 66, 66, 67, 68, 65]

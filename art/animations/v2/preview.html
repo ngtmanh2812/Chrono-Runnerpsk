@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="vi">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chrono Runner — Animation v2</title>
+<style>
+  :root{color-scheme:dark;font-family:ui-monospace,Consolas,monospace;background:#0c0f18;color:#dce6f8}
+  body{max-width:1536px;margin:auto;padding:24px}h1{font-size:24px;letter-spacing:2px}
+  p{color:#9baec8;line-height:1.6}a{color:#62d9ff}button,select,input{font:inherit}
+  button,select{border:1px solid #405474;background:#182239;color:#edf6ff;padding:10px 14px;border-radius:5px}
+  button:hover,select:focus{border-color:#62d9ff}button{cursor:pointer}
+  .controls{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:24px 0}
+  canvas{display:block;width:100%;height:auto;image-rendering:pixelated;background:#0c0f18;border:1px solid #28364d}
+  .timeline{display:flex;gap:18px;align-items:center;margin:20px 0}input[type=range]{flex:1;accent-color:#62d9ff}
+  footer{border-top:1px solid #28364d;margin-top:30px;padding-top:15px;color:#9baec8;line-height:1.7}
+</style>
+<h1>CHRONO RUNNER / ANIMATION V2</h1>
+<p>3 nhân vật · 2 boss · 12 trạng thái. Bản xem này dùng trực tiếp sprite sheet đã cài vào game.</p>
+<div class="controls">
+  <label>Trạng thái <select id="state"></select></label>
+  <button id="pause">Tạm dừng</button><button id="restart">Phát lại</button>
+  <label>Tốc độ <select id="speed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="1.5">1.5×</option></select></label>
+  <label><input type="checkbox" id="flip"> Quay trái</label>
+  <label><input type="checkbox" id="pivots"> Hiện pivot (chỉ bản xem)</label>
+</div>
+<canvas id="stage" width="1536" height="600"></canvas>
+<div class="timeline"><label for="frame">Tua từng frame</label><input id="frame" type="range" min="0" max="5" value="0"><output id="counter">1 / 6</output></div>
+<p id="note"></p>
+<p><a href="previews/all-animations.gif">Xem toàn bộ animation dạng GIF</a> · <a href="README.md">Thông số và cách tích hợp</a> · <a href="test-results.txt">Kết quả kiểm thử</a></p>
+<footer>Block của player dùng cơ chế đỡ đòn hiện có. Boss có sẵn frame Block, không thêm cơ chế đỡ đòn hay AI mới.<br>Fall và Land lấy từ những tư thế đã vẽ trong Jump. Death giữ tư thế cuối; bấm Phát lại để xem lại.</footer>
+<script>
+const order=['idle','run','jump','attack','hurt','death','walk','special','block','dash','fall','land'];
+const labels=['Đứng yên','Chạy','Nhảy','Đánh thường','Trúng đòn','Bị hạ gục','Đi chậm','Tung chiêu','Đỡ đòn','Lướt nhanh','Rơi','Tiếp đất'];
+const actors=[
+ ['Phan Sĩ Kiên','players/phan_si_kien',128,64,116,2,144,.07222222,.09],
+ ['Ronaldo','players/ronaldo',128,64,116,2,368,.05,.09],
+ ['Độ Mixi','players/do_mixi',128,64,116,2,592,.11666667,.09],
+ ['The Time Guardian','bosses/the_time_guardian',256,128,232,3,904,.05,.075],
+ ['The Void Core','bosses/the_void_core',256,128,128,3,1304,.025,.03]
+].map(([name,path,size,px,py,scale,x,attack,special])=>{
+ const image=new Image();image.src=path+'/sprite_sheet.png';
+ return {name,path,size,px,py,scale,x,attack,special,image};
+});
+const state=document.getElementById('state'),pause=document.getElementById('pause'),speed=document.getElementById('speed'),
+ flip=document.getElementById('flip'),pivots=document.getElementById('pivots'),slider=document.getElementById('frame'),
+ counter=document.getElementById('counter'),note=document.getElementById('note'),ctx=document.getElementById('stage').getContext('2d');
+order.forEach((name,i)=>state.add(new Option(labels[i]+' / '+name,name)));
+let elapsed=0,paused=false,manual=false,last=performance.now();
+function count(){return ['fall','land'].includes(state.value)?2:6}
+function seconds(actor){
+ if(state.value==='attack')return actor.attack;if(state.value==='special')return actor.special;
+ return ({idle:.14,run:.075,jump:.12,hurt:.05,death:.14,walk:.12,block:.5/6,dash:.025,fall:.10,land:.10})[state.value];
+}
+function loops(){return ['idle','run','walk','fall'].includes(state.value)}
+function frame(actor){const n=count(),v=Math.floor(elapsed/seconds(actor));return manual?Number(slider.value):loops()?v%n:Math.min(n-1,v)}
+function reset(){elapsed=0;paused=false;manual=false;slider.max=count()-1;slider.value=0;pause.textContent='Tạm dừng';
+ note.textContent=state.value==='block'?'Player dùng animation này khi đỡ đòn; boss chỉ có bộ tư thế dự trữ.':
+ state.value==='death'?'Gục xuống / vỡ lõi, giữ nguyên frame kết thúc.':
+ ['fall','land'].includes(state.value)?'Hai tư thế lấy từ Jump; trong game việc chuyển trạng thái do physics quyết định.':
+ 'Mỗi đối tượng có tốc độ phát riêng; đòn thường trong game bám theo cửa sổ gây sát thương.';}
+state.onchange=reset;document.getElementById('restart').onclick=reset;
+pause.onclick=()=>{if(manual){reset();return}paused=!paused;pause.textContent=paused?'Tiếp tục':'Tạm dừng'};
+slider.oninput=()=>{manual=true;paused=true;pause.textContent='Phát lại'};
+function draw(now){
+ if(!paused)elapsed+=Math.min(.1,(now-last)/1000)*Number(speed.value);last=now;
+ ctx.imageSmoothingEnabled=false;ctx.fillStyle='#0c0f18';ctx.fillRect(0,0,1536,600);
+ ctx.font='24px monospace';ctx.fillStyle='#dce6f8';ctx.textAlign='left';ctx.fillText(labels[order.indexOf(state.value)].toUpperCase(),32,54);
+ for(const actor of actors){
+  const index=frame(actor),s=actor.scale,rootY=actor.py===128?480-105*s/2:480;
+  if(actor.image.complete&&actor.image.naturalWidth){
+   ctx.save();ctx.translate(actor.x,rootY);if(flip.checked)ctx.scale(-1,1);
+   ctx.drawImage(actor.image,index*actor.size,order.indexOf(state.value)*actor.size,actor.size,actor.size,
+    -actor.px*s,-actor.py*s,actor.size*s,actor.size*s);ctx.restore();
+  }
+  if(pivots.checked){ctx.strokeStyle='#69ffc2';ctx.beginPath();ctx.moveTo(actor.x-7,rootY);ctx.lineTo(actor.x+7,rootY);ctx.moveTo(actor.x,rootY-7);ctx.lineTo(actor.x,rootY+7);ctx.stroke()}
+  ctx.fillStyle='#dce6f8';ctx.textAlign='center';ctx.font='19px monospace';ctx.fillText(actor.name,actor.x,535);
+  ctx.fillStyle='#8197b8';ctx.font='15px monospace';ctx.fillText(`${index+1} / ${count()}`,actor.x,563);
+ }
+ if(!manual)slider.value=frame(actors[0]);counter.value=`${Number(slider.value)+1} / ${count()}`;
+ requestAnimationFrame(draw);
+}
+reset();requestAnimationFrame(draw);
+</script>
+</html>

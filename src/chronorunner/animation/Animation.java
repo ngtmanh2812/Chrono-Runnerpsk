@@ -1,9 +1,8 @@
 package chronorunner.animation;
 
 /**
- * A time driven frame counter. The MVP draws characters with procedural shapes,
- * so an animation is used to drive visual steps (walk bob, attack flash, ...)
- * rather than sprite frames.
+ * A time driven sprite counter. Non-looping clips hold their final pose;
+ * combat and airborne states can pin progress to the simulation.
  */
 public class Animation {
 
@@ -29,7 +28,8 @@ public class Animation {
     }
 
     public int frame() {
-        return Math.min(frames - 1, (int) (time / frameDuration));
+        // A pinned phase boundary can divide to 1.9999999999999998.
+        return Math.min(frames - 1, (int) (time / frameDuration + 1e-9));
     }
 
     /** Number of frames this animation was authored with. */

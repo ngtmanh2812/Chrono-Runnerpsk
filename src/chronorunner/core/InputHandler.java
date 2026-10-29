@@ -19,16 +19,31 @@ import java.util.Set;
  * the next one instead of being dropped.
  */
 public class InputHandler extends KeyAdapter {
+    /** Separate gameplay binding; raw Enter remains an alias for menu input. */
+    public static final int NUMPAD_ENTER = 0x10000 + KeyEvent.VK_ENTER;
 
     private final Object lock = new Object();
     private final Set<Integer> down = new HashSet<>();
     private final Set<Integer> pending = new HashSet<>();
     private final Set<Integer> frame = new HashSet<>();
+    private boolean mainEnterDown, numpadEnterDown;
+    private int pointerX = -1, pointerY = -1;
+    private int framePointerX = -1, framePointerY = -1;
+    private int pendingClickX, pendingClickY, frameClickX, frameClickY;
+    private boolean pendingPointerMove, framePointerMove, pendingClick, frameClick;
 
     @Override
     public void keyPressed(KeyEvent e) {
         synchronized (lock) {
             int code = e.getKeyCode();
+            if (code == KeyEvent.VK_ENTER) {
+                if (e.getKeyLocation() == KeyEvent.KEY_LOCATION_NUMPAD) {
+                    if (!numpadEnterDown) {
+                        numpadEnterDown = true;
+                        down.add(NUMPAD_ENTER); pending.add(NUMPAD_ENTER);
+                    }
+                } else mainEnterDown = true;
+            }
             if (down.add(code)) {
                 pending.add(code);
             }
@@ -38,7 +53,14 @@ public class InputHandler extends KeyAdapter {
     @Override
     public void keyReleased(KeyEvent e) {
         synchronized (lock) {
-            down.remove(e.getKeyCode());
+            int code = e.getKeyCode();
+            if (code == KeyEvent.VK_ENTER) {
+                if (e.getKeyLocation() == KeyEvent.KEY_LOCATION_NUMPAD) {
+                    numpadEnterDown = false;
+                    down.remove(NUMPAD_ENTER);
+                } else mainEnterDown = false;
+                if (!mainEnterDown && !numpadEnterDown) down.remove(KeyEvent.VK_ENTER);
+            } else down.remove(code);
         }
     }
 
@@ -54,11 +76,48 @@ public class InputHandler extends KeyAdapter {
         }
     }
 
+    /** Mouse events use the same pending/frame boundary as keyboard edges. */
+    public void movePointer(int x, int y) {
+        synchronized (lock) {
+            if (pointerX != x || pointerY != y) pendingPointerMove = true;
+            pointerX = x;
+            pointerY = y;
+        }
+    }
+
+    public void primaryPressed(int x, int y) {
+        synchronized (lock) {
+            movePointer(x, y);
+            if (!pendingClick) {
+                pendingClickX = x;
+                pendingClickY = y;
+            }
+            pendingClick = true;
+        }
+    }
+
+    public boolean wasPointerMoved() { synchronized (lock) { return framePointerMove; } }
+    public int pointerX() { synchronized (lock) { return framePointerX; } }
+    public int pointerY() { synchronized (lock) { return framePointerY; } }
+    public boolean wasPrimaryClicked() { synchronized (lock) { return frameClick; } }
+    public int clickX() { synchronized (lock) { return frameClickX; } }
+    public int clickY() { synchronized (lock) { return frameClickY; } }
+
     /** Publishes the presses collected since the last frame. Call once per frame, before update. */
     public void beginFrame() {
         synchronized (lock) {
             frame.addAll(pending);
             pending.clear();
+            framePointerX = pointerX;
+            framePointerY = pointerY;
+            framePointerMove |= pendingPointerMove;
+            pendingPointerMove = false;
+            if (!frameClick && pendingClick) {
+                frameClickX = pendingClickX;
+                frameClickY = pendingClickY;
+            }
+            frameClick |= pendingClick;
+            pendingClick = false;
         }
     }
 
@@ -70,6 +129,8 @@ public class InputHandler extends KeyAdapter {
     public void endFrame() {
         synchronized (lock) {
             frame.clear();
+            framePointerMove = false;
+            frameClick = false;
         }
     }
 
@@ -78,14 +139,18 @@ public class InputHandler extends KeyAdapter {
         synchronized (lock) {
             frame.clear();
             pending.clear();
+            pendingPointerMove = framePointerMove = pendingClick = frameClick = false;
         }
     }
 
     public void clearAll() {
         synchronized (lock) {
             down.clear();
+            mainEnterDown = numpadEnterDown = false;
             frame.clear();
             pending.clear();
+            pendingPointerMove = framePointerMove = pendingClick = frameClick = false;
+            pointerX = pointerY = framePointerX = framePointerY = -1;
         }
     }
 }

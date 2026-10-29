@@ -1,0 +1,1 @@
+PASS: 590 animation integration checks; actual controls, attack windows, guard impact, death, pause, victory and UI portraits; no save writes; debug OFF.

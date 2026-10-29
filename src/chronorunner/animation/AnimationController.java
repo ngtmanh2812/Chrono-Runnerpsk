@@ -32,6 +32,12 @@ public class AnimationController {
         }
     }
 
+    public void restart(String name) {
+        if (!animations.containsKey(name)) return;
+        current = name;
+        animations.get(name).reset();
+    }
+
     public Animation current() {
         return animations.get(current);
     }

@@ -45,7 +45,7 @@ public final class LevelFactory {
         if (art.sourceWidth() != 1913 || art.sourceHeight() != 822) {
             throw new IllegalStateException("Chapter 2 artwork changed; remeasure its platform caps");
         }
-        // Coordinates measured on Shadowed Ruins Over a Sunlit Canal.png.
+        // Coordinates measured on assets/backgrounds/chapter_2.png.
         // Only the slab tops collide. Cars, containers, fences and the broken
         // structures below the main highway remain background decorations.
         int[][] caps = {

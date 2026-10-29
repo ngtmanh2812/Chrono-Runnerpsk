@@ -31,22 +31,30 @@ public final class CharacterFactory {
     public static String skinOf(int index) {
         switch (index) {
             case 1:
-                return "Tốc độ - HP thấp, dash nhanh";
+                return "Cầu thủ bóng đá\nTốc độ, sút mạnh";
             case 2:
-                return "Tank - HP cao, tầm đánh rộng, chậm";
+                return "Streamer sóng âm\nChậm, HP cao";
             default:
-                return "Cân bằng - dash + đánh xa";
+                return "Kiếm sĩ thời gian\nCân bằng, đánh xa";
         }
     }
 
     public static String skillOf(int index) {
         switch (index) {
             case 1:
-                return "Siuu (burst lao tới)";
+                return "Siuu Bicycle Kick";
             case 2:
-                return "Alo Vũ à Vũ (chấn động AOE)";
+                return "Đại Hội Tộc";
             default:
-                return "Chrono Shot (đạn xa)";
+                return "Timeline Break";
+        }
+    }
+
+    public static String[] skillsOf(int index) {
+        switch (index) {
+            case 1: return new String[]{"U Power Shot", "I Step-over Burst", "O Siuu Bicycle Kick"};
+            case 2: return new String[]{"U Sóng Âm", "I Đập Bàn", "O Đại Hội Tộc"};
+            default: return new String[]{"U Chrono Shot", "I Time Slash", "O Timeline Break"};
         }
     }
 

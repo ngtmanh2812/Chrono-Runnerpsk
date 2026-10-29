@@ -51,11 +51,24 @@ public final class ChapterTwoMapCheck {
         Boss core = world.level.boss();
         check(core.getName().equals("The Void Core"), "Wrong Chapter 2 boss");
         check(!core.grounded && core.bottom() < world.level.groundY(), "Core must spawn airborne");
-        PixelSprite sprite = Art.bossAnimation(core.getName(), "idle").frame(0);
+        SpriteSet sprites = Art.bossAnimation(core.getName(), "idle");
+        PixelSprite sprite = sprites.frame(0);
         int scale = sprite.scaleFor((int) core.width) + 1;
-        check(core.centerX() + sprite.width() * scale / 2.0 < Game.WIDTH,
+        // Transparent v2 canvas padding is not visible artwork. Measure the
+        // actual renderer with its explicit pivot/scale instead of canvas size.
+        BufferedImage rendered = new BufferedImage(2400, 1000, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D art = rendered.createGraphics();
+        if (sprites.layout() != null) sprites.layout().draw(sprite, art, (int)core.centerX(),
+                (int)core.bottom(), (int)core.centerY(), false, PixelSprite.Mode.NORMAL, 1f);
+        else sprite.draw(art,(int)core.centerX()-sprite.width()*scale/2,
+                (int)core.centerY()-sprite.height()*scale/2,scale,false);
+        art.dispose();
+        int top=rendered.getHeight(),right=0;
+        for(int yy=0;yy<rendered.getHeight();yy++)for(int xx=0;xx<rendered.getWidth();xx++)
+            if((rendered.getRGB(xx,yy)>>>24)!=0) { top=Math.min(top,yy);right=Math.max(right,xx); }
+        check(right < Game.WIDTH,
                 "Core artwork starts outside initial viewport");
-        check(core.centerY() - sprite.height() * scale / 2.0 > 90, "Core obscured by boss HUD");
+        check(top > 90, "Core obscured by boss HUD");
         Player target = ChapterOneMapCheck.player(new InputHandler(), world.level.playerSpawn(0), world.level.groundY());
         world.players.add(target);
         for (int frame = 0; frame < 2400; frame++) {
@@ -64,8 +77,8 @@ public final class ChapterTwoMapCheck {
             check(core.x >= 0 && core.right() <= world.worldWidth() + .001, "Core escaped arena");
             check(core.bottom() <= world.level.groundY() + .001, "Core fell through road");
         }
-        check(world.projectiles > 8 && world.summons >= 2 && world.melee > 0,
-                "Existing volley/radial/summon/melee cycle did not execute");
+        check(world.projectiles > 8 && world.summons == 0 && world.melee > 0,
+                "Volley/radial/melee failed, or obsolete minion summon returned");
         core.takeDamage(new DamageInfo(600, 0, 0, true));
         core.update(ChapterOneMapCheck.DT, world);
         check(core.getPhase() == 2 && core.getHealth() == 1000, "Phase 2 / health regression");
@@ -73,7 +86,7 @@ public final class ChapterTwoMapCheck {
         core.takeDamage(new DamageInfo(500, 0, 0, true));
         core.update(ChapterOneMapCheck.DT, world);
         check(core.getPhase() == 3, "Phase 3 regression");
-        System.out.println("Void Core: airborne spawn, movement, volleys, radial burst, teleport/dive, summons and phases PASS");
+        System.out.println("Void Core: hover, volleys, radial burst, teleport/dive, zero minions and phases PASS");
     }
 
     static Game game() throws Exception {

@@ -1,0 +1,7 @@
+ronaldo/skills 1774x887 cutsY=[0, 299, 580, 887] bodyRef=245.00000000
+  skill_u cutsX=[0, 295, 591, 881, 1254, 1478, 1774] heights=[250, 247, 238, 243, 246, 245]
+  skill_i cutsX=[0, 295, 591, 866, 1182, 1478, 1774] heights=[221, 230, 231, 205, 221, 238]
+  ultimate cutsX=[0, 295, 591, 887, 1198, 1478, 1774] heights=[204, 242, 206, 261, 210, 252]
+skill_u: 6 unique; fits128x128 at64px calibration; output body heights=[65, 65, 62, 63, 64, 64]
+skill_i: 6 unique; fits128x128 at64px calibration; output body heights=[58, 60, 60, 54, 58, 62]
+ultimate: 6 unique; fits128x128 at64px calibration; output body heights=[53, 63, 54, 68, 55, 66]

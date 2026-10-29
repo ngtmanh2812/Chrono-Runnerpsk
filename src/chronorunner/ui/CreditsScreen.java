@@ -57,7 +57,7 @@ public class CreditsScreen extends Screen {
         int feet = CARD_Y + 170;
         PixelArt.shadow(g, cx, feet + 2, 72, new Color(0, 0, 0, 130));
         Art.player(CharacterFactory.idOf(index)).frame(0)
-                .drawAnchored(g, cx, feet, 2, false, PixelSprite.Mode.NORMAL, 1f);
+                .drawPreview(g, cx, feet, 110, 100);
         UiKit.arcade(g, CharacterFactory.nameOf(index), UiKit.ARC_BODY_SCALE,
                 UiKit.CREAM, cx, CARD_Y + 220, 2);
         UiKit.arcade(g, CharacterFactory.skillOf(index), UiKit.ARC_SMALL_SCALE,

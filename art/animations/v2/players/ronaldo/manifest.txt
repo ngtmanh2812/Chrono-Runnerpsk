@@ -1,0 +1,9 @@
+Actor: Ronaldo
+Frame: 128x128 px
+Atlas: 768x1536 px; 6 columns, 12 rows
+Pivot: 64,116 (feet)
+Alpha: binary 0/255; nearest-neighbour; 64-colour shared actor palette
+Row order: idle, run, jump, attack, hurt, death, walk, special, block, dash, fall, land
+First ten rows: six frames each; fall and land: two source-authored jump poses each
+Runtime: assets/players/ronaldo/v2/
+Boss guard is visual only.

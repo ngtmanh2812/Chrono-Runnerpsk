@@ -1,0 +1,11 @@
+ronaldo/combo 1374x1145 cutsY=[0, 235, 471, 696, 915, 1145] bodyRef=190.00000000
+  light_1 cutsX=[0, 229, 458, 687, 916, 1169, 1374] heights=[190, 183, 182, 188, 183, 193]
+  light_2 cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[189, 197, 202, 195, 171, 190]
+  light_3 cutsX=[0, 229, 458, 687, 927, 1170, 1374] heights=[186, 187, 184, 189, 184, 193]
+  heavy cutsX=[0, 229, 458, 697, 970, 1145, 1374] heights=[168, 176, 177, 176, 171, 176]
+  launcher cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[143, 143, 157, 174, 175, 177]
+light_1: 6 unique; fits128x128 at64px calibration; output body heights=[64, 62, 61, 63, 62, 65]
+light_2: 6 unique; fits128x128 at64px calibration; output body heights=[64, 66, 68, 66, 58, 64]
+light_3: 6 unique; fits128x128 at64px calibration; output body heights=[63, 63, 62, 63, 62, 65]
+heavy: 6 unique; fits128x128 at64px calibration; output body heights=[57, 59, 60, 59, 58, 59]
+launcher: 6 unique; fits128x128 at64px calibration; output body heights=[48, 48, 53, 59, 59, 59]

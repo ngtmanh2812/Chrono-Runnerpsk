@@ -236,8 +236,8 @@ Dash giúp:
 
 ## Jump
 
-**Player 1:** `W / Space`  
-**Player 2:** `↑`
+**Player 1:** `W`<br>
+**Player 2:** `Numpad 0`
 
 Jump hỗ trợ:
 
@@ -442,10 +442,12 @@ BOSS DEFEATED
 |---|---|
 | Move Left | `A` |
 | Move Right | `D` |
-| Jump | `W / Space` |
-| Attack | `J` |
+| Jump / double jump | `W` |
+| Normal → Heavy → Launcher | `J → J → J` |
 | Dash | `K` |
-| Skill | `L` |
+| Block one hit | `S` |
+| Charge energy | Hold `L` |
+| Skills | `U / I / O` |
 
 ## Player 2
 
@@ -453,12 +455,14 @@ BOSS DEFEATED
 |---|---|
 | Move Left | `←` |
 | Move Right | `→` |
-| Jump | `↑` |
-| Attack | `Numpad 1` |
-| Dash | `Numpad 2` |
-| Skill | `Numpad 3` |
+| Jump / double jump | `Numpad 0` |
+| Normal → Heavy → Launcher | `Numpad 1 → 1 → 1` |
+| Dash | `Numpad 3` |
+| Block one hit | `↓` |
+| Charge energy | Hold `Numpad Enter` |
+| Skills | `Numpad 4 / 5 / 6` |
 
-Các phím có thể được thay đổi trong quá trình phát triển.
+Cập nhật 30/10/2026: damage chuỗi 30 / 40 / 35; giữ nguyên animation. Mỗi bước cần một lần nhấn; giữ phím không tự nối. Chi tiết: [runtime v3](docs/identity-runtime-v3.md). Các phím ở menu giữ ngữ cảnh riêng.
 
 ---
 

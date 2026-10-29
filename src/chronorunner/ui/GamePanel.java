@@ -6,6 +6,7 @@ import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.JPanel;
 
@@ -51,7 +52,18 @@ public class GamePanel extends JPanel implements Runnable {
             @Override
             public void mousePressed(MouseEvent e) {
                 requestFocusInWindow();
+                if (e.getButton() == MouseEvent.BUTTON1) input.primaryPressed(e.getX(), e.getY());
             }
+
+            @Override
+            public void mouseExited(MouseEvent e) { input.movePointer(-1, -1); }
+        });
+        addMouseMotionListener(new MouseMotionAdapter() {
+            @Override
+            public void mouseMoved(MouseEvent e) { input.movePointer(e.getX(), e.getY()); }
+
+            @Override
+            public void mouseDragged(MouseEvent e) { input.movePointer(e.getX(), e.getY()); }
         });
     }
 

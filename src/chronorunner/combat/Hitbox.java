@@ -60,10 +60,17 @@ public class Hitbox {
         // Treat the float residue left after the final whole frame as expired,
         // so the hitbox dies on the same frame its window ends.
         if (life < EPS) life = 0;
+        syncOwner();
+    }
+
+    /** Resolve collisions against this frame's owner position, without ageing. */
+    public void syncOwner() {
         if (followsOwner) {
             rect.set(owner.x + offsetX, owner.y + offsetY, rect.w, rect.h);
         }
     }
+
+    public void cancel() { life = 0; }
 
     public boolean isAlive() {
         return life > 0;

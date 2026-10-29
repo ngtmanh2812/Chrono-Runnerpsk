@@ -295,20 +295,20 @@ Tránh để các bảng trang trí che khuất chướng ngại hoặc diễn b
 
 ## Điều khiển
 
-Phím điều khiển chính thức phải khớp với phần triển khai và được hiển thị trong Cài đặt. Bảng dưới đây là **cấu hình mặc định đề xuất**, chưa phải danh sách phím đã xác minh trong mã nguồn.
+Bộ phím gameplay đã tích hợp và kiểm thử ngày 30/10/2026:
 
-| Action | Proposed key |
-|---|---|
-| Move left / right | A / D or Left / Right |
-| Jump | Space |
-| Attack | J or left mouse button |
-| Dodge / dash | Shift |
-| Chapter-specific time ability | K or another configurable key |
-| Pause | Esc |
-| Confirm / select | Enter |
-| Navigate menus | Arrow keys / WASD |
+| Hành động | P1 | P2 |
+|---|---|---|
+| Di chuyển | A / D | ← / → |
+| Nhảy / nhảy đôi | W | Numpad 0 |
+| Thường → Heavy → Launcher | J → J → J | Numpad 1 → 1 → 1 |
+| Dash | K | Numpad 3 |
+| Đỡ một hit | S | ↓ |
+| Nạp năng lượng | Giữ L | Giữ Numpad Enter |
+| Ba kỹ năng riêng | U / I / O | Numpad 4 / 5 / 6 |
+| Pause | Esc | Esc |
 
-Controls should be centralized in the input layer or configurable input map, not hard-coded independently into every gameplay class.
+Chuỗi J gây 30 / 40 / 35 damage; mỗi đòn cần một lần nhấn, giữ phím không tự nối. Animation giữ nguyên. Xem [báo cáo runtime](docs/identity-runtime-v3.md) cho cửa sổ nối và kiểm thử. Menu/chọn nhân vật dùng bộ phím riêng như hiển thị trên màn hình.
 
 ---
 

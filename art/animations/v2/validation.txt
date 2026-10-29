@@ -1,0 +1,1 @@
+PASS: 1705 structural checks; 5 actors, 320 PNG frame files, 12 states per actor. Asset bank verified.

@@ -12,7 +12,7 @@ from PIL import Image, ImageDraw
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "Dual Boss Pixel Art Sprite Sheet-2.png"
+SOURCE = ROOT / "art" / "sources" / "legacy" / "boss_sprite_source.png"
 OUTPUT = ROOT / "assets" / "bosses"
 SHEET_COLUMNS = 8
 

@@ -38,6 +38,10 @@ import javax.imageio.ImageIO;
  * is missing, the shared {@code assets/players/chrono_runner} folder is used.
  * That lets every selectable character share the same time-traveller art while
  * keeping their individual stats and skills.
+ * Versioned {@code v3/} packs with {@code animation.properties} take precedence,
+ * followed by {@code v2/};
+ * their actual frame counts, explicit pivots and timing drive the shared player
+ * and boss animation systems. Original assets remain available as fallbacks.
  */
 public final class Art {
 
@@ -55,7 +59,8 @@ public final class Art {
 
     /** Animation names a player sprite set can provide. */
     public static final String[] PLAYER_ANIMATIONS = {
-            "idle", "walk", "run", "jump", "attack", "special", "hurt", "death", "dash"
+            "idle", "walk", "run", "jump", "attack", "special", "hurt", "death", "dash", "block", "fall", "land",
+            "light_1", "light_2", "light_3", "heavy", "launcher", "air_attack", "charge", "skill_u", "skill_i", "ultimate"
     };
 
     /** Outline / near-black / eye / white / grey, shared by every sprite. */
@@ -492,10 +497,12 @@ public final class Art {
         if (!dir.isDirectory()) {
             dir = new File(new File(ASSET_ROOT, "players"), SHARED_PLAYER_ART);
         }
+        dir = animationDirectory(dir);
+        SpriteLayout layout = SpriteLayout.load(dir);
         for (String animation : PLAYER_ANIMATIONS) {
             PixelSprite[] frames = animationFrames(dir, animation);
             if (frames.length > 0) {
-                sets.put(animation, new SpriteSet(frames));
+                sets.put(animation, new SpriteSet(layout, frames));
             }
         }
         if (sets.isEmpty()) {
@@ -512,7 +519,10 @@ public final class Art {
             // Leave dash unresolved so playerAnim() can borrow the run cycle
             // instead of the static idle frame.
             if (!sets.containsKey(animation) && !"dash".equals(animation)) {
-                sets.put(animation, fallback);
+                String alias = animation.startsWith("light_") || "heavy".equals(animation)
+                        || "launcher".equals(animation) || "air_attack".equals(animation) ? "attack"
+                        : animation.startsWith("skill_") || "ultimate".equals(animation) ? "special" : "idle";
+                sets.put(animation, sets.getOrDefault(alias, fallback));
             }
         }
         return sets;
@@ -570,6 +580,7 @@ public final class Art {
         if (cached != null) return cached;
 
         File dir = new File(new File(ASSET_ROOT, "bosses"), slug(name));
+        dir = animationDirectory(dir);
         PixelSprite[] frames = animationFrames(dir, animation);
         if (frames.length == 0 && !"idle".equals(animation)) {
             // Some concept-sheet rows contain only standalone attack effects,
@@ -577,7 +588,7 @@ public final class Art {
             // effects continue through the gameplay systems.
             frames = animationFrames(dir, "idle");
         }
-        SpriteSet built = frames.length > 0 ? new SpriteSet(frames)
+        SpriteSet built = frames.length > 0 ? new SpriteSet(SpriteLayout.load(dir), frames)
                 : new SpriteSet(boss(name).frame(0));
         sets.put(animation, built);
         return built;
@@ -632,6 +643,14 @@ public final class Art {
         }
     }
 
+    /** Prefer the newest complete bank while keeping previous packs intact. */
+    private static File animationDirectory(File directory) {
+        File v3 = new File(directory, "v3");
+        if (new File(v3, "animation.properties").isFile()) return v3;
+        File upgraded = new File(directory, "v2");
+        return new File(upgraded, "animation.properties").isFile() ? upgraded : directory;
+    }
+
     /** File-name form of an entity name: lowercase, other runs collapse to '_'. */
     private static String slug(String name) {
         StringBuilder sb = new StringBuilder(name.length());
@@ -655,7 +674,7 @@ public final class Art {
             }
         }
         for (String animation : new String[] {
-                "idle", "run", "jump", "attack", "hurt", "death", "walk", "special"
+                "idle", "run", "jump", "attack", "hurt", "death", "walk", "special", "block", "dash", "fall", "land"
         }) {
             bossAnimation("The Time Guardian", animation);
             bossAnimation("The Void Core", animation);

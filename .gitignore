@@ -24,3 +24,9 @@ Thumbs.db
 # Temporary
 *.tmp
 *.log
+
+# Generated development diagnostics
+__pycache__/
+*.pyc
+tools/out/
+tools/dump.txt

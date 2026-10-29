@@ -1,0 +1,7 @@
+do_mixi/skills 1774x887 cutsY=[0, 297, 591, 887] bodyRef=263.00000000
+  skill_u cutsX=[0, 295, 591, 900, 1182, 1478, 1774] heights=[266, 266, 266, 254, 264, 266]
+  skill_i cutsX=[0, 295, 591, 887, 1182, 1478, 1774] heights=[280, 232, 190, 167, 225, 263]
+  ultimate cutsX=[0, 295, 591, 891, 1226, 1478, 1774] heights=[245, 249, 261, 251, 245, 244]
+skill_u: 6 unique; fits128x128 at64px calibration; output body heights=[64, 64, 64, 62, 64, 64]
+skill_i: 6 unique; fits128x128 at64px calibration; output body heights=[68, 56, 46, 41, 55, 64]
+ultimate: 6 unique; fits128x128 at64px calibration; output body heights=[59, 60, 64, 61, 60, 59]

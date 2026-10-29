@@ -29,6 +29,8 @@ public class Attack {
     private static final double EPS = 1e-9;
 
     private final AttackData data;
+    private final Runnable activeEffect;
+    private final Runnable activeEnd;
     private Phase phase = Phase.READY;
     private double elapsed;
     /** Seconds finished by earlier windows of the current swing. */
@@ -46,9 +48,19 @@ public class Attack {
      * moving mid-swing.
      */
     private Rect activeRect;
+    private Hitbox activeHitbox;
+    private DamageInfo.MeleeChain meleeChain;
+    private int meleeStep;
 
     public Attack(AttackData data) {
+        this(data, null, null);
+    }
+
+    /** Optional effects share the same windows as melee (boss volleys/dashes). */
+    public Attack(AttackData data, Runnable activeEffect, Runnable activeEnd) {
         this.data = data;
+        this.activeEffect = activeEffect;
+        this.activeEnd = activeEnd;
     }
 
     public AttackData getData() {
@@ -90,6 +102,21 @@ public class Attack {
         return Math.max(0, Math.min(1, done / total));
     }
 
+    /** Equal thirds for the authored wind-up/strike/recovery pose groups. */
+    public double animationProgress() {
+        if (phase == Phase.READY) return 1;
+        double local = Math.max(0, Math.min(1, elapsed / Math.max(EPS, phaseSeconds())));
+        return (phase.ordinal() - 1 + local) / 3;
+    }
+
+    /** A motion-driven move may recover early when it reaches its landing. */
+    public void completeActive() {
+        if (phase != Phase.ACTIVE) return;
+        completed = data.startupSeconds() + data.activeSeconds();
+        elapsed = 0;
+        advance();
+    }
+
     /**
      * Winds the attack up in front of {@code attacker}. The hitbox is spawned
      * later, once {@link AttackData#startupFrames} have elapsed.
@@ -97,6 +124,11 @@ public class Attack {
      * @return false if the previous attack has not finished yet.
      */
     public boolean start(GameObject attacker, int facing, boolean friendly, CombatWorld world) {
+        return start(attacker, facing, friendly, world, null, 0);
+    }
+
+    public boolean start(GameObject attacker, int facing, boolean friendly, CombatWorld world,
+                         DamageInfo.MeleeChain chain, int step) {
         if (!isReady()) return false;
         this.attacker = attacker;
         this.facing = facing;
@@ -105,6 +137,8 @@ public class Attack {
         this.phase = Phase.STARTUP;
         this.elapsed = 0;
         this.completed = 0;
+        this.meleeChain = chain;
+        this.meleeStep = step;
         return true;
     }
 
@@ -137,12 +171,16 @@ public class Attack {
 
     /** Cancels any attack in progress. */
     public void reset() {
+        if (phase == Phase.ACTIVE && activeEnd != null) activeEnd.run();
+        if (activeHitbox != null) activeHitbox.cancel();
+        activeHitbox = null;
         phase = Phase.READY;
         elapsed = 0;
         completed = 0;
         attacker = null;
         world = null;
         activeRect = null;
+        meleeChain = null; meleeStep = 0;
     }
 
     private double phaseSeconds() {
@@ -159,9 +197,13 @@ public class Attack {
             case STARTUP:
                 phase = Phase.ACTIVE;
                 activeRect = computeRect();
-                spawnHitbox();
+                if (activeEffect == null) spawnHitbox();
+                else activeEffect.run();
                 break;
             case ACTIVE:
+                if (activeEnd != null) activeEnd.run();
+                if (activeHitbox != null) activeHitbox.cancel();
+                activeHitbox = null;
                 phase = Phase.RECOVERY;
                 activeRect = null;
                 break;
@@ -170,6 +212,7 @@ public class Attack {
                 attacker = null;
                 world = null;
                 activeRect = null;
+                meleeChain = null; meleeStep = 0;
                 break;
             default:
                 break;
@@ -188,7 +231,9 @@ public class Attack {
             activeRect = null;
             return;
         }
-        DamageInfo info = new DamageInfo(data.damage, data.knockback * facing, -260, friendly);
-        world.addHitbox(new Hitbox(activeRect, info, data.activeSeconds(), friendly, attacker));
+        DamageInfo info = new DamageInfo(data.damage, data.knockback * facing, data.knockbackY, friendly)
+                .withMeleeChain(meleeChain, meleeStep);
+        activeHitbox = new Hitbox(activeRect, info, data.activeSeconds(), friendly, attacker);
+        world.addHitbox(activeHitbox);
     }
 }

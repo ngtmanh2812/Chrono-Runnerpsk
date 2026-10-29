@@ -2,7 +2,7 @@
 
 ## Artwork and transform
 
-- Original: `Shadowed Ruins Over a Sunlit Canal.png`, PNG RGB, **1913 × 822**.
+- Original: `assets/backgrounds/chapter_2.png`, PNG RGB, **1913 × 822** (duplicate root copy removed during cleanup).
 - Runtime copy: `assets/backgrounds/chapter_2.png`; identical bytes to the original.
 - Renderer: existing `ArenaBackdrop`, nearest-neighbor, uniform scale **720 / 822 = 120 / 137**.
 - World size: **1675.620438 × 720**. Logical viewport remains **1280 × 720**.

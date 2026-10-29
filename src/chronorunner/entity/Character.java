@@ -49,9 +49,18 @@ public abstract class Character extends GameObject {
         updateTimers(dt);
         if (!isDead()) {
             updateBehavior(dt, world);
-        }
+        } else updateDeath(dt, world);
         hurtbox.set(x, y, width, height);
     }
+
+    /** Ending cinematics advance poses/death physics without reading combat input. */
+    public final void updateAfterCombat(double dt, CombatWorld world) {
+        updateTimers(dt);
+        if (isDead()) updateDeath(dt, world);
+        hurtbox.set(x, y, width, height);
+    }
+
+    protected void updateDeath(double dt, CombatWorld world) { }
 
     protected abstract void updateBehavior(double dt, CombatWorld world);
 
@@ -64,7 +73,7 @@ public abstract class Character extends GameObject {
     }
 
     public void takeDamage(DamageInfo info) {
-        if (info == null || invuln > 0 || isDead()) return;
+        if (info == null || isInvulnerableTo(info) || isDead()) return;
         health -= info.amount;
         if (health < 0) health = 0;
         invuln = 0.55;
@@ -85,6 +94,9 @@ public abstract class Character extends GameObject {
     public boolean isInvulnerable() {
         return invuln > 0;
     }
+
+    /** Damage-aware gate; players retain their ordinary hit/dash invulnerability. */
+    public boolean isInvulnerableTo(DamageInfo info) { return isInvulnerable(); }
 
     public void applySlow(double seconds) {
         slow = Math.max(slow, seconds);

@@ -1,0 +1,11 @@
+phan_si_kien/combo 1374x1145 cutsY=[0, 229, 450, 668, 916, 1145] bodyRef=152.00000000
+  light_1 cutsX=[0, 229, 458, 703, 964, 1148, 1374] heights=[161, 160, 156, 157, 158, 156]
+  light_2 cutsX=[0, 229, 458, 708, 954, 1153, 1374] heights=[155, 148, 151, 151, 154, 159]
+  light_3 cutsX=[0, 229, 458, 687, 931, 1153, 1374] heights=[167, 199, 157, 139, 125, 133]
+  heavy cutsX=[0, 229, 458, 687, 922, 1145, 1374] heights=[162, 234, 203, 142, 126, 130]
+  launcher cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[112, 128, 142, 165, 147, 152]
+light_1: 6 unique; fits128x128 at64px calibration; output body heights=[67, 67, 66, 66, 66, 66]
+light_2: 6 unique; fits128x128 at64px calibration; output body heights=[65, 62, 64, 63, 64, 66]
+light_3: 6 unique; fits128x128 at64px calibration; output body heights=[69, 84, 61, 59, 53, 56]
+heavy: 6 unique; fits128x128 at64px calibration; output body heights=[67, 99, 82, 60, 53, 55]
+launcher: 6 unique; fits128x128 at64px calibration; output body heights=[47, 53, 59, 69, 62, 64]

@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 
 import chronorunner.animation.Animation;
+import chronorunner.combat.Attack;
+import chronorunner.combat.AttackData;
 import chronorunner.combat.DamageInfo;
 import chronorunner.combat.Hitbox;
 import chronorunner.core.Physics;
@@ -14,6 +16,7 @@ import chronorunner.entity.enemy.Enemy;
 import chronorunner.gfx.Art;
 import chronorunner.gfx.PixelArt;
 import chronorunner.gfx.PixelSprite;
+import chronorunner.gfx.SpriteSet;
 import chronorunner.util.Rect;
 import chronorunner.world.CombatWorld;
 
@@ -32,6 +35,12 @@ public abstract class Boss extends Character {
 
     private double dashTimer;
     private double dashVX;
+    private double landingAnimTimer;
+    private Attack action;
+    private String actionAnimation;
+    private Hitbox actionHitbox;
+    private DamageInfo.MeleeChain lastMeleeChain;
+    private int lastMeleeStep;
 
     protected Boss(String name, double x, double y, double w, double h,
                    int maxHealth, int contactDamage, double baseSpeed,
@@ -43,39 +52,153 @@ public abstract class Boss extends Character {
 
     @Override
     protected void setupAnimations() {
-        anim.add("idle", new Animation(Art.bossAnimation(name, "idle").count(), 0.16, true));
-        anim.add("run", new Animation(Art.bossAnimation(name, "run").count(), 0.085, true));
-        anim.add("jump", new Animation(Art.bossAnimation(name, "jump").count(), 0.11, true));
-        anim.add("attack", new Animation(Art.bossAnimation(name, "attack").count(), 0.075, false));
-        anim.add("hurt", new Animation(Art.bossAnimation(name, "hurt").count(), 0.07, false));
-        anim.add("death", new Animation(Art.bossAnimation(name, "death").count(), 0.13, false));
-        anim.add("walk", new Animation(Art.bossAnimation(name, "walk").count(), 0.13, true));
-        anim.add("special", new Animation(Art.bossAnimation(name, "special").count(), 0.09, false));
+        addAnimation("idle", .16, true);
+        addAnimation("run", .085, true);
+        addAnimation("jump", .11, false);
+        addAnimation("fall", .10, true);
+        addAnimation("land", .08, false);
+        addAnimation("dash", .025, false);
+        addAnimation("attack", .075, false);
+        addAnimation("hurt", .07, false);
+        addAnimation("death", .13, false);
+        addAnimation("walk", .13, true);
+        addAnimation("special", .09, false);
+        // A visual bank for future use; no boss guarding behavior is introduced.
+        addAnimation("block", .08, false);
+    }
+
+    private void addAnimation(String state, double seconds, boolean loop) {
+        anim.add(state, Art.bossAnimation(name, state).animation(state, seconds, loop));
+    }
+
+    @Override
+    public boolean isInvulnerableTo(DamageInfo info) {
+        // Only the next distinct move of the SAME chain may pass hit i-frames.
+        // Other players, skills, repeated hitboxes and new chains keep the old gate.
+        boolean followup = info != null && info.fromPlayer && info.meleeChain != null
+                && info.meleeChain == lastMeleeChain && info.meleeStep == lastMeleeStep + 1
+                && info.meleeStep >= 2 && info.meleeStep <= 3;
+        return super.isInvulnerableTo(info) && !followup;
     }
 
     @Override
     public void takeDamage(DamageInfo info) {
-        boolean aliveBeforeHit = !isDead();
+        if (info == null || info.amount <= 0) return;
+        int before = health;
         super.takeDamage(info);
-        if (aliveBeforeHit && isDead()) anim.play("death");
+        if (health < before) {
+            lastMeleeChain = info.meleeChain; lastMeleeStep = info.meleeStep;
+            double hitVX = vx, hitVY = vy;
+            cancelAction();
+            vx = hitVX; vy = hitVY;
+            if (isDead()) anim.play("death");
+        }
     }
 
     @Override
     protected void updateBehavior(double dt, CombatWorld world) {
+        if (landingAnimTimer > 0) landingAnimTimer -= dt;
         updatePhase();
         if (attackTimer > 0) attackTimer -= dt;
         if (specialTimer > 0) specialTimer -= dt;
 
-        if (dashTimer > 0) {
-            dashTimer -= dt;
-            vx = dashVX;
-            vy = 0;
+        if (!world.isCombatActive()) {
+            endCombat();
+            return;
+        }
+        if (isStaggered()) {
+            vx *= Math.pow(.86, dt * 60);
+            applyVerticalMotion(dt, world);
+        } else if (action != null) {
+            action.update(dt);
+            if (dashTimer > 0) {
+                dashTimer = Math.max(0, dashTimer - dt);
+                vx = dashVX; vy = 0;
+            } else applyVerticalMotion(dt, world);
+            if (action.isReady()) {
+                action = null;
+                actionAnimation = null;
+            }
+        } else if (dashTimer > 0) {
+            dashTimer = Math.max(0, dashTimer - dt);
+            vx = dashVX; vy = 0;
         } else {
-            vy = Physics.applyGravity(vy, dt);
+            applyVerticalMotion(dt, world);
             updateAI(dt, world);
         }
-        Physics.moveAndCollide(this, world, dt);
+        boolean wasAirborne = !grounded;
+        moveBody(dt, world);
+        if (wasAirborne && grounded) landingAnimTimer = .16;
         updateAnimationState();
+    }
+
+    protected void applyVerticalMotion(double dt, CombatWorld world) {
+        vy = Physics.applyGravity(vy, dt);
+    }
+
+    protected void moveBody(double dt, CombatWorld world) {
+        Physics.moveAndCollide(this, world, dt);
+    }
+
+    protected boolean isHovering() { return false; }
+
+    protected final boolean isStaggered() {
+        return stun > 0 || hurtFlash > 0 || ("hurt".equals(anim.currentName())
+                && anim.current() != null && !anim.current().finished());
+    }
+
+    protected final boolean canBeginAction(CombatWorld world) {
+        return !isDead() && !isStaggered() && (action == null || action.isReady()) && world.isCombatActive();
+    }
+
+    /** Reuse Attack's windows for melee, projectile volleys and scripted motion. */
+    protected final boolean beginAction(CombatWorld world, String clip, double startup,
+                                         double active, double recovery, Runnable effect) {
+        if (!canBeginAction(world)) return false;
+        AttackData data = new AttackData(clip, 0, 0, 0,
+                Math.max(1, (int)Math.round(startup * 60)),
+                Math.max(1, (int)Math.round(active * 60)),
+                Math.max(1, (int)Math.round(recovery * 60)), 0);
+        action = new Attack(data, effect, this::stopAttackMotion);
+        actionAnimation = clip;
+        vx = 0;
+        action.start(this, facing, false, world);
+        anim.restart(clip);
+        return true;
+    }
+
+    protected final void finishActiveAction() {
+        if (action != null) action.completeActive();
+    }
+
+    protected void stopAttackMotion() {
+        if (actionHitbox != null) actionHitbox.cancel();
+        actionHitbox = null;
+        dashTimer = 0; dashVX = 0; vx = 0;
+    }
+
+    private void cancelAction() {
+        if (action != null) action.reset();
+        action = null; actionAnimation = null;
+        stopAttackMotion();
+    }
+
+    public final void endCombat() {
+        cancelAction();
+        if (!isDead()) anim.play("idle");
+    }
+
+    public final boolean isContactDamageEnabled() {
+        return !isDead() && !isStaggered() && (action == null || action.isActive());
+    }
+
+    @Override
+    protected void updateDeath(double dt, CombatWorld world) {
+        vx = 0;
+        if (!grounded) {
+            vy = Physics.applyGravity(vy, dt);
+            Physics.moveAndCollide(this, world, dt);
+        }
     }
 
     protected abstract void updateAI(double dt, CombatWorld world);
@@ -115,7 +238,7 @@ public abstract class Boss extends Character {
         double bestDistance = Double.MAX_VALUE;
         for (Player p : world.players()) {
             if (p.isDead()) continue;
-            double d = Math.abs(p.centerX() - centerX());
+            double d = Math.hypot(p.centerX() - centerX(), p.centerY() - centerY());
             if (d < bestDistance) {
                 bestDistance = d;
                 best = p;
@@ -125,7 +248,7 @@ public abstract class Boss extends Character {
     }
 
     protected void faceTarget(Player target) {
-        if (target != null) {
+        if (target != null && (action == null || action.isReady())) {
             facing = target.centerX() < centerX() ? -1 : 1;
         }
     }
@@ -149,20 +272,37 @@ public abstract class Boss extends Character {
     protected void dash(int direction, double speed, double duration) {
         dashVX = direction * speed;
         dashTimer = duration;
+        vx = dashVX;
+        vy = 0;
+    }
+
+    protected final boolean canMelee(Player target, double reach, double attackHeight) {
+        return target != null && meleeRegion(reach, attackHeight).intersects(target.bounds());
+    }
+
+    private Rect meleeRegion(double reach, double attackHeight) {
+        return new Rect(facing >= 0 ? right() : x - reach,
+                y + (height - attackHeight) / 2, reach, attackHeight);
     }
 
     protected Hitbox melee(CombatWorld world, double reach, double height, int damage, double knockback) {
-        double hx = facing >= 0 ? right() : this.x - reach;
-        Rect rect = new Rect(hx, y + (this.height - height) / 2.0, reach, height);
-        Hitbox hitbox = new Hitbox(rect, new DamageInfo(damage, knockback * facing, -260, false), 0.18, false, this);
+        Rect rect = meleeRegion(reach, height);
+        double life = action == null ? .18 : action.getData().activeSeconds();
+        Hitbox hitbox = new Hitbox(rect, new DamageInfo(damage, knockback * facing, -260, false), life, false, this, action != null);
+        if (action != null) actionHitbox = hitbox;
         world.addHitbox(hitbox);
         return hitbox;
     }
 
     protected void shootAngled(CombatWorld world, Player target, double angleOffset,
                                int damage, double speed, double radius) {
-        double dx = target.centerX() - centerX();
-        double dy = target.centerY() - centerY();
+        shootAt(world, target.centerX(), target.centerY(), angleOffset, damage, speed, radius);
+    }
+
+    protected void shootAt(CombatWorld world, double aimX, double aimY, double angleOffset,
+                             int damage, double speed, double radius) {
+        double dx = aimX - centerX();
+        double dy = aimY - centerY();
         double angle = Math.atan2(dy, dx) + angleOffset;
         double px = Math.cos(angle);
         double py = Math.sin(angle);
@@ -188,18 +328,27 @@ public abstract class Boss extends Character {
             anim.play("death");
             return;
         }
-        if (hurtFlash > 0) {
+        if (isStaggered()) {
             anim.play("hurt");
             return;
         }
 
-        String current = anim.currentName();
-        if ("attack".equals(current) || "special".equals(current) || "hurt".equals(current)) {
-            Animation active = anim.current();
-            if (active != null && !active.finished()) return;
+        if (action != null) {
+            anim.play(actionAnimation);
+            anim.current().setProgress(action.animationProgress());
+            return;
         }
 
-        if (!grounded) anim.play("jump");
+        if (dashTimer > 0) anim.play("dash");
+        else if (!grounded && !isHovering()) {
+            anim.play(vy < 0 ? "jump" : "fall");
+            Animation airborne = anim.current();
+            if (airborne != null) airborne.setProgress(vy < 0 ? .33 : Math.min(1, vy / Physics.MAX_FALL));
+        }
+        else if (landingAnimTimer > 0) {
+            anim.play("land");
+            anim.current().setProgress(1 - landingAnimTimer / .16);
+        }
         else if (Math.abs(vx) >= baseSpeed * 1.12) anim.play("run");
         else if (Math.abs(vx) > 12) anim.play("walk");
         else anim.play("idle");
@@ -216,12 +365,14 @@ public abstract class Boss extends Character {
                 : (slow > 0 ? PixelSprite.Mode.SLOW : PixelSprite.Mode.NORMAL);
         Animation current = anim.current();
         String animation = anim.currentName();
-        PixelSprite art = Art.bossAnimation(name, animation)
-                .frame(current == null ? 0 : current.frame());
+        SpriteSet sprites = Art.bossAnimation(name, animation);
+        PixelSprite art = sprites.frame(current == null ? 0 : current.frame());
         // Give bosses more screen presence while leaving their combat hitboxes
         // and world coordinates untouched.
         int scale = art.scaleFor((int) width) + 1;
-        if ("The Void Core".equals(name)) {
+        if (sprites.layout() != null) {
+            sprites.layout().draw(art, g, cx, feetY, cy, facing < 0, mode, 1f);
+        } else if ("The Void Core".equals(name)) {
             art.draw(g, cx - art.width() * scale / 2, cy - art.height() * scale / 2,
                     scale, facing < 0, mode, 1f);
         } else {

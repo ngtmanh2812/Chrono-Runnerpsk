@@ -1,0 +1,17 @@
+REPRODUCED instant-damage/The Time Guardian | hitbox exists at animation frame 0
+REPRODUCED unlatched-facing/The Time Guardian | boss now faces left; same attack hitbox remains on its right
+REPRODUCED instant-damage/The Void Core | hitbox exists at animation frame 0
+REPRODUCED unlatched-facing/The Void Core | boss now faces left; same attack hitbox remains on its right
+REPRODUCED guardian-dash-hitbox | boss moved 102.0px; hitbox moved 0.0px; hitbox expired while dash has 0.15s left
+REPRODUCED stun-ignored/The Time Guardian | stun=0.123s, projectile count=1, vx -300 -> 150
+REPRODUCED stun-ignored/The Void Core | stun=0.123s, projectile count=3, vx -300 -> 160
+REPRODUCED vertical-range-ignored/The Time Guardian | target directly above: melee whiffs; no ranged choice, no jump
+REPRODUCED vertical-range-ignored/The Void Core | target directly above: melee whiffs; no ranged choice, no jump
+REPRODUCED core-no-hover | core fell from y=100 and became grounded at floor y=600.0
+REPRODUCED core-dive-intercepted | dive landed on slab y=500.0; target stands on floor y=600
+REPRODUCED core-still-summons-minions | third special spawns 2 Chrono Bat enemies
+REPRODUCED airborne-corpse/The Time Guardian | death finished while y stayed 100; no descent to floor
+REPRODUCED airborne-corpse/The Void Core | death finished while y stayed 100; no descent to floor
+REPRODUCED post-victory-damage | combat was inactive; lingering hostile projectile killed player; final screen is still VICTORY
+REPRODUCED shared-invulnerability | two distinct 30-damage calls in same tick remove only 30 HP; shared invulnerability=0.55
+Confirmed diagnostic observations: 16. No production changes; save calls intercepted.

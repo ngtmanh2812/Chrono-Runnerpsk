@@ -1,0 +1,1 @@
+PASS: 6098087 structural checks; 3 actors; all authored states have 6 distinct frames; binary alpha; no edge crop; death endpoint prone.

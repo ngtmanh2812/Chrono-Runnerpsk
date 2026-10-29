@@ -1,0 +1,8 @@
+phan_si_kien/reaction 1374x1145 cutsY=[0, 289, 498, 716, 916, 1145] bodyRef=174.00000000
+  air_attack cutsX=[0, 229, 458, 717, 935, 1165, 1374] heights=[195, 178, 171, 200, 179, 185]
+  block cutsX=[0, 229, 453, 678, 920, 1145, 1374] SKIPPED: retained V2 state
+  hurt cutsX=[0, 229, 458, 687, 916, 1145, 1374] SKIPPED: retained V2 state
+  death cutsX=[0, 229, 444, 682, 906, 1144, 1374] SKIPPED: retained V2 state
+  charge cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[175, 175, 176, 175, 175, 174]
+air_attack: 6 unique; fits128x128 at64px calibration; output body heights=[72, 65, 63, 74, 66, 61]
+charge: 6 unique; fits128x128 at64px calibration; output body heights=[64, 64, 64, 64, 64, 64]

@@ -56,6 +56,10 @@ public class Menu {
         return items[index];
     }
 
+    public int size() { return items.length; }
+
+    public String item(int row) { return items[row]; }
+
     /**
      * Draws the rows in the shared arcade voice: the current row is cream with
      * a gold triangle beside it, the rest recede to dim.

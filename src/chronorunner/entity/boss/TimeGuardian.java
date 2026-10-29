@@ -8,6 +8,10 @@ import chronorunner.world.CombatWorld;
 /** Chapter 1: melee swipes, projectile volley and a lunging dash. */
 public class TimeGuardian extends Boss {
 
+    // Gameplay windows stay independent of sprite frame counts and asset FPS.
+    private static final double ATTACK_WINDUP = .10, ATTACK_RECOVERY = .10;
+    private static final double SPECIAL_WINDUP = .15, SPECIAL_RECOVERY = .15;
+
     public TimeGuardian(double x, double y) {
         super("The Time Guardian", x, y, 96, 124, 700, 12, 150,
                 new Color(255, 170, 52));
@@ -21,7 +25,6 @@ public class TimeGuardian extends Boss {
             return;
         }
         faceTarget(target);
-        double distance = Math.abs(target.centerX() - centerX());
 
         if (specialTimer <= 0) {
             specialAttack(world);
@@ -30,29 +33,38 @@ public class TimeGuardian extends Boss {
         }
 
         if (attackTimer <= 0) {
-            anim.play("attack");
-            if (distance < 150) {
-                melee(world, 110, 96, scaleDamage(14), 340);
-                attackTimer = 1.2 * cooldownScale();
-            } else {
-                int count = getPhase() >= 2 ? 3 : 1;
-                for (int i = 0; i < count; i++) {
-                    shootAngled(world, target, (i - (count - 1) / 2.0) * 0.18,
-                            scaleDamage(10), 430, 9);
-                }
-                attackTimer = 1.9 * cooldownScale();
+            boolean melee = canMelee(target, 110, 96);
+            double aimX = target.centerX(), aimY = target.centerY();
+            int count = getPhase() >= 2 ? 3 : 1;
+            if (beginAction(world, "attack", ATTACK_WINDUP, melee ? .18 : .10,
+                    ATTACK_RECOVERY, () -> {
+                        if (melee) melee(world, 110, 96, scaleDamage(14), 340);
+                        else for (int i = 0; i < count; i++) shootAt(world, aimX, aimY,
+                                (i - (count - 1) / 2.0) * .18, scaleDamage(10), 430, 9);
+                    })) {
+                attackTimer = (melee ? 1.2 : 1.9) * cooldownScale();
             }
+            return;
         }
-        walkToward(target, speed(), distance < 150 ? 0 : 140);
+        walkToward(target, speed(), canMelee(target, 110, 96) ? Double.POSITIVE_INFINITY : 125);
     }
 
     @Override
     public void specialAttack(CombatWorld world) {
-        anim.play("special");
         Player target = nearestPlayer(world);
-        if (target == null) return;
+        if (target == null || !canBeginAction(world)) return;
         faceTarget(target);
-        dash(facing, speed() * 3.4, 0.35);
-        melee(world, 150, 110, scaleDamage(18), 460);
+        // A target on a higher ledge receives an aimed volley rather than a
+        // horizontal charge that cannot reach its height.
+        boolean sameHeight = target.bottom() > y && target.y < bottom();
+        double aimX = target.centerX(), aimY = target.centerY();
+        beginAction(world, "special", SPECIAL_WINDUP, .35, SPECIAL_RECOVERY, () -> {
+            if (sameHeight) {
+                dash(facing, speed() * 3.4, .35);
+                melee(world, 150, 110, scaleDamage(18), 460);
+            } else {
+                shootAt(world, aimX, aimY, 0, scaleDamage(10), 430, 9);
+            }
+        });
     }
 }

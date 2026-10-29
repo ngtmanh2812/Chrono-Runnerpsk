@@ -1,0 +1,11 @@
+do_mixi/combo 1374x1145 cutsY=[0, 229, 458, 687, 887, 1145] bodyRef=187.00000000
+  light_1 cutsX=[0, 229, 458, 702, 927, 1145, 1374] heights=[187, 183, 183, 186, 181, 187]
+  light_2 cutsX=[0, 229, 458, 685, 920, 1145, 1374] heights=[191, 182, 181, 177, 181, 189]
+  light_3 cutsX=[0, 229, 467, 704, 940, 1146, 1374] heights=[189, 184, 194, 185, 186, 188]
+  heavy cutsX=[0, 229, 458, 687, 952, 1145, 1374] heights=[170, 158, 159, 168, 156, 184]
+  launcher cutsX=[0, 229, 458, 687, 895, 1145, 1374] heights=[157, 189, 217, 225, 177, 181]
+light_1: 6 unique; fits128x128 at64px calibration; output body heights=[64, 63, 63, 64, 62, 64]
+light_2: 6 unique; fits128x128 at64px calibration; output body heights=[65, 62, 62, 60, 62, 64]
+light_3: 6 unique; fits128x128 at64px calibration; output body heights=[64, 63, 66, 63, 64, 64]
+heavy: 6 unique; fits128x128 at64px calibration; output body heights=[58, 54, 54, 53, 53, 63]
+launcher: 6 unique; fits128x128 at64px calibration; output body heights=[53, 64, 74, 77, 60, 62]

@@ -20,7 +20,7 @@ import chronorunner.util.Progress;
 /** Main menu styled from the supplied Chrono Runner title-screen reference. */
 public class MainMenuScreen extends Screen {
 
-    private static final String REFERENCE_PATH = "Chrono Runner_ Neon Time Vortex.png";
+    private static final String REFERENCE_PATH = "assets/ui/main_menu.png";
     private static final String[] OPTIONS = {
             "CHƠI", "TIẾP TỤC", "CHỌN NHÂN VẬT", "CÀI ĐẶT", "ĐỘI NGŨ", "THOÁT"
     };

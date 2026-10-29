@@ -1,0 +1,9 @@
+Actor: The Void Core
+Frame: 256x256 px
+Atlas: 1536x3072 px; 6 columns, 12 rows
+Pivot: 128,128 (reactor centre)
+Alpha: binary 0/255; nearest-neighbour; 64-colour shared actor palette
+Row order: idle, run, jump, attack, hurt, death, walk, special, block, dash, fall, land
+First ten rows: six frames each; fall and land: two source-authored jump poses each
+Runtime: assets/bosses/the_void_core/v2/
+Boss guard is visual only.

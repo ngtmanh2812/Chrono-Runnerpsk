@@ -40,7 +40,7 @@ except ImportError as exc:  # pragma: no cover - dev tool only
 
 
 ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_SOURCE = ROOT / "Lưới sprite anh hùng kiếm năng lượng pixel-art.png"
+DEFAULT_SOURCE = ROOT / "art" / "sources" / "legacy" / "player_sprite_source.png"
 OUT_DIR = ROOT / "assets" / "players" / "chrono_runner"
 PREVIEW = ROOT / "tools" / "previews" / "chrono_runner_sheet.png"
 

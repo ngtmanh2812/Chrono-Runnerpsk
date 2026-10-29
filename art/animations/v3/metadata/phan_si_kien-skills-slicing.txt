@@ -1,0 +1,7 @@
+phan_si_kien/skills 1774x887 cutsY=[0, 295, 581, 887] bodyRef=218.00000000
+  skill_u cutsX=[0, 295, 580, 874, 1187, 1512, 1774] heights=[218, 220, 220, 218, 218, 218]
+  skill_i cutsX=[0, 295, 577, 887, 1205, 1480, 1774] heights=[202, 208, 199, 195, 197, 214]
+  ultimate cutsX=[0, 295, 591, 859, 1182, 1499, 1774] heights=[218, 225, 210, 163, 191, 219]
+skill_u: 6 unique; fits128x128 at64px calibration; output body heights=[64, 65, 64, 64, 64, 64]
+skill_i: 6 unique; fits128x128 at64px calibration; output body heights=[59, 60, 58, 57, 58, 63]
+ultimate: 6 unique; fits128x128 at64px calibration; output body heights=[63, 66, 61, 48, 56, 64]

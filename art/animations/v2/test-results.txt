@@ -1,0 +1,56 @@
+CHRONO RUNNER — ANIMATION V2 / 2026-10-29
+
+BUILD: PASS
+Command: build.bat
+Java compiler/runtime: Eclipse Adoptium JDK 25.
+
+PrepareAnimationPack: PASS — 1705 structural checks.
+5 actors, 12 states each, 320 PNG frame files.
+PNG RGBA alpha is exactly 0/255; shared 64-colour palette per actor.
+Fixed dimensions/pivots, nonempty frames, no output edge clipping.
+Walk differs from Run; Attack differs from Special; Death ends low/prone/debris.
+
+AnimationIntegrationCheck: PASS — 390 checks.
+Actual installed asset loading, frame counts and explicit pivots.
+Actual player input: run, slowed walk, jump, fall, land, dash, normal attack,
+skill, block, impact, hurt and death. Two attack poses per Startup/Active/Recovery.
+Pause freezes animation. Boss death advances in PlayScreen and holds its last
+pose before Victory. Dead boss AI does not run. HUD/menu portraits rendered.
+Save calls intercepted by NoSaveGame in this suite.
+
+PlayerDefenseCheck: PASS — 315 combat checks.
+3 characters, both player slots, both chapters: existing normal-attack timings,
+damage, hit/miss/dedup, one-hit block, 0.5s duration, 2s cooldown, skills,
+projectiles, contact damage, pause/resume and transitions.
+
+OverlayScreensCheck: PASS — 372 checks.
+Pause/Game Over/Victory input, snapshots, restart/continue/menu and both slots.
+Save calls intercepted in this suite.
+
+ChapterOneMapCheck: PASS — 756 checks.
+All 10 floating platforms reachable, floor/camera bounds and boss combat.
+Debug enabled only in test process, disabled before test completion.
+
+ChapterTwoMapCheck: PASS — 11573 checks.
+All 9 floating platforms reachable for all 3 characters, complete ground
+traversal/bounds; Core visible at initial spawn below HUD using measured alpha
+bounds rather than transparent canvas dimensions. Existing volley, radial,
+summon, teleport/dive, melee and HP phases preserved. Debug OFF at completion.
+
+Delivery verification: PASS.
+All 320 frame PNGs match their sprite-sheet rectangles pixel for pixel.
+All 340 installed runtime pack files match authored exports by SHA-256.
+Source dimensions and cell rectangles verified against real PNG files.
+All 176 original asset files remain unchanged by SHA-256.
+Attack.java, AttackData.java, Physics.java, TimeGuardian.java,
+TheVoidCore.java and LevelFactory.java remain unchanged by SHA-256.
+
+Preview JavaScript: node --check PASS.
+Visual review: original pose atlases, normalized attack/special/death frames,
+real gameplay captures for both chapters, character selection and portraits.
+Automated gameplay checks run headless against the production renderer,
+input handler and physics; these are not a claim of a manual desktop playthrough.
+
+Production collision debug remains OFF by default.
+Boss Block is an authored visual bank; no new boss guard AI/mechanic is added.
+Legacy art remains intact; assets/*/<actor>/v2/ is the active bank.

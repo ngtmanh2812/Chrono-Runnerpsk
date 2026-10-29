@@ -43,6 +43,8 @@ public final class PlayerDefense {
     }
 
     public boolean isBlocking() { return remaining > 0; }
+    /** Read-only visual progress through the existing guard window. */
+    public double blockProgress() { return 1 - remaining / BLOCK_DURATION_SECONDS; }
     public double cooldownRemaining() { return cooldown; }
     public double cooldownRatio() { return 1 - cooldown / BLOCK_COOLDOWN_SECONDS; }
     public boolean isImpactVisible() { return impact > 0; }

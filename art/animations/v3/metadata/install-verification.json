@@ -1,0 +1,29 @@
+[
+  {
+    "actor": "ronaldo",
+    "frames": 124,
+    "states": 22,
+    "atlas": "768x2816",
+    "installed_files_verified": 129,
+    "retained_v2_files_byte_identical": 0,
+    "status": "PASS"
+  },
+  {
+    "actor": "do_mixi",
+    "frames": 124,
+    "states": 22,
+    "atlas": "768x2816",
+    "installed_files_verified": 129,
+    "retained_v2_files_byte_identical": 0,
+    "status": "PASS"
+  },
+  {
+    "actor": "phan_si_kien",
+    "frames": 124,
+    "states": 22,
+    "atlas": "768x2816",
+    "installed_files_verified": 129,
+    "retained_v2_files_byte_identical": 48,
+    "status": "PASS"
+  }
+]

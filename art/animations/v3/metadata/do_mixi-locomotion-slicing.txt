@@ -1,0 +1,11 @@
+do_mixi/locomotion 1374x1145 cutsY=[0, 251, 499, 735, 955, 1145] bodyRef=216.00000000
+  idle cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[216, 216, 212, 215, 219, 218]
+  walk cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[223, 227, 224, 226, 218, 223]
+  run cutsX=[0, 230, 465, 687, 916, 1145, 1374] heights=[200, 203, 201, 200, 199, 188]
+  jump cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[147, 195, 206, 156, 174, 189]
+  dash cutsX=[0, 229, 453, 681, 940, 1186, 1374] heights=[149, 147, 137, 151, 133, 170]
+idle: 6 unique; fits128x128 at64px calibration; output body heights=[64, 64, 63, 64, 65, 65]
+walk: 6 unique; fits128x128 at64px calibration; output body heights=[66, 67, 66, 67, 65, 66]
+run: 6 unique; fits128x128 at64px calibration; output body heights=[59, 60, 60, 59, 59, 56]
+jump: 6 unique; fits128x128 at64px calibration; output body heights=[43, 57, 60, 46, 52, 56]
+dash: 6 unique; fits128x128 at64px calibration; output body heights=[44, 44, 41, 45, 39, 50]

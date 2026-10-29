@@ -18,7 +18,7 @@ import chronorunner.util.Progress;
 
 /**
  * Per-player character picker. P1 uses A/D + J, P2 uses arrow keys + Numpad 1.
- * Press the dash key to un-confirm and change.
+ * K / Numpad 2 un-confirms a choice; gameplay bindings are independent.
  */
 public class CharacterSelectScreen extends Screen {
 
@@ -155,8 +155,7 @@ public class CharacterSelectScreen extends Screen {
         UiKit.arcadeLeft(g, CharacterFactory.nameOf(index), UiKit.ARC_BODY_SCALE,
                 UiKit.CREAM, textLeft, CARD_Y + 34, 2);
 
-        // The blurb and the skill name are the long lines, so they wrap to at
-        // most two rows each and never spill past the card edge.
+        // Authored short lines fit the bitmap font's two-pixel tracking.
         List<String> skin = UiKit.wrap(g, CharacterFactory.skinOf(index), textW, UiKit.SMALL);
         for (int i = 0; i < skin.size() && i < 2; i++) {
             UiKit.arcadeLeft(g, skin.get(i), UiKit.ARC_SMALL_SCALE,
@@ -170,18 +169,16 @@ public class CharacterSelectScreen extends Screen {
         PixelArt.rect(g, fx + 6, figureFeet + 2, FIGURE_W - 12, 7, body.darker());
         PixelArt.rect(g, fx + 6, figureFeet + 2, FIGURE_W - 12, 2, body);
         Art.player(CharacterFactory.idOf(index)).frame(0)
-                .drawAnchored(g, figureCx, figureFeet, FIGURE_SCALE, false,
-                        PixelSprite.Mode.NORMAL, 1f);
+                .drawPreview(g, figureCx, figureFeet, FIGURE_W, FIGURE_H);
 
         int[] stats = CharacterFactory.statsOf(index);
         statRow(g, textLeft, CARD_Y + 238, "HP", stats[0]);
         statRow(g, textLeft, CARD_Y + 258, "Damage", stats[1]);
         statRow(g, textLeft, CARD_Y + 278, "Tốc độ", stats[2]);
 
-        List<String> skill = UiKit.wrap(g, "Skill: " + CharacterFactory.skillOf(index),
-                textW, UiKit.SMALL);
-        for (int i = 0; i < skill.size() && i < 2; i++) {
-            UiKit.arcadeLeft(g, skill.get(i), UiKit.ARC_SMALL_SCALE,
+        String[] skill = CharacterFactory.skillsOf(index);
+        for (int i = 0; i < skill.length; i++) {
+            UiKit.arcadeLeft(g, skill[i], UiKit.ARC_SMALL_SCALE,
                     UiKit.GOLD_PALE, textLeft, CARD_Y + 306 + i * 20, 2);
         }
     }

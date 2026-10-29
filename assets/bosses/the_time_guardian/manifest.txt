@@ -1,5 +1,5 @@
 Boss: The Time Guardian
-Source: Dual Boss Pixel Art Sprite Sheet-2.png (1536x1024, RGBA)
+Source: art/sources/legacy/boss_sprite_source.png (1536x1024, RGBA)
 Output frame: 48x62 px
 Sprite sheet: 384x496 px
 Grid: 8 columns x 8 animation rows

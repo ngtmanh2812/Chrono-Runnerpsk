@@ -1,0 +1,11 @@
+ronaldo/locomotion 1374x1145 cutsY=[0, 229, 458, 695, 918, 1145] bodyRef=196.00000000
+  idle cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[196, 195, 192, 196, 195, 196]
+  walk cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[198, 200, 201, 202, 201, 201]
+  run cutsX=[0, 229, 458, 687, 916, 1145, 1374] heights=[200, 207, 203, 202, 194, 206]
+  jump cutsX=[0, 229, 458, 687, 933, 1145, 1374] heights=[163, 197, 166, 189, 159, 193]
+  dash cutsX=[0, 229, 458, 687, 919, 1163, 1374] heights=[180, 177, 160, 164, 175, 183]
+idle: 6 unique; fits128x128 at64px calibration; output body heights=[64, 64, 63, 64, 64, 64]
+walk: 6 unique; fits128x128 at64px calibration; output body heights=[65, 65, 66, 66, 66, 66]
+run: 6 unique; fits128x128 at64px calibration; output body heights=[65, 68, 66, 66, 63, 67]
+jump: 6 unique; fits128x128 at64px calibration; output body heights=[53, 64, 54, 62, 52, 63]
+dash: 6 unique; fits128x128 at64px calibration; output body heights=[59, 58, 52, 54, 57, 60]
