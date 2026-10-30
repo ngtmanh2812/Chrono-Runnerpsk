@@ -1,5 +1,7 @@
 # Sửa bug boss — 29/10/2026
 
+> Lịch sử đợt sửa ngày29/10. Đợt cân cận chiến tiếp theo đã cập nhật timer choáng, contact, hurtbox và cửa sổ tấn công; cấu hình hiện tại ở [melee-fairness.md](melee-fairness.md).
+
 Đã xử lý nhóm lỗi xác nhận trong [báo cáo trước sửa](boss-audit-2026-10-29.md). Không thay asset, HP, thông số damage, cooldown cơ bản hoặc các phase HP. Chưa làm đợt nâng cấp chiêu và cân bằng mới.
 
 ## Các thay đổi

@@ -33,7 +33,7 @@ public class PhanSiKien extends Player {
         // Balanced: 9f wind-up, 6f active (frames 9-14), 11f recovery. This is
         // the reference attack: pressing J winds up for frames 0-8, deals
         // damage on frames 9-14 and is committed through frame 25.
-        this.basicAttack = new Attack(new AttackData("Chrono Slash", PLAYER_BASE_ATTACK_DAMAGE, 60, 54, 9, 6, 11, 260));
+        this.basicAttack = new Attack(new AttackData("Chrono Slash", PLAYER_BASE_ATTACK_DAMAGE, 84, 54, 9, 6, 11, 100, 0));
     }
 
     @Override

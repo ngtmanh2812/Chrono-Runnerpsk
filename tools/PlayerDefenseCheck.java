@@ -106,7 +106,7 @@ public final class PlayerDefenseCheck {
     }
 
     static void normalAttacks() throws Exception {
-        int[][] expected = {{60,54,9,6,11,260}, {48,46,5,6,7,180}, {72,66,14,10,18,380}};
+        int[][] expected = {{84,54,9,6,11,100}, {72,46,5,6,7,100}, {96,66,14,10,18,140}};
         for (int chapter = 1; chapter <= 2; chapter++) {
             for (int character = 0; character < 3; character++) {
                 for (int index = 0; index < 2; index++) {
@@ -118,8 +118,8 @@ public final class PlayerDefenseCheck {
                     Attack a = attack(p); AttackData d = a.getData(); int[] e = expected[character];
                     check(d.damage == 30, "Normal damage must be 30 for every character/player slot");
                     check(d.reach == e[0] && d.height == e[1] && d.startupFrames == e[2]
-                            && d.activeFrames == e[3] && d.recoveryFrames == e[4] && d.knockback == e[5],
-                            "Existing attack timing/geometry/knockback changed");
+                            && d.activeFrames == e[3] && d.recoveryFrames == e[4] && d.knockback == e[5] && d.knockbackY == 0,
+                            "Fair melee tuning or preserved startup/active/recovery changed");
                     int hp = boss.getHealth(); f.press(Player.keysFor(index)[3]);
                     check(a.isStartup() && boss.getHealth() == hp, "Attack must retain startup");
                     for (int n = 0; n < d.startupFrames - 1; n++) {
@@ -236,12 +236,12 @@ public final class PlayerDefenseCheck {
             Fixture contact = new Fixture(chapter, 0, 1); Player r = contact.p(); Boss boss = contact.level.boss();
             boss.x = r.x; boss.y = r.y; contact.press(KeyEvent.VK_S);
             call(contact.screen, "resolveContact");
-            check(!r.isBlocking() && r.getHealth() == r.getMaxHealth(), "Boss contact bypassed guard");
+            check(r.isBlocking() && r.getHealth() == r.getMaxHealth(), "Idle boss contact consumed guard");
             for (int i = 0; i < 40; i++) call(contact.screen, "resolveContact");
             check(r.getHealth() == r.getMaxHealth(), "Same continuous contact damaged after block");
             boss.x += 300; call(contact.screen, "resolveContact"); boss.x = r.x;
             call(contact.screen, "resolveContact");
-            check(r.getHealth() == r.getMaxHealth() - boss.getContactDamage(), "New contact should damage");
+            check(r.isBlocking() && r.getHealth() == r.getMaxHealth(), "Idle boss re-overlap should be harmless");
 
             Fixture enemy = new Fixture(chapter, 0, 1); enemy.press(KeyEvent.VK_S);
             enemy.screen.addEnemy(new TimeSlime(enemy.p().x, enemy.p().y));

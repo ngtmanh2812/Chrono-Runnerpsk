@@ -32,7 +32,7 @@ public class Ronaldo extends Player {
         configureSkill(1, "Step-over Burst", 3.0, 12, 15, 18);
         configureSkill(2, "Siuu Bicycle Kick", 8.0, 24, 12, 30);
         // Fastest: 5f wind-up, 6f active (frames 5-10), 7f recovery.
-        this.basicAttack = new Attack(new AttackData("Quick Kick", PLAYER_BASE_ATTACK_DAMAGE, 48, 46, 5, 6, 7, 180));
+        this.basicAttack = new Attack(new AttackData("Quick Kick", PLAYER_BASE_ATTACK_DAMAGE, 72, 46, 5, 6, 7, 100, 0));
     }
 
     @Override

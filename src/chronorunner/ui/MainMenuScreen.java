@@ -22,7 +22,7 @@ public class MainMenuScreen extends Screen {
 
     private static final String REFERENCE_PATH = "assets/ui/main_menu.png";
     private static final String[] OPTIONS = {
-            "CHƠI", "TIẾP TỤC", "CHỌN NHÂN VẬT", "CÀI ĐẶT", "ĐỘI NGŨ", "THOÁT"
+            "CHƠI", "TIẾP TỤC", "CÀI ĐẶT", "HƯỚNG DẪN CHƠI", "THOÁT"
     };
 
     // Menu layout in the reference image's 1585x992 coordinate space.
@@ -32,7 +32,7 @@ public class MainMenuScreen extends Screen {
     private static final int BUTTON_Y = 394;
     private static final int BUTTON_W = 452;
     private static final int BUTTON_H = 75;
-    private static final int BUTTON_PITCH = 77;
+    private static final int BUTTON_PITCH = 94;
 
     private static final Color NEON = new Color(56, 218, 255);
     private static final Color NEON_DIM = new Color(28, 139, 196);
@@ -85,7 +85,7 @@ public class MainMenuScreen extends Screen {
         switch (index) {
             case 0:
                 startFreshRun();
-                game.setState(GameState.LEVEL_SELECT);
+                game.setState(GameState.CHARACTER_SELECT);
                 break;
             case 1:
                 game.getSession().playerCount = playerCount;
@@ -93,15 +93,10 @@ public class MainMenuScreen extends Screen {
                 game.setState(GameState.LEVEL_SELECT);
                 break;
             case 2:
-                game.getSession().resetForNewRun();
-                game.getSession().playerCount = playerCount;
-                game.setState(GameState.CHARACTER_SELECT);
-                break;
-            case 3:
                 game.setState(GameState.SETTINGS);
                 break;
-            case 4:
-                game.setState(GameState.CREDITS);
+            case 3:
+                game.setState(GameState.HOW_TO_PLAY);
                 break;
             default:
                 game.quit();
@@ -140,6 +135,9 @@ public class MainMenuScreen extends Screen {
         Graphics2D menu = (Graphics2D) g.create();
         menu.translate(offsetX, offsetY);
         menu.scale(scale, scale);
+        // Hide all six labels baked into the reference before drawing five live rows.
+        menu.setColor(BUTTON_FILL);
+        menu.fillRect(BUTTON_X - 8, BUTTON_Y - 8, BUTTON_W + 16, 478);
         for (int i = 0; i < OPTIONS.length; i++) {
             drawButton(menu, i, i == index);
         }
@@ -172,7 +170,7 @@ public class MainMenuScreen extends Screen {
         g.setStroke(new BasicStroke(1f));
 
         drawIcon(g, option, x + 58, y + h / 2, selected ? NEON : NEON_DIM);
-        int labelScale = option == 2 ? 2 : 3;
+        int labelScale = option == 3 ? 2 : 3;
         UiKit.arcadeLeft(g, OPTIONS[option], labelScale, selected ? UiKit.CREAM : NEON_DIM,
                 x + 116, y + 48, 2);
         if (option == 0) {
@@ -205,10 +203,6 @@ public class MainMenuScreen extends Screen {
                 g.drawLine(cx, cy, cx + 8, cy + 5);
                 break;
             case 2:
-                g.fillOval(cx - 8, cy - 17, 16, 16);
-                g.fillRoundRect(cx - 15, cy + 2, 30, 21, 10, 10);
-                break;
-            case 3:
                 g.drawOval(cx - 11, cy - 11, 22, 22);
                 g.fillOval(cx - 4, cy - 4, 8, 8);
                 for (int a = 0; a < 8; a++) {
@@ -220,13 +214,13 @@ public class MainMenuScreen extends Screen {
                     g.drawLine(x1, y1, x2, y2);
                 }
                 break;
-            case 4:
-                g.fillOval(cx - 15, cy - 15, 13, 13);
-                g.fillOval(cx + 2, cy - 15, 13, 13);
-                g.fillOval(cx - 7, cy - 1, 14, 14);
-                g.drawArc(cx - 20, cy - 1, 23, 25, 0, 180);
-                g.drawArc(cx - 3, cy - 1, 23, 25, 0, 180);
-                g.drawArc(cx - 14, cy + 10, 28, 20, 0, 180);
+            case 3:
+                g.drawRect(cx - 19, cy - 16, 38, 32);
+                g.drawLine(cx, cy - 16, cx, cy + 16);
+                g.drawLine(cx - 13, cy - 7, cx - 5, cy - 7);
+                g.drawLine(cx + 5, cy - 7, cx + 13, cy - 7);
+                g.drawLine(cx - 13, cy + 3, cx - 5, cy + 3);
+                g.drawLine(cx + 5, cy + 3, cx + 13, cy + 3);
                 break;
             default:
                 g.drawRect(cx - 14, cy - 20, 20, 40);

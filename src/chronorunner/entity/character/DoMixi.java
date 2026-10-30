@@ -32,7 +32,7 @@ public class DoMixi extends Player {
         configureSkill(1, "Đập Bàn", 3.0, 12, 15, 18);
         configureSkill(2, "Đại Hội Tộc", 8.0, 24, 12, 30);
         // Heaviest: 14f wind-up, 10f active (frames 14-23), 18f recovery.
-        this.basicAttack = new Attack(new AttackData("Mic Strike", PLAYER_BASE_ATTACK_DAMAGE, 72, 66, 14, 10, 18, 380));
+        this.basicAttack = new Attack(new AttackData("Mic Strike", PLAYER_BASE_ATTACK_DAMAGE, 96, 66, 14, 10, 18, 140, 0));
     }
 
     @Override

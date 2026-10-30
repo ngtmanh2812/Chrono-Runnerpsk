@@ -139,6 +139,41 @@ public final class BossCombatFixCheck {
         check(!hit.isAlive()&&near(b.vx,0),"Dash damage/motion continues in recovery");
         System.out.println("Guardian dash: moving hitbox spans full .35s Active; recovery stops motion/damage PASS");
     }
+    static void staggerBudget()throws Exception {
+        for(boolean core:new boolean[]{false,true}) {
+            World w=new World();Boss b=boss(core);w.target(650,538);
+            set(b,"attackTimer",0);set(b,"specialTimer",100);
+            b.takeDamage(new DamageInfo(1,0,0,true));
+            // Finishing the presentation cannot finish the gameplay lock.
+            anim(b).current().update(10);
+            b.update(DT,w);
+            check(action(b)==null&&w.hits.isEmpty()&&w.shots.isEmpty(),"Hurt art completion reopened AI before combat stagger expired");
+
+            w=new World();b=boss(core);w.target(650,538);
+            set(b,"attackTimer",0);set(b,"specialTimer",100);
+            for(int tick=0;tick<120&&!b.isStaggerResistant();tick++) {
+                if(tick%10==0) b.takeDamage(new DamageInfo(1,0,0,true)
+                        .withMeleeChain(new DamageInfo.MeleeChain(),1));
+                b.update(DT,w);
+            }
+            check(b.isStaggerResistant(),"Continuous hits never exhausted shared boss stagger budget");
+            Attack response=action(b);
+            check(response!=null&&response.isStartup(),"Boss did not regain an actionable response after stagger cap");
+            int hp=b.getHealth();double vx=b.vx,vy=b.vy;boolean grounded=b.grounded;
+            b.takeDamage(new DamageInfo(1,-500,-620,true)
+                    .withMeleeChain(new DamageInfo.MeleeChain(),1));
+            check(b.getHealth()==hp-1&&action(b)==response,"Resistance blocked damage or cancelled committed response");
+            check(near(b.vx,vx)&&near(b.vy,vy)&&b.grounded==grounded,"Resistance still accepted forced launch/knockback");
+            check(!"hurt".equals(anim(b).currentName()),"Resisted hit promised an interrupt through Hurt animation");
+            for(int tick=0;tick<20;tick++) {
+                if(tick%5==0)b.takeDamage(new DamageInfo(1,0,0,true)
+                        .withMeleeChain(new DamageInfo.MeleeChain(),1));
+                b.update(DT,w);
+            }
+            check(w.hits.size()==1,"Fresh melee pressure permanently suppressed boss's counterattack");
+        }
+        System.out.println("Combat-owned Hurt timing, shared stagger budget, damage during resistance and real counterattack under pressure PASS");
+    }
     static void coreFlight()throws Exception {
         World w=new World();TheVoidCore b=new TheVoidCore(500,100);w.target(1200,538);
         set(b,"attackTimer",100);set(b,"specialTimer",100);
@@ -221,14 +256,19 @@ public final class BossCombatFixCheck {
         flight.capture("chapter2-hover");
         Fixture charge=new Fixture(1,1);Boss guardian=charge.level.boss();Player target=charge.screen.players().get(0);
         guardian.x=850;target.x=650;target.y=charge.level.groundY()-target.height;target.grounded=true;
-        guardian.specialAttack(charge.screen);for(int i=0;i<4;i++)charge.tick();charge.capture("guardian-dash-windup");
-        for(int i=0;i<8;i++)charge.tick();charge.capture("guardian-dash-active");
+        guardian.specialAttack(charge.screen);charge.tick();
+        check(action(guardian)!=null&&action(guardian).isStartup(),"Dash screenshot missed wind-up");
+        charge.capture("guardian-dash-windup");
+        int advance=0;
+        while(action(guardian)!=null&&action(guardian).isStartup()&&advance++<180)charge.tick();
+        check(action(guardian)!=null&&action(guardian).isActive(),"Dash screenshot did not reach Active");
+        charge.capture("guardian-dash-active");
         System.out.println("Real PlayScreen: locked outcomes, no post-win damage/casts/minions, corpse physics, ties, 1P/2P endings and pause PASS");
     }
     public static void main(String[] args)throws Exception {
-        Files.createDirectories(OUTPUT);basicWindows();rangedHeightAndTargets();hurtAndDeath();dash();coreFlight();endingsAndPause();
+        Files.createDirectories(OUTPUT);basicWindows();rangedHeightAndTargets();hurtAndDeath();dash();staggerBudget();coreFlight();endingsAndPause();
         check(!Boolean.getBoolean("chronorunner.debugCollision"),"Debug left enabled");
-        String result="PASS: "+checks+" boss regression checks; assets/HP/player attack timings unchanged; saves intercepted; debug OFF.\n";
+        String result="PASS: "+checks+" boss regression checks; assets/HP preserved; saves intercepted; debug OFF.\n";
         Files.writeString(OUTPUT.resolve("results.txt"),result);System.out.print(result);
     }
 }

@@ -62,10 +62,13 @@ public abstract class Player extends Character {
     private final double[] skillCooldowns = new double[3];
     private final double[] skillTimers = new double[3];
     private final List<Hitbox> skillHitboxes = new ArrayList<>();
-    private final Attack heavyAttack = new Attack(new AttackData("Heavy", 40, 84, 68, 14, 8, 18, 380));
-    private final Attack launcherAttack = new Attack(new AttackData("Launcher", 35, 60, 96, 12, 7, 18, 180, -620));
+    private final Attack heavyAttack = new Attack(new AttackData("Heavy", 40, 112, 76, 14, 8, 18, 120, 0));
+    private final Attack launcherAttack = new Attack(new AttackData("Launcher", 35, 104, 108, 12, 7, 18, 180, -620));
     private static final double CHAIN_WINDOW_SECONDS = .60;
-    private static final double ATTACK_BUFFER_SECONDS = 8.0 / 60;
+    private static final double ATTACK_BUFFER_SECONDS = 12.0 / 60;
+    private static final double LINK_RECOVERY_SECONDS = 2.0 / 60;
+    private static final int[] MELEE_ENERGY_GAIN = {5, 7, 10};
+    private boolean meleeHitConfirmed;
     private int meleeStep;
     private double chainWindow, bufferedAttack;
     private DamageInfo.MeleeChain meleeChain;
@@ -179,7 +182,7 @@ public abstract class Player extends Character {
         for (int slot = 0; slot < 3; slot++) skillTimers[slot] = Math.max(0, skillTimers[slot] - dt);
         skillFlash = Math.max(0, skillFlash - dt);
 
-        boolean controllable = combatActive && stun <= 0;
+        boolean controllable = combatActive && stun <= 0 && hurtAnimTimer <= 0;
         int dir = controllable ? (input.isDown(kRight) ? 1 : 0) - (input.isDown(kLeft) ? 1 : 0) : 0;
         if (dashTimer > 0) {
             dashTimer = Math.max(0, dashTimer - dt);
@@ -206,10 +209,10 @@ public abstract class Player extends Character {
             }
             if (!defense.isBlocking() && dashTimer <= 0) {
                 if (input.wasPressed(kAttack)) {
-                    if (canStartAction()) performAttack(world);
+                    if (canStartAction() || canLinkMelee()) performAttack(world);
                     else if (meleeStep > 0 && meleeStep < 3 && isMeleeAction(currentAction()))
                         bufferedAttack = ATTACK_BUFFER_SECONDS;
-                } else if (canStartAction() && bufferedAttack > 0) performAttack(world);
+                } else if (bufferedAttack > 0 && (canStartAction() || canLinkMelee())) performAttack(world);
             }
             for (int slot = 0; slot < 3; slot++) {
                 if (canStartAction() && input.wasPressed(skillKeys[slot])) trySkill(slot, world);
@@ -238,6 +241,23 @@ public abstract class Player extends Character {
         return action != null && (action == basicAttack || action == heavyAttack || action == launcherAttack);
     }
 
+    private boolean canLinkMelee() {
+        Attack action = currentAction();
+        if (!meleeHitConfirmed || meleeStep < 1 || meleeStep >= 3 || !isMeleeAction(action)
+                || action.phase() != Attack.Phase.RECOVERY) return false;
+        AttackData data = action.getData();
+        double done = action.progress() * data.totalSeconds();
+        return done + 1e-9 >= data.startupSeconds() + data.activeSeconds() + LINK_RECOVERY_SECONDS;
+    }
+
+    /** Called only after this player's tagged melee actually removes target HP. */
+    public final void confirmMeleeHit(DamageInfo info) {
+        if (isDead() || info.meleeChain == null || info.meleeChain != meleeChain
+                || info.meleeStep != meleeStep || meleeHitConfirmed || meleeStep < 1 || meleeStep > 3) return;
+        meleeHitConfirmed = true;
+        energy = Math.min(MAX_ENERGY, energy + MELEE_ENERGY_GAIN[meleeStep - 1]);
+    }
+
     private void updateMeleeChain(double dt, Attack previous) {
         bufferedAttack = Math.max(0, bufferedAttack - dt);
         if (meleeStep == 0) return;
@@ -251,7 +271,7 @@ public abstract class Player extends Character {
     }
 
     private void clearMeleeChain() {
-        meleeStep = 0; chainWindow = 0; bufferedAttack = 0; meleeChain = null;
+        meleeStep = 0; chainWindow = 0; bufferedAttack = 0; meleeChain = null; meleeHitConfirmed = false;
     }
 
     /** Discard buffered combat input on a screen transition; committed poses stay frozen. */
@@ -425,6 +445,11 @@ public abstract class Player extends Character {
 
     protected final void performAttack(CombatWorld world) {
         if (defense.isBlocking()) return;
+        Attack previous = currentAction();
+        if (previous != null) {
+            if (!canLinkMelee()) return;
+            previous.reset();
+        }
         stopCharging();
         if (meleeStep == 0) meleeChain = new DamageInfo.MeleeChain();
         meleeStep++;
@@ -432,6 +457,7 @@ public abstract class Player extends Character {
         actionClip = meleeStep == 1 ? (grounded ? "light_1" : "air_attack")
                 : meleeStep == 2 ? "heavy" : "launcher";
         bufferedAttack = 0; chainWindow = 0;
+        meleeHitConfirmed = false;
         attack.start(this, facing, true, world, meleeChain, meleeStep);
     }
 

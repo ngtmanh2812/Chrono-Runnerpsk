@@ -12,7 +12,7 @@
 
 U/I/O lần lượt gây **40/45/120 damage**, tiêu hao **20/30/100 EN**. Năng lượng tối đa/khởi đầu 100; giữ phím nạp khi đứng yên trên mặt đất sẽ hồi 18 EN/giây. Bộ chiêu có nguồn sát thương và hiệu ứng riêng: orb/kiếm thời gian, bóng/rê bóng, sóng mic/chấn động. Độ Mixi không triệu hồi enemy. Các vòng sóng lớn được game vẽ riêng, không nhúng nền hoặc che tư thế trong sprite.
 
-Chuỗi J gây **30 / 40 / 35** damage, giữ nguyên frame và timing animation. Mỗi bước cần một lần nhấn; có buffer 8 frame và cửa sổ nối 0,60 giây sau đòn. Các clip dùng là Light 1 (hoặc Air Attack), Heavy, Launcher. Light 2/3 vẫn có asset để xem, chưa dùng trong route này. Không có hit-confirm cancel/juggle nâng cao.
+Chuỗi J gây **30 / 40 / 35** damage và trúng thực nhận **+5 / +7 / +10 EN**. Giữ bộ frame/asset. Mỗi bước cần một lần nhấn; buffer 12 frame, cửa sổ nối 0,60 giây sau đòn. Đã có hit-confirm nối sớm sau 2 frame Recovery; hụt phải hết Recovery. Các clip dùng là Light 1 (hoặc Air Attack), Heavy, Launcher. Light 2/3 và juggle nâng cao chưa dùng. Căn hurtbox thân boss và hitbox melee bám owner được mô tả ở [melee-fairness.md](../../../docs/melee-fairness.md).
 
 ## Điều khiển đã áp dụng
 
@@ -55,7 +55,7 @@ Asset v2 và hai boss không bị ghi đè. `Art` chọn v3 trước v2; metadat
 - `metadata/validation.txt`, `install-verification.json`, `preview-verification.json`: alpha, bounds, uniqueness, manifest và SHA-256.
 - `out/identity-v3-check/`: ảnh renderer game thật, HUD hai người và chín chiêu.
 
-Xem [báo cáo runtime](../../../docs/identity-runtime-v3.md) cho energy, cooldown, timing, ngắt đòn và danh sách kiểm thử. Build đạt; Identity `--require-v3` 703, MeleeChainControlsCheck 692, Animation 590, Player 321, Boss 571, Overlay 372, Chapter 1 756, Chapter 2 11.573 kiểm tra. Các phép kiểm tra dùng input/physics/renderer production ở chế độ headless, không thay cho playtest cân bằng với người chơi.
+Xem [báo cáo runtime](../../../docs/identity-runtime-v3.md) cho energy, cooldown, timing, ngắt đòn và danh sách kiểm thử. Build đạt; Identity703, MeleeChainControls694, MeleeFairness391, Animation590, Player321, Boss937, Overlay372, ChapterOne756, ChapterTwo11573, MenuFlow30 kiểm tra. Có tình huống boss chạy AI thật ở suite melee; kiểm thử headless không thay cho cảm nhận cân bằng khi chơi trực tiếp.
 
 ## Nguồn và tạo lại
 

@@ -9,8 +9,8 @@ import chronorunner.world.CombatWorld;
 public class TimeGuardian extends Boss {
 
     // Gameplay windows stay independent of sprite frame counts and asset FPS.
-    private static final double ATTACK_WINDUP = .10, ATTACK_RECOVERY = .10;
-    private static final double SPECIAL_WINDUP = .15, SPECIAL_RECOVERY = .15;
+    private static final double ATTACK_WINDUP = .18, ATTACK_RECOVERY = .22;
+    private static final double SPECIAL_WINDUP = .28, SPECIAL_RECOVERY = .30;
 
     public TimeGuardian(double x, double y) {
         super("The Time Guardian", x, y, 96, 124, 700, 12, 150,

@@ -41,7 +41,8 @@ public final class MeleeChainControlsCheck {
                     }
                     if (step < 2 && !queued && action.progress() >= 1 - 3.0 / action.getData().totalFrames()) {
                         f.press(key); queued = true;
-                        check(clip(p).equals(clips[step]), "Buffered J cancelled recovery/changed animation early");
+                        check(clip(p).equals(clips[step]) || clip(p).equals(clips[step + 1]),
+                                "Buffered J selected an unrelated action");
                     } else f.tick();
                 }
                 hp -= damage[step];
@@ -99,20 +100,20 @@ public final class MeleeChainControlsCheck {
             DamageInfo first = new DamageInfo(30, 0, 0, true).withMeleeChain(chain, 1);
             int hp = boss.getHealth(); boss.takeDamage(first); hp -= 30;
             boss.takeDamage(first);
-            boss.takeDamage(new DamageInfo(40, 0, 0, true).withMeleeChain(foreign, 2));
-            boss.takeDamage(new DamageInfo(35, 0, 0, true).withMeleeChain(chain, 3));
             boss.takeDamage(new DamageInfo(40, 0, 0, true));
-            check(boss.getHealth() == hp, "Duplicate, unrelated source, skipped stage or skill bypassed iframe");
+            check(boss.getHealth() == hp, "Duplicate step or untagged skill bypassed iframe");
+            boss.takeDamage(new DamageInfo(30, 0, 0, true).withMeleeChain(foreign, 1)); hp -= 30;
+            check(boss.getHealth() == hp, "Other player's distinct melee was swallowed by blanket iframe");
             DamageInfo second = new DamageInfo(40, 0, 0, true).withMeleeChain(chain, 2);
             boss.takeDamage(second); hp -= 40; boss.takeDamage(second);
             check(boss.getHealth() == hp, "Second distinct move must hit exactly once");
             boss.takeDamage(new DamageInfo(35, 0, 0, true).withMeleeChain(chain, 3)); hp -= 35;
             boss.takeDamage(new DamageInfo(30, 0, 0, true).withMeleeChain(foreign, 1));
-            check(boss.getHealth() == hp, "Finisher/new chain iframe policy broken");
+            check(boss.getHealth() == hp, "Finisher/duplicate foreign move policy broken");
             Player p = f.p(0); int playerHP = p.getHealth(); p.takeDamage(first); p.takeDamage(second);
             check(p.getHealth() == playerHP - 30, "Melee tokens bypassed player invulnerability");
         }
-        System.out.println("Boss iframe exception is per chain/target/ordered step; duplicates, skipped steps, other players/skills and player iframe protected PASS");
+        System.out.println("Distinct melee across both players connects; duplicate/backward steps rejected; skill/player iframe preserved PASS");
     }
     static void pauseAndEnd() throws Exception {
         var f = fixture(1, 0, 1); Player p = f.p(0); f.press(KeyEvent.VK_J);

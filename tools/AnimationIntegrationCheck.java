@@ -154,7 +154,7 @@ public final class AnimationIntegrationCheck {
         f.game.setState(GameState.PAUSED);for(int i=0;i<120;i++)f.game.update(DT);
         check(a.progress()==progress&&f.player.isBlocking(),"Pause advanced animation");f.snapshot("pause");
         f.game.setState(GameState.CHARACTER_SELECT);f.snapshot("character-select");
-        f.game.setState(GameState.CREDITS);f.snapshot("credits");
+        f.game.setState(GameState.HOW_TO_PLAY);f.snapshot("how-to-play");
         f.game.setState(GameState.MAIN_MENU);f.snapshot("main-menu");
     }
     public static void main(String[] args)throws Exception {

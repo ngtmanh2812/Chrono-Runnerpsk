@@ -2,6 +2,8 @@ package chronorunner.entity.boss;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 import chronorunner.animation.Animation;
 import chronorunner.combat.Attack;
@@ -15,6 +17,7 @@ import chronorunner.entity.Projectile;
 import chronorunner.entity.enemy.Enemy;
 import chronorunner.gfx.Art;
 import chronorunner.gfx.PixelArt;
+import chronorunner.gfx.PixelFont;
 import chronorunner.gfx.PixelSprite;
 import chronorunner.gfx.SpriteSet;
 import chronorunner.util.Rect;
@@ -39,8 +42,12 @@ public abstract class Boss extends Character {
     private Attack action;
     private String actionAnimation;
     private Hitbox actionHitbox;
-    private DamageInfo.MeleeChain lastMeleeChain;
-    private int lastMeleeStep;
+    private final Map<DamageInfo.MeleeChain, Integer> acceptedMeleeSteps = new WeakHashMap<>();
+    private static final double MAX_CONTINUOUS_STAGGER = .90;
+    private static final double STAGGER_RESISTANCE_SECONDS = .45;
+    private double staggerTimer;
+    private double continuousStagger;
+    private double staggerResistance;
 
     protected Boss(String name, double x, double y, double w, double h,
                    int maxHealth, int contactDamage, double baseSpeed,
@@ -72,22 +79,61 @@ public abstract class Boss extends Character {
     }
 
     @Override
+    protected Rect damageBounds() {
+        return BossHurtGeometry.bounds(name, x, y, width, height, facing);
+    }
+
+    @Override
+    protected void updateTimers(double dt) {
+        double lockedTime = Math.min(dt, Math.max(stun, staggerTimer));
+        super.updateTimers(dt);
+        staggerTimer = Math.max(0, staggerTimer - dt);
+        staggerResistance = Math.max(0, staggerResistance - dt);
+        if (lockedTime > 0) {
+            continuousStagger += lockedTime;
+            if (continuousStagger >= MAX_CONTINUOUS_STAGGER - 1e-9) {
+                // Return control after one bounded opening, including co-op hits.
+                stun = 0; staggerTimer = 0; continuousStagger = 0;
+                staggerResistance = STAGGER_RESISTANCE_SECONDS;
+            }
+        } else if (!isStaggered() && staggerResistance <= 0) continuousStagger = 0;
+    }
+
+    @Override
     public boolean isInvulnerableTo(DamageInfo info) {
-        // Only the next distinct move of the SAME chain may pass hit i-frames.
-        // Other players, skills, repeated hitboxes and new chains keep the old gate.
-        boolean followup = info != null && info.fromPlayer && info.meleeChain != null
-                && info.meleeChain == lastMeleeChain && info.meleeStep == lastMeleeStep + 1
-                && info.meleeStep >= 2 && info.meleeStep <= 3;
-        return super.isInvulnerableTo(info) && !followup;
+        if (isTaggedMelee(info)) {
+            // Distinct committed J moves can connect, including another player
+            // or the next chain; replaying an accepted step never deals damage.
+            return acceptedMeleeSteps.getOrDefault(info.meleeChain, 0) >= info.meleeStep;
+        }
+        return super.isInvulnerableTo(info);
+    }
+
+    private boolean isTaggedMelee(DamageInfo info) {
+        return info != null && info.fromPlayer && info.meleeChain != null
+                && info.meleeStep >= 1 && info.meleeStep <= 3;
     }
 
     @Override
     public void takeDamage(DamageInfo info) {
         if (info == null || info.amount <= 0) return;
         int before = health;
+        double previousVX = vx, previousVY = vy;
+        boolean wasGrounded = grounded;
         super.takeDamage(info);
         if (health < before) {
-            lastMeleeChain = info.meleeChain; lastMeleeStep = info.meleeStep;
+            if (isTaggedMelee(info)) acceptedMeleeSteps.put(info.meleeChain, info.meleeStep);
+            if (!isDead() && isStaggerResistant()) {
+                // Damage still lands during resistance; the next attack cannot
+                // refresh the boss's control lock or cancel a committed response.
+                vx = previousVX; vy = previousVY; grounded = wasGrounded;
+                stun = 0;
+                updateAnimationState();
+                return;
+            }
+            double duration = info.meleeStep == 3 ? .42 : info.meleeStep == 2 ? .36 : .30;
+            staggerTimer = Math.max(staggerTimer,
+                    Math.min(duration, Math.max(0, MAX_CONTINUOUS_STAGGER - continuousStagger)));
             double hitVX = vx, hitVY = vy;
             cancelAction();
             vx = hitVX; vy = hitVY;
@@ -143,9 +189,10 @@ public abstract class Boss extends Character {
     protected boolean isHovering() { return false; }
 
     protected final boolean isStaggered() {
-        return stun > 0 || hurtFlash > 0 || ("hurt".equals(anim.currentName())
-                && anim.current() != null && !anim.current().finished());
+        return stun > 0 || staggerTimer > 0;
     }
+
+    public final boolean isStaggerResistant() { return staggerResistance > 0; }
 
     protected final boolean canBeginAction(CombatWorld world) {
         return !isDead() && !isStaggered() && (action == null || action.isReady()) && world.isCombatActive();
@@ -185,12 +232,19 @@ public abstract class Boss extends Character {
 
     public final void endCombat() {
         cancelAction();
+        staggerTimer = 0; continuousStagger = 0; staggerResistance = 0; stun = 0;
         if (!isDead()) anim.play("idle");
     }
 
     public final boolean isContactDamageEnabled() {
-        return !isDead() && !isStaggered() && (action == null || action.isActive());
+        return !isDead() && !isStaggered() && action != null && action.isActive() && isBodyContactAction();
     }
+
+    /** Most attacks own a dedicated melee hitbox instead of damaging with the body. */
+    protected boolean isBodyContactAction() { return false; }
+
+    /** Stable only for one dangerous contact action; PlayScreen deduplicates per player. */
+    public final Object getContactActionId() { return isContactDamageEnabled() ? action : null; }
 
     @Override
     protected void updateDeath(double dt, CombatWorld world) {
@@ -367,8 +421,8 @@ public abstract class Boss extends Character {
         String animation = anim.currentName();
         SpriteSet sprites = Art.bossAnimation(name, animation);
         PixelSprite art = sprites.frame(current == null ? 0 : current.frame());
-        // Give bosses more screen presence while leaving their combat hitboxes
-        // and world coordinates untouched.
+        // Visual size is independent of the terrain body. damageBounds() aligns
+        // the vulnerable torso separately without inflating world collision.
         int scale = art.scaleFor((int) width) + 1;
         if (sprites.layout() != null) {
             sprites.layout().draw(art, g, cx, feetY, cy, facing < 0, mode, 1f);
@@ -378,6 +432,16 @@ public abstract class Boss extends Character {
         } else {
             art.drawAnchored(g, cx, feetY, scale, facing < 0, mode, 1f);
         }
-
+        if (!isDead() && isStaggerResistant()) {
+            String cue = "KHÁNG CHOÁNG";
+            int cueScale = 2;
+            int cueX = cx - PixelFont.width(cue, cueScale, 0) / 2;
+            // Keep the short cue above the enlarged sprite/halo, not over its core.
+            int cueY = Math.max(32, (int)Math.min(damageBounds().y - 16, y - 80));
+            PixelFont.drawBaseline(g, cue, cueX + 1, cueY + 1, cueScale,
+                    new Color(16, 10, 2, 220), 0);
+            PixelFont.drawBaseline(g, cue, cueX, cueY, cueScale,
+                    new Color(255, 196, 83), 0);
+        }
     }
 }

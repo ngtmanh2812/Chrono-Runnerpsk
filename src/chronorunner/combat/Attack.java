@@ -159,13 +159,17 @@ public class Attack {
      * The damage region of this attack, or null when nothing should be drawn.
      *
      * <p>During startup this tracks the attacker so the wind-up telegraph stays
-     * attached to the body. During the active window it returns the frozen rect
-     * the hitbox was built from, so the swing graphic and the damage agree
-     * exactly. Recovery draws nothing.
+     * attached to the body. Player melee follows the owner's motion throughout
+     * Active while retaining the facing captured at commit. Synchronising the
+     * owned hitbox here keeps the swing graphic and damage at the same position
+     * even when rendering happens after the owner has moved. Recovery draws nothing.
      */
     public Rect region() {
         if (phase == Phase.STARTUP) return computeRect();
-        if (phase == Phase.ACTIVE) return activeRect;
+        if (phase == Phase.ACTIVE) {
+            if (activeHitbox != null) activeHitbox.syncOwner();
+            return activeRect;
+        }
         return null;
     }
 
@@ -233,7 +237,7 @@ public class Attack {
         }
         DamageInfo info = new DamageInfo(data.damage, data.knockback * facing, data.knockbackY, friendly)
                 .withMeleeChain(meleeChain, meleeStep);
-        activeHitbox = new Hitbox(activeRect, info, data.activeSeconds(), friendly, attacker);
+        activeHitbox = new Hitbox(activeRect, info, data.activeSeconds(), friendly, attacker, friendly);
         world.addHitbox(activeHitbox);
     }
 }

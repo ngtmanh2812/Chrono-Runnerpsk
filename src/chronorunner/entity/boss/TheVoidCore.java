@@ -11,8 +11,8 @@ import chronorunner.world.CombatWorld;
 /** Flying chapter boss: existing volleys, radial bursts and a telegraphed dive. */
 public class TheVoidCore extends Boss {
 
-    private static final double ATTACK_WINDUP = .05, ATTACK_RECOVERY = .05;
-    private static final double SPECIAL_WINDUP = .06, SPECIAL_RECOVERY = .06;
+    private static final double ATTACK_WINDUP = .16, ATTACK_RECOVERY = .20;
+    private static final double SPECIAL_WINDUP = .30, SPECIAL_RECOVERY = .30;
 
     private int cycle;
     private boolean diving;
@@ -118,6 +118,9 @@ public class TheVoidCore extends Boss {
 
     @Override
     protected boolean isHovering() { return !diving && !isStaggered(); }
+
+    @Override
+    protected boolean isBodyContactAction() { return diving; }
 
     @Override
     protected void stopAttackMotion() {

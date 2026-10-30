@@ -5,6 +5,8 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 import chronorunner.entity.GameObject;
+import chronorunner.entity.Character;
+import chronorunner.util.Rect;
 import chronorunner.entity.Player;
 import chronorunner.obstacle.Platform;
 import chronorunner.world.Level;
@@ -23,9 +25,18 @@ public final class CollisionDebug {
         debug.setColor(Color.YELLOW);
         for (Player p : players) outline(debug, p);
         if (level.boss() != null) outline(debug, level.boss());
+        // Terrain/push bodies stay yellow; actual damage receivers are orange.
+        debug.setColor(Color.ORANGE);
+        for (Player p : players) hurtbox(debug, p);
+        if (level.boss() != null) hurtbox(debug, level.boss());
         debug.setColor(Color.MAGENTA);
         debug.draw(new Rectangle2D.Double(0, 0, level.width(), level.height()));
         debug.dispose();
+    }
+
+    private static void hurtbox(Graphics2D g, Character character) {
+        Rect rect = character.hurtbox().rect();
+        g.draw(new Rectangle2D.Double(rect.x, rect.y, rect.w, rect.h));
     }
 
     private static void outline(Graphics2D g, GameObject object) {

@@ -1,6 +1,6 @@
 # Runtime kỹ năng riêng — v3
 
-Đã triển khai ba kỹ năng riêng cho từng hero, năng lượng và animation bank v3. Cập nhật 30/10/2026: **W nhảy/nhảy đôi, K dash; ba lần nhấn J nối đòn thường → Heavy → Launcher**. P2 dùng Numpad 1 cho cùng chuỗi; các phím nhảy/dash của P2 giữ nguyên. Asset, frame, pivot, timing startup/active/recovery, animation boss và AI giữ nguyên.
+Đã triển khai ba kỹ năng riêng cho từng hero, năng lượng và animation bank v3. Cập nhật 30/10/2026: **W nhảy/nhảy đôi, K dash; ba lần nhấn J nối đòn thường → Heavy → Launcher**. P2 dùng Numpad 1 cho cùng chuỗi; các phím nhảy/dash của P2 giữ nguyên. Đợt sửa melee tiếp theo căn hurtbox thân boss, đồng bộ hitbox di chuyển, cho nối sớm khi trúng và tích nội năng. Sprite/frame/pivot giữ nguyên; cửa sổ combat boss đã được cân lại. Chi tiết ở [melee-fairness.md](melee-fairness.md).
 
 | Hành động | P1 | P2 |
 |---|---|---|
@@ -17,9 +17,11 @@ Guard vẫn dùng được cùng dash và kỹ năng như trước, hấp thụ 
 
 Các phím ở menu/chọn nhân vật giữ nguyên. Numpad Enter được phân biệt bằng KeyEvent location để chỉ phím đó nạp P2; Enter chính không nạp P2. Trong menu, cả hai Enter vẫn xác nhận như trước. H và Shift không còn là đòn Heavy/dash trong trận; Space không là alias nhảy. Damage chuỗi là **30 / 40 / 35**, tổng **105** nếu cả ba trúng. Heavy giữ S/A/R 14/8/18; Launcher giữ 12/7/18 và lực đẩy lên -620; Light giữ cấu hình riêng của mỗi hero. Không đổi HP, tốc độ, dash hoặc iframe của player.
 
-Mỗi đòn cần một cạnh nhấn riêng; giữ J hoặc auto-repeat bàn phím không tự nối. Có thể đệm một lần nhấn trong 8 frame (60 Hz) cuối đòn để bắt đầu đòn kế sau khi Recovery kết thúc; không cắt ngắn animation. Sau khi một đòn kết thúc, có 0,60 giây để nhấn tiếp. Quá thời gian, hoàn thành Launcher, bị Hurt/chết, dùng dash/block/skill/nạp hoặc kết thúc trận sẽ đặt lại chuỗi. Pause giữ nguyên hành động đang commit nhưng xóa lệnh đệm và bước nối; resume không tự phát Heavy. Đòn đầu trên không vẫn dùng `air_attack`; Heavy/Launcher dùng đúng các clip cũ. `light_2`/`light_3`, hit-confirm cancel, air juggle và guard counter nâng cao vẫn chưa triển khai.
+Mỗi đòn cần một cạnh nhấn riêng; giữ J hoặc auto-repeat bàn phím không tự nối. Buffer có hạn 12 frame (0,20 giây). Nếu đòn trước đã gây mất HP thật, cho nối từ sau 2 frame Recovery; không bỏ Startup/Active. Đánh hụt phải hết Recovery. Sau khi một đòn kết thúc, có 0,60 giây để nhấn tiếp. Quá thời gian, hoàn thành Launcher, bị Hurt/chết, dùng dash/block/skill/nạp hoặc kết thúc trận sẽ đặt lại chuỗi. Pause giữ nguyên hành động đang commit nhưng xóa lệnh đệm và bước nối. Đòn đầu trên không vẫn dùng `air_attack`; Heavy/Launcher dùng các clip cũ. `light_2`/`light_3`, air juggle và guard counter nâng cao chưa triển khai.
 
-Boss vẫn có iframe sau hit 0,55 giây với ngoại lệ hẹp: bước kế tiếp của **cùng một chuỗi melee đã trúng chính boss đó** được nhận damage. `DamageInfo.MeleeChain` dùng identity riêng cho mỗi chuỗi/player; Boss ghi bước cuối thực sự mất HP. Hitbox lặp, bước nhảy cóc, chuỗi khác, P2/skill không thuộc chuỗi vẫn bị chặn như cũ. Mỗi hitbox tiếp tục nhớ mục tiêu đã trúng. Player không nhận ngoại lệ này. Điều chỉnh này tránh nuốt Heavy khi nối từ đòn thường nhanh mà không bỏ toàn bộ iframe boss hoặc đổi AI.
+Boss nhận các melee có token riêng độc lập iframe chung: đòn mới, chuỗi mới và melee P2 không bị nuốt bởi hit P1 trước đó. `WeakHashMap<MeleeChain,Integer>` ghi bước đã mất HP trên từng boss, từ chối lặp/bước lùi kể cả khi iframe đã hết. Một bước có thể trúng sau khi bước trước đánh hụt. Hitbox chỉ đánh dấu khi kết quả là HIT hoặc BLOCK; IMMUNE không xác nhận combo. Skill/projectile không được mở rộng ngoại lệ này; iframe player/dash giữ nguyên. Boss có giới hạn choáng và kháng choáng để chống khóa AI vô hạn.
+
+Melee trúng thực nhận **+5 / +7 / +10 EN** theo thường/Heavy/Launcher, tối đa **22 EN mỗi chuỗi** và giới hạn 100. Cộng cho đúng chủ đòn, một lần trên mỗi bước; hụt, trùng, miễn damage và U/I/O không tạo nội năng. Giữ L/Numpad Enter vẫn nạp 18 EN/giây như cũ.
 
 | Hero | U — 40 damage / 20 EN | I — 45 damage / 30 EN | O — 120 damage / 100 EN |
 |---|---|---|---|
@@ -48,6 +50,6 @@ java '-Djava.awt.headless=true' -cp out AnimationIntegrationCheck
 
 `IdentitySkillsCheck` dùng input thật, Player thật và collision PlayScreen cho 3 hero × 2 slot × 2 chương × U/I/O; kiểm tra năng lượng, damage một lần, cooldown, nạp, ngắt, 1P/2P pause/restart/chết/kết thúc và render HUD/chọn nhân vật. Các fixture chặn `saveProgress`, không ghi save. Ảnh và kết quả được xuất vào `out/identity-v3-check/`.
 
-Kiểm tra cập nhật W/K/J: build OK; IdentitySkillsCheck `--require-v3` 703, MeleeChainControlsCheck 692, AnimationIntegrationCheck 590, PlayerDefenseCheck 321, BossCombatFixCheck 571. Kiểm tra map/overlay: ChapterOneMapCheck 756, ChapterTwoMapCheck 11.573, OverlayScreensCheck 372. Tổng 15.578 assertion qua trong harness headless, input và collision production; fixture chặn ghi save. Chain fixture cố định vị trí boss để đo sát thương từng bước, regression boss kiểm tra AI riêng. Runtime bank proof kiểm tra version 3, pivot, đúng số frame và đối chiếu PNG render của mọi clip; ảnh HUD/ba đòn ở `out/identity-v3-check/j-chain-*.png`.
+Kiểm tra mới nhất sau sửa melee: IdentitySkills703, MeleeChainControls694, PlayerDefense321, BossCombatFix937, Animation590, ChapterOne756, ChapterTwo11573, Overlay372, MenuFlow30 và MeleeFairness391 đều qua. Tổng16367 assertion. Suite mới có tình huống áp sát/nối đòn với boss chạy AI thật, bên cạnh fixture cô lập đo damage. Không ghi save; debug OFF. Xem [báo cáo melee](melee-fairness.md) cho giới hạn kiểm thử và ảnh debug/kháng choáng. Runtime bank proof vẫn kiểm tra version3, pivot và PNG của mọi clip.
 
 Sau khi build, khởi động lại game qua `run.bat` để JVM mới tải bank v3; Art cache asset cho suốt phiên chạy.

@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.Set;
 
 import chronorunner.combat.DamageInfo;
+import chronorunner.combat.CombatHitResult;
 import chronorunner.combat.Hitbox;
 import chronorunner.core.Camera;
 import chronorunner.core.Game;
@@ -60,6 +61,8 @@ public class PlayScreen extends Screen implements CombatWorld {
     private final List<FloatingText> texts = new ArrayList<>();
     /** A blocked body contact remains consumed until that pair separates. */
     private final Map<Character, Set<Player>> blockedContacts = new IdentityHashMap<>();
+    private Object bossContactAction;
+    private final Set<Player> bossContactHits = new HashSet<>();
 
     private double endTimer = -1;
     private boolean victory;
@@ -82,6 +85,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         particles.clear();
         texts.clear();
         blockedContacts.clear();
+        bossContactAction = null; bossContactHits.clear();
         endTimer = -1;
         victory = false;
         defeat = false;
@@ -140,6 +144,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         hitboxes.removeIf(h -> !h.isAlive());
 
         resolveContact();
+        separateFighters();
 
         updateEffects(dt);
 
@@ -175,6 +180,7 @@ public class PlayScreen extends Screen implements CombatWorld {
         projectiles.clear();
         enemies.clear();
         blockedContacts.clear();
+        bossContactAction = null; bossContactHits.clear();
         for (Player player : players) player.endCombat();
         if (level.boss() != null) level.boss().endCombat();
     }
@@ -251,26 +257,31 @@ public class PlayScreen extends Screen implements CombatWorld {
             if (h.friendly) {
                 if (boss != null && !boss.isDead() && !h.hasHit(boss)
                         && h.rect.intersects(boss.hurtbox().rect())) {
-                    applyDamage(boss, h.damage);
-                    h.markHit(boss);
+                    resolveMeleeHit(h, boss);
                 }
                 for (Enemy e : enemies) {
                     if (e.isDead() || h.hasHit(e)) continue;
                     if (h.rect.intersects(e.hurtbox().rect())) {
-                        applyDamage(e, h.damage);
-                        h.markHit(e);
+                        resolveMeleeHit(h, e);
                     }
                 }
             } else {
                 for (Player p : players) {
                     if (p.isDead() || h.hasHit(p)) continue;
                     if (h.rect.intersects(p.hurtbox().rect())) {
-                        applyDamage(p, h.damage);
-                        h.markHit(p);
+                        resolveMeleeHit(h, p);
                     }
                 }
             }
         }
+    }
+
+    private void resolveMeleeHit(Hitbox hitbox, Character target) {
+        CombatHitResult result = applyDamage(target, hitbox.damage);
+        if (result.landed() && hitbox.friendly && hitbox.owner instanceof Player player)
+            player.confirmMeleeHit(hitbox.damage);
+        // Immune overlap is not a hit-confirm. It may connect later in Active.
+        if (result.consumed()) hitbox.markHit(target);
     }
 
     private void resolveProjectiles() {
@@ -328,8 +339,20 @@ public class PlayScreen extends Screen implements CombatWorld {
             return source.isDead() || entry.getValue().isEmpty();
         });
         Boss boss = level.boss();
-        if (boss != null && boss.isContactDamageEnabled() && boss.getContactDamage() > 0) {
-            contactDamage(boss, boss.getContactDamage());
+        Object contactAction = boss == null ? null : boss.getContactActionId();
+        if (contactAction != bossContactAction) {
+            bossContactAction = contactAction;
+            bossContactHits.clear();
+        }
+        if (contactAction != null && boss.getContactDamage() > 0) {
+            for (Player player : players) {
+                if (player.isDead() || bossContactHits.contains(player)
+                        || !player.bounds().intersects(boss.bounds())) continue;
+                double dir = player.centerX() < boss.centerX() ? -1 : 1;
+                CombatHitResult result = applyDamage(player,
+                        new DamageInfo(boss.getContactDamage(), dir * 260, -260, false));
+                if (result.consumed()) bossContactHits.add(player);
+            }
         }
         for (Enemy e : enemies) {
             if (!e.isDead() && e.getContactDamage() > 0) {
@@ -345,22 +368,24 @@ public class PlayScreen extends Screen implements CombatWorld {
             if (consumed != null && consumed.contains(p)) continue;
             if (p.bounds().intersects(source.bounds())) {
                 double dir = p.centerX() < source.centerX() ? -1 : 1;
-                if (applyDamage(p, new DamageInfo(damage, dir * 260, -260, false))) {
+                if (applyDamage(p, new DamageInfo(damage, dir * 260, -260, false)).blocked()) {
                     blockedContacts.computeIfAbsent(source, key -> new HashSet<>()).add(p);
                 }
             }
         }
     }
 
-    /** Returns true only when this hit was consumed by a player's guard. */
-    private boolean applyDamage(Character target, DamageInfo info) {
-        if (!isCombatActive()) return false;
-        if (target == null || info == null || info.amount <= 0 || target.isDead() || target.isInvulnerableTo(info)) return false;
+    /** Only accepted HP loss is a HIT; overlap and immunity do not confirm combos. */
+    private CombatHitResult applyDamage(Character target, DamageInfo info) {
+        if (!isCombatActive()) return CombatHitResult.NONE;
+        if (target == null || info == null || info.amount <= 0 || target.isDead()) return CombatHitResult.NONE;
+        if (target.isInvulnerableTo(info)) return CombatHitResult.IMMUNE;
         boolean guarding = target instanceof Player && ((Player) target).isBlocking();
         int before = target.getHealth();
         target.takeDamage(info);
         int dealt = before - target.getHealth();
-        if (dealt <= 0) return guarding && !((Player) target).isBlocking();
+        if (dealt <= 0) return guarding && !((Player) target).isBlocking()
+                ? CombatHitResult.BLOCK : CombatHitResult.IMMUNE;
 
         if (info.slowSeconds > 0) {
             target.applySlow(info.slowSeconds);
@@ -379,7 +404,24 @@ public class PlayScreen extends Screen implements CombatWorld {
         } else {
             shake(0.22);
         }
-        return false;
+        return new CombatHitResult(CombatHitResult.Kind.HIT, dealt);
+    }
+
+    /** A horizontal pushbox keeps melee approaches out of passive body overlap. */
+    private void separateFighters() {
+        Boss boss = level.boss();
+        if (boss == null || boss.isDead()) return;
+        for (Player player : players) {
+            if (player.isDead() || !player.bounds().intersects(boss.bounds())) continue;
+            // Players can jump above/below a boss without a sideways teleport.
+            if (Math.abs(player.bottom() - boss.bottom()) > player.height * .8) continue;
+            double left = boss.x - player.width, right = boss.right();
+            double preferred = player.centerX() < boss.centerX() ? left : right;
+            double alternate = preferred == left ? right : left;
+            double maximum = level.width() - player.width;
+            if (preferred < 0 || preferred > maximum) preferred = alternate;
+            player.x = Math.max(0, Math.min(maximum, preferred));
+        }
     }
 
     private void burst(Projectile pr) {

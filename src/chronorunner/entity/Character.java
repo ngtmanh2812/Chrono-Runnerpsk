@@ -7,6 +7,7 @@ import chronorunner.animation.AnimationController;
 import chronorunner.combat.DamageInfo;
 import chronorunner.combat.Hurtbox;
 import chronorunner.world.CombatWorld;
+import chronorunner.util.Rect;
 
 /** Shared behaviour for players, enemies and bosses: health + damage timers. */
 public abstract class Character extends GameObject {
@@ -50,14 +51,14 @@ public abstract class Character extends GameObject {
         if (!isDead()) {
             updateBehavior(dt, world);
         } else updateDeath(dt, world);
-        hurtbox.set(x, y, width, height);
+        refreshHurtbox();
     }
 
     /** Ending cinematics advance poses/death physics without reading combat input. */
     public final void updateAfterCombat(double dt, CombatWorld world) {
         updateTimers(dt);
         if (isDead()) updateDeath(dt, world);
-        hurtbox.set(x, y, width, height);
+        refreshHurtbox();
     }
 
     protected void updateDeath(double dt, CombatWorld world) { }
@@ -107,7 +108,16 @@ public abstract class Character extends GameObject {
     }
 
     public Hurtbox hurtbox() {
+        refreshHurtbox();
         return hurtbox;
+    }
+
+    /** Damage geometry may differ from the body used for floors and movement. */
+    protected Rect damageBounds() { return bounds(); }
+
+    protected final void refreshHurtbox() {
+        Rect rect = damageBounds();
+        hurtbox.set(rect.x, rect.y, rect.w, rect.h);
     }
 
     public String getName() {

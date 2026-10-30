@@ -5,7 +5,7 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import chronorunner.ui.CharacterSelectScreen;
-import chronorunner.ui.CreditsScreen;
+import chronorunner.ui.HowToPlayScreen;
 import chronorunner.ui.GameOverScreen;
 import chronorunner.ui.GamePanel;
 import chronorunner.ui.GameWindow;
@@ -47,7 +47,7 @@ public class Game {
 
     private void registerScreens() {
         screens.put(GameState.MAIN_MENU, new MainMenuScreen(this));
-        screens.put(GameState.CREDITS, new CreditsScreen(this));
+        screens.put(GameState.HOW_TO_PLAY, new HowToPlayScreen(this));
         screens.put(GameState.LEVEL_SELECT, new LevelSelectScreen(this));
         screens.put(GameState.SETTINGS, new SettingsScreen(this));
         screens.put(GameState.CHARACTER_SELECT, new CharacterSelectScreen(this));
