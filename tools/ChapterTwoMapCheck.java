@@ -90,7 +90,7 @@ public final class ChapterTwoMapCheck {
     }
 
     static Game game() throws Exception {
-        Game game = new Game(); game.getSession().chapter = 2;
+        Game game = new ChapterOneMapCheck.NoSaveGame(); game.getSession().chapter = 2;
         Method register = Game.class.getDeclaredMethod("registerScreens"); register.setAccessible(true);
         register.invoke(game); game.setState(GameState.PLAYING);
         return game;
@@ -146,7 +146,7 @@ public final class ChapterTwoMapCheck {
     public static void main(String[] args) throws Exception {
         if (args.length > 0 && args[0].equals("--live")) {
             SwingUtilities.invokeLater(() -> {
-                Game game = new Game(); game.getSession().chapter = 2; game.start();
+                Game game = new ChapterOneMapCheck.NoSaveGame(); game.getSession().chapter = 2; game.start();
                 game.screen(GameState.PLAYING).onEnter(); game.resumeState(GameState.PLAYING);
             });
             return;

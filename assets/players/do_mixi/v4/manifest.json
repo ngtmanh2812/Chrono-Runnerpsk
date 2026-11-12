@@ -1,0 +1,8486 @@
+{
+  "version": 4,
+  "status": "runtime-v4",
+  "actor": "do_mixi",
+  "frame_width": 192,
+  "frame_height": 192,
+  "columns": 6,
+  "rows": 24,
+  "pivot": [
+    96,
+    172
+  ],
+  "anchor": "feet",
+  "render_scale": 1,
+  "offset_y": 0,
+  "uniform_source_scale": 0.5161290322580645,
+  "idle_body_reference_height": 124.0,
+  "target_body_height": 64,
+  "resampling": "nearest-neighbour uniform",
+  "alpha_cutoff": 128,
+  "palette_colors": 128,
+  "reserved_clips": [
+    "new_skill",
+    "knockdown"
+  ],
+  "retained_distinct_v3_clips": [
+    "light_2",
+    "light_3"
+  ],
+  "sources": [
+    {
+      "file": "art/animations/v4/source/do_mixi-A.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "d08ec11ee4f94579ec0646421fbe91ba77140d5ebb42c9fa76c60a05e652d068",
+      "removed_alpha_speck_pixels": 103,
+      "y_cuts": [
+        0,
+        193,
+        354,
+        504,
+        678,
+        877,
+        1027,
+        1169,
+        1324,
+        1474,
+        1619
+      ]
+    },
+    {
+      "file": "art/animations/v4/source/do_mixi-B.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "dc8b7e531f3227ba53a4a32d21d04d37519cb28110c03538bf52ae2f0bd7eb3b",
+      "removed_alpha_speck_pixels": 75,
+      "y_cuts": [
+        0,
+        217,
+        370,
+        540,
+        714,
+        876,
+        1040,
+        1188,
+        1344,
+        1484,
+        1619
+      ]
+    }
+  ],
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            0,
+            186,
+            193
+          ],
+          "source_body_bounds": [
+            68,
+            51,
+            150,
+            174
+          ],
+          "source_root": [
+            110.14269141531322,
+            174.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            109,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.249,
+            108.516,
+            116.572,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_1.png",
+          "atlas_rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            109,
+            117,
+            172
+          ],
+          "sha256": "24e734779d3d8cb5c0fb13683092b351610139eec86326b4f1e42333c0bad2d8"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            186,
+            0,
+            148,
+            193
+          ],
+          "source_body_bounds": [
+            36,
+            50,
+            112,
+            175
+          ],
+          "source_root": [
+            72.24565469293164,
+            175.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            107,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.293,
+            107.484,
+            116.518,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_2.png",
+          "atlas_rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            107,
+            117,
+            172
+          ],
+          "sha256": "0b4bee73760cbbfe5af90c4392757c06ad9aaa425922c6be4a01efcd048c6e53"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            334,
+            0,
+            152,
+            193
+          ],
+          "source_body_bounds": [
+            37,
+            46,
+            115,
+            175
+          ],
+          "source_root": [
+            75.43068181818182,
+            175.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            105,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.165,
+            105.419,
+            116.423,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_3.png",
+          "atlas_rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            105,
+            116,
+            172
+          ],
+          "sha256": "95496f3a095a9939b54ca368f4e9fc849093ce869104b584d6fad28f0c5ea9f1"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            486,
+            0,
+            150,
+            193
+          ],
+          "source_body_bounds": [
+            38,
+            51,
+            113,
+            175
+          ],
+          "source_root": [
+            74.65202312138729,
+            175.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            108,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.083,
+            108.0,
+            115.793,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_4.png",
+          "atlas_rect": [
+            576,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            108,
+            116,
+            172
+          ],
+          "sha256": "03e216b9b147c06407635d326b531c6020b06cdddf21a8d5481f35ea79e14cc7"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            636,
+            0,
+            152,
+            193
+          ],
+          "source_body_bounds": [
+            37,
+            52,
+            116,
+            175
+          ],
+          "source_root": [
+            77.50919540229886,
+            175.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            109,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.092,
+            108.516,
+            115.866,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_5.png",
+          "atlas_rect": [
+            768,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            109,
+            116,
+            172
+          ],
+          "sha256": "996bd6629000d8d30bcaae191d395c32c178372d2de03df58ccad2d466848dd6"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            788,
+            0,
+            183,
+            193
+          ],
+          "source_body_bounds": [
+            37,
+            51,
+            116,
+            175
+          ],
+          "source_root": [
+            76.89643268124281,
+            175.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            108,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.408,
+            108.0,
+            116.182,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_6.png",
+          "atlas_rect": [
+            960,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            108,
+            116,
+            172
+          ],
+          "sha256": "47a489bec163a75fe28fcf6fa4c5a65155a66a7225c69ff42db02931821af7f0"
+        }
+      ]
+    },
+    "run": {
+      "row": 1,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.075,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            354,
+            172,
+            150
+          ],
+          "source_body_bounds": [
+            57,
+            29,
+            140,
+            142
+          ],
+          "source_root": [
+            95.5731981981982,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            114,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.091,
+            113.677,
+            118.93,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_1.png",
+          "atlas_rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            114,
+            119,
+            172
+          ],
+          "sha256": "2ab9ad4eb9ee277f7b7fd0c90ea833329e823c255d8a9cdbb33309b19ae7ee89"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            172,
+            354,
+            156,
+            150
+          ],
+          "source_body_bounds": [
+            32,
+            25,
+            128,
+            142
+          ],
+          "source_root": [
+            59.58411214953271,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            82,
+            112,
+            131,
+            172
+          ],
+          "transformed_visible_bounds": [
+            81.763,
+            111.613,
+            131.311,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_2.png",
+          "atlas_rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            82,
+            112,
+            131,
+            172
+          ],
+          "sha256": "b09ee618aabcee111e97e9e3a3c24d002cccfa70dabdee09d8a397ac821c337a"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            328,
+            354,
+            150,
+            150
+          ],
+          "source_body_bounds": [
+            27,
+            19,
+            128,
+            134
+          ],
+          "source_root": [
+            54.2992125984252,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            82,
+            113,
+            134,
+            172
+          ],
+          "transformed_visible_bounds": [
+            81.91,
+            112.645,
+            134.039,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_3.png",
+          "atlas_rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            82,
+            113,
+            134,
+            172
+          ],
+          "sha256": "24a01fa619136c012602a7f4a949711124731674d6bffe8f1f79eaa319d72b3b"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            478,
+            354,
+            156,
+            150
+          ],
+          "source_body_bounds": [
+            21,
+            19,
+            135,
+            112
+          ],
+          "source_root": [
+            61.054437869822486,
+            112.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            124,
+            134,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.327,
+            124.0,
+            134.165,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_4.png",
+          "atlas_rect": [
+            576,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            124,
+            134,
+            172
+          ],
+          "sha256": "c07e0d13cb665f1e1524a6b8b549f50f56561a4e62dd957de76093469f799dc5"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            634,
+            354,
+            160,
+            150
+          ],
+          "source_body_bounds": [
+            21,
+            26,
+            129,
+            141
+          ],
+          "source_root": [
+            110.52185792349727,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            50,
+            113,
+            106,
+            172
+          ],
+          "transformed_visible_bounds": [
+            49.795,
+            112.645,
+            105.537,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_5.png",
+          "atlas_rect": [
+            768,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            50,
+            113,
+            106,
+            172
+          ],
+          "sha256": "97ae37edb3a309332d0a01f4e6281cb7a83aeee457221915e3918b8faee55ac2"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            794,
+            354,
+            177,
+            150
+          ],
+          "source_body_bounds": [
+            31,
+            30,
+            118,
+            140
+          ],
+          "source_root": [
+            69.75062656641605,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.0,
+            115.226,
+            120.903,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_6.png",
+          "atlas_rect": [
+            960,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            121,
+            172
+          ],
+          "sha256": "ddca939caccbb70987400bdcab50c0ca775229cd0296ef1af9625610c48dfef0"
+        }
+      ]
+    },
+    "jump": {
+      "row": 2,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            504,
+            170,
+            174
+          ],
+          "source_body_bounds": [
+            58,
+            64,
+            137,
+            161
+          ],
+          "source_root": [
+            99.26829268292683,
+            161.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            122,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.7,
+            121.935,
+            115.474,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_1.png",
+          "atlas_rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            122,
+            115,
+            172
+          ],
+          "sha256": "782fbb9622945de13e0b4e85516a192e1d6aaafaf47e59e6bb7a26f4aad55d59"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            170,
+            504,
+            158,
+            174
+          ],
+          "source_body_bounds": [
+            33,
+            68,
+            122,
+            161
+          ],
+          "source_root": [
+            86.08447488584476,
+            161.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            69,
+            124,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.602,
+            124.0,
+            114.537,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_2.png",
+          "atlas_rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            69,
+            124,
+            115,
+            172
+          ],
+          "sha256": "09eb40487845b133074bc3ddf7987039c78e53a212df18583b7e585e89d83a7e"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            328,
+            504,
+            146,
+            174
+          ],
+          "source_body_bounds": [
+            35,
+            45,
+            110,
+            160
+          ],
+          "source_root": [
+            52.997275204359674,
+            160.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            87,
+            113,
+            125,
+            172
+          ],
+          "transformed_visible_bounds": [
+            86.711,
+            112.645,
+            125.421,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_3.png",
+          "atlas_rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            87,
+            113,
+            125,
+            172
+          ],
+          "sha256": "33156807f9cdbdf1be20193ca972d0b227d6dd5daaab3db7ab050001ef6018ed"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            474,
+            504,
+            150,
+            174
+          ],
+          "source_body_bounds": [
+            37,
+            16,
+            120,
+            143
+          ],
+          "source_root": [
+            60.62222222222222,
+            143.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            84,
+            106,
+            127,
+            172
+          ],
+          "transformed_visible_bounds": [
+            83.808,
+            106.452,
+            126.647,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_4.png",
+          "atlas_rect": [
+            576,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            84,
+            106,
+            127,
+            172
+          ],
+          "sha256": "5cf5d5f62a44c11135bcb7033ae704e3e3a41a54e4c64b2b7a317e8c0421ce6d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            624,
+            504,
+            159,
+            174
+          ],
+          "source_body_bounds": [
+            30,
+            13,
+            126,
+            120
+          ],
+          "source_root": [
+            71.24882629107981,
+            120.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.71,
+            116.774,
+            124.259,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_5.png",
+          "atlas_rect": [
+            768,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            124,
+            172
+          ],
+          "sha256": "40ec2ca25a28ee1ba9be4be1707d8588fc25eb19eb7cfe3fd60d2b4a0c48ea51"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            783,
+            504,
+            188,
+            174
+          ],
+          "source_body_bounds": [
+            33,
+            9,
+            125,
+            115
+          ],
+          "source_root": [
+            74.32510288065843,
+            115.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.671,
+            117.29,
+            122.155,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_6.png",
+          "atlas_rect": [
+            960,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            122,
+            172
+          ],
+          "sha256": "01f71a9018b3fe7079707c650fb09e69af5e69a815ea450151f2273d3e41a74e"
+        }
+      ]
+    },
+    "attack": {
+      "row": 3,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            0,
+            164,
+            217
+          ],
+          "source_body_bounds": [
+            51,
+            77,
+            124,
+            190
+          ],
+          "source_root": [
+            88.36540962288687,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.715,
+            113.677,
+            114.392,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_1.png",
+          "atlas_rect": [
+            0,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "sha256": "cfdcd9e2339cd72a0c616fcc84f1d5f5a120ce8c1f7e5e9d01c0a91aed246f08"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            164,
+            0,
+            159,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            80,
+            118,
+            190
+          ],
+          "source_root": [
+            80.21824907521578,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.758,
+            115.226,
+            115.5,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_2.png",
+          "atlas_rect": [
+            192,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            116,
+            172
+          ],
+          "sha256": "dc738611a9e0a82ce7729b74dffa303055146a66f99feb2d96fb21ed3969c55c"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            323,
+            0,
+            157,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            82,
+            115,
+            190
+          ],
+          "source_root": [
+            77.19642857142857,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            116,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.318,
+            116.258,
+            115.512,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_3.png",
+          "atlas_rect": [
+            384,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            116,
+            116,
+            172
+          ],
+          "sha256": "27d5d44a3d61391cf7c4ece00bc2e6fc251b532b885caef8ebbfb05f63fa78d9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            480,
+            0,
+            177,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            81,
+            151,
+            190
+          ],
+          "source_root": [
+            76.6540404040404,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            134,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.598,
+            115.742,
+            134.888,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_4.png",
+          "atlas_rect": [
+            576,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            135,
+            172
+          ],
+          "sha256": "c0b76dd16cd07a4cee60005a7c7d9fbdc4375612804c25f52c2e2cad1b04e9d7"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            657,
+            0,
+            148,
+            217
+          ],
+          "source_body_bounds": [
+            25,
+            82,
+            106,
+            190
+          ],
+          "source_root": [
+            59.38190364277321,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.255,
+            116.258,
+            120.061,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_5.png",
+          "atlas_rect": [
+            768,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            120,
+            172
+          ],
+          "sha256": "d45de86f0f18af48edce265d53ded9d283b10c69294884511939ebf8aed2ac40"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            805,
+            0,
+            166,
+            217
+          ],
+          "source_body_bounds": [
+            42,
+            82,
+            113,
+            190
+          ],
+          "source_root": [
+            76.75892857142857,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.06,
+            116.258,
+            114.705,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_6.png",
+          "atlas_rect": [
+            960,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            115,
+            172
+          ],
+          "sha256": "d4442d848631fb28eb13c1695709c60e795e433a9c087ea4d3816c6121e2703b"
+        }
+      ]
+    },
+    "hurt": {
+      "row": 4,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            1474,
+            164,
+            145
+          ],
+          "source_body_bounds": [
+            51,
+            15,
+            134,
+            135
+          ],
+          "source_root": [
+            94.24617196702002,
+            135.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            110,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.679,
+            110.065,
+            116.518,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_1.png",
+          "atlas_rect": [
+            0,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            110,
+            117,
+            172
+          ],
+          "sha256": "da55be76ba0641a63bfc7025b777b26dd99f344606654a1fc79cbdd7c3ca002f"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            164,
+            1474,
+            153,
+            145
+          ],
+          "source_body_bounds": [
+            31,
+            16,
+            122,
+            137
+          ],
+          "source_root": [
+            80.00291120815139,
+            137.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            71,
+            110,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.708,
+            109.548,
+            117.676,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_2.png",
+          "atlas_rect": [
+            192,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            110,
+            118,
+            172
+          ],
+          "sha256": "4cca0a3990566c224b40880e4e71e2cc3b97474515b8921f53aa1c7cac866a41"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            317,
+            1474,
+            155,
+            145
+          ],
+          "source_body_bounds": [
+            31,
+            20,
+            130,
+            135
+          ],
+          "source_root": [
+            71.09879518072289,
+            135.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            113,
+            126,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.304,
+            112.645,
+            126.401,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_3.png",
+          "atlas_rect": [
+            384,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            113,
+            126,
+            172
+          ],
+          "sha256": "47f2d9e35e897c894ca3bcb34214226bd26b4c75798b9eb8f3298f5759dd023c"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            472,
+            1474,
+            160,
+            145
+          ],
+          "source_body_bounds": [
+            26,
+            23,
+            128,
+            135
+          ],
+          "source_root": [
+            84.79976303317535,
+            135.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            66,
+            114,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            65.652,
+            114.194,
+            118.297,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_4.png",
+          "atlas_rect": [
+            576,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            66,
+            114,
+            118,
+            172
+          ],
+          "sha256": "34540d6e8342033c12c01c3ddd99f046c9d4f7fed3044cae22d7b34ff7c81aab"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            632,
+            1474,
+            158,
+            145
+          ],
+          "source_body_bounds": [
+            32,
+            32,
+            124,
+            135
+          ],
+          "source_root": [
+            77.53016241299304,
+            135.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            119,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.501,
+            118.839,
+            119.984,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_5.png",
+          "atlas_rect": [
+            768,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            119,
+            120,
+            172
+          ],
+          "sha256": "13a6a756bc6afc0562f10444b2341ef76c8de5b9f385cc678671f886e8dee3c5"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            790,
+            1474,
+            181,
+            145
+          ],
+          "source_body_bounds": [
+            34,
+            24,
+            116,
+            135
+          ],
+          "source_root": [
+            74.07863849765258,
+            135.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            115,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.314,
+            114.71,
+            117.637,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_6.png",
+          "atlas_rect": [
+            960,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            115,
+            118,
+            172
+          ],
+          "sha256": "8e19e754b3410c5e208869caf5c4a041758099394a1723fc3ec6ce3726081859"
+        }
+      ]
+    },
+    "death": {
+      "row": 5,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            1484,
+            158,
+            135
+          ],
+          "source_body_bounds": [
+            53,
+            15,
+            122,
+            116
+          ],
+          "source_root": [
+            79.0,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            83,
+            120,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            82.581,
+            119.871,
+            118.194,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_1.png",
+          "atlas_rect": [
+            0,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            83,
+            120,
+            118,
+            172
+          ],
+          "sha256": "f31767f21d556302e2b24c519ef1fcbcb318c998315043fa273ea79342db04a4"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            158,
+            1484,
+            147,
+            135
+          ],
+          "source_body_bounds": [
+            36,
+            21,
+            116,
+            116
+          ],
+          "source_root": [
+            73.5,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            123,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.645,
+            119.355,
+            117.935,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_2.png",
+          "atlas_rect": [
+            192,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            119,
+            118,
+            172
+          ],
+          "sha256": "1d51e04551696b11bdeccbd28c6d30fb6e37319d2f7c9a6efc8832ca1db99e56"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            305,
+            1484,
+            142,
+            135
+          ],
+          "source_body_bounds": [
+            31,
+            35,
+            110,
+            116
+          ],
+          "source_root": [
+            71.0,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            130,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.355,
+            130.194,
+            116.129,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_3.png",
+          "atlas_rect": [
+            384,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            130,
+            116,
+            172
+          ],
+          "sha256": "6a252071c80a7b071d22ec084a0ff1836634bf9efc8916386670160f52ed2523"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            447,
+            1484,
+            157,
+            135
+          ],
+          "source_body_bounds": [
+            32,
+            63,
+            128,
+            116
+          ],
+          "source_root": [
+            78.5,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            145,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.0,
+            144.645,
+            121.548,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_4.png",
+          "atlas_rect": [
+            576,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            145,
+            122,
+            172
+          ],
+          "sha256": "08694a74ef4242a97b56e5a4550ebf1b49282dbd047b0b64a929957c0dfd8a3d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            604,
+            1484,
+            177,
+            135
+          ],
+          "source_body_bounds": [
+            28,
+            74,
+            158,
+            116
+          ],
+          "source_root": [
+            88.5,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            65,
+            150,
+            132,
+            172
+          ],
+          "transformed_visible_bounds": [
+            64.774,
+            150.323,
+            131.871,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_5.png",
+          "atlas_rect": [
+            768,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            65,
+            150,
+            132,
+            172
+          ],
+          "sha256": "a13417fe433afa5566856ea127810908a236aec1a3a73c859e10614a70f921c2"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            781,
+            1484,
+            190,
+            135
+          ],
+          "source_body_bounds": [
+            19,
+            82,
+            150,
+            116
+          ],
+          "source_root": [
+            95.0,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            57,
+            154,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            56.774,
+            154.452,
+            124.387,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_6.png",
+          "atlas_rect": [
+            960,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            57,
+            154,
+            124,
+            172
+          ],
+          "sha256": "32113aa46e12bc892465520aeec69cbc8cfc16475a37625880dce1d47c85b226"
+        }
+      ]
+    },
+    "walk": {
+      "row": 6,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            193,
+            184,
+            161
+          ],
+          "source_body_bounds": [
+            70,
+            19,
+            147,
+            140
+          ],
+          "source_root": [
+            108.93436754176611,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            110,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.905,
+            109.548,
+            115.647,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_1.png",
+          "atlas_rect": [
+            0,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            110,
+            115,
+            172
+          ],
+          "sha256": "3c4592f549161bc27e9e28fdf79f9cd26ebfa420e7e3df81bbb6cdb158337869"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            184,
+            193,
+            152,
+            161
+          ],
+          "source_body_bounds": [
+            36,
+            20,
+            116,
+            142
+          ],
+          "source_root": [
+            72.20643729189788,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            109,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.313,
+            109.032,
+            118.603,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_2.png",
+          "atlas_rect": [
+            192,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            109,
+            119,
+            172
+          ],
+          "sha256": "08dec5c54f426a229456d683a2e96e5fcd322b089b1ca2985d8d22a66942be67"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            336,
+            193,
+            148,
+            161
+          ],
+          "source_body_bounds": [
+            36,
+            18,
+            106,
+            142
+          ],
+          "source_root": [
+            77.7625786163522,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            108,
+            111,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.445,
+            108.0,
+            110.574,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_3.png",
+          "atlas_rect": [
+            384,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            108,
+            111,
+            172
+          ],
+          "sha256": "600d2e0d1cee5bc8192141a2c43e15e6b6344952eaa09f598c73ed964912e716"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            484,
+            193,
+            152,
+            161
+          ],
+          "source_body_bounds": [
+            43,
+            20,
+            110,
+            142
+          ],
+          "source_root": [
+            70.76144244105409,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            82,
+            109,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            81.672,
+            109.032,
+            116.252,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_4.png",
+          "atlas_rect": [
+            576,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            82,
+            109,
+            116,
+            172
+          ],
+          "sha256": "e600f028d97caba69961a17e63aba55f06ddb079d7d5c6a1e8f8075260a7abf5"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            636,
+            193,
+            157,
+            161
+          ],
+          "source_body_bounds": [
+            41,
+            20,
+            119,
+            141
+          ],
+          "source_root": [
+            79.9401913875598,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            110,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.902,
+            109.548,
+            116.16,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_5.png",
+          "atlas_rect": [
+            768,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            110,
+            116,
+            172
+          ],
+          "sha256": "80da8858b8bb7cafbb798fcee6ba361b5acfb2181a8cdbba3b0d927d58fa1e36"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            793,
+            193,
+            178,
+            161
+          ],
+          "source_body_bounds": [
+            38,
+            20,
+            109,
+            142
+          ],
+          "source_root": [
+            75.6643059490085,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            109,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.56,
+            109.032,
+            113.206,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_6.png",
+          "atlas_rect": [
+            960,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            109,
+            113,
+            172
+          ],
+          "sha256": "89387765b4b9e1e3032ed7815ad0de84a86e5aaa821d75f7bcaeaabad6956cd4"
+        }
+      ]
+    },
+    "special": {
+      "row": 7,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.06666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            714,
+            164,
+            162
+          ],
+          "source_body_bounds": [
+            53,
+            36,
+            124,
+            140
+          ],
+          "source_root": [
+            89.04657179818888,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            119,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.395,
+            118.323,
+            114.04,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_1.png",
+          "atlas_rect": [
+            0,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            119,
+            114,
+            172
+          ],
+          "sha256": "ac053e142870e2942f355893c4d7da2344b5028f46e7a5af6aeb355cbaacfdbe"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            164,
+            714,
+            158,
+            162
+          ],
+          "source_body_bounds": [
+            40,
+            31,
+            124,
+            141
+          ],
+          "source_root": [
+            78.15474642392718,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.307,
+            115.226,
+            119.662,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_2.png",
+          "atlas_rect": [
+            192,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "sha256": "1c714285516ce1466a48599c45540910b53491ea824a0c246d2de29c3fae6459"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            322,
+            714,
+            151,
+            162
+          ],
+          "source_body_bounds": [
+            35,
+            21,
+            117,
+            140
+          ],
+          "source_root": [
+            73.25064599483204,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            111,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.258,
+            110.581,
+            118.58,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_3.png",
+          "atlas_rect": [
+            384,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            111,
+            119,
+            172
+          ],
+          "sha256": "3c11e826c164bf0eeb25890a49a1a355ab1de5838a7640d3b33286e88af51cf9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            473,
+            714,
+            179,
+            162
+          ],
+          "source_body_bounds": [
+            34,
+            37,
+            165,
+            140
+          ],
+          "source_root": [
+            71.78562577447336,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            119,
+            144,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.498,
+            118.839,
+            144.627,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_4.png",
+          "atlas_rect": [
+            576,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            119,
+            145,
+            172
+          ],
+          "sha256": "f8c87a87e05629b5e484ac6b2deec3fc7c154953816f0f84164031ca835bc290"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            652,
+            714,
+            163,
+            162
+          ],
+          "source_body_bounds": [
+            14,
+            38,
+            141,
+            141
+          ],
+          "source_root": [
+            46.1624685138539,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            119,
+            145,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.4,
+            112.645,
+            145.465,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_5.png",
+          "atlas_rect": [
+            768,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            113,
+            145,
+            172
+          ],
+          "sha256": "aa2411c40e0cba6b62a29b93f9510e70dbcbc2da093381cbfe34d0e5c3ad3f78"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            815,
+            714,
+            156,
+            162
+          ],
+          "source_body_bounds": [
+            21,
+            41,
+            96,
+            140
+          ],
+          "source_root": [
+            59.82741116751269,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            121,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.96,
+            120.903,
+            114.67,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_6.png",
+          "atlas_rect": [
+            960,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            121,
+            115,
+            172
+          ],
+          "sha256": "cf72ff9aa4f9740d1fd322d0644245a8051554d43877cc36e87506039d445a5f"
+        }
+      ]
+    },
+    "block": {
+      "row": 8,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.08333333,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            1324,
+            170,
+            150
+          ],
+          "source_body_bounds": [
+            54,
+            17,
+            136,
+            134
+          ],
+          "source_root": [
+            94.64634146341463,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            112,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.021,
+            111.613,
+            117.344,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_1.png",
+          "atlas_rect": [
+            0,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            112,
+            117,
+            172
+          ],
+          "sha256": "f5928ccf37da2bcfecaf8221e8505f5c4bc3329414654ac3fc496a96a10cfe33"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            170,
+            1324,
+            152,
+            150
+          ],
+          "source_body_bounds": [
+            35,
+            18,
+            121,
+            134
+          ],
+          "source_root": [
+            78.21913236929922,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            112,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.693,
+            112.129,
+            118.08,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_2.png",
+          "atlas_rect": [
+            192,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            112,
+            118,
+            172
+          ],
+          "sha256": "3c886118293cd78d12efbb9c61d4db717dacdd7d7c7ad287ff38f03aa8ff7e59"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            322,
+            1324,
+            156,
+            150
+          ],
+          "source_body_bounds": [
+            32,
+            19,
+            131,
+            134
+          ],
+          "source_root": [
+            69.79823455233291,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            113,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.491,
+            112.645,
+            127.588,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_3.png",
+          "atlas_rect": [
+            384,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            113,
+            128,
+            172
+          ],
+          "sha256": "b3411dcea1e7557a5d10209755be0afd92a2d15f88ae88bb53d15228ef1c8d54"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            478,
+            1324,
+            161,
+            150
+          ],
+          "source_body_bounds": [
+            24,
+            23,
+            137,
+            134
+          ],
+          "source_root": [
+            63.88314883148831,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            115,
+            134,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.415,
+            114.71,
+            133.738,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_4.png",
+          "atlas_rect": [
+            576,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            115,
+            134,
+            172
+          ],
+          "sha256": "f6d64667ea904191cf17d4b93ac0fc6015e70fe077256455df958dfd524aa282"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            639,
+            1324,
+            145,
+            150
+          ],
+          "source_body_bounds": [
+            24,
+            28,
+            109,
+            134
+          ],
+          "source_root": [
+            64.57791411042945,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.057,
+            117.29,
+            118.928,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_5.png",
+          "atlas_rect": [
+            768,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            119,
+            172
+          ],
+          "sha256": "99c2b5cf8991a8d1cc806cfa4d895caff6f5036f8af9616f18a66bc93c784cba"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            784,
+            1324,
+            187,
+            150
+          ],
+          "source_body_bounds": [
+            36,
+            22,
+            119,
+            134
+          ],
+          "source_root": [
+            77.35934065934066,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            114,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.653,
+            114.194,
+            117.492,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_6.png",
+          "atlas_rect": [
+            960,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            114,
+            117,
+            172
+          ],
+          "sha256": "e9ed6793e8d6a7d7f7c17898608408ad323616649bff134468c642382be69e9f"
+        }
+      ]
+    },
+    "dash": {
+      "row": 9,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.03,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            1027,
+            164,
+            142
+          ],
+          "source_body_bounds": [
+            52,
+            21,
+            141,
+            124
+          ],
+          "source_root": [
+            91.58760429082241,
+            124.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            119,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.568,
+            118.839,
+            121.503,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_1.png",
+          "atlas_rect": [
+            0,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            119,
+            122,
+            172
+          ],
+          "sha256": "3e22e2c4e14d330385ee7a778be682a861d3365a9319196ecd5bf1f65f3fe8d2"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            164,
+            1027,
+            158,
+            142
+          ],
+          "source_body_bounds": [
+            24,
+            34,
+            141,
+            124
+          ],
+          "source_root": [
+            53.7619926199262,
+            124.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            81,
+            126,
+            141,
+            172
+          ],
+          "transformed_visible_bounds": [
+            80.639,
+            125.548,
+            141.026,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_2.png",
+          "atlas_rect": [
+            192,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            81,
+            126,
+            141,
+            172
+          ],
+          "sha256": "131a8db1dcd7a7d744ddb938e53ecb0eeed1e006d24b32aa7d65f290ce43936d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            322,
+            1027,
+            159,
+            142
+          ],
+          "source_body_bounds": [
+            17,
+            37,
+            146,
+            119
+          ],
+          "source_root": [
+            54.87224669603524,
+            119.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            130,
+            143,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.453,
+            129.677,
+            143.034,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_3.png",
+          "atlas_rect": [
+            384,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            130,
+            143,
+            172
+          ],
+          "sha256": "7cb31b1742709f78f334fe52b421f36ace3952b09f3a20416734cc7ff76779e9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            481,
+            1027,
+            157,
+            142
+          ],
+          "source_body_bounds": [
+            13,
+            35,
+            133,
+            124
+          ],
+          "source_root": [
+            63.177570093457945,
+            124.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            126,
+            132,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.102,
+            126.065,
+            132.037,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_4.png",
+          "atlas_rect": [
+            576,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            126,
+            132,
+            172
+          ],
+          "sha256": "d97ef570dae6673c7c8f1313411ec3d002aef83f946a7e7b2e84365d34a83c19"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            638,
+            1027,
+            167,
+            142
+          ],
+          "source_body_bounds": [
+            24,
+            29,
+            140,
+            124
+          ],
+          "source_root": [
+            90.45023148148148,
+            124.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            62,
+            123,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            61.703,
+            122.968,
+            121.574,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_5.png",
+          "atlas_rect": [
+            768,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            123,
+            122,
+            172
+          ],
+          "sha256": "d7df759e7ca40cef85ef163ae9092da44369ded2a5ec2cea7a16c5f411a470b1"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            805,
+            1027,
+            166,
+            142
+          ],
+          "source_body_bounds": [
+            27,
+            17,
+            107,
+            124
+          ],
+          "source_root": [
+            65.91018619934283,
+            124.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            117,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.917,
+            116.774,
+            117.208,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_6.png",
+          "atlas_rect": [
+            960,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            117,
+            117,
+            172
+          ],
+          "sha256": "8e4aa69bda9aa2bd5161f8fa10f272cf90e7b4bf910850ee394f4d9c41beefd2"
+        }
+      ]
+    },
+    "fall": {
+      "row": 10,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            678,
+            170,
+            199
+          ],
+          "source_body_bounds": [
+            50,
+            13,
+            138,
+            116
+          ],
+          "source_root": [
+            89.74308300395256,
+            116.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            119,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.487,
+            118.839,
+            120.907,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_1.png",
+          "atlas_rect": [
+            0,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            119,
+            121,
+            172
+          ],
+          "sha256": "bb6fdbf91bd1d610655153d0fcd4ae53c7649b78c872b94f655b2a68bb3daae4"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            170,
+            678,
+            162,
+            199
+          ],
+          "source_body_bounds": [
+            31,
+            30,
+            134,
+            148
+          ],
+          "source_root": [
+            84.80888888888889,
+            148.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            111,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.228,
+            111.097,
+            121.389,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_2.png",
+          "atlas_rect": [
+            192,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            111,
+            121,
+            172
+          ],
+          "sha256": "944e2aa2835120902411975b395585b590dd4c8e56abee161400b53bccbf3f92"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            332,
+            678,
+            152,
+            199
+          ],
+          "source_body_bounds": [
+            27,
+            50,
+            127,
+            169
+          ],
+          "source_root": [
+            85.49137931034483,
+            169.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            66,
+            111,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            65.811,
+            110.581,
+            117.424,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_3.png",
+          "atlas_rect": [
+            384,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            66,
+            111,
+            117,
+            172
+          ],
+          "sha256": "1d8329bee12e1b6a76e9b49887ae16fbb1dc12508fecddaceb96fd0bc40918c2"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            484,
+            678,
+            153,
+            199
+          ],
+          "source_body_bounds": [
+            26,
+            62,
+            124,
+            179
+          ],
+          "source_root": [
+            89.83306836248013,
+            179.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            63,
+            112,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            63.054,
+            111.613,
+            113.635,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_4.png",
+          "atlas_rect": [
+            576,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            63,
+            112,
+            114,
+            172
+          ],
+          "sha256": "329f8b2d31db374c051ad68f3d409053effa61946b209800cac09c252ef56c27"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            637,
+            678,
+            149,
+            199
+          ],
+          "source_body_bounds": [
+            29,
+            74,
+            115,
+            178
+          ],
+          "source_root": [
+            80.12750885478158,
+            178.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            118,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            69.612,
+            118.323,
+            113.999,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_5.png",
+          "atlas_rect": [
+            768,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            118,
+            114,
+            172
+          ],
+          "sha256": "b9d27cd949694b9458d16ce583f6aa029e035a7ed014326022f4b18f70675dcd"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            786,
+            678,
+            185,
+            199
+          ],
+          "source_body_bounds": [
+            35,
+            78,
+            119,
+            179
+          ],
+          "source_root": [
+            75.08870967741936,
+            179.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            120,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.309,
+            119.871,
+            118.664,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_6.png",
+          "atlas_rect": [
+            960,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            120,
+            119,
+            172
+          ],
+          "sha256": "3fe0681b519c4afd72a10beb91f50912e8c887b88e5ad757cfa7f0c4a596bbde"
+        }
+      ]
+    },
+    "land": {
+      "row": 11,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            877,
+            172,
+            150
+          ],
+          "source_body_bounds": [
+            54,
+            24,
+            138,
+            132
+          ],
+          "source_root": [
+            98.59229898074746,
+            132.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            116,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.985,
+            116.258,
+            116.339,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_1.png",
+          "atlas_rect": [
+            0,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            116,
+            116,
+            172
+          ],
+          "sha256": "f09826161e9931e8e7b679ba7c418beb0ce25970b968c86ce227e0487d712e54"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            172,
+            877,
+            154,
+            150
+          ],
+          "source_body_bounds": [
+            35,
+            47,
+            123,
+            133
+          ],
+          "source_root": [
+            82.12278876170656,
+            133.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            128,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.679,
+            127.613,
+            117.098,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_2.png",
+          "atlas_rect": [
+            192,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            128,
+            117,
+            172
+          ],
+          "sha256": "43aefa98a11978a2d43284971ffa9bdd1a3e4469c4bd83522f127dc81ffe8f4b"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            326,
+            877,
+            153,
+            150
+          ],
+          "source_body_bounds": [
+            32,
+            56,
+            123,
+            133
+          ],
+          "source_root": [
+            75.87139917695474,
+            133.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            132,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.357,
+            132.258,
+            120.324,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_3.png",
+          "atlas_rect": [
+            384,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            132,
+            120,
+            172
+          ],
+          "sha256": "8aef5608233e731bd022a70e207320b1f175107d293a1212c32859044c736b1a"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            479,
+            877,
+            149,
+            150
+          ],
+          "source_body_bounds": [
+            30,
+            41,
+            112,
+            133
+          ],
+          "source_root": [
+            70.72108108108108,
+            133.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            125,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.983,
+            124.516,
+            117.305,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_4.png",
+          "atlas_rect": [
+            576,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            125,
+            117,
+            172
+          ],
+          "sha256": "83c9d04990ecca84fe1636afe15f599bff892666b6ba7514ec16223c3e1f94f5"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            628,
+            877,
+            156,
+            150
+          ],
+          "source_body_bounds": [
+            36,
+            26,
+            117,
+            133
+          ],
+          "source_root": [
+            76.1276102088167,
+            133.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.289,
+            116.774,
+            117.095,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_5.png",
+          "atlas_rect": [
+            768,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            117,
+            172
+          ],
+          "sha256": "b4f4a382cb14b30a75944e23e3730d98f51dbc2c0949320898482ef2fc4729b8"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            784,
+            877,
+            187,
+            150
+          ],
+          "source_body_bounds": [
+            38,
+            20,
+            119,
+            133
+          ],
+          "source_root": [
+            77.41129943502825,
+            133.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            114,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.659,
+            113.677,
+            117.465,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_6.png",
+          "atlas_rect": [
+            960,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            114,
+            117,
+            172
+          ],
+          "sha256": "8d9da87be805a8ec2ff32520f27f8b4314582c0881cf22e9adc120613d50608b"
+        }
+      ]
+    },
+    "light_1": {
+      "row": 12,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            0,
+            164,
+            217
+          ],
+          "source_body_bounds": [
+            51,
+            77,
+            124,
+            190
+          ],
+          "source_root": [
+            88.36540962288687,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.715,
+            113.677,
+            114.392,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_1.png",
+          "atlas_rect": [
+            0,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "sha256": "cfdcd9e2339cd72a0c616fcc84f1d5f5a120ce8c1f7e5e9d01c0a91aed246f08"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            164,
+            0,
+            159,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            80,
+            118,
+            190
+          ],
+          "source_root": [
+            80.21824907521578,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.758,
+            115.226,
+            115.5,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_2.png",
+          "atlas_rect": [
+            192,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            116,
+            172
+          ],
+          "sha256": "dc738611a9e0a82ce7729b74dffa303055146a66f99feb2d96fb21ed3969c55c"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            323,
+            0,
+            157,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            82,
+            115,
+            190
+          ],
+          "source_root": [
+            77.19642857142857,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            116,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.318,
+            116.258,
+            115.512,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_3.png",
+          "atlas_rect": [
+            384,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            116,
+            116,
+            172
+          ],
+          "sha256": "27d5d44a3d61391cf7c4ece00bc2e6fc251b532b885caef8ebbfb05f63fa78d9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            480,
+            0,
+            177,
+            217
+          ],
+          "source_body_bounds": [
+            41,
+            81,
+            151,
+            190
+          ],
+          "source_root": [
+            76.6540404040404,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            134,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.598,
+            115.742,
+            134.888,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_4.png",
+          "atlas_rect": [
+            576,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            135,
+            172
+          ],
+          "sha256": "c0b76dd16cd07a4cee60005a7c7d9fbdc4375612804c25f52c2e2cad1b04e9d7"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            657,
+            0,
+            148,
+            217
+          ],
+          "source_body_bounds": [
+            25,
+            82,
+            106,
+            190
+          ],
+          "source_root": [
+            59.38190364277321,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.255,
+            116.258,
+            120.061,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_5.png",
+          "atlas_rect": [
+            768,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            120,
+            172
+          ],
+          "sha256": "d45de86f0f18af48edce265d53ded9d283b10c69294884511939ebf8aed2ac40"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            805,
+            0,
+            166,
+            217
+          ],
+          "source_body_bounds": [
+            42,
+            82,
+            113,
+            190
+          ],
+          "source_root": [
+            76.75892857142857,
+            190.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.06,
+            116.258,
+            114.705,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_6.png",
+          "atlas_rect": [
+            960,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            115,
+            172
+          ],
+          "sha256": "d4442d848631fb28eb13c1695709c60e795e433a9c087ea4d3816c6121e2703b"
+        }
+      ]
+    },
+    "light_2": {
+      "row": 13,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11666667,
+      "frame_metadata": [
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_1.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_1.png",
+          "atlas_rect": [
+            0,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            107,
+            121,
+            172
+          ],
+          "sha256": "2f247fa2b115137e583f6bfcc253a08684b0cf328a70f7714036f9f7eb4027e7"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_2.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_2.png",
+          "atlas_rect": [
+            192,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            110,
+            123,
+            172
+          ],
+          "sha256": "3299a6b7e1e317d0f0d9581899d42c3732e516674ffb298c838c1a271bd73760"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_3.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_3.png",
+          "atlas_rect": [
+            384,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            110,
+            129,
+            172
+          ],
+          "sha256": "e83ce762e9e3f6f21190b5a0d7e96678b92fed58f63ed309d6f6d1df9d4267b9"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_4.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_4.png",
+          "atlas_rect": [
+            576,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            112,
+            146,
+            172
+          ],
+          "sha256": "64a36fba8d5ef8e23ef5f492fb685d840b05b24bb97e3db2f9b12a55b75e3b3a"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_5.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_5.png",
+          "atlas_rect": [
+            768,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            110,
+            125,
+            172
+          ],
+          "sha256": "44e5cf2c0f8e722389948139b7e5a0fb820922499eb31ec80853761a4dac63e7"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_2_6.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_6.png",
+          "atlas_rect": [
+            960,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            108,
+            120,
+            172
+          ],
+          "sha256": "f59cc44fab2bc50ee19609d70d0cf77edc8e0aed7db23128eae221dc8c31d35d"
+        }
+      ]
+    },
+    "light_3": {
+      "row": 14,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11666667,
+      "frame_metadata": [
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_1.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_1.png",
+          "atlas_rect": [
+            0,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            108,
+            121,
+            172
+          ],
+          "sha256": "eed40771d1e14a5b20a979c3b4dd8c2e3c9b347adb888932166e71c75d9cc166"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_2.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_2.png",
+          "atlas_rect": [
+            192,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            66,
+            109,
+            143,
+            172
+          ],
+          "sha256": "a28f83ab9e5336c3ff6b4e33ed2544e072fdfe7c42bd2b998b5841d19874a4c2"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_3.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_3.png",
+          "atlas_rect": [
+            384,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            106,
+            148,
+            172
+          ],
+          "sha256": "09d7dcfb258d1e6a0470deb2e81006028e4b89bc8a7abcef40a6fb45c9cca6c6"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_4.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_4.png",
+          "atlas_rect": [
+            576,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            109,
+            145,
+            172
+          ],
+          "sha256": "ba5bea9276a7b6632e1d3a64c0d6890a91ac0aea2d7f531c9acca45c4d0e6d62"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_5.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_5.png",
+          "atlas_rect": [
+            768,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            108,
+            123,
+            172
+          ],
+          "sha256": "9843e760b40cf08b5ff5a459eb4b92b549d3075ea7e434608819bc973f20919f"
+        },
+        {
+          "source_file": "assets/players/do_mixi/v3/light_3_6.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_6.png",
+          "atlas_rect": [
+            960,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            108,
+            120,
+            172
+          ],
+          "sha256": "1cda09c029ad82b52d6596c633ecc73ab7869595977a82388f41be5364094384"
+        }
+      ]
+    },
+    "heavy": {
+      "row": 15,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11111111,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            217,
+            158,
+            153
+          ],
+          "source_body_bounds": [
+            53,
+            27,
+            124,
+            139
+          ],
+          "source_root": [
+            89.02310654685495,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.407,
+            114.194,
+            114.053,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_1.png",
+          "atlas_rect": [
+            0,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            114,
+            114,
+            172
+          ],
+          "sha256": "329adeb4ef09200647dd10987298c853e26ff1c7c3dbad98207035f7f4ef79af"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            158,
+            217,
+            155,
+            153
+          ],
+          "source_body_bounds": [
+            34,
+            60,
+            128,
+            139
+          ],
+          "source_root": [
+            86.45405982905983,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            69,
+            131,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.927,
+            131.226,
+            117.443,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_2.png",
+          "atlas_rect": [
+            192,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            69,
+            131,
+            117,
+            172
+          ],
+          "sha256": "af9fa473320630d3424e990d1a1a7f4d014e9b1a9881d48d9568ea5356dd5b73"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            313,
+            217,
+            159,
+            153
+          ],
+          "source_body_bounds": [
+            39,
+            36,
+            134,
+            139
+          ],
+          "source_root": [
+            92.05441354292624,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            119,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.424,
+            118.839,
+            117.649,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_3.png",
+          "atlas_rect": [
+            384,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            119,
+            118,
+            172
+          ],
+          "sha256": "e7ec6f624db7b213d309467a40a1b781d77d0809ef935334900e672acd4207cc"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            472,
+            217,
+            182,
+            153
+          ],
+          "source_body_bounds": [
+            27,
+            30,
+            166,
+            139
+          ],
+          "source_root": [
+            89.67196367763904,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            64,
+            116,
+            135,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.621,
+            115.742,
+            135.911,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_4.png",
+          "atlas_rect": [
+            576,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            63,
+            116,
+            136,
+            172
+          ],
+          "sha256": "2365e248d7111b7bfd1a6b3ed372c0032f3576e908a73de1900743e274f0bb34"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            654,
+            217,
+            150,
+            153
+          ],
+          "source_body_bounds": [
+            19,
+            34,
+            112,
+            139
+          ],
+          "source_root": [
+            68.82009345794393,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            118,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.222,
+            117.806,
+            118.286,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_5.png",
+          "atlas_rect": [
+            768,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            118,
+            118,
+            172
+          ],
+          "sha256": "3098b6891260e1c76ce47c98b1edfc9fbaf0a8812347b4bb7decdc0422560e56"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            804,
+            217,
+            167,
+            153
+          ],
+          "source_body_bounds": [
+            38,
+            32,
+            115,
+            139
+          ],
+          "source_root": [
+            78.5273631840796,
+            139.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.083,
+            116.774,
+            114.825,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_6.png",
+          "atlas_rect": [
+            960,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            115,
+            172
+          ],
+          "sha256": "935478ba15f44267626b3423c1d3ccc1f1bbefb87043949bb20db3495979aeae"
+        }
+      ]
+    },
+    "launcher": {
+      "row": 16,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.10277778,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            370,
+            164,
+            170
+          ],
+          "source_body_bounds": [
+            52,
+            49,
+            125,
+            159
+          ],
+          "source_root": [
+            89.4090909090909,
+            159.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            115,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.692,
+            115.226,
+            114.37,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_1.png",
+          "atlas_rect": [
+            0,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            115,
+            114,
+            172
+          ],
+          "sha256": "c732b03c2c1dd8071d8bfd85e6a75cd44af5cc3848421384cdceff37c6210040"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            164,
+            370,
+            158,
+            170
+          ],
+          "source_body_bounds": [
+            39,
+            82,
+            125,
+            159
+          ],
+          "source_root": [
+            80.63891891891892,
+            159.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            133,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.509,
+            132.258,
+            118.896,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_2.png",
+          "atlas_rect": [
+            192,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            133,
+            119,
+            172
+          ],
+          "sha256": "da42204c58c252e4811b287d0b7ac24b35bfa8488522da4132989a5ef9b2b4aa"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            322,
+            370,
+            154,
+            170
+          ],
+          "source_body_bounds": [
+            34,
+            61,
+            129,
+            159
+          ],
+          "source_root": [
+            71.71535022354695,
+            159.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            121,
+            126,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.534,
+            121.419,
+            125.566,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_3.png",
+          "atlas_rect": [
+            384,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            121,
+            126,
+            172
+          ],
+          "sha256": "3483890035ec1a82304b2f34fe6241846f8e905937b6f7fdfa47e4afc285961d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            476,
+            370,
+            164,
+            170
+          ],
+          "source_body_bounds": [
+            30,
+            13,
+            133,
+            153
+          ],
+          "source_root": [
+            72.62058823529412,
+            153.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            100,
+            127,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.422,
+            99.742,
+            127.68,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_4.png",
+          "atlas_rect": [
+            576,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            100,
+            128,
+            172
+          ],
+          "sha256": "834f81acc56ef433aaac5aff034d723977ef761bc618ec630cf0da458239e876"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            640,
+            370,
+            166,
+            170
+          ],
+          "source_body_bounds": [
+            47,
+            19,
+            109,
+            136
+          ],
+          "source_root": [
+            74.10915492957747,
+            136.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            82,
+            112,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.75,
+            111.613,
+            126.395,
+            174.581
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_5.png",
+          "atlas_rect": [
+            768,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            112,
+            126,
+            175
+          ],
+          "sha256": "05e49391d7906d8dcd2987c423293a23fbe243e19c6d01203401a141beec79f4"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            806,
+            370,
+            165,
+            170
+          ],
+          "source_body_bounds": [
+            32,
+            64,
+            111,
+            159
+          ],
+          "source_root": [
+            70.92280701754386,
+            159.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            123,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.911,
+            122.968,
+            116.685,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_6.png",
+          "atlas_rect": [
+            960,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            123,
+            117,
+            172
+          ],
+          "sha256": "31b637db3dbe02231409968c1ec9eb0ba37ea8bccf800791e35da39774df2454"
+        }
+      ]
+    },
+    "air_attack": {
+      "row": 17,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            540,
+            161,
+            174
+          ],
+          "source_body_bounds": [
+            53,
+            68,
+            121,
+            154
+          ],
+          "source_root": [
+            86.12043795620438,
+            154.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            128,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.906,
+            127.613,
+            114.002,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_1.png",
+          "atlas_rect": [
+            0,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            128,
+            114,
+            172
+          ],
+          "sha256": "bc49ddb27306a39930b84a54c1216e3b6e3abdc992c5309b0ac121cf210b9f98"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            161,
+            540,
+            159,
+            174
+          ],
+          "source_body_bounds": [
+            40,
+            32,
+            133,
+            136
+          ],
+          "source_root": [
+            71.63218390804597,
+            136.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            118,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.674,
+            118.323,
+            127.674,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_2.png",
+          "atlas_rect": [
+            192,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            118,
+            128,
+            172
+          ],
+          "sha256": "9bb36f4b283681ee514f4136c08f289ec3bda821df514ee696056b062101a60d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            320,
+            540,
+            152,
+            174
+          ],
+          "source_body_bounds": [
+            41,
+            11,
+            122,
+            123
+          ],
+          "source_root": [
+            76.82608695652173,
+            123.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            114,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            69.767,
+            114.194,
+            119.316,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_3.png",
+          "atlas_rect": [
+            384,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            114,
+            119,
+            172
+          ],
+          "sha256": "16d91346f7f0cdc8237623cc6645b8a6dfe3f3cbfd2179fbd97aa1805673d37e"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            472,
+            540,
+            182,
+            174
+          ],
+          "source_body_bounds": [
+            35,
+            46,
+            151,
+            147
+          ],
+          "source_root": [
+            89.05205479452054,
+            147.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            120,
+            128,
+            171
+          ],
+          "transformed_visible_bounds": [
+            65.005,
+            119.871,
+            129.522,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_4.png",
+          "atlas_rect": [
+            576,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            65,
+            120,
+            129,
+            171
+          ],
+          "sha256": "f5c8ec2847162277f9a11bf3f4b25256c6cafc2ddea507374625b0c5acd3cfdc"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            654,
+            540,
+            148,
+            174
+          ],
+          "source_body_bounds": [
+            29,
+            52,
+            110,
+            149
+          ],
+          "source_root": [
+            47.21527777777778,
+            149.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            87,
+            122,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            86.599,
+            121.935,
+            128.405,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_5.png",
+          "atlas_rect": [
+            768,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            87,
+            122,
+            128,
+            172
+          ],
+          "sha256": "bd45ad3ca9aff5d46bbdfe744a8e0e675ff77f90c015577c0b8ba8bf8acafe26"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            802,
+            540,
+            169,
+            174
+          ],
+          "source_body_bounds": [
+            39,
+            69,
+            116,
+            154
+          ],
+          "source_root": [
+            78.1642685851319,
+            154.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            128,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.786,
+            128.129,
+            115.528,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_6.png",
+          "atlas_rect": [
+            960,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            128,
+            116,
+            172
+          ],
+          "sha256": "a42005b249eab8cead2afbeb22da16f7153a519707e52b6a96591944dcffb7db"
+        }
+      ]
+    },
+    "charge": {
+      "row": 18,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            0,
+            1169,
+            166,
+            155
+          ],
+          "source_body_bounds": [
+            58,
+            24,
+            136,
+            137
+          ],
+          "source_root": [
+            96.72537659327926,
+            137.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            114,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.013,
+            113.677,
+            116.271,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_1.png",
+          "atlas_rect": [
+            0,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            114,
+            116,
+            172
+          ],
+          "sha256": "76363623620df584519c8d32a1400413173e6cc737ee6fd9b8041e2c6461fbd1"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            166,
+            1169,
+            148,
+            155
+          ],
+          "source_body_bounds": [
+            30,
+            18,
+            123,
+            136
+          ],
+          "source_root": [
+            80.48488664987406,
+            136.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            111,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            69.943,
+            111.097,
+            117.943,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_2.png",
+          "atlas_rect": [
+            192,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            111,
+            118,
+            172
+          ],
+          "sha256": "e66db35022af6ee33c2e98071d0aefc65c818f311d623260338556a618fbfc17"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            314,
+            1169,
+            173,
+            155
+          ],
+          "source_body_bounds": [
+            25,
+            18,
+            141,
+            137
+          ],
+          "source_root": [
+            87.63603818615752,
+            137.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            64,
+            111,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            63.672,
+            110.581,
+            139.543,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_3.png",
+          "atlas_rect": [
+            384,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            64,
+            111,
+            140,
+            172
+          ],
+          "sha256": "11f0905f37db9d736f18e9990060fa3e62600e6e7d729e1757078473b4d88c79"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            487,
+            1169,
+            158,
+            155
+          ],
+          "source_body_bounds": [
+            1,
+            18,
+            157,
+            138
+          ],
+          "source_root": [
+            66.39227895392278,
+            138.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            62,
+            110,
+            143,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.249,
+            110.065,
+            142.765,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_4.png",
+          "atlas_rect": [
+            576,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            110,
+            143,
+            172
+          ],
+          "sha256": "be4bd16af093d044ed7801654bb49240fff467ad522944100b34bc7be92c6356"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            645,
+            1169,
+            165,
+            155
+          ],
+          "source_body_bounds": [
+            1,
+            18,
+            164,
+            137
+          ],
+          "source_root": [
+            66.09367945823928,
+            137.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            62,
+            111,
+            147,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.403,
+            110.581,
+            146.532,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_5.png",
+          "atlas_rect": [
+            768,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            111,
+            147,
+            172
+          ],
+          "sha256": "93cfa1b438f319a31d5d4b8c6429f2a7c9e21c7f528163f9a4cc8cbcecfa8af3"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-A.png",
+          "source_rect": [
+            810,
+            1169,
+            161,
+            155
+          ],
+          "source_body_bounds": [
+            1,
+            21,
+            121,
+            137
+          ],
+          "source_root": [
+            59.17099567099567,
+            137.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            66,
+            112,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            65.976,
+            112.129,
+            127.912,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_6.png",
+          "atlas_rect": [
+            960,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            66,
+            112,
+            128,
+            172
+          ],
+          "sha256": "d7d30340d44d1d6d1cc5413a073562592b43db6ba625f822d322f720059cacec"
+        }
+      ]
+    },
+    "skill_u": {
+      "row": 19,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.06666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            714,
+            164,
+            162
+          ],
+          "source_body_bounds": [
+            53,
+            36,
+            124,
+            140
+          ],
+          "source_root": [
+            89.04657179818888,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            119,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.395,
+            118.323,
+            114.04,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_1.png",
+          "atlas_rect": [
+            0,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            119,
+            114,
+            172
+          ],
+          "sha256": "ac053e142870e2942f355893c4d7da2344b5028f46e7a5af6aeb355cbaacfdbe"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            164,
+            714,
+            158,
+            162
+          ],
+          "source_body_bounds": [
+            40,
+            31,
+            124,
+            141
+          ],
+          "source_root": [
+            78.15474642392718,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.307,
+            115.226,
+            119.662,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_2.png",
+          "atlas_rect": [
+            192,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "sha256": "1c714285516ce1466a48599c45540910b53491ea824a0c246d2de29c3fae6459"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            322,
+            714,
+            151,
+            162
+          ],
+          "source_body_bounds": [
+            35,
+            21,
+            117,
+            140
+          ],
+          "source_root": [
+            73.25064599483204,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            111,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.258,
+            110.581,
+            118.58,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_3.png",
+          "atlas_rect": [
+            384,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            111,
+            119,
+            172
+          ],
+          "sha256": "3c11e826c164bf0eeb25890a49a1a355ab1de5838a7640d3b33286e88af51cf9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            473,
+            714,
+            179,
+            162
+          ],
+          "source_body_bounds": [
+            34,
+            37,
+            165,
+            140
+          ],
+          "source_root": [
+            71.78562577447336,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            119,
+            144,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.498,
+            118.839,
+            144.627,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_4.png",
+          "atlas_rect": [
+            576,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            119,
+            145,
+            172
+          ],
+          "sha256": "f8c87a87e05629b5e484ac6b2deec3fc7c154953816f0f84164031ca835bc290"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            652,
+            714,
+            163,
+            162
+          ],
+          "source_body_bounds": [
+            14,
+            38,
+            141,
+            141
+          ],
+          "source_root": [
+            46.1624685138539,
+            141.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            119,
+            145,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.4,
+            112.645,
+            145.465,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_5.png",
+          "atlas_rect": [
+            768,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            113,
+            145,
+            172
+          ],
+          "sha256": "aa2411c40e0cba6b62a29b93f9510e70dbcbc2da093381cbfe34d0e5c3ad3f78"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            815,
+            714,
+            156,
+            162
+          ],
+          "source_body_bounds": [
+            21,
+            41,
+            96,
+            140
+          ],
+          "source_root": [
+            59.82741116751269,
+            140.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            121,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.96,
+            120.903,
+            114.67,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_6.png",
+          "atlas_rect": [
+            960,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            121,
+            115,
+            172
+          ],
+          "sha256": "cf72ff9aa4f9740d1fd322d0644245a8051554d43877cc36e87506039d445a5f"
+        }
+      ]
+    },
+    "skill_i": {
+      "row": 20,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.125,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            876,
+            160,
+            164
+          ],
+          "source_body_bounds": [
+            53,
+            37,
+            122,
+            142
+          ],
+          "source_root": [
+            88.52562417871222,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            118,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.664,
+            117.806,
+            113.277,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_1.png",
+          "atlas_rect": [
+            0,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            118,
+            113,
+            172
+          ],
+          "sha256": "d838316dc92694338f2a966c05e90e41b893db60f4dbf8456aec528c4f08ef0f"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            160,
+            876,
+            155,
+            164
+          ],
+          "source_body_bounds": [
+            37,
+            42,
+            132,
+            142
+          ],
+          "source_root": [
+            87.3076923076923,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            120,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.035,
+            120.387,
+            119.067,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_2.png",
+          "atlas_rect": [
+            192,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            120,
+            119,
+            172
+          ],
+          "sha256": "a471b92b1ca1a5a223e41dd310ce71648c1f4f482d6776d511457bfe33887e7b"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            315,
+            876,
+            155,
+            164
+          ],
+          "source_body_bounds": [
+            30,
+            20,
+            136,
+            142
+          ],
+          "source_root": [
+            79.54838709677419,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            109,
+            125,
+            172
+          ],
+          "transformed_visible_bounds": [
+            66.814,
+            109.032,
+            127.717,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_3.png",
+          "atlas_rect": [
+            384,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            109,
+            128,
+            172
+          ],
+          "sha256": "77e0e3ea05f64e39ffb67a44ab672f536b81e965a953bc11b33d116c45966419"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            470,
+            876,
+            170,
+            164
+          ],
+          "source_body_bounds": [
+            20,
+            55,
+            151,
+            147
+          ],
+          "source_root": [
+            82.28982528263104,
+            147.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            64,
+            125,
+            131,
+            172
+          ],
+          "transformed_visible_bounds": [
+            60.754,
+            124.516,
+            134.56,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_4.png",
+          "atlas_rect": [
+            576,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            61,
+            125,
+            135,
+            172
+          ],
+          "sha256": "d0cff6ce4ce1097ce497c1eb1841e263e45d18ec18916d091a5e8e6311c31e3c"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            640,
+            876,
+            171,
+            164
+          ],
+          "source_body_bounds": [
+            17,
+            71,
+            145,
+            142
+          ],
+          "source_root": [
+            78.71015761821366,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            64,
+            135,
+            129,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.085,
+            135.355,
+            130.214,
+            172.516
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_5.png",
+          "atlas_rect": [
+            768,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            135,
+            129,
+            173
+          ],
+          "sha256": "ecb9366b59f764cddf6f31fefe673af1bd20c8840a7737a97887646a2a909608"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            811,
+            876,
+            160,
+            164
+          ],
+          "source_body_bounds": [
+            26,
+            44,
+            104,
+            142
+          ],
+          "source_root": [
+            64.92154420921544,
+            142.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            121,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.911,
+            121.419,
+            116.17,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_6.png",
+          "atlas_rect": [
+            960,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            121,
+            116,
+            172
+          ],
+          "sha256": "e5ce75aded6ff7d8326b04568ad1898abb6851e9c8a988759de200168ba6bfcf"
+        }
+      ]
+    },
+    "ultimate": {
+      "row": 21,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.18333333,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            1040,
+            160,
+            148
+          ],
+          "source_body_bounds": [
+            51,
+            30,
+            120,
+            130
+          ],
+          "source_root": [
+            86.90826873385014,
+            130.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            120,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.467,
+            120.387,
+            113.08,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_1.png",
+          "atlas_rect": [
+            0,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            120,
+            113,
+            172
+          ],
+          "sha256": "124b46b159b1f8d4e97727e9d6b5d603061500dfc80e690693efc893df375d86"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            160,
+            1040,
+            135,
+            148
+          ],
+          "source_body_bounds": [
+            40,
+            26,
+            113,
+            130
+          ],
+          "source_root": [
+            76.59740259740259,
+            130.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            118,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.111,
+            118.323,
+            114.788,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_2.png",
+          "atlas_rect": [
+            192,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            118,
+            115,
+            172
+          ],
+          "sha256": "7a447052055952493918d938446efeb1acbd3fbea8d41287060093fba58d49af"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            295,
+            1040,
+            172,
+            148
+          ],
+          "source_body_bounds": [
+            22,
+            26,
+            168,
+            131
+          ],
+          "source_root": [
+            96.74126778783959,
+            131.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            57,
+            118,
+            133,
+            172
+          ],
+          "transformed_visible_bounds": [
+            57.424,
+            117.806,
+            132.779,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_3.png",
+          "atlas_rect": [
+            384,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            57,
+            118,
+            133,
+            172
+          ],
+          "sha256": "03774ab6fdc2118f05cd2ce0f29733c3ca6d78bf20c6ef15418cead7b1651b0e"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            467,
+            1040,
+            185,
+            148
+          ],
+          "source_body_bounds": [
+            4,
+            23,
+            179,
+            136
+          ],
+          "source_root": [
+            89.019,
+            136.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            52,
+            114,
+            142,
+            172
+          ],
+          "transformed_visible_bounds": [
+            52.119,
+            110.065,
+            142.442,
+            172.516
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_4.png",
+          "atlas_rect": [
+            576,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            52,
+            110,
+            142,
+            173
+          ],
+          "sha256": "6bbc02c2cc36cda5eebc680c27c455bedad505d21f82a2d7f9202625a8889daf"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            652,
+            1040,
+            160,
+            148
+          ],
+          "source_body_bounds": [
+            23,
+            31,
+            131,
+            132
+          ],
+          "source_root": [
+            65.25285895806861,
+            132.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            120,
+            130,
+            172
+          ],
+          "transformed_visible_bounds": [
+            64.902,
+            119.871,
+            129.934,
+            172.516
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_5.png",
+          "atlas_rect": [
+            768,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            65,
+            120,
+            130,
+            173
+          ],
+          "sha256": "6657ff34376237d8f149ac0162499b06ae27ca6a1b5e90b0bb4aa3897d3f9781"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            812,
+            1040,
+            159,
+            148
+          ],
+          "source_body_bounds": [
+            29,
+            33,
+            102,
+            131
+          ],
+          "source_root": [
+            65.72365038560412,
+            131.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            121,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.046,
+            121.419,
+            114.723,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_6.png",
+          "atlas_rect": [
+            960,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            121,
+            115,
+            172
+          ],
+          "sha256": "d506081f6604808555e0691ea102ca5f38a9393f50f962999aeb143b7d041212"
+        }
+      ]
+    },
+    "new_skill": {
+      "row": 22,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            1188,
+            158,
+            156
+          ],
+          "source_body_bounds": [
+            52,
+            30,
+            121,
+            134
+          ],
+          "source_root": [
+            87.90084985835693,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            118,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.471,
+            118.323,
+            113.083,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_1.png",
+          "atlas_rect": [
+            0,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            118,
+            113,
+            172
+          ],
+          "sha256": "0b4ecca5ce839bdb34e3049bb6331717947c1431b31893b7abe9331bd5ed4eab"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            158,
+            1188,
+            150,
+            156
+          ],
+          "source_body_bounds": [
+            36,
+            33,
+            117,
+            134
+          ],
+          "source_root": [
+            81.74864130434783,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            120,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.388,
+            119.871,
+            114.194,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_2.png",
+          "atlas_rect": [
+            192,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            120,
+            114,
+            172
+          ],
+          "sha256": "5aaa074995d1e6901fdfbc6c83fb3b27353f1074c63267677cbc525c4e8ea711"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            308,
+            1188,
+            158,
+            156
+          ],
+          "source_body_bounds": [
+            52,
+            11,
+            121,
+            134
+          ],
+          "source_root": [
+            85.18588873812755,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            109,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            69.065,
+            108.516,
+            114.485,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_3.png",
+          "atlas_rect": [
+            384,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            69,
+            109,
+            114,
+            172
+          ],
+          "sha256": "7a8b9dadbac122d1cdf7ea530505010c04808d89a6b7e093b7b81ec79f5cefa9"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            466,
+            1188,
+            173,
+            156
+          ],
+          "source_body_bounds": [
+            38,
+            26,
+            152,
+            134
+          ],
+          "source_root": [
+            90.55179282868527,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            69,
+            116,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.876,
+            116.258,
+            127.715,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_4.png",
+          "atlas_rect": [
+            576,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            69,
+            116,
+            128,
+            172
+          ],
+          "sha256": "dd4cb9f128f9c34f94c9f6a6d4c80191de1beaeb31b359f46be16398c4907e29"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            639,
+            1188,
+            176,
+            156
+          ],
+          "source_body_bounds": [
+            30,
+            48,
+            139,
+            143
+          ],
+          "source_root": [
+            83.81681034482759,
+            143.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            123,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            63.578,
+            122.968,
+            130.159,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_5.png",
+          "atlas_rect": [
+            768,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            66,
+            123,
+            130,
+            172
+          ],
+          "sha256": "59087036e0c17ae81c1c15ccffa7c78f6b793b0b7ec23ea59ffd32679f27e931"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            815,
+            1188,
+            156,
+            156
+          ],
+          "source_body_bounds": [
+            26,
+            44,
+            104,
+            134
+          ],
+          "source_root": [
+            63.28431372549019,
+            134.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            126,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.756,
+            125.548,
+            117.015,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_6.png",
+          "atlas_rect": [
+            960,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            126,
+            117,
+            172
+          ],
+          "sha256": "1660aa8e44e62b67983a5728094c0f42b20c4db91b49e0367ef4834c33ca303f"
+        }
+      ]
+    },
+    "knockdown": {
+      "row": 23,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            0,
+            1344,
+            155,
+            140
+          ],
+          "source_body_bounds": [
+            53,
+            22,
+            120,
+            125
+          ],
+          "source_root": [
+            77.5,
+            125.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            83,
+            119,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            83.355,
+            118.839,
+            117.935,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_1.png",
+          "atlas_rect": [
+            0,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            83,
+            119,
+            118,
+            172
+          ],
+          "sha256": "984f38078aa2c778e1a66f3a45cbcea96daef21d2ed852d901a5940f7704b150"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            155,
+            1344,
+            151,
+            140
+          ],
+          "source_body_bounds": [
+            35,
+            22,
+            127,
+            125
+          ],
+          "source_root": [
+            75.5,
+            125.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            119,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.097,
+            114.71,
+            122.581,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_2.png",
+          "atlas_rect": [
+            192,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            123,
+            172
+          ],
+          "sha256": "94f41c195e1ff964918e6b0300f789f88585f7a3782f7dea38fa3676c1258e14"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            306,
+            1344,
+            156,
+            140
+          ],
+          "source_body_bounds": [
+            27,
+            27,
+            139,
+            110
+          ],
+          "source_root": [
+            78.0,
+            110.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            129,
+            127,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.129,
+            129.161,
+            127.484,
+            177.161
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_3.png",
+          "atlas_rect": [
+            384,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            129,
+            127,
+            177
+          ],
+          "sha256": "22b8988d15be4e780a9d8c4dde4f670ecd375e1ae6404e772d3301e51700a52d"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            462,
+            1344,
+            182,
+            140
+          ],
+          "source_body_bounds": [
+            26,
+            70,
+            157,
+            122
+          ],
+          "source_root": [
+            91.0,
+            122.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            63,
+            145,
+            129,
+            172
+          ],
+          "transformed_visible_bounds": [
+            58.323,
+            145.161,
+            132.129,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_4.png",
+          "atlas_rect": [
+            576,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            58,
+            145,
+            132,
+            172
+          ],
+          "sha256": "1b05e8653040cb9034a2b71dd871f8c4c6750adc66bb50f587addf3fa35a69b4"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            644,
+            1344,
+            152,
+            140
+          ],
+          "source_body_bounds": [
+            20,
+            60,
+            110,
+            123
+          ],
+          "source_root": [
+            76.0,
+            123.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            67,
+            139,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.097,
+            139.484,
+            113.548,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_5.png",
+          "atlas_rect": [
+            768,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            139,
+            114,
+            172
+          ],
+          "sha256": "2f0393e17015dc52ce14ddb7c25fa1a6682098907525e3dd7707c7e87ef52496"
+        },
+        {
+          "source_file": "art/animations/v4/source/do_mixi-B.png",
+          "source_rect": [
+            796,
+            1344,
+            175,
+            140
+          ],
+          "source_body_bounds": [
+            41,
+            27,
+            118,
+            127
+          ],
+          "source_root": [
+            87.5,
+            127.0
+          ],
+          "scale": 0.5161290322580645,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            120,
+            112,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.0,
+            120.387,
+            111.742,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_6.png",
+          "atlas_rect": [
+            960,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            120,
+            112,
+            172
+          ],
+          "sha256": "b6ef8d568d4ce46f410889f4136b3d81102eec6e17d61c33575aae018acb774a"
+        }
+      ]
+    }
+  }
+}

@@ -72,6 +72,8 @@ public class Hitbox {
 
     public void cancel() { life = 0; }
 
+    public boolean intersects(Rect target) { return rect.intersects(target); }
+
     public boolean isAlive() {
         return life > 0;
     }

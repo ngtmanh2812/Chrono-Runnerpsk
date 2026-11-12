@@ -1,0 +1,4 @@
+V4 runtime bank: the_time_guardian
+256x256; pivot=(128, 232); anchor=feet; scale=2.
+20 V4 authored clips; runtime aliases included. New_skill and knockdown reserved; no new gameplay logic.
+Source coordinates/roots/palette/body calibration are in manifest.json.

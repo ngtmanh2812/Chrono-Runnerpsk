@@ -1,0 +1,4 @@
+V4 runtime bank: phan_si_kien
+192x192; feet pivot=(96,172); scale=1.
+24 rows, 11 atlas columns. U/I/O and special alias have 11 frames; other clips have 6.
+Source coordinates, roots and override provenance are in manifest.json.

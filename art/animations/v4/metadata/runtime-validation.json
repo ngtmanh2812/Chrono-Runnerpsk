@@ -1,0 +1,31 @@
+{
+  "actors": 1,
+  "runtime_banks": {
+    "phan_si_kien": {
+      "frame_size": [
+        192,
+        192
+      ],
+      "rows": 24,
+      "scale": 0.5311203319502075
+    }
+  },
+  "preserved_gameplay": true,
+  "source_root": "art/animations/v4/source",
+  "source_defects_cleaned": {
+    "the_void_core-A.png": [
+      [
+        392,
+        521
+      ],
+      [
+        392,
+        537
+      ],
+      [
+        392,
+        538
+      ]
+    ]
+  }
+}

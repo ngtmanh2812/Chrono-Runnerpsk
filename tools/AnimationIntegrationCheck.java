@@ -67,11 +67,16 @@ public final class AnimationIntegrationCheck {
         Art.validateAll();
         for(String actor:new String[]{"phan_si_kien","ronaldo","do_mixi","The Time Guardian","The Void Core"}) {
             boolean boss=actor.startsWith("The ");
-            for(String state:Art.PLAYER_ANIMATIONS) {
+            Path bank=Path.of("assets",boss?"bosses":"players",boss?actor.toLowerCase(java.util.Locale.ROOT).replace(' ','_'):actor,actor.equals("The Time Guardian")?"v5":"v4");
+            if(!Files.isRegularFile(bank.resolve("animation.properties")))bank=bank.getParent().resolve(boss?"v2":"v3");
+            Properties metadata=new Properties();try(var in=Files.newInputStream(bank.resolve("animation.properties"))){metadata.load(in);}
+            int version=Integer.parseInt(metadata.getProperty("version"));
+            for(String state:boss?Art.BOSS_ANIMATIONS:Art.PLAYER_ANIMATIONS) {
                 SpriteSet set=boss?Art.bossAnimation(actor,state):Art.playerAnim(actor,state);
                 check(set.layout()!=null,"Legacy art still active: "+actor+"/"+state);
-                check(set.count()==(state.equals("fall")||state.equals("land")?2:6),"Stale/missing frames: "+actor+"/"+state);
-                check(set.frame(0).width()==(boss?256:128),"Wrong geometry");
+                int expected=Integer.parseInt(metadata.getProperty(state+".frames",Integer.toString(version>=4?6:state.equals("fall")||state.equals("land")?2:6)));
+                check(set.count()==expected,"Stale/missing frames: "+actor+"/"+state);
+                check(set.frame(0).width()==Integer.parseInt(metadata.getProperty("frameWidth"))&&set.frame(0).height()==Integer.parseInt(metadata.getProperty("frameHeight")),"Wrong measured geometry");
                 check(set.animation(state,.1,true).frameCount()==set.count(),"Animation count drift");
             }
         }
@@ -96,7 +101,12 @@ public final class AnimationIntegrationCheck {
             while(attack.isBusy()) {
                 phases.add(attack.phase());int frame=anim(p).current().frame();
                 int window=switch(attack.phase()){case STARTUP->0;case ACTIVE->1;case RECOVERY->2;default->-1;};
-                check(state(p).equals("light_1")&&frame>=window*2&&frame<window*2+2,
+                Properties layout=(Properties)get(Art.playerAnim(p.characterId(),"light_1").layout(),"properties");
+                int active=Integer.parseInt(layout.getProperty("combat.activeFrame","2"));
+                int recovery=Integer.parseInt(layout.getProperty("combat.recoveryFrame","4"));
+                int first=window==0?0:window==1?active:recovery;
+                int limit=window==0?active:window==1?recovery:Art.playerAnim(p.characterId(),"light_1").count();
+                check(state(p).equals("light_1")&&frame>=first&&frame<limit,
                         "Attack pose outside damaging window: "+character+"/"+attack.phase()+" frame "+frame);
                 f.tick();
             }
@@ -125,13 +135,15 @@ public final class AnimationIntegrationCheck {
             b.y=f.level.groundY()-b.height;b.grounded=true;
             f.snapshot("chapter-"+chapter+"-idle");
             set(b,"attackTimer",0);set(b,"specialTimer",100);b.update(DT,f.screen);
-            check(anim(b).currentName().equals("attack"),"Boss normal attack invisible");
+            check(anim(b).currentName().equals("skill_u"),"Ranged boss action did not select cast animation");
+            check(((Attack)get(b,"action")).getData().name.equals("attack"),"Visual clip changed normal combat action identity");
             // A committed normal attack now owns its recovery; a Special must
             // wait for that action to finish instead of interrupting its pose.
             set(b,"attackTimer",100);
             for(int i=0;i<90&&get(b,"action")!=null;i++)b.update(DT,f.screen);
             set(b,"attackTimer",100);set(b,"specialTimer",0);b.update(DT,f.screen);
-            check(anim(b).currentName().equals("special"),"Boss special invisible");
+            check(anim(b).currentName().equals(chapter==1?"skill_i":"ultimate"),"Boss special did not select action-specific animation");
+            check(((Attack)get(b,"action")).getData().name.equals("special"),"Visual clip changed special combat action identity");
             f.snapshot("chapter-"+chapter+"-special");
             f=new Fixture(chapter,0);b=f.level.boss();b.y=f.level.groundY()-b.height;b.grounded=true;
             if(chapter==1)b.x=1050;
@@ -142,7 +154,7 @@ public final class AnimationIntegrationCheck {
             check((double)get(b,"attackTimer")==timer,"Dead boss still runs AI");
             f.snapshot("chapter-"+chapter+"-boss-falling");
             for(int i=0;i<27;i++)f.gameTick();
-            check(anim(b).current().finished()&&anim(b).current().frame()==5,"Boss death not held");
+            check(anim(b).current().finished()&&anim(b).current().frame()==Art.bossAnimation(b.getName(),"death").count()-1,"Boss death not held");
             check(f.game.getState()==GameState.PLAYING,"Victory cut off death");
             f.snapshot("chapter-"+chapter+"-boss-defeated");
             for(int i=0;i<60;i++)f.gameTick();

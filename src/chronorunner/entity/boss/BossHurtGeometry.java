@@ -18,7 +18,9 @@ final class BossHurtGeometry {
         if ("The Time Guardian".equals(name)) {
             sx = 94; sy = 138; sw = 70; sh = 94;
         } else if ("The Void Core".equals(name)) {
-            sx = 88; sy = 108; sw = 88; sh = 68;
+            if (!layout.centerAnchor) { // Grounded Daddy bank, same-sized torso as Guardian.
+                sx = 94; sy = 138; sw = 70; sh = 94;
+            } else { sx = 88; sy = 108; sw = 88; sh = 68; }
         } else return new Rect(x, y, width, height);
         double left = facing < 0 ? layout.pivotX - sx - sw : sx - layout.pivotX;
         double anchorY = layout.centerAnchor ? y + height / 2 : y + height;

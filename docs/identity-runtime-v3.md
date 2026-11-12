@@ -1,5 +1,9 @@
 # Runtime kỹ năng riêng — v3
 
+> Hình ảnh đang dùng đã được nâng cấp sang V4; xem
+> [tích hợp animation V4](animation-v4-integration.md). Các luật chiến đấu và
+> phím bấm dưới đây vẫn áp dụng. Mô tả bank/pivot V3 là thông tin của bộ cũ.
+
 Đã triển khai ba kỹ năng riêng cho từng hero, năng lượng và animation bank v3. Cập nhật 30/10/2026: **W nhảy/nhảy đôi, K dash; ba lần nhấn J nối đòn thường → Heavy → Launcher**. P2 dùng Numpad 1 cho cùng chuỗi; các phím nhảy/dash của P2 giữ nguyên. Đợt sửa melee tiếp theo căn hurtbox thân boss, đồng bộ hitbox di chuyển, cho nối sớm khi trúng và tích nội năng. Sprite/frame/pivot giữ nguyên; cửa sổ combat boss đã được cân lại. Chi tiết ở [melee-fairness.md](melee-fairness.md).
 
 | Hành động | P1 | P2 |

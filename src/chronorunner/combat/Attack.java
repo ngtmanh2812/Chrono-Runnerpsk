@@ -1,6 +1,7 @@
 package chronorunner.combat;
 
 import chronorunner.entity.GameObject;
+import chronorunner.entity.Player;
 import chronorunner.util.Rect;
 import chronorunner.world.CombatWorld;
 
@@ -239,5 +240,8 @@ public class Attack {
                 .withMeleeChain(meleeChain, meleeStep);
         activeHitbox = new Hitbox(activeRect, info, data.activeSeconds(), friendly, attacker, friendly);
         world.addHitbox(activeHitbox);
+        if (friendly && attacker instanceof Player player) {
+            player.onMeleeActive(world, facing, meleeStep);
+        }
     }
 }

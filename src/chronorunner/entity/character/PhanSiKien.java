@@ -7,13 +7,16 @@ import chronorunner.combat.Hitbox;
 import chronorunner.combat.Attack;
 import chronorunner.combat.AttackData;
 import chronorunner.combat.DamageInfo;
+import chronorunner.combat.DamageInfo.Feedback;
 import chronorunner.core.InputHandler;
 import chronorunner.entity.Player;
-import chronorunner.entity.Projectile;
+import chronorunner.entity.SwordWave;
+import chronorunner.entity.SwordVisualEffect;
+import chronorunner.gfx.SwordEffects.Kind;
 import chronorunner.world.CombatWorld;
 import chronorunner.entity.SkillPulse;
 
-/** Balanced all-rounder with a long range Chrono Shot. */
+/** Time swordsman: travelling blade, extended cleave and clock-cross finisher. */
 public class PhanSiKien extends Player {
 
     public PhanSiKien(int playerIndex, InputHandler input, double x, double y) {
@@ -39,21 +42,32 @@ public class PhanSiKien extends Player {
     @Override
     protected void performSkill(int slot, CombatWorld world) {
         if (slot == 0) {
-            double sx = facing >= 0 ? right() + 10 : x - 10;
-            world.addProjectile(new Projectile(sx, centerY(), facing * 780, 0, 9,
-                    new DamageInfo(40, 200 * facing, -150, true), true, skillEffectColor, 1.6));
+            double sx = facing >= 0 ? right() + 28 : x - 28;
+            world.addProjectile(new SwordWave(sx,centerY()-8,facing,
+                    new DamageInfo(40,200*facing,-150,true).withFeedback(Feedback.PHAN_SWORD_LIGHT)));
+            world.addParticle(SwordVisualEffect.slash(Kind.CRESCENT,sx,centerY()-8,facing,.24,.55));
+            world.shake(.22);
         } else if (slot == 1) {
-            double sx = facing >= 0 ? right() : x - 135;
-            addSkillHitbox(world, new Hitbox(new Rect(sx, y - 10, 135, height + 20),
-                    new DamageInfo(45, 320 * facing, -280, true, .8), .25, true, this));
-            world.addParticle(new SkillPulse(centerX() + facing * 75, centerY(), 90, .35, skillEffectColor));
+            double sx = facing >= 0 ? right() : x - 220;
+            addSkillHitbox(world,new Hitbox(new Rect(sx,y-10,220,height+20),
+                    new DamageInfo(45,320*facing,-280,true,.8).withFeedback(Feedback.PHAN_SWORD_MEDIUM),.25,true,this));
+            world.addParticle(SwordVisualEffect.slash(Kind.LONG_SLASH,sx+110,centerY()-5,facing,.32,1));
+            world.shake(.30);
         } else {
             addSkillHitbox(world, new Hitbox(new Rect(x - 220, y - 140, width + 440, height + 200),
-                    new DamageInfo(120, 0, -420, true, 1.2), .2, true, this));
-            world.addParticle(new SkillPulse(centerX(), centerY(), 240, .65, skillEffectColor));
-            world.addParticle(new SkillPulse(centerX(), centerY(), 160, .5, new Color(180, 245, 255)));
-            world.shake(.45);
+                    new DamageInfo(120,0,-420,true,1.2).withFeedback(Feedback.PHAN_SWORD_ULTIMATE),.2,true,this));
+            world.addParticle(SwordVisualEffect.slash(Kind.CROSS_BURST,centerX(),centerY()-30,facing,.58,1));
+            world.addParticle(SwordVisualEffect.slash(Kind.LONG_SLASH,centerX(),centerY()-10,facing,.34,1.6));
+            world.addParticle(new SkillPulse(centerX(),centerY(),240,.55,skillEffectColor));
+            world.shake(.48);
         }
+    }
+
+    @Override protected void emitMeleeTrail(CombatWorld world,int direction,int step) {
+        Kind kind=step==2?Kind.LONG_SLASH:Kind.CRESCENT;
+        double reach=step==2?70:step==3?45:40;
+        world.addParticle(SwordVisualEffect.slash(kind,centerX()+direction*reach,
+                centerY()-(step==3?20:0),direction,.18,step==2?.38:.42));
     }
 
     @Override

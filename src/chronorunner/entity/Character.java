@@ -79,7 +79,7 @@ public abstract class Character extends GameObject {
         if (health < 0) health = 0;
         invuln = 0.55;
         hurtFlash = 0.22;
-        stun = Math.max(stun, 0.14);
+        stun = Math.max(stun, Math.max(0.14, info.stunSeconds));
         vx += info.knockbackX;
         if (info.knockbackY < 0) {
             vy = Math.min(vy, info.knockbackY);

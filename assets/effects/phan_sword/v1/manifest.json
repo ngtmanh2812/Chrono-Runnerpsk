@@ -1,0 +1,2505 @@
+{
+  "version": 1,
+  "frames_per_animation": 11,
+  "added_frames": 5,
+  "order": "original0,inbetween0,...,original4,inbetween4,original5",
+  "resampling": "nearest-neighbour uniform; no per-frame normalization",
+  "alpha": "binary, actual transparent channel",
+  "sources": [
+    {
+      "file": "art/effects/phan_sword/source/fx-sheet.png",
+      "sha256": "ae41e7a26cbd56ced7c2e37f3037a876fe092ea6850882d0a50ca231d244607c",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "x_cuts": [
+        0,
+        256,
+        512,
+        768,
+        1024,
+        1280,
+        1536
+      ],
+      "y_cuts": [
+        0,
+        300,
+        491,
+        748,
+        1024
+      ],
+      "columns": 6,
+      "rows": 4,
+      "alpha_cutoff": 128,
+      "removed_tiny_pixels": 26,
+      "row_measurements": [
+        {
+          "row": 0,
+          "kind": "crescent",
+          "row_root_y": 164.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                97,
+                104,
+                180,
+                226
+              ]
+            },
+            {
+              "source_rect": [
+                256,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                64,
+                88,
+                198,
+                237
+              ]
+            },
+            {
+              "source_rect": [
+                512,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                34,
+                80,
+                214,
+                248
+              ]
+            },
+            {
+              "source_rect": [
+                768,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                27,
+                81,
+                236,
+                238
+              ]
+            },
+            {
+              "source_rect": [
+                1024,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                33,
+                84,
+                224,
+                234
+              ]
+            },
+            {
+              "source_rect": [
+                1280,
+                0,
+                256,
+                300
+              ],
+              "source_root": [
+                128.0,
+                164.0
+              ],
+              "visible_bounds": [
+                52,
+                92,
+                216,
+                230
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "kind": "long_slash",
+          "row_root_y": 95.5,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                59,
+                74,
+                199,
+                113
+              ]
+            },
+            {
+              "source_rect": [
+                256,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                29,
+                66,
+                222,
+                120
+              ]
+            },
+            {
+              "source_rect": [
+                512,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                11,
+                59,
+                237,
+                131
+              ]
+            },
+            {
+              "source_rect": [
+                768,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                10,
+                53,
+                245,
+                138
+              ]
+            },
+            {
+              "source_rect": [
+                1024,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                18,
+                58,
+                241,
+                129
+              ]
+            },
+            {
+              "source_rect": [
+                1280,
+                300,
+                256,
+                191
+              ],
+              "source_root": [
+                128.0,
+                95.5
+              ],
+              "visible_bounds": [
+                27,
+                61,
+                227,
+                128
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "kind": "cross_burst",
+          "row_root_y": 137.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                62,
+                95,
+                195,
+                190
+              ]
+            },
+            {
+              "source_rect": [
+                256,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                40,
+                78,
+                209,
+                211
+              ]
+            },
+            {
+              "source_rect": [
+                512,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                28,
+                58,
+                222,
+                215
+              ]
+            },
+            {
+              "source_rect": [
+                768,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                21,
+                53,
+                226,
+                221
+              ]
+            },
+            {
+              "source_rect": [
+                1024,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                30,
+                64,
+                223,
+                212
+              ]
+            },
+            {
+              "source_rect": [
+                1280,
+                491,
+                256,
+                257
+              ],
+              "source_root": [
+                128.0,
+                137.0
+              ],
+              "visible_bounds": [
+                25,
+                69,
+                213,
+                211
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "kind": "smoke",
+          "row_root_y": 129.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                102,
+                112,
+                170,
+                162
+              ]
+            },
+            {
+              "source_rect": [
+                256,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                53,
+                86,
+                198,
+                191
+              ]
+            },
+            {
+              "source_rect": [
+                512,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                15,
+                59,
+                223,
+                213
+              ]
+            },
+            {
+              "source_rect": [
+                768,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                13,
+                37,
+                236,
+                221
+              ]
+            },
+            {
+              "source_rect": [
+                1024,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                28,
+                51,
+                228,
+                221
+              ]
+            },
+            {
+              "source_rect": [
+                1280,
+                748,
+                256,
+                276
+              ],
+              "source_root": [
+                128.0,
+                129.0
+              ],
+              "visible_bounds": [
+                25,
+                55,
+                212,
+                208
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "art/effects/phan_sword/source/fx-inbetweens.png",
+      "sha256": "02448cf9ee3dfef225df453f7f8af285959ad776c3d03e1fb4b66c851e13aa49",
+      "width": 1402,
+      "height": 1122,
+      "mode": "RGBA",
+      "x_cuts": [
+        0,
+        280,
+        561,
+        841,
+        1122,
+        1402
+      ],
+      "y_cuts": [
+        0,
+        322,
+        539,
+        820,
+        1122
+      ],
+      "columns": 5,
+      "rows": 4,
+      "alpha_cutoff": 128,
+      "removed_tiny_pixels": 9,
+      "row_measurements": [
+        {
+          "row": 0,
+          "kind": "crescent",
+          "row_root_y": 163.5,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                0,
+                280,
+                322
+              ],
+              "source_root": [
+                140.0,
+                163.5
+              ],
+              "visible_bounds": [
+                91,
+                92,
+                208,
+                238
+              ]
+            },
+            {
+              "source_rect": [
+                280,
+                0,
+                281,
+                322
+              ],
+              "source_root": [
+                140.5,
+                163.5
+              ],
+              "visible_bounds": [
+                57,
+                80,
+                235,
+                255
+              ]
+            },
+            {
+              "source_rect": [
+                561,
+                0,
+                280,
+                322
+              ],
+              "source_root": [
+                140.0,
+                163.5
+              ],
+              "visible_bounds": [
+                39,
+                66,
+                251,
+                261
+              ]
+            },
+            {
+              "source_rect": [
+                841,
+                0,
+                281,
+                322
+              ],
+              "source_root": [
+                140.5,
+                163.5
+              ],
+              "visible_bounds": [
+                45,
+                73,
+                245,
+                258
+              ]
+            },
+            {
+              "source_rect": [
+                1122,
+                0,
+                280,
+                322
+              ],
+              "source_root": [
+                140.0,
+                163.5
+              ],
+              "visible_bounds": [
+                41,
+                74,
+                230,
+                254
+              ]
+            }
+          ]
+        },
+        {
+          "row": 1,
+          "kind": "long_slash",
+          "row_root_y": 108.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                322,
+                280,
+                217
+              ],
+              "source_root": [
+                140.0,
+                108.0
+              ],
+              "visible_bounds": [
+                62,
+                79,
+                235,
+                130
+              ]
+            },
+            {
+              "source_rect": [
+                280,
+                322,
+                281,
+                217
+              ],
+              "source_root": [
+                140.5,
+                108.0
+              ],
+              "visible_bounds": [
+                31,
+                72,
+                249,
+                143
+              ]
+            },
+            {
+              "source_rect": [
+                561,
+                322,
+                280,
+                217
+              ],
+              "source_root": [
+                140.0,
+                108.0
+              ],
+              "visible_bounds": [
+                13,
+                61,
+                258,
+                155
+              ]
+            },
+            {
+              "source_rect": [
+                841,
+                322,
+                281,
+                217
+              ],
+              "source_root": [
+                140.5,
+                108.0
+              ],
+              "visible_bounds": [
+                23,
+                62,
+                257,
+                150
+              ]
+            },
+            {
+              "source_rect": [
+                1122,
+                322,
+                280,
+                217
+              ],
+              "source_root": [
+                140.0,
+                108.0
+              ],
+              "visible_bounds": [
+                31,
+                72,
+                234,
+                143
+              ]
+            }
+          ]
+        },
+        {
+          "row": 2,
+          "kind": "cross_burst",
+          "row_root_y": 148.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                539,
+                280,
+                281
+              ],
+              "source_root": [
+                140.0,
+                148.0
+              ],
+              "visible_bounds": [
+                81,
+                97,
+                214,
+                207
+              ]
+            },
+            {
+              "source_rect": [
+                280,
+                539,
+                281,
+                281
+              ],
+              "source_root": [
+                140.5,
+                148.0
+              ],
+              "visible_bounds": [
+                47,
+                69,
+                234,
+                224
+              ]
+            },
+            {
+              "source_rect": [
+                561,
+                539,
+                280,
+                281
+              ],
+              "source_root": [
+                140.0,
+                148.0
+              ],
+              "visible_bounds": [
+                32,
+                62,
+                239,
+                231
+              ]
+            },
+            {
+              "source_rect": [
+                841,
+                539,
+                281,
+                281
+              ],
+              "source_root": [
+                140.5,
+                148.0
+              ],
+              "visible_bounds": [
+                23,
+                65,
+                233,
+                234
+              ]
+            },
+            {
+              "source_rect": [
+                1122,
+                539,
+                280,
+                281
+              ],
+              "source_root": [
+                140.0,
+                148.0
+              ],
+              "visible_bounds": [
+                33,
+                65,
+                215,
+                227
+              ]
+            }
+          ]
+        },
+        {
+          "row": 3,
+          "kind": "smoke",
+          "row_root_y": 147.0,
+          "cells": [
+            {
+              "source_rect": [
+                0,
+                820,
+                280,
+                302
+              ],
+              "source_root": [
+                140.0,
+                147.0
+              ],
+              "visible_bounds": [
+                81,
+                107,
+                214,
+                206
+              ]
+            },
+            {
+              "source_rect": [
+                280,
+                820,
+                281,
+                302
+              ],
+              "source_root": [
+                140.5,
+                147.0
+              ],
+              "visible_bounds": [
+                36,
+                78,
+                242,
+                234
+              ]
+            },
+            {
+              "source_rect": [
+                561,
+                820,
+                280,
+                302
+              ],
+              "source_root": [
+                140.0,
+                147.0
+              ],
+              "visible_bounds": [
+                17,
+                48,
+                258,
+                246
+              ]
+            },
+            {
+              "source_rect": [
+                841,
+                820,
+                281,
+                302
+              ],
+              "source_root": [
+                140.5,
+                147.0
+              ],
+              "visible_bounds": [
+                29,
+                54,
+                246,
+                235
+              ]
+            },
+            {
+              "source_rect": [
+                1122,
+                820,
+                280,
+                302
+              ],
+              "source_root": [
+                140.0,
+                147.0
+              ],
+              "visible_bounds": [
+                27,
+                62,
+                234,
+                238
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "animations": {
+    "crescent": {
+      "frames": 11,
+      "frame_width": 128,
+      "frame_height": 128,
+      "pivot": [
+        64.0,
+        64.0
+      ],
+      "uniform_group_scale": 0.46296296296296297,
+      "frame_metadata": [
+        {
+          "source_rect": [
+            0,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            50,
+            36,
+            88,
+            93
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_1.png",
+          "sha256": "0f6bfdfbfc63f9524f52faa75ca9b160fac41f361f28b40df51be401fec6376e",
+          "atlas_rect": [
+            0,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            0,
+            280,
+            322
+          ],
+          "source_root": [
+            140.0,
+            163.5
+          ],
+          "visible_bounds": [
+            43,
+            34,
+            93,
+            95
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.4226765995667565,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_2.png",
+          "sha256": "7c65ef60b08e4a8f42b5272b1aa7cf1894a7af9fc6720a30ae6597156743a639",
+          "atlas_rect": [
+            128,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            256,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            34,
+            29,
+            96,
+            98
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_3.png",
+          "sha256": "d01ef3fa8403011c92138eadd32e54ba99072644e61782c726e1890bd09bb113",
+          "atlas_rect": [
+            256,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            280,
+            0,
+            281,
+            322
+          ],
+          "source_root": [
+            140.5,
+            163.5
+          ],
+          "visible_bounds": [
+            29,
+            29,
+            104,
+            103
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.4226765995667565,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_4.png",
+          "sha256": "fdd838f54732a6a4515d9dbda463e74ad6564d04dd711e7f9262000acebd54bc",
+          "atlas_rect": [
+            384,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            512,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            20,
+            25,
+            104,
+            103
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_5.png",
+          "sha256": "877b40f985fb95c044bb807956580b6ae9de583a52a18958ac352d46283c819e",
+          "atlas_rect": [
+            512,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            561,
+            0,
+            280,
+            322
+          ],
+          "source_root": [
+            140.0,
+            163.5
+          ],
+          "visible_bounds": [
+            21,
+            23,
+            111,
+            105
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.4226765995667565,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_6.png",
+          "sha256": "98a047beacfd75973344e3ccc97fcd6f46a299047a3e8d02fa65bd45bd7d9c61",
+          "atlas_rect": [
+            640,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            768,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            17,
+            26,
+            114,
+            98
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_7.png",
+          "sha256": "a4521cb8a65246b80a08a4a2fbfc0bf6aa2465c44183e3b34ed0f3ee69ec2e1b",
+          "atlas_rect": [
+            768,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            841,
+            0,
+            281,
+            322
+          ],
+          "source_root": [
+            140.5,
+            163.5
+          ],
+          "visible_bounds": [
+            24,
+            26,
+            108,
+            104
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.4226765995667565,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_8.png",
+          "sha256": "68f11c90eb07f95b2505983776eca576fc21ba8f80df4a69d14ffc32b43e6f05",
+          "atlas_rect": [
+            896,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1024,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            20,
+            27,
+            108,
+            96
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_9.png",
+          "sha256": "deb40d11e3a6ad14b07f8847ba02da7972cbd338323c6afcb3f70481750c53e7",
+          "atlas_rect": [
+            1024,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1122,
+            0,
+            280,
+            322
+          ],
+          "source_root": [
+            140.0,
+            163.5
+          ],
+          "visible_bounds": [
+            22,
+            26,
+            102,
+            102
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.4226765995667565,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_10.png",
+          "sha256": "145939e82f32bc2e8c1d54fa6449026adb1108cce51c93b044d6bfd11529c1cf",
+          "atlas_rect": [
+            1152,
+            0,
+            128,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1280,
+            0,
+            256,
+            300
+          ],
+          "source_root": [
+            128.0,
+            164.0
+          ],
+          "visible_bounds": [
+            29,
+            31,
+            105,
+            95
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.46296296296296297,
+          "effective_source_scale": 0.46296296296296297,
+          "target_pivot": [
+            64.0,
+            64.0
+          ],
+          "file": "crescent_11.png",
+          "sha256": "f0c4e54f34e93252d00561f113ffb565922604ec341ea64c60793e8365c429fe",
+          "atlas_rect": [
+            1280,
+            0,
+            128,
+            128
+          ]
+        }
+      ]
+    },
+    "long_slash": {
+      "frames": 11,
+      "frame_width": 256,
+      "frame_height": 128,
+      "pivot": [
+        128.0,
+        64.0
+      ],
+      "uniform_group_scale": 0.9322033898305084,
+      "frame_metadata": [
+        {
+          "source_rect": [
+            0,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            64,
+            44,
+            194,
+            80
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_1.png",
+          "sha256": "b310187fcc8ce1eda1c68aabd182dad5e1012224451d8fdf26c8645f0dd60ad6",
+          "atlas_rect": [
+            0,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            322,
+            280,
+            217
+          ],
+          "source_root": [
+            140.0,
+            108.0
+          ],
+          "visible_bounds": [
+            62,
+            39,
+            209,
+            83
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.8510844072632316,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_2.png",
+          "sha256": "78c56618423afbfc639c7fc901399c171617ca488986d22750b17f74e71f3d43",
+          "atlas_rect": [
+            256,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            256,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            36,
+            37,
+            216,
+            87
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_3.png",
+          "sha256": "fc6380b8e3958532e2def2c45283eff6da001121acb074d20abfb11a92bbf09a",
+          "atlas_rect": [
+            512,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            280,
+            322,
+            281,
+            217
+          ],
+          "source_root": [
+            140.5,
+            108.0
+          ],
+          "visible_bounds": [
+            35,
+            33,
+            220,
+            94
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.8510844072632316,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_4.png",
+          "sha256": "791ee485c188eef9c32157d605f8278202ef688efc0a04806ca4cdaf31f1385c",
+          "atlas_rect": [
+            768,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            512,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            19,
+            30,
+            230,
+            97
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_5.png",
+          "sha256": "9c20e1e552fdd41bede19eee85b1122e75eecced915658cb795228b567fdac04",
+          "atlas_rect": [
+            1024,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            561,
+            322,
+            280,
+            217
+          ],
+          "source_root": [
+            140.0,
+            108.0
+          ],
+          "visible_bounds": [
+            20,
+            24,
+            228,
+            104
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.8510844072632316,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_6.png",
+          "sha256": "043d4a28f2f77b66e8839a15f045a2b7daee35b8426c33b0b69e84fe9a20abcc",
+          "atlas_rect": [
+            1280,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            768,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            18,
+            24,
+            237,
+            104
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_7.png",
+          "sha256": "3ce2fc60923074e1da70c43f08b7108cd54cd67e264cfa3464c37a739db10e25",
+          "atlas_rect": [
+            1536,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            841,
+            322,
+            281,
+            217
+          ],
+          "source_root": [
+            140.5,
+            108.0
+          ],
+          "visible_bounds": [
+            28,
+            25,
+            227,
+            100
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.8510844072632316,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_8.png",
+          "sha256": "d45450a61caba3822b365d6dd0e2405382a0a3f6b08112be3ee3171e37ce1578",
+          "atlas_rect": [
+            1792,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1024,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            25,
+            29,
+            233,
+            95
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_9.png",
+          "sha256": "438cabeba1f9f18b9e32fa55d27ef0bc814265287a836844e1f9ab36e5060660",
+          "atlas_rect": [
+            2048,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1122,
+            322,
+            280,
+            217
+          ],
+          "source_root": [
+            140.0,
+            108.0
+          ],
+          "visible_bounds": [
+            35,
+            33,
+            208,
+            94
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.8510844072632316,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_10.png",
+          "sha256": "4997de4ee4fab4f29df01bcc4eb262bc27ceeb39f16d4a71415651e3410122de",
+          "atlas_rect": [
+            2304,
+            0,
+            256,
+            128
+          ]
+        },
+        {
+          "source_rect": [
+            1280,
+            300,
+            256,
+            191
+          ],
+          "source_root": [
+            128.0,
+            95.5
+          ],
+          "visible_bounds": [
+            34,
+            32,
+            220,
+            94
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.9322033898305084,
+          "effective_source_scale": 0.9322033898305084,
+          "target_pivot": [
+            128.0,
+            64.0
+          ],
+          "file": "long_slash_11.png",
+          "sha256": "761997a30fdfb2c464350847a414e698f804109c0187609414d5ffd9144b86c0",
+          "atlas_rect": [
+            2560,
+            0,
+            256,
+            128
+          ]
+        }
+      ]
+    },
+    "cross_burst": {
+      "frames": 11,
+      "frame_width": 384,
+      "frame_height": 256,
+      "pivot": [
+        192.0,
+        128.0
+      ],
+      "uniform_group_scale": 1.0253989361702127,
+      "frame_metadata": [
+        {
+          "source_rect": [
+            0,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            124,
+            85,
+            261,
+            182
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_1.png",
+          "sha256": "20ed8493e6babaaa602a88e34e0f9392c1b5f92806cf33b8313fa4eec334e934",
+          "atlas_rect": [
+            0,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            539,
+            280,
+            281
+          ],
+          "source_root": [
+            140.0,
+            148.0
+          ],
+          "visible_bounds": [
+            137,
+            80,
+            261,
+            183
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 0.9361702127659575,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_2.png",
+          "sha256": "365596077601f28ce3f0ceba4ea406e0ecc41353614fd6d3e9ccfdd6ca4b4174",
+          "atlas_rect": [
+            384,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            256,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            102,
+            68,
+            275,
+            204
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_3.png",
+          "sha256": "371649b2003d0dffa74a07df407e2622b86d42337d3a94530aa9c690b5ed605e",
+          "atlas_rect": [
+            768,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            280,
+            539,
+            281,
+            281
+          ],
+          "source_root": [
+            140.5,
+            148.0
+          ],
+          "visible_bounds": [
+            104,
+            54,
+            280,
+            199
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 0.9361702127659575,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_4.png",
+          "sha256": "503ce8bc45d5e442080988f9eea40a3a466fe348f20332b0d0cc4dbde564366b",
+          "atlas_rect": [
+            1152,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            512,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            89,
+            47,
+            288,
+            208
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_5.png",
+          "sha256": "f1f749009a9147712b99b7d998f6a31a78985d1d0ba9e083aa94098426119fa2",
+          "atlas_rect": [
+            1536,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            561,
+            539,
+            280,
+            281
+          ],
+          "source_root": [
+            140.0,
+            148.0
+          ],
+          "visible_bounds": [
+            91,
+            47,
+            285,
+            206
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 0.9361702127659575,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_6.png",
+          "sha256": "7a4fb5d669d2ce701f6cf3bb1828e226dc4e36334691503fc37d702f8a927d3f",
+          "atlas_rect": [
+            1920,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            768,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            82,
+            42,
+            292,
+            214
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_7.png",
+          "sha256": "954489b865b02a8cc81b3c261aa4b0500926357a88a65758f142be2f9a47742d",
+          "atlas_rect": [
+            2304,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            841,
+            539,
+            281,
+            281
+          ],
+          "source_root": [
+            140.5,
+            148.0
+          ],
+          "visible_bounds": [
+            82,
+            50,
+            279,
+            209
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 0.9361702127659575,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_8.png",
+          "sha256": "586b04044bbfe8d850626724d1a6e8df61186f5a78ac0c2f9f4d532469888efd",
+          "atlas_rect": [
+            2688,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            1024,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            92,
+            53,
+            289,
+            205
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_9.png",
+          "sha256": "60141b0427b6d815d2d05866a4f4b69729c24af2339776351cadb4784c2f659f",
+          "atlas_rect": [
+            3072,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            1122,
+            539,
+            280,
+            281
+          ],
+          "source_root": [
+            140.0,
+            148.0
+          ],
+          "visible_bounds": [
+            92,
+            50,
+            262,
+            202
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 0.9361702127659575,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_10.png",
+          "sha256": "5d8fcbf8ace848ee4cf974318d3643560a449c32b484126c93c523f84c6d37f8",
+          "atlas_rect": [
+            3456,
+            0,
+            384,
+            256
+          ]
+        },
+        {
+          "source_rect": [
+            1280,
+            491,
+            256,
+            257
+          ],
+          "source_root": [
+            128.0,
+            137.0
+          ],
+          "visible_bounds": [
+            86,
+            58,
+            279,
+            204
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 1.0253989361702127,
+          "effective_source_scale": 1.0253989361702127,
+          "target_pivot": [
+            192.0,
+            128.0
+          ],
+          "file": "cross_burst_11.png",
+          "sha256": "12ca124e2239410e282673503c3b2d55046f41e194c976f98e6a0dc602a939e3",
+          "atlas_rect": [
+            3840,
+            0,
+            384,
+            256
+          ]
+        }
+      ]
+    },
+    "smoke": {
+      "frames": 11,
+      "frame_width": 192,
+      "frame_height": 192,
+      "pivot": [
+        96.0,
+        96.0
+      ],
+      "uniform_group_scale": 0.6956521739130435,
+      "frame_metadata": [
+        {
+          "source_rect": [
+            0,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            78,
+            84,
+            125,
+            119
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_1.png",
+          "sha256": "88e42f497a997f739874dd99f92f87a141dc51f8a8cb01d509d95bfb35f25fd4",
+          "atlas_rect": [
+            0,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            0,
+            820,
+            280,
+            302
+          ],
+          "source_root": [
+            140.0,
+            147.0
+          ],
+          "visible_bounds": [
+            59,
+            71,
+            143,
+            133
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6351175339577002,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_2.png",
+          "sha256": "5e9e014b6dbb75186ab232c448696e6755fe6f79359ff8d1cbd877deb03fa61b",
+          "atlas_rect": [
+            192,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            256,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            44,
+            66,
+            145,
+            139
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_3.png",
+          "sha256": "6950db89cf38e70ff26178dde3dd739ccf1a5d1621a8d0c5e5a539f0ca9cdc91",
+          "atlas_rect": [
+            384,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            280,
+            820,
+            281,
+            302
+          ],
+          "source_root": [
+            140.5,
+            147.0
+          ],
+          "visible_bounds": [
+            30,
+            52,
+            160,
+            151
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6351175339577002,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_4.png",
+          "sha256": "4f4d9597f03a3480da24eee739d37af61c3b033189e77df8475f9c60d9cb7470",
+          "atlas_rect": [
+            576,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            512,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            17,
+            47,
+            162,
+            154
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_5.png",
+          "sha256": "b33845f057279441fdb5749dfffbaf551c0c4d8833e0d9d43850b98c92a13d34",
+          "atlas_rect": [
+            768,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            561,
+            820,
+            280,
+            302
+          ],
+          "source_root": [
+            140.0,
+            147.0
+          ],
+          "visible_bounds": [
+            18,
+            33,
+            171,
+            159
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6351175339577002,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_6.png",
+          "sha256": "8f00c902077f6d4b3919fbcb35e5fbbbfa5818aa550dedb1dde7f2981452c5d7",
+          "atlas_rect": [
+            960,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            768,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            16,
+            32,
+            171,
+            160
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_7.png",
+          "sha256": "b8b930fcd8c1a804073670b4a0e2d88cac96691004ad1ed9ca49250a76210f35",
+          "atlas_rect": [
+            1152,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            841,
+            820,
+            281,
+            302
+          ],
+          "source_root": [
+            140.5,
+            147.0
+          ],
+          "visible_bounds": [
+            25,
+            37,
+            163,
+            152
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6351175339577002,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_8.png",
+          "sha256": "028fbbdbcfe973e6007fecbd862d4ba7a91c081852dc85fa67ed8f3c858588bd",
+          "atlas_rect": [
+            1344,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            1024,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            26,
+            42,
+            166,
+            160
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_9.png",
+          "sha256": "cd0788fa9b546831bd3a24f409d098daf7c51e94fa18912f769ec97d2b2956cf",
+          "atlas_rect": [
+            1536,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            1122,
+            820,
+            280,
+            302
+          ],
+          "source_root": [
+            140.0,
+            147.0
+          ],
+          "visible_bounds": [
+            24,
+            42,
+            156,
+            154
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-inbetweens.png",
+          "source_kind": "authored-inbetween",
+          "density_scale": 0.912981455064194,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6351175339577002,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_10.png",
+          "sha256": "2601e2408789d1b23d3164e1524496ddd0532e5147db634daf7f12b0424a7821",
+          "atlas_rect": [
+            1728,
+            0,
+            192,
+            192
+          ]
+        },
+        {
+          "source_rect": [
+            1280,
+            748,
+            256,
+            276
+          ],
+          "source_root": [
+            128.0,
+            129.0
+          ],
+          "visible_bounds": [
+            24,
+            45,
+            154,
+            151
+          ],
+          "source_file": "art/effects/phan_sword/source/fx-sheet.png",
+          "source_kind": "original-authored",
+          "density_scale": 1.0,
+          "uniform_animation_scale": 0.6956521739130435,
+          "effective_source_scale": 0.6956521739130435,
+          "target_pivot": [
+            96.0,
+            96.0
+          ],
+          "file": "smoke_11.png",
+          "sha256": "191b1f6b1933c3c50871559d3d863c98c966c7508a894e4deaa07e0cd1063237",
+          "atlas_rect": [
+            1920,
+            0,
+            192,
+            192
+          ]
+        }
+      ]
+    }
+  }
+}

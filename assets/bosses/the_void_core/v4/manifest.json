@@ -1,0 +1,8069 @@
+{
+  "version": 4,
+  "status": "runtime-v4",
+  "actor": "the_void_core",
+  "frame_width": 256,
+  "frame_height": 256,
+  "columns": 6,
+  "rows": 22,
+  "pivot": [
+    128,
+    128
+  ],
+  "anchor": "center",
+  "render_scale": 2,
+  "offset_y": -24,
+  "uniform_source_scale": 1.033434650455927,
+  "idle_body_reference_height": 65.8,
+  "target_body_height": 68,
+  "resampling": "nearest-neighbour uniform",
+  "alpha_cutoff": 128,
+  "palette_colors": 128,
+  "reserved_clips": [
+    "new_skill",
+    "knockdown"
+  ],
+  "retained_distinct_v3_clips": [],
+  "sources": [
+    {
+      "file": "art/animations/v4/source/the_void_core-A.png",
+      "width": 793,
+      "height": 1983,
+      "sha256": "7bce02f79683de9e50e07c9dfbeb723f20e319ce00f8c13374e2e5a069c96ca4",
+      "removed_alpha_speck_pixels": 5,
+      "y_cuts": [
+        0,
+        228,
+        415,
+        592,
+        792,
+        1003,
+        1198,
+        1376,
+        1566,
+        1748,
+        1983
+      ]
+    },
+    {
+      "file": "art/animations/v4/source/the_void_core-B.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "4cf7d1b607051409c8d7a9eaab735fea7c04fe91e755c09adfa9851006742289",
+      "removed_alpha_speck_pixels": 121,
+      "y_cuts": [
+        0,
+        170,
+        321,
+        506,
+        676,
+        818,
+        964,
+        1152,
+        1302,
+        1460,
+        1619
+      ]
+    }
+  ],
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            0,
+            136,
+            228
+          ],
+          "source_body_bounds": [
+            22,
+            90,
+            119,
+            182
+          ],
+          "source_root": [
+            76.98850574712644,
+            140.1551724137931
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            80,
+            174,
+            175
+          ],
+          "transformed_visible_bounds": [
+            74.173,
+            80.168,
+            174.416,
+            175.244
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_1.png",
+          "atlas_rect": [
+            0,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            80,
+            174,
+            175
+          ],
+          "sha256": "6c45a4cf80833492ec58d7f8c3fbd00cc5604263684800c528bad94f4bbfa49b"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            136,
+            0,
+            130,
+            228
+          ],
+          "source_body_bounds": [
+            17,
+            92,
+            114,
+            186
+          ],
+          "source_root": [
+            65.85714285714286,
+            155.71428571428572
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            66,
+            181,
+            163
+          ],
+          "transformed_visible_bounds": [
+            80.509,
+            66.155,
+            180.752,
+            163.298
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_2.png",
+          "atlas_rect": [
+            256,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            66,
+            181,
+            163
+          ],
+          "sha256": "eb65be3451701adf779bf2226f6333150db0511aeef4b21c95817b61294f610c"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            266,
+            0,
+            130,
+            228
+          ],
+          "source_body_bounds": [
+            17,
+            92,
+            114,
+            186
+          ],
+          "source_root": [
+            73.57575757575758,
+            143.2348484848485
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            79,
+            173,
+            176
+          ],
+          "transformed_visible_bounds": [
+            72.533,
+            79.052,
+            172.776,
+            176.195
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_3.png",
+          "atlas_rect": [
+            512,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            79,
+            173,
+            176
+          ],
+          "sha256": "ffdb2947fab3f936c44457c1a786a3ce5357ff609220fce1f103a15e301a16ac"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            396,
+            0,
+            130,
+            228
+          ],
+          "source_body_bounds": [
+            16,
+            91,
+            113,
+            185
+          ],
+          "source_root": [
+            71.86524822695036,
+            141.6241134751773
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            80,
+            174,
+            177
+          ],
+          "transformed_visible_bounds": [
+            73.267,
+            79.683,
+            173.51,
+            176.826
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_4.png",
+          "atlas_rect": [
+            768,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            80,
+            174,
+            177
+          ],
+          "sha256": "dd9ccd0ec49f8e1356125bfbe5d5599dd1d351a3e0ac821e61acf0060a6e3757"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            526,
+            0,
+            130,
+            228
+          ],
+          "source_body_bounds": [
+            16,
+            90,
+            113,
+            185
+          ],
+          "source_root": [
+            58.083333333333336,
+            151.16666666666666
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            69,
+            188,
+            167
+          ],
+          "transformed_visible_bounds": [
+            87.51,
+            68.788,
+            187.753,
+            166.965
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_5.png",
+          "atlas_rect": [
+            1024,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            69,
+            188,
+            167
+          ],
+          "sha256": "74999067d4599d6cba8b85f799588131f9ec39b67b9b0ee27708f91802f9fdde"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            656,
+            0,
+            137,
+            228
+          ],
+          "source_body_bounds": [
+            18,
+            89,
+            115,
+            183
+          ],
+          "source_root": [
+            73.19310344827586,
+            140.2206896551724
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            79,
+            174,
+            176
+          ],
+          "transformed_visible_bounds": [
+            73.962,
+            79.067,
+            174.205,
+            176.21
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_6.png",
+          "atlas_rect": [
+            1280,
+            0,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            79,
+            174,
+            176
+          ],
+          "sha256": "73efdafad841f86d5023808f02e486d1102c3c0b325789c6780126513a2d1c5c"
+        }
+      ]
+    },
+    "run": {
+      "row": 1,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.075,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            415,
+            132,
+            177
+          ],
+          "source_body_bounds": [
+            23,
+            47,
+            119,
+            139
+          ],
+          "source_root": [
+            77.24528301886792,
+            96.04402515723271
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            81,
+            174,
+            176
+          ],
+          "transformed_visible_bounds": [
+            74.941,
+            81.316,
+            174.151,
+            176.392
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_1.png",
+          "atlas_rect": [
+            0,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            81,
+            174,
+            176
+          ],
+          "sha256": "bfe8280ad915603006ac4600bbe08a99a76fa0d679638ff6f6753989bd906e14"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            132,
+            415,
+            126,
+            177
+          ],
+          "source_body_bounds": [
+            20,
+            51,
+            123,
+            143
+          ],
+          "source_root": [
+            81.33116883116882,
+            102.20779220779221
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            68,
+            79,
+            174,
+            174
+          ],
+          "transformed_visible_bounds": [
+            59.351,
+            79.08,
+            174.062,
+            174.156
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_2.png",
+          "atlas_rect": [
+            256,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            59,
+            79,
+            174,
+            174
+          ],
+          "sha256": "8acc3bcfac731b4a1b303904eaab07d6c3fc735b5242ef702acc36dd0fbbd5ef"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            258,
+            415,
+            134,
+            177
+          ],
+          "source_body_bounds": [
+            12,
+            51,
+            132,
+            142
+          ],
+          "source_root": [
+            73.125,
+            107.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            68,
+            74,
+            192,
+            168
+          ],
+          "transformed_visible_bounds": [
+            57.497,
+            73.611,
+            193.91,
+            167.653
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_3.png",
+          "atlas_rect": [
+            512,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            57,
+            74,
+            194,
+            168
+          ],
+          "sha256": "04232cb37eaf1f5bc32135d4a7662aab5eea8a0e6dec85cf3501982349036c2d"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            392,
+            415,
+            137,
+            177
+          ],
+          "source_body_bounds": [
+            9,
+            50,
+            132,
+            141
+          ],
+          "source_root": [
+            82.81818181818181,
+            106.54545454545455
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            55,
+            74,
+            182,
+            168
+          ],
+          "transformed_visible_bounds": [
+            46.446,
+            73.564,
+            181.826,
+            167.607
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_4.png",
+          "atlas_rect": [
+            768,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            46,
+            74,
+            182,
+            168
+          ],
+          "sha256": "43cc2126cab24e01d3def220d3792a8d267191c67ea3edf730f13579b0d5b5d2"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            529,
+            415,
+            133,
+            177
+          ],
+          "source_body_bounds": [
+            12,
+            49,
+            118,
+            139
+          ],
+          "source_root": [
+            69.71428571428571,
+            105.14285714285714
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            71,
+            74,
+            181,
+            167
+          ],
+          "transformed_visible_bounds": [
+            64.122,
+            73.98,
+            180.9,
+            166.989
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_5.png",
+          "atlas_rect": [
+            1024,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            64,
+            74,
+            181,
+            167
+          ],
+          "sha256": "37e5a5a93c70b8c75af04b66d5340c116c6a9784dc03998c67bbe85213477940"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            662,
+            415,
+            131,
+            177
+          ],
+          "source_body_bounds": [
+            15,
+            47,
+            111,
+            138
+          ],
+          "source_root": [
+            69.41463414634147,
+            96.73170731707317
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            81,
+            174,
+            175
+          ],
+          "transformed_visible_bounds": [
+            74.766,
+            80.606,
+            173.976,
+            174.648
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_6.png",
+          "atlas_rect": [
+            1280,
+            256,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            81,
+            174,
+            175
+          ],
+          "sha256": "487c5f5a134e6422538b4006918be65f8b9d8c6956aa09a77a2e9d2003aa8f75"
+        }
+      ]
+    },
+    "jump": {
+      "row": 2,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            592,
+            136,
+            200
+          ],
+          "source_body_bounds": [
+            22,
+            66,
+            120,
+            154
+          ],
+          "source_root": [
+            78.75182481751825,
+            115.47445255474453
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            72,
+            81,
+            174,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.351,
+            80.871,
+            173.627,
+            171.814
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_1.png",
+          "atlas_rect": [
+            0,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            72,
+            81,
+            174,
+            172
+          ],
+          "sha256": "33c4da8c25000d6ce2a56c831be977e6fc4e6ac93895a2bb3ce36a36e1521018"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            136,
+            592,
+            130,
+            200
+          ],
+          "source_body_bounds": [
+            17,
+            62,
+            114,
+            160
+          ],
+          "source_root": [
+            58.22222222222222,
+            121.66666666666667
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            70,
+            189,
+            172
+          ],
+          "transformed_visible_bounds": [
+            88.4,
+            70.338,
+            188.643,
+            178.849
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_2.png",
+          "atlas_rect": [
+            256,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            70,
+            189,
+            179
+          ],
+          "sha256": "32a527e6f2d942b68ea44e931c7df6c02a9a6c2ec459e0fb9f6dda1193d7d820"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            266,
+            592,
+            130,
+            200
+          ],
+          "source_body_bounds": [
+            16,
+            50,
+            113,
+            151
+          ],
+          "source_root": [
+            57.666666666666664,
+            109.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            71,
+            188,
+            175
+          ],
+          "transformed_visible_bounds": [
+            87.94,
+            70.511,
+            188.183,
+            190.389
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_3.png",
+          "atlas_rect": [
+            512,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            71,
+            188,
+            190
+          ],
+          "sha256": "6c40aff3373c4edcc273be970c9466476600b19eda18c16f0d707732e9010859"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            396,
+            592,
+            130,
+            200
+          ],
+          "source_body_bounds": [
+            16,
+            35,
+            113,
+            137
+          ],
+          "source_root": [
+            57.142857142857146,
+            96.42857142857143
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            69,
+            189,
+            174
+          ],
+          "transformed_visible_bounds": [
+            88.482,
+            68.518,
+            188.725,
+            182.195
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_4.png",
+          "atlas_rect": [
+            768,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            69,
+            189,
+            182
+          ],
+          "sha256": "fa3746afb6340972e9b37cc71552f1621b3c3b02b14388b0629c32aa30a57ee7"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            526,
+            592,
+            131,
+            200
+          ],
+          "source_body_bounds": [
+            17,
+            36,
+            114,
+            136
+          ],
+          "source_root": [
+            72.45864661654136,
+            89.89473684210526
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            76,
+            174,
+            180
+          ],
+          "transformed_visible_bounds": [
+            73.687,
+            76.303,
+            173.93,
+            180.68
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_5.png",
+          "atlas_rect": [
+            1024,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            76,
+            174,
+            181
+          ],
+          "sha256": "d169966e07ffc10c0c304e8ae16d69c811798060d588a926e28b5ff9d4deda6a"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            657,
+            592,
+            136,
+            200
+          ],
+          "source_body_bounds": [
+            17,
+            42,
+            115,
+            137
+          ],
+          "source_root": [
+            72.95483870967742,
+            94.27741935483871
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            78,
+            174,
+            176
+          ],
+          "transformed_visible_bounds": [
+            73.174,
+            77.975,
+            174.451,
+            176.151
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_6.png",
+          "atlas_rect": [
+            1280,
+            512,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            78,
+            174,
+            176
+          ],
+          "sha256": "58b5ae50b0d8162a5d5073e201cbefa091714f803a04cc192c35dba25cc6e950"
+        }
+      ]
+    },
+    "attack": {
+      "row": 3,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.025,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            0,
+            168,
+            170
+          ],
+          "source_body_bounds": [
+            34,
+            37,
+            139,
+            138
+          ],
+          "source_root": [
+            80.6923076923077,
+            100.46153846153847
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            83,
+            66,
+            191,
+            171
+          ],
+          "transformed_visible_bounds": [
+            82.747,
+            66.417,
+            191.257,
+            170.794
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_1.png",
+          "atlas_rect": [
+            0,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            83,
+            66,
+            191,
+            171
+          ],
+          "sha256": "ed7cff27a67f440635cab3420d60252448afed63cd29c8fdf6a486ba7c6d8b45"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            168,
+            0,
+            164,
+            170
+          ],
+          "source_body_bounds": [
+            30,
+            38,
+            135,
+            138
+          ],
+          "source_root": [
+            77.9090909090909,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            67,
+            190,
+            170
+          ],
+          "transformed_visible_bounds": [
+            81.489,
+            66.894,
+            190.0,
+            170.237
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_2.png",
+          "atlas_rect": [
+            256,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            67,
+            190,
+            170
+          ],
+          "sha256": "f7ac4b216cdce52dc72f85913cf4a5bf43c6088677ee8a24f3ca081d28dc13d5"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            332,
+            0,
+            165,
+            170
+          ],
+          "source_body_bounds": [
+            28,
+            38,
+            140,
+            138
+          ],
+          "source_root": [
+            78.18181818181819,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            67,
+            195,
+            170
+          ],
+          "transformed_visible_bounds": [
+            79.14,
+            66.894,
+            195.918,
+            170.237
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_3.png",
+          "atlas_rect": [
+            512,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            67,
+            196,
+            170
+          ],
+          "sha256": "b3ceca14efbc2187c9110cc644f0e28f2e7d48e1f6dc1b35391135395580dfdb"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            497,
+            0,
+            167,
+            170
+          ],
+          "source_body_bounds": [
+            24,
+            41,
+            150,
+            135
+          ],
+          "source_root": [
+            88.4375,
+            89.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            64,
+            82,
+            195,
+            179
+          ],
+          "transformed_visible_bounds": [
+            64.408,
+            79.812,
+            195.654,
+            179.021
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_4.png",
+          "atlas_rect": [
+            768,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            64,
+            80,
+            196,
+            179
+          ],
+          "sha256": "8c645ddc27cd0aa476edcc15b10354edd00b50a0ce886643dee83d09df829d61"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            664,
+            0,
+            150,
+            170
+          ],
+          "source_body_bounds": [
+            15,
+            39,
+            122,
+            137
+          ],
+          "source_root": [
+            63.666666666666664,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            68,
+            191,
+            169
+          ],
+          "transformed_visible_bounds": [
+            80.706,
+            67.927,
+            192.317,
+            169.204
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_5.png",
+          "atlas_rect": [
+            1024,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            68,
+            192,
+            169
+          ],
+          "sha256": "a72f09eae990b1ac8113017626bbbe06ece5cdcae5a354950a0dd4478da66bcb"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            814,
+            0,
+            157,
+            170
+          ],
+          "source_body_bounds": [
+            26,
+            38,
+            125,
+            139
+          ],
+          "source_root": [
+            72.375,
+            101.625
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            83,
+            66,
+            185,
+            171
+          ],
+          "transformed_visible_bounds": [
+            83.074,
+            66.248,
+            185.384,
+            170.625
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light",
+          "file": "attack_6.png",
+          "atlas_rect": [
+            1280,
+            768,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            83,
+            66,
+            185,
+            171
+          ],
+          "sha256": "155f675fb7789d91c60567a433d9e1dc1d800ad9f6068283935bb98fb09f7899"
+        }
+      ]
+    },
+    "hurt": {
+      "row": 4,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            1748,
+            136,
+            235
+          ],
+          "source_body_bounds": [
+            23,
+            55,
+            120,
+            148
+          ],
+          "source_root": [
+            64.18181818181819,
+            113.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            72,
+            189,
+            168
+          ],
+          "transformed_visible_bounds": [
+            88.441,
+            72.061,
+            188.684,
+            168.17
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_1.png",
+          "atlas_rect": [
+            0,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            72,
+            189,
+            168
+          ],
+          "sha256": "93b25d065ca476713b6d6b7ca10723a4e5901a2a496ce65729a30898eae5d7c8"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            136,
+            1748,
+            122,
+            235
+          ],
+          "source_body_bounds": [
+            17,
+            51,
+            108,
+            145
+          ],
+          "source_root": [
+            67.41666666666667,
+            108.70833333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            72,
+            173,
+            170
+          ],
+          "transformed_visible_bounds": [
+            78.898,
+            72.362,
+            172.94,
+            169.505
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_2.png",
+          "atlas_rect": [
+            256,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            72,
+            173,
+            170
+          ],
+          "sha256": "096d0d35f3a026bcb4f98cc9a73a747439c2bb4710a1ca83713f21778380a83d"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            258,
+            1748,
+            134,
+            235
+          ],
+          "source_body_bounds": [
+            13,
+            41,
+            119,
+            146
+          ],
+          "source_root": [
+            64.7,
+            111.9
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            78,
+            59,
+            187,
+            167
+          ],
+          "transformed_visible_bounds": [
+            77.571,
+            58.729,
+            187.116,
+            167.24
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_3.png",
+          "atlas_rect": [
+            512,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            78,
+            59,
+            187,
+            167
+          ],
+          "sha256": "f2c0fd86c911fae119aab801f49d88227639e937674b4fff465301d39a322230"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            392,
+            1748,
+            138,
+            235
+          ],
+          "source_body_bounds": [
+            14,
+            37,
+            122,
+            151
+          ],
+          "source_root": [
+            70.14285714285714,
+            113.71428571428571
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            53,
+            185,
+            171
+          ],
+          "transformed_visible_bounds": [
+            72.98,
+            52.721,
+            184.591,
+            177.766
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_4.png",
+          "atlas_rect": [
+            768,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            53,
+            185,
+            178
+          ],
+          "sha256": "f5af5a7bd496093e4d69cfa355301b7b6988724b8e43416209a3e9217e161410"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            530,
+            1748,
+            130,
+            235
+          ],
+          "source_body_bounds": [
+            17,
+            57,
+            114,
+            149
+          ],
+          "source_root": [
+            66.84,
+            109.21333333333334
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            78,
+            180,
+            173
+          ],
+          "transformed_visible_bounds": [
+            78.46,
+            78.041,
+            179.737,
+            180.351
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_5.png",
+          "atlas_rect": [
+            1024,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            78,
+            78,
+            180,
+            180
+          ],
+          "sha256": "13f3b8cf4ab188b1dc25d137035899072d5f2dbb2bd37e8efbd32eaa7620e16c"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            660,
+            1748,
+            133,
+            235
+          ],
+          "source_body_bounds": [
+            15,
+            55,
+            112,
+            148
+          ],
+          "source_root": [
+            70.19354838709677,
+            105.41129032258064
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            80,
+            174,
+            176
+          ],
+          "transformed_visible_bounds": [
+            73.961,
+            79.903,
+            174.204,
+            176.013
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_6.png",
+          "atlas_rect": [
+            1280,
+            1024,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            80,
+            174,
+            176
+          ],
+          "sha256": "a259b128fb2a7c7697173e068aa9f797563a388233779f3ff5384987f4cbcb8d"
+        }
+      ]
+    },
+    "death": {
+      "row": 5,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            1460,
+            162,
+            159
+          ],
+          "source_body_bounds": [
+            26,
+            16,
+            137,
+            129
+          ],
+          "source_root": [
+            81.5,
+            92.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            74,
+            59,
+            188,
+            175
+          ],
+          "transformed_visible_bounds": [
+            73.644,
+            58.622,
+            188.356,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_1.png",
+          "atlas_rect": [
+            0,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            59,
+            188,
+            175
+          ],
+          "sha256": "e22994520bd5bad424c9573bb86b3873a38f66213a6f3503548dbe93e38d412c"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            162,
+            1460,
+            160,
+            159
+          ],
+          "source_body_bounds": [
+            24,
+            31,
+            136,
+            130
+          ],
+          "source_root": [
+            80.0,
+            93.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            73,
+            73,
+            189,
+            175
+          ],
+          "transformed_visible_bounds": [
+            73.128,
+            73.09,
+            188.872,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_2.png",
+          "atlas_rect": [
+            256,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            73,
+            189,
+            175
+          ],
+          "sha256": "eeab824dc20004c74c32a56261c6f1fad218d12a8d1c610f4102d08b0782b710"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            322,
+            1460,
+            164,
+            159
+          ],
+          "source_body_bounds": [
+            23,
+            37,
+            148,
+            134
+          ],
+          "source_root": [
+            85.5,
+            97.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            66,
+            75,
+            196,
+            175
+          ],
+          "transformed_visible_bounds": [
+            66.41,
+            75.157,
+            195.59,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_3.png",
+          "atlas_rect": [
+            512,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            66,
+            75,
+            196,
+            175
+          ],
+          "sha256": "a4594943e574fb4c163ba3ea2d58a2136f75da9d601f681091785b64dbb5b757"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            486,
+            1460,
+            161,
+            159
+          ],
+          "source_body_bounds": [
+            17,
+            67,
+            144,
+            134
+          ],
+          "source_root": [
+            80.5,
+            97.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            65,
+            106,
+            197,
+            175
+          ],
+          "transformed_visible_bounds": [
+            65.377,
+            106.16,
+            196.623,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_4.png",
+          "atlas_rect": [
+            768,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            65,
+            106,
+            197,
+            175
+          ],
+          "sha256": "b564986b27a2d0053d49d2dd921aec174f18fdc8351e2d23bc197ceca7e8a06b"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            647,
+            1460,
+            165,
+            159
+          ],
+          "source_body_bounds": [
+            17,
+            90,
+            144,
+            134
+          ],
+          "source_root": [
+            80.5,
+            97.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            65,
+            130,
+            197,
+            175
+          ],
+          "transformed_visible_bounds": [
+            65.377,
+            129.929,
+            196.623,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_5.png",
+          "atlas_rect": [
+            1024,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            65,
+            130,
+            197,
+            175
+          ],
+          "sha256": "c059823ee2814db72161b63bbae44c5ea67d751e34675ac18f56662e1fe30b2d"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            812,
+            1460,
+            159,
+            159
+          ],
+          "source_body_bounds": [
+            21,
+            90,
+            134,
+            134
+          ],
+          "source_root": [
+            77.5,
+            97.81
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            10
+          ],
+          "target_body_bounds": [
+            73,
+            130,
+            189,
+            175
+          ],
+          "transformed_visible_bounds": [
+            72.611,
+            129.929,
+            189.389,
+            175.4
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_6.png",
+          "atlas_rect": [
+            1280,
+            1280,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            130,
+            189,
+            175
+          ],
+          "sha256": "14d0da696890a20fb3582747148d3f244b71187cb46bd78eed241c615680eabb"
+        }
+      ]
+    },
+    "walk": {
+      "row": 6,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            228,
+            140,
+            187
+          ],
+          "source_body_bounds": [
+            23,
+            43,
+            120,
+            137
+          ],
+          "source_root": [
+            78.28025477707007,
+            92.72611464968153
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            81,
+            174,
+            178
+          ],
+          "transformed_visible_bounds": [
+            73.871,
+            80.611,
+            174.115,
+            177.754
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_1.png",
+          "atlas_rect": [
+            0,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            81,
+            174,
+            178
+          ],
+          "sha256": "e67a8905c20e3b0ec3f2c8e87eb55f02b65a41e4c98dcddc381b2a73e7e508ee"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            140,
+            228,
+            126,
+            187
+          ],
+          "source_body_bounds": [
+            20,
+            46,
+            113,
+            140
+          ],
+          "source_root": [
+            71.44897959183673,
+            95.22448979591837
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            78,
+            81,
+            174,
+            178
+          ],
+          "transformed_visible_bounds": [
+            77.831,
+            81.13,
+            173.94,
+            178.273
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_2.png",
+          "atlas_rect": [
+            256,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            78,
+            81,
+            174,
+            178
+          ],
+          "sha256": "be59ef4bb36bc6d006f3eec971fd624f478d63e5d36d1b61ceffd983d1bd60dc"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            266,
+            228,
+            128,
+            187
+          ],
+          "source_body_bounds": [
+            17,
+            47,
+            116,
+            139
+          ],
+          "source_root": [
+            75.12857142857143,
+            96.3
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            71,
+            81,
+            173,
+            176
+          ],
+          "transformed_visible_bounds": [
+            66.794,
+            81.052,
+            173.238,
+            176.128
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_3.png",
+          "atlas_rect": [
+            512,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            67,
+            81,
+            173,
+            176
+          ],
+          "sha256": "4f47476cf0b1ae1efac046f32d4497889fe35c6c0f6c139e7cbf3049b71fb020"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            394,
+            228,
+            130,
+            187
+          ],
+          "source_body_bounds": [
+            17,
+            49,
+            118,
+            137
+          ],
+          "source_root": [
+            77.51123595505618,
+            98.98876404494382
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            68,
+            80,
+            173,
+            171
+          ],
+          "transformed_visible_bounds": [
+            63.298,
+            80.34,
+            172.842,
+            171.282
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_4.png",
+          "atlas_rect": [
+            768,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            63,
+            80,
+            173,
+            171
+          ],
+          "sha256": "3c32072236e8b7a1e58b57f50f66cf2a5b31d4a5d744478c8bdacae201354a45"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            524,
+            228,
+            133,
+            187
+          ],
+          "source_body_bounds": [
+            20,
+            47,
+            115,
+            139
+          ],
+          "source_root": [
+            76.00588235294117,
+            98.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            79,
+            171,
+            174
+          ],
+          "transformed_visible_bounds": [
+            64.854,
+            78.778,
+            171.298,
+            173.854
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_5.png",
+          "atlas_rect": [
+            1024,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            65,
+            79,
+            171,
+            174
+          ],
+          "sha256": "836757c0bf3c3ecff2abc8c1fa308d1606db3f79012fe15216156aef6149fc93"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            657,
+            228,
+            136,
+            187
+          ],
+          "source_body_bounds": [
+            18,
+            45,
+            114,
+            139
+          ],
+          "source_root": [
+            72.91082802547771,
+            95.03184713375796
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            80,
+            173,
+            177
+          ],
+          "transformed_visible_bounds": [
+            74.253,
+            80.295,
+            173.463,
+            177.438
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_6.png",
+          "atlas_rect": [
+            1280,
+            1536,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            80,
+            173,
+            177
+          ],
+          "sha256": "44faf3222c3ed3329ade49f0f468ec19b2e37b2fad24080d79ae229629aa1528"
+        }
+      ]
+    },
+    "special": {
+      "row": 7,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.03,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            964,
+            164,
+            188
+          ],
+          "source_body_bounds": [
+            29,
+            41,
+            142,
+            143
+          ],
+          "source_root": [
+            81.21428571428571,
+            107.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            77,
+            64,
+            194,
+            169
+          ],
+          "transformed_visible_bounds": [
+            77.04,
+            63.793,
+            193.818,
+            169.204
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_1.png",
+          "atlas_rect": [
+            0,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            64,
+            194,
+            169
+          ],
+          "sha256": "c8ed098d4deb0f7be9aefa2a810c6c15b223581ae87099f8a3826aecc6887610"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            164,
+            964,
+            156,
+            188
+          ],
+          "source_body_bounds": [
+            21,
+            37,
+            140,
+            149
+          ],
+          "source_root": [
+            76.77777777777777,
+            107.44444444444444
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            59,
+            196,
+            175
+          ],
+          "transformed_visible_bounds": [
+            73.357,
+            59.2,
+            196.336,
+            174.945
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_2.png",
+          "atlas_rect": [
+            256,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            59,
+            196,
+            175
+          ],
+          "sha256": "16bc2b53677b9128e3c73fed6292360afe707b76c16bb75748a98c22593a311c"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            320,
+            964,
+            157,
+            188
+          ],
+          "source_body_bounds": [
+            15,
+            31,
+            150,
+            156
+          ],
+          "source_root": [
+            93.29277566539923,
+            98.24334600760456
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            50,
+            63,
+            190,
+            192
+          ],
+          "transformed_visible_bounds": [
+            50.09,
+            61.475,
+            189.603,
+            191.688
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_3.png",
+          "atlas_rect": [
+            512,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            50,
+            61,
+            190,
+            192
+          ],
+          "sha256": "ca2147b3172281c6685fe3e4170f192d434969cf52ee20a3062f321d207f31f4"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            477,
+            964,
+            185,
+            188
+          ],
+          "source_body_bounds": [
+            10,
+            41,
+            164,
+            154
+          ],
+          "source_root": [
+            78.5,
+            107.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            60,
+            64,
+            219,
+            181
+          ],
+          "transformed_visible_bounds": [
+            57.109,
+            42.091,
+            230.726,
+            199.173
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_4.png",
+          "atlas_rect": [
+            768,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            57,
+            42,
+            231,
+            199
+          ],
+          "sha256": "deba0076b86d290450690ec1e40dcd939e174e96b24eaee40c41c11a49cf249e"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            662,
+            964,
+            148,
+            188
+          ],
+          "source_body_bounds": [
+            10,
+            40,
+            125,
+            143
+          ],
+          "source_root": [
+            61.833333333333336,
+            107.83333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            77,
+            62,
+            196,
+            168
+          ],
+          "transformed_visible_bounds": [
+            77.434,
+            61.899,
+            196.279,
+            168.342
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_5.png",
+          "atlas_rect": [
+            1024,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            62,
+            196,
+            168
+          ],
+          "sha256": "e49a0108d6ebe84c491959c688f07a3f2a875eda7857b4ce2c88bab439cf04de"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            810,
+            964,
+            161,
+            188
+          ],
+          "source_body_bounds": [
+            23,
+            42,
+            135,
+            142
+          ],
+          "source_root": [
+            75.92307692307692,
+            106.84615384615384
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            65,
+            192,
+            168
+          ],
+          "transformed_visible_bounds": [
+            76.307,
+            64.986,
+            192.052,
+            168.329
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "ultimate",
+          "file": "special_6.png",
+          "atlas_rect": [
+            1280,
+            1792,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            65,
+            192,
+            168
+          ],
+          "sha256": "14784e134d4bf39eb5698bdcc6f4d943d4b8d0cffde349bf240cc35290f4365c"
+        }
+      ]
+    },
+    "block": {
+      "row": 8,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.08333333,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            1566,
+            136,
+            182
+          ],
+          "source_body_bounds": [
+            23,
+            47,
+            120,
+            142
+          ],
+          "source_root": [
+            78.1,
+            97.50625
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            80,
+            174,
+            178
+          ],
+          "transformed_visible_bounds": [
+            74.058,
+            79.805,
+            174.301,
+            177.981
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_1.png",
+          "atlas_rect": [
+            0,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            80,
+            174,
+            178
+          ],
+          "sha256": "2ec39aec8d7f31aa5a5ac9b1df45fe642e8143fb5de0cf031c0bfa53fd584303"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            136,
+            1566,
+            130,
+            182
+          ],
+          "source_body_bounds": [
+            17,
+            47,
+            114,
+            142
+          ],
+          "source_root": [
+            70.80132450331126,
+            98.24503311258277
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            79,
+            176,
+            177
+          ],
+          "transformed_visible_bounds": [
+            75.4,
+            79.042,
+            175.643,
+            177.218
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_2.png",
+          "atlas_rect": [
+            256,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            79,
+            176,
+            177
+          ],
+          "sha256": "0dd0346f1b3f00fa9f7e5c7a107af9283cd01ef70c753f24fb32d3d836c0d666"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            266,
+            1566,
+            130,
+            182
+          ],
+          "source_body_bounds": [
+            16,
+            46,
+            114,
+            143
+          ],
+          "source_root": [
+            71.4,
+            99.03333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            77,
+            175,
+            177
+          ],
+          "transformed_visible_bounds": [
+            73.748,
+            77.194,
+            175.024,
+            177.437
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_3.png",
+          "atlas_rect": [
+            512,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            77,
+            175,
+            177
+          ],
+          "sha256": "2378dcc93788f47efc32b091b160d8d570eb658c3ae0cebd4fb0f6f2bd5d44df"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            396,
+            1566,
+            137,
+            182
+          ],
+          "source_body_bounds": [
+            15,
+            41,
+            115,
+            144
+          ],
+          "source_root": [
+            72.75409836065573,
+            98.98360655737704
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            71,
+            72,
+            175,
+            179
+          ],
+          "transformed_visible_bounds": [
+            71.315,
+            72.078,
+            187.06,
+            178.522
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_4.png",
+          "atlas_rect": [
+            768,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            71,
+            72,
+            187,
+            179
+          ],
+          "sha256": "15768d8c14692be309dcb17cc5a929ba1b74d6608ae3d43504cf15af45812372"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            533,
+            1566,
+            125,
+            182
+          ],
+          "source_body_bounds": [
+            10,
+            46,
+            108,
+            144
+          ],
+          "source_root": [
+            65.80645161290323,
+            98.45161290322581
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            78,
+            175,
+            179
+          ],
+          "transformed_visible_bounds": [
+            73.328,
+            77.795,
+            174.604,
+            179.071
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_5.png",
+          "atlas_rect": [
+            1024,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            78,
+            175,
+            179
+          ],
+          "sha256": "29372ab4b460e6ca60910748fe7692ae78dda0bd17fbe0d9b61341e6f1b705a8"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            658,
+            1566,
+            135,
+            182
+          ],
+          "source_body_bounds": [
+            16,
+            47,
+            114,
+            142
+          ],
+          "source_root": [
+            71.29411764705883,
+            97.36974789915966
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            80,
+            175,
+            178
+          ],
+          "transformed_visible_bounds": [
+            73.857,
+            79.946,
+            175.134,
+            178.122
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_6.png",
+          "atlas_rect": [
+            1280,
+            2048,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            80,
+            175,
+            178
+          ],
+          "sha256": "74faa440efa5f26fa3be6f4edf58193285d1ee7d7c1ea0a1a8e231d47435b83b"
+        }
+      ]
+    },
+    "dash": {
+      "row": 9,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.025,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            1198,
+            132,
+            178
+          ],
+          "source_body_bounds": [
+            26,
+            40,
+            115,
+            133
+          ],
+          "source_root": [
+            78.95172413793104,
+            90.22758620689655
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            80,
+            168,
+            176
+          ],
+          "transformed_visible_bounds": [
+            76.278,
+            80.093,
+            168.254,
+            176.202
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_1.png",
+          "atlas_rect": [
+            0,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            80,
+            168,
+            176
+          ],
+          "sha256": "c4626932ccf3a45c5480129e1a4bebcbd1bdd0e3689c41afb0eb8e16ec52bd1a"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            132,
+            1198,
+            120,
+            178
+          ],
+          "source_body_bounds": [
+            21,
+            48,
+            114,
+            127
+          ],
+          "source_root": [
+            70.42857142857143,
+            90.71428571428571
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            88,
+            176,
+            169
+          ],
+          "transformed_visible_bounds": [
+            76.818,
+            87.858,
+            176.028,
+            169.499
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_2.png",
+          "atlas_rect": [
+            256,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            88,
+            176,
+            169
+          ],
+          "sha256": "d23afd0406d7764204ca86537d8f6191e196f592d13fc641ac2df38095f25a23"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            252,
+            1198,
+            134,
+            178
+          ],
+          "source_body_bounds": [
+            19,
+            51,
+            126,
+            127
+          ],
+          "source_root": [
+            77.625,
+            107.75
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            70,
+            73,
+            181,
+            152
+          ],
+          "transformed_visible_bounds": [
+            58.014,
+            73.353,
+            180.992,
+            151.894
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_3.png",
+          "atlas_rect": [
+            512,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            58,
+            73,
+            181,
+            152
+          ],
+          "sha256": "0d8e22ed676b791a35ea58def0bdcb0be67603355de119c2e740defe60873498"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            386,
+            1198,
+            138,
+            178
+          ],
+          "source_body_bounds": [
+            13,
+            52,
+            123,
+            127
+          ],
+          "source_root": [
+            70.33333333333333,
+            91.83333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            72,
+            91,
+            185,
+            168
+          ],
+          "transformed_visible_bounds": [
+            65.549,
+            90.835,
+            185.428,
+            168.342
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_4.png",
+          "atlas_rect": [
+            768,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            66,
+            91,
+            185,
+            168
+          ],
+          "sha256": "f270a7a8eee86c1f50b853fb4c7366d3c9e541f368819173ef16339d2ef890a5"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            524,
+            1198,
+            134,
+            178
+          ],
+          "source_body_bounds": [
+            20,
+            46,
+            116,
+            135
+          ],
+          "source_root": [
+            63.0,
+            99.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            87,
+            77,
+            186,
+            169
+          ],
+          "transformed_visible_bounds": [
+            81.395,
+            77.228,
+            185.772,
+            169.204
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_5.png",
+          "atlas_rect": [
+            1024,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            77,
+            186,
+            169
+          ],
+          "sha256": "d207305c5d67e1c6958651e1b5e2a0d5b94ff07317a80b5d07f7323dcfa43c48"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            658,
+            1198,
+            135,
+            178
+          ],
+          "source_body_bounds": [
+            17,
+            39,
+            114,
+            135
+          ],
+          "source_root": [
+            71.62937062937063,
+            90.37062937062937
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            79,
+            175,
+            178
+          ],
+          "transformed_visible_bounds": [
+            74.544,
+            78.912,
+            174.787,
+            178.122
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_6.png",
+          "atlas_rect": [
+            1280,
+            2304,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            79,
+            175,
+            178
+          ],
+          "sha256": "4f1eb17ff1d44bede4d2e19e61942c4a4dd1672d87e8454bcd3bda7976b0149c"
+        }
+      ]
+    },
+    "fall": {
+      "row": 10,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            792,
+            137,
+            211
+          ],
+          "source_body_bounds": [
+            22,
+            34,
+            119,
+            129
+          ],
+          "source_root": [
+            78.32191780821918,
+            85.15068493150685
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            79,
+            173,
+            177
+          ],
+          "transformed_visible_bounds": [
+            72.795,
+            79.139,
+            173.038,
+            177.315
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_1.png",
+          "atlas_rect": [
+            0,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            79,
+            173,
+            177
+          ],
+          "sha256": "0f9500587929b6110d505f55e73a6d23f0c39358cca8db455f8a761134641e60"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            137,
+            792,
+            131,
+            211
+          ],
+          "source_body_bounds": [
+            18,
+            45,
+            115,
+            145
+          ],
+          "source_root": [
+            66.33333333333333,
+            105.66666666666667
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            69,
+            181,
+            173
+          ],
+          "transformed_visible_bounds": [
+            81.051,
+            69.305,
+            181.294,
+            173.682
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_2.png",
+          "atlas_rect": [
+            256,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            69,
+            181,
+            174
+          ],
+          "sha256": "ce601bfe75c02e709f29e0e3761962016d5b51237a0fd8e18da37077e8d57132"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            268,
+            792,
+            128,
+            211
+          ],
+          "source_body_bounds": [
+            16,
+            54,
+            113,
+            158
+          ],
+          "source_root": [
+            57.0,
+            118.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            89,
+            65,
+            189,
+            173
+          ],
+          "transformed_visible_bounds": [
+            88.629,
+            65.343,
+            188.872,
+            183.155
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_3.png",
+          "atlas_rect": [
+            512,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            89,
+            65,
+            189,
+            183
+          ],
+          "sha256": "42ce6d498b69a2e59f6c8b9bfce63e859a04a8a5b4f0679ecf1b7582bafd7558"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            396,
+            792,
+            130,
+            211
+          ],
+          "source_body_bounds": [
+            16,
+            63,
+            114,
+            169
+          ],
+          "source_root": [
+            58.30769230769231,
+            127.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            87,
+            66,
+            189,
+            175
+          ],
+          "transformed_visible_bounds": [
+            87.278,
+            65.86,
+            188.554,
+            185.739
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_4.png",
+          "atlas_rect": [
+            768,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            87,
+            66,
+            189,
+            186
+          ],
+          "sha256": "f2333c70f7c04e8454a8e84525722972ebba302f4d5b9cb56d026d405899a01e"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            526,
+            792,
+            131,
+            211
+          ],
+          "source_body_bounds": [
+            17,
+            65,
+            114,
+            166
+          ],
+          "source_root": [
+            72.0,
+            130.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            65,
+            174,
+            169
+          ],
+          "transformed_visible_bounds": [
+            74.161,
+            64.827,
+            174.404,
+            178.505
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_5.png",
+          "atlas_rect": [
+            1024,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            65,
+            174,
+            179
+          ],
+          "sha256": "8cbeb9deb7f7731fe00c85e2e16247bb2269202767404365191840e9913a2393"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            657,
+            792,
+            136,
+            211
+          ],
+          "source_body_bounds": [
+            17,
+            67,
+            115,
+            159
+          ],
+          "source_root": [
+            72.16417910447761,
+            115.71641791044776
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            82,
+            175,
+            177
+          ],
+          "transformed_visible_bounds": [
+            73.991,
+            81.655,
+            175.268,
+            183.965
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_6.png",
+          "atlas_rect": [
+            1280,
+            2560,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            82,
+            175,
+            184
+          ],
+          "sha256": "e9bf85d886a8571c97ddd135e4e5e80245dfef5e87402d53ee8be1f3a82e224e"
+        }
+      ]
+    },
+    "land": {
+      "row": 11,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            1003,
+            134,
+            195
+          ],
+          "source_body_bounds": [
+            23,
+            32,
+            119,
+            125
+          ],
+          "source_root": [
+            77.29801324503312,
+            82.37748344370861
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            80,
+            174,
+            176
+          ],
+          "transformed_visible_bounds": [
+            74.887,
+            79.938,
+            174.096,
+            184.315
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_1.png",
+          "atlas_rect": [
+            0,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            80,
+            174,
+            184
+          ],
+          "sha256": "5bb566824eced8a69cee7c490cdebc1012a376b7b40769b2ab6c7670d571db76"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            134,
+            1003,
+            128,
+            195
+          ],
+          "source_body_bounds": [
+            16,
+            53,
+            113,
+            154
+          ],
+          "source_root": [
+            58.5,
+            112.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            87,
+            71,
+            187,
+            175
+          ],
+          "transformed_visible_bounds": [
+            87.079,
+            71.027,
+            187.322,
+            175.404
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_2.png",
+          "atlas_rect": [
+            256,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            87,
+            71,
+            187,
+            175
+          ],
+          "sha256": "d11ebdbf1b79a3cb3ea93fa407ecb05f91d0002acfa2f465d5fbc48356f64860"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            262,
+            1003,
+            138,
+            195
+          ],
+          "source_body_bounds": [
+            19,
+            68,
+            126,
+            156
+          ],
+          "source_root": [
+            75.67142857142858,
+            118.63571428571429
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            72,
+            80,
+            183,
+            171
+          ],
+          "transformed_visible_bounds": [
+            68.3,
+            79.671,
+            184.045,
+            170.614
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_3.png",
+          "atlas_rect": [
+            512,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            68,
+            80,
+            184,
+            171
+          ],
+          "sha256": "c6d6c09802afbfd59208ea334ae5f263e3273054002dd4ce11f96be0c8fa5d04"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            400,
+            1003,
+            126,
+            195
+          ],
+          "source_body_bounds": [
+            12,
+            52,
+            109,
+            148
+          ],
+          "source_root": [
+            53.45454545454545,
+            112.63636363636364
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            88,
+            69,
+            188,
+            169
+          ],
+          "transformed_visible_bounds": [
+            88.159,
+            69.336,
+            188.403,
+            168.546
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_4.png",
+          "atlas_rect": [
+            768,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            88,
+            69,
+            188,
+            169
+          ],
+          "sha256": "89fa0bb29d778be4dafe071e6097946701305120dccfc1ff01098fe192374671"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            526,
+            1003,
+            132,
+            195
+          ],
+          "source_body_bounds": [
+            18,
+            46,
+            114,
+            141
+          ],
+          "source_root": [
+            73.92248062015504,
+            97.16279069767442
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            79,
+            172,
+            177
+          ],
+          "transformed_visible_bounds": [
+            73.208,
+            79.127,
+            172.417,
+            177.303
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_5.png",
+          "atlas_rect": [
+            1024,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            79,
+            172,
+            177
+          ],
+          "sha256": "7cda7ea85f2a098010b0a600c668ab2507ec0379cf78b0eb5acfb9e5d43fd7b4"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            658,
+            1003,
+            135,
+            195
+          ],
+          "source_body_bounds": [
+            18,
+            46,
+            115,
+            139
+          ],
+          "source_root": [
+            71.46969696969697,
+            97.11363636363636
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            79,
+            176,
+            175
+          ],
+          "transformed_visible_bounds": [
+            75.743,
+            79.177,
+            175.986,
+            175.287
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_6.png",
+          "atlas_rect": [
+            1280,
+            2816,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            79,
+            176,
+            175
+          ],
+          "sha256": "415b7420eec981150b6a60c8e831e4a5361e1cfc5cb8632788d7d4c5938af30c"
+        }
+      ]
+    },
+    "light": {
+      "row": 12,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.025,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            0,
+            168,
+            170
+          ],
+          "source_body_bounds": [
+            34,
+            37,
+            139,
+            138
+          ],
+          "source_root": [
+            80.6923076923077,
+            100.46153846153847
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            83,
+            66,
+            191,
+            171
+          ],
+          "transformed_visible_bounds": [
+            82.747,
+            66.417,
+            191.257,
+            170.794
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1.png",
+          "atlas_rect": [
+            0,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            83,
+            66,
+            191,
+            171
+          ],
+          "sha256": "ed7cff27a67f440635cab3420d60252448afed63cd29c8fdf6a486ba7c6d8b45"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            168,
+            0,
+            164,
+            170
+          ],
+          "source_body_bounds": [
+            30,
+            38,
+            135,
+            138
+          ],
+          "source_root": [
+            77.9090909090909,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            67,
+            190,
+            170
+          ],
+          "transformed_visible_bounds": [
+            81.489,
+            66.894,
+            190.0,
+            170.237
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_2.png",
+          "atlas_rect": [
+            256,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            67,
+            190,
+            170
+          ],
+          "sha256": "f7ac4b216cdce52dc72f85913cf4a5bf43c6088677ee8a24f3ca081d28dc13d5"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            332,
+            0,
+            165,
+            170
+          ],
+          "source_body_bounds": [
+            28,
+            38,
+            140,
+            138
+          ],
+          "source_root": [
+            78.18181818181819,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            67,
+            195,
+            170
+          ],
+          "transformed_visible_bounds": [
+            79.14,
+            66.894,
+            195.918,
+            170.237
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_3.png",
+          "atlas_rect": [
+            512,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            67,
+            196,
+            170
+          ],
+          "sha256": "b3ceca14efbc2187c9110cc644f0e28f2e7d48e1f6dc1b35391135395580dfdb"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            497,
+            0,
+            167,
+            170
+          ],
+          "source_body_bounds": [
+            24,
+            41,
+            150,
+            135
+          ],
+          "source_root": [
+            88.4375,
+            89.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            64,
+            82,
+            195,
+            179
+          ],
+          "transformed_visible_bounds": [
+            64.408,
+            79.812,
+            195.654,
+            179.021
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_4.png",
+          "atlas_rect": [
+            768,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            64,
+            80,
+            196,
+            179
+          ],
+          "sha256": "8c645ddc27cd0aa476edcc15b10354edd00b50a0ce886643dee83d09df829d61"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            664,
+            0,
+            150,
+            170
+          ],
+          "source_body_bounds": [
+            15,
+            39,
+            122,
+            137
+          ],
+          "source_root": [
+            63.666666666666664,
+            101.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            68,
+            191,
+            169
+          ],
+          "transformed_visible_bounds": [
+            80.706,
+            67.927,
+            192.317,
+            169.204
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_5.png",
+          "atlas_rect": [
+            1024,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            68,
+            192,
+            169
+          ],
+          "sha256": "a72f09eae990b1ac8113017626bbbe06ece5cdcae5a354950a0dd4478da66bcb"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            814,
+            0,
+            157,
+            170
+          ],
+          "source_body_bounds": [
+            26,
+            38,
+            125,
+            139
+          ],
+          "source_root": [
+            72.375,
+            101.625
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            83,
+            66,
+            185,
+            171
+          ],
+          "transformed_visible_bounds": [
+            83.074,
+            66.248,
+            185.384,
+            170.625
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_6.png",
+          "atlas_rect": [
+            1280,
+            3072,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            83,
+            66,
+            185,
+            171
+          ],
+          "sha256": "155f675fb7789d91c60567a433d9e1dc1d800ad9f6068283935bb98fb09f7899"
+        }
+      ]
+    },
+    "heavy": {
+      "row": 13,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            170,
+            165,
+            151
+          ],
+          "source_body_bounds": [
+            34,
+            30,
+            134,
+            131
+          ],
+          "source_root": [
+            79.91666666666667,
+            93.25
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            84,
+            67,
+            187,
+            171
+          ],
+          "transformed_visible_bounds": [
+            83.548,
+            66.635,
+            186.892,
+            171.012
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_1.png",
+          "atlas_rect": [
+            0,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            84,
+            67,
+            187,
+            171
+          ],
+          "sha256": "9b94e1f46e0f75599383e58d6b29b5e7c5eb9e412c40b9639d16091aba40e774"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            165,
+            170,
+            163,
+            151
+          ],
+          "source_body_bounds": [
+            31,
+            36,
+            132,
+            133
+          ],
+          "source_root": [
+            79.75,
+            98.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            67,
+            185,
+            168
+          ],
+          "transformed_visible_bounds": [
+            80.62,
+            67.41,
+            184.997,
+            167.653
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_2.png",
+          "atlas_rect": [
+            256,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            67,
+            185,
+            168
+          ],
+          "sha256": "85fe39deddebde0333c601c66f32386bb58ff9c00b00e4463e988108c5784f81"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            328,
+            170,
+            160,
+            151
+          ],
+          "source_body_bounds": [
+            31,
+            36,
+            130,
+            130
+          ],
+          "source_root": [
+            82.0,
+            99.1
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            78,
+            67,
+            181,
+            164
+          ],
+          "transformed_visible_bounds": [
+            78.295,
+            66.79,
+            180.605,
+            163.933
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_3.png",
+          "atlas_rect": [
+            512,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            78,
+            67,
+            181,
+            164
+          ],
+          "sha256": "13e57af89f7362d9d488d5f2191adbfbf741ffade98aa699007732ac040b9690"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            488,
+            170,
+            172,
+            151
+          ],
+          "source_body_bounds": [
+            29,
+            36,
+            147,
+            131
+          ],
+          "source_root": [
+            94.89820359281437,
+            88.59281437125749
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            63,
+            78,
+            185,
+            176
+          ],
+          "transformed_visible_bounds": [
+            62.899,
+            77.649,
+            190.011,
+            175.825
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_4.png",
+          "atlas_rect": [
+            768,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            63,
+            78,
+            190,
+            176
+          ],
+          "sha256": "f2241ebbf7ae8cc1139ec7add846fd72e5d1b279f0b34bb0e3c6bc93c0ca3aa4"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            660,
+            170,
+            149,
+            151
+          ],
+          "source_body_bounds": [
+            19,
+            35,
+            118,
+            131
+          ],
+          "source_root": [
+            62.63636363636363,
+            95.54545454545455
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            86,
+            69,
+            188,
+            169
+          ],
+          "transformed_visible_bounds": [
+            85.905,
+            69.43,
+            188.215,
+            168.64
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_5.png",
+          "atlas_rect": [
+            1024,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            86,
+            69,
+            188,
+            169
+          ],
+          "sha256": "86f088915569b6554a5c7c696218078077dee801a8efc83d68971ea930fa94f0"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            809,
+            170,
+            162,
+            151
+          ],
+          "source_body_bounds": [
+            31,
+            33,
+            131,
+            131
+          ],
+          "source_root": [
+            79.7,
+            96.3
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            67,
+            184,
+            168
+          ],
+          "transformed_visible_bounds": [
+            80.672,
+            66.584,
+            184.015,
+            167.86
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_6.png",
+          "atlas_rect": [
+            1280,
+            3328,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            67,
+            184,
+            168
+          ],
+          "sha256": "84d6a8b0988c135e8259c2621a60d823d69e8c8053517b3a77e523e1a85aaea0"
+        }
+      ]
+    },
+    "launcher": {
+      "row": 14,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            321,
+            168,
+            185
+          ],
+          "source_body_bounds": [
+            32,
+            49,
+            141,
+            149
+          ],
+          "source_root": [
+            81.3,
+            112.1
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            67,
+            193,
+            170
+          ],
+          "transformed_visible_bounds": [
+            80.052,
+            66.79,
+            192.696,
+            170.134
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_1.png",
+          "atlas_rect": [
+            0,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            67,
+            193,
+            170
+          ],
+          "sha256": "f13f9db7e53a46e21e7668fda2d4560e1845bdcd24b114b1b76148b0bf3fd0cc"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            168,
+            321,
+            161,
+            185
+          ],
+          "source_body_bounds": [
+            28,
+            56,
+            130,
+            152
+          ],
+          "source_root": [
+            77.0,
+            121.375
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            64,
+            186,
+            164
+          ],
+          "transformed_visible_bounds": [
+            80.362,
+            64.439,
+            185.772,
+            164.682
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_2.png",
+          "atlas_rect": [
+            256,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            64,
+            186,
+            165
+          ],
+          "sha256": "77f8c1061be2d3e5f71c2a93bf16435ba2e05c23967f738d7cfb072d035615ad"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            329,
+            321,
+            159,
+            185
+          ],
+          "source_body_bounds": [
+            31,
+            45,
+            131,
+            154
+          ],
+          "source_root": [
+            80.5,
+            107.875
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            67,
+            183,
+            180
+          ],
+          "transformed_visible_bounds": [
+            79.845,
+            67.023,
+            183.188,
+            191.035
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_3.png",
+          "atlas_rect": [
+            512,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            67,
+            183,
+            191
+          ],
+          "sha256": "64d347866c02e495c8ddc5f47b613cff8d3a2ec0502cf6057eef270f95258238"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            488,
+            321,
+            161,
+            185
+          ],
+          "source_body_bounds": [
+            29,
+            18,
+            129,
+            151
+          ],
+          "source_root": [
+            79.66666666666667,
+            95.66666666666667
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            52,
+            182,
+            189
+          ],
+          "transformed_visible_bounds": [
+            78.639,
+            51.737,
+            181.983,
+            199.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_4.png",
+          "atlas_rect": [
+            768,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            52,
+            182,
+            200
+          ],
+          "sha256": "ff8bdf69db62913065d41bc0d1f579af791b8c8878d65cc45cbe20128efa6e6a"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            649,
+            321,
+            161,
+            185
+          ],
+          "source_body_bounds": [
+            32,
+            32,
+            133,
+            151
+          ],
+          "source_root": [
+            81.5,
+            96.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            65,
+            184,
+            188
+          ],
+          "transformed_visible_bounds": [
+            79.845,
+            65.343,
+            184.222,
+            191.422
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_5.png",
+          "atlas_rect": [
+            1024,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            65,
+            184,
+            191
+          ],
+          "sha256": "9b3317cb47d0729bd840cd1f5c4cdff4962ff6fa70792ea3a920175f31cbf90b"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            810,
+            321,
+            161,
+            185
+          ],
+          "source_body_bounds": [
+            27,
+            48,
+            131,
+            149
+          ],
+          "source_root": [
+            76.66666666666667,
+            112.75
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            65,
+            187,
+            169
+          ],
+          "transformed_visible_bounds": [
+            79.673,
+            65.085,
+            187.15,
+            169.462
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_6.png",
+          "atlas_rect": [
+            1280,
+            3584,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            65,
+            187,
+            169
+          ],
+          "sha256": "c0929cccae623c4ea1ae54406ccef08cffb1b35fcfd2ba3677a13b147883efc9"
+        }
+      ]
+    },
+    "air_attack": {
+      "row": 15,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            506,
+            164,
+            170
+          ],
+          "source_body_bounds": [
+            31,
+            19,
+            136,
+            118
+          ],
+          "source_root": [
+            80.7,
+            82.9
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            66,
+            188,
+            168
+          ],
+          "transformed_visible_bounds": [
+            79.638,
+            65.964,
+            188.149,
+            168.274
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_1.png",
+          "atlas_rect": [
+            0,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            66,
+            188,
+            168
+          ],
+          "sha256": "dfed1e26dd7394580bfeb75e640517a447b5146a4e2cb03df091e48b9d4f79af"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            164,
+            506,
+            158,
+            170
+          ],
+          "source_body_bounds": [
+            29,
+            25,
+            131,
+            123
+          ],
+          "source_root": [
+            74.5,
+            88.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            84,
+            67,
+            189,
+            168
+          ],
+          "transformed_visible_bounds": [
+            83.979,
+            66.894,
+            189.389,
+            168.17
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_2.png",
+          "atlas_rect": [
+            256,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            84,
+            67,
+            189,
+            168
+          ],
+          "sha256": "b32d589df5ed4a745f85382aa7b3c25441d2322e13ff0b42e4525c2dcf54a176"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            322,
+            506,
+            150,
+            170
+          ],
+          "source_body_bounds": [
+            28,
+            23,
+            127,
+            123
+          ],
+          "source_root": [
+            73.33333333333333,
+            79.66666666666667
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            84,
+            73,
+            186,
+            177
+          ],
+          "transformed_visible_bounds": [
+            84.151,
+            73.439,
+            186.461,
+            176.782
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_3.png",
+          "atlas_rect": [
+            512,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            84,
+            73,
+            186,
+            177
+          ],
+          "sha256": "6b37ad049500a487746915d7f9e7d290d83be8f1f43b81781e7b6c822db6a1be"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            472,
+            506,
+            170,
+            170
+          ],
+          "source_body_bounds": [
+            38,
+            38,
+            138,
+            153
+          ],
+          "source_root": [
+            98.5,
+            106.41666666666667
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            68,
+            61,
+            172,
+            180
+          ],
+          "transformed_visible_bounds": [
+            52.976,
+            61.296,
+            171.821,
+            181.174
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_4.png",
+          "atlas_rect": [
+            768,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            53,
+            61,
+            172,
+            181
+          ],
+          "sha256": "03fe5363a6328fb6228e25440bfcc590b8df28718c27bbccf5941688c1f48684"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            642,
+            506,
+            167,
+            170
+          ],
+          "source_body_bounds": [
+            32,
+            33,
+            139,
+            132
+          ],
+          "source_root": [
+            81.375,
+            96.875
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            66,
+            191,
+            168
+          ],
+          "transformed_visible_bounds": [
+            79.974,
+            65.989,
+            190.552,
+            168.299
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_5.png",
+          "atlas_rect": [
+            1024,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            66,
+            191,
+            168
+          ],
+          "sha256": "823a1e743cb600b1bb24b0e96c2f456fd73560efb859c86c6f4f53623fef4825"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            809,
+            506,
+            162,
+            170
+          ],
+          "source_body_bounds": [
+            28,
+            24,
+            138,
+            124
+          ],
+          "source_root": [
+            77.5,
+            87.42857142857143
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            66,
+            194,
+            170
+          ],
+          "transformed_visible_bounds": [
+            79.845,
+            66.451,
+            193.523,
+            169.794
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_6.png",
+          "atlas_rect": [
+            1280,
+            3840,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            66,
+            194,
+            170
+          ],
+          "sha256": "7e5c5c5893f4d30e2793659f19843a61f216ec51f983d9fc6efa15a0d0581480"
+        }
+      ]
+    },
+    "charge": {
+      "row": 16,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            0,
+            1376,
+            136,
+            190
+          ],
+          "source_body_bounds": [
+            23,
+            49,
+            120,
+            140
+          ],
+          "source_root": [
+            77.86363636363636,
+            97.7159090909091
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            82,
+            175,
+            176
+          ],
+          "transformed_visible_bounds": [
+            74.302,
+            81.655,
+            174.545,
+            175.698
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_1.png",
+          "atlas_rect": [
+            0,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            82,
+            175,
+            176
+          ],
+          "sha256": "9c24a0706aeed24069b1298683e945f7b01970818a89e89d4d0b384b4818135e"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            136,
+            1376,
+            130,
+            190
+          ],
+          "source_body_bounds": [
+            17,
+            49,
+            114,
+            142
+          ],
+          "source_root": [
+            72.99428571428571,
+            98.85714285714286
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            80,
+            173,
+            177
+          ],
+          "transformed_visible_bounds": [
+            73.134,
+            80.476,
+            173.377,
+            176.585
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_2.png",
+          "atlas_rect": [
+            256,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            80,
+            173,
+            177
+          ],
+          "sha256": "38c281fffd057f23d026fa7ffe346121e3946a05ecef7bed8df0e3f73b8fe5b3"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            266,
+            1376,
+            128,
+            190
+          ],
+          "source_body_bounds": [
+            16,
+            48,
+            114,
+            143
+          ],
+          "source_root": [
+            70.125,
+            99.115
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            79,
+            176,
+            177
+          ],
+          "transformed_visible_bounds": [
+            75.065,
+            79.176,
+            176.342,
+            177.352
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_3.png",
+          "atlas_rect": [
+            512,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            79,
+            176,
+            177
+          ],
+          "sha256": "881130b07162f97d46ef3e2824bfdc49da2142ef1be4181c609a08e0e58bcd0d"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            394,
+            1376,
+            134,
+            190
+          ],
+          "source_body_bounds": [
+            15,
+            42,
+            122,
+            149
+          ],
+          "source_root": [
+            70.00859598853869,
+            99.60458452722062
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            72,
+            185,
+            183
+          ],
+          "transformed_visible_bounds": [
+            74.152,
+            72.469,
+            184.73,
+            183.047
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_4.png",
+          "atlas_rect": [
+            768,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            72,
+            185,
+            183
+          ],
+          "sha256": "bdc3f1026b539705513bff5d2dd13749f9402313d9dbc5cda80604a537f60425"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            528,
+            1376,
+            132,
+            190
+          ],
+          "source_body_bounds": [
+            13,
+            42,
+            117,
+            150
+          ],
+          "source_root": [
+            66.64344262295081,
+            99.83811475409836
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            72,
+            183,
+            184
+          ],
+          "transformed_visible_bounds": [
+            75.563,
+            72.228,
+            183.04,
+            183.839
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_5.png",
+          "atlas_rect": [
+            1024,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            72,
+            183,
+            184
+          ],
+          "sha256": "4cffd3c56bbf1717fa6810a20eae3d893c0498f21a0142e92cde6131aebd8722"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-A.png",
+          "source_rect": [
+            660,
+            1376,
+            133,
+            190
+          ],
+          "source_body_bounds": [
+            15,
+            48,
+            113,
+            142
+          ],
+          "source_root": [
+            69.79888268156425,
+            98.91620111731844
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            74,
+            79,
+            176,
+            177
+          ],
+          "transformed_visible_bounds": [
+            74.369,
+            79.381,
+            175.646,
+            176.524
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_6.png",
+          "atlas_rect": [
+            1280,
+            4096,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            74,
+            79,
+            176,
+            177
+          ],
+          "sha256": "7c31241b3221c4868386ca53f4d1c690eee7b8e152df8c84c7a5564c2c8c2a97"
+        }
+      ]
+    },
+    "skill_u": {
+      "row": 17,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.025,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            676,
+            158,
+            142
+          ],
+          "source_body_bounds": [
+            31,
+            16,
+            131,
+            112
+          ],
+          "source_root": [
+            79.55555555555556,
+            79.11111111111111
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            67,
+            184,
+            166
+          ],
+          "transformed_visible_bounds": [
+            80.821,
+            66.779,
+            184.164,
+            165.989
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_1.png",
+          "atlas_rect": [
+            0,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            67,
+            184,
+            166
+          ],
+          "sha256": "e7ca20c2e39965fe6e108c1b64e1c93a1bea6c6d75972ac51b34fa2a02bd8edf"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            158,
+            676,
+            170,
+            142
+          ],
+          "source_body_bounds": [
+            27,
+            16,
+            149,
+            114
+          ],
+          "source_root": [
+            83.63636363636364,
+            79.9090909090909
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            72,
+            66,
+            199,
+            167
+          ],
+          "transformed_visible_bounds": [
+            72.47,
+            65.954,
+            198.549,
+            167.231
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_2.png",
+          "atlas_rect": [
+            256,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            72,
+            66,
+            199,
+            167
+          ],
+          "sha256": "520608c1a1e77dc2e027b4245860ba89b9ca018601d58435f9820eb52b17a572"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            328,
+            676,
+            165,
+            142
+          ],
+          "source_body_bounds": [
+            22,
+            17,
+            134,
+            111
+          ],
+          "source_root": [
+            74.54545454545455,
+            78.0909090909091
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            77,
+            69,
+            192,
+            166
+          ],
+          "transformed_visible_bounds": [
+            76.698,
+            68.867,
+            206.91,
+            166.009
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_3.png",
+          "atlas_rect": [
+            512,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            69,
+            207,
+            166
+          ],
+          "sha256": "ec854d9379c8505351cad78788216c54307942d0ed3d347351d925338b5c8f53"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            493,
+            676,
+            167,
+            142
+          ],
+          "source_body_bounds": [
+            20,
+            16,
+            143,
+            111
+          ],
+          "source_root": [
+            84.28358208955224,
+            65.65671641791045
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            65,
+            81,
+            192,
+            179
+          ],
+          "transformed_visible_bounds": [
+            61.467,
+            80.683,
+            204.081,
+            178.859
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_4.png",
+          "atlas_rect": [
+            768,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            61,
+            81,
+            204,
+            179
+          ],
+          "sha256": "5fa542a19da538b7c1a00eaf1139a81be018a06f24d897b8ab02da3f51d62f53"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            660,
+            676,
+            154,
+            142
+          ],
+          "source_body_bounds": [
+            11,
+            16,
+            127,
+            111
+          ],
+          "source_root": [
+            65.5,
+            76.83333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            75,
+            69,
+            195,
+            167
+          ],
+          "transformed_visible_bounds": [
+            74.678,
+            69.133,
+            194.556,
+            167.309
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_5.png",
+          "atlas_rect": [
+            1024,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            75,
+            69,
+            195,
+            167
+          ],
+          "sha256": "28f75071607fea60781426910ca2ca6da89a31d09f5e21cf3e053d0663bb14c8"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            814,
+            676,
+            157,
+            142
+          ],
+          "source_body_bounds": [
+            26,
+            17,
+            125,
+            114
+          ],
+          "source_root": [
+            73.2,
+            79.8
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            82,
+            67,
+            185,
+            167
+          ],
+          "transformed_visible_bounds": [
+            82.222,
+            67.1,
+            184.532,
+            167.343
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_6.png",
+          "atlas_rect": [
+            1280,
+            4352,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            82,
+            67,
+            185,
+            167
+          ],
+          "sha256": "60ef65596b8813586763c15142ab7f22ba6519b5df294f26d769d1cc2700b221"
+        }
+      ]
+    },
+    "skill_i": {
+      "row": 18,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.03,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            818,
+            164,
+            146
+          ],
+          "source_body_bounds": [
+            33,
+            28,
+            135,
+            126
+          ],
+          "source_root": [
+            82.27272727272727,
+            91.36363636363636
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            67,
+            185,
+            168
+          ],
+          "transformed_visible_bounds": [
+            80.08,
+            66.518,
+            185.49,
+            167.794
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_1.png",
+          "atlas_rect": [
+            0,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            67,
+            185,
+            168
+          ],
+          "sha256": "a154d5e6ea89a4efbd4fe6728684d4ac2df454c5f159a523fa570723fb8e514a"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            164,
+            818,
+            162,
+            146
+          ],
+          "source_body_bounds": [
+            30,
+            31,
+            126,
+            126
+          ],
+          "source_root": [
+            77.5,
+            92.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            82,
+            68,
+            181,
+            167
+          ],
+          "transformed_visible_bounds": [
+            80.878,
+            68.444,
+            183.188,
+            166.62
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_2.png",
+          "atlas_rect": [
+            256,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            81,
+            68,
+            183,
+            167
+          ],
+          "sha256": "5794552d8fc42acd93da4ebaf1f2d02a3489d8cc6bbcf76760dcf4256b537927"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            326,
+            818,
+            166,
+            146
+          ],
+          "source_body_bounds": [
+            38,
+            32,
+            116,
+            124
+          ],
+          "source_root": [
+            90.80645161290323,
+            79.70967741935483
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            83,
+            157,
+            178
+          ],
+          "transformed_visible_bounds": [
+            71.261,
+            82.695,
+            167.37,
+            177.771
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_3.png",
+          "atlas_rect": [
+            512,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            71,
+            83,
+            167,
+            178
+          ],
+          "sha256": "68fb7115fde953b81853a89f20a1eb9b2ce86f006f722ec326f390edef539218"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            492,
+            818,
+            148,
+            146
+          ],
+          "source_body_bounds": [
+            51,
+            37,
+            78,
+            121
+          ],
+          "source_root": [
+            66.32850241545894,
+            85.72463768115942
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            115,
+            82,
+            143,
+            168
+          ],
+          "transformed_visible_bounds": [
+            104.825,
+            80.613,
+            171.998,
+            168.455
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_4.png",
+          "atlas_rect": [
+            768,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            105,
+            81,
+            172,
+            168
+          ],
+          "sha256": "bb26459854da0f0a45fb4a9399c967c40d9a1584b9180bf1a00d0cfee7b87eff"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            640,
+            818,
+            170,
+            146
+          ],
+          "source_body_bounds": [
+            44,
+            31,
+            135,
+            125
+          ],
+          "source_root": [
+            93.0,
+            84.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            77,
+            174,
+            174
+          ],
+          "transformed_visible_bounds": [
+            77.261,
+            77.228,
+            178.538,
+            174.371
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_5.png",
+          "atlas_rect": [
+            1024,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            77,
+            179,
+            174
+          ],
+          "sha256": "d2ed77154921582cdead8eaec608114ac4c4df1aebc4acb0fd142513eac71ea0"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            810,
+            818,
+            161,
+            146
+          ],
+          "source_body_bounds": [
+            30,
+            29,
+            129,
+            126
+          ],
+          "source_root": [
+            79.16666666666667,
+            90.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            80,
+            68,
+            182,
+            169
+          ],
+          "transformed_visible_bounds": [
+            80.189,
+            68.444,
+            182.499,
+            168.687
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_6.png",
+          "atlas_rect": [
+            1280,
+            4608,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            80,
+            68,
+            182,
+            169
+          ],
+          "sha256": "a3cd4e9bcaa9ec9cbd1a3e4ac202040fcba730f7cbfb8493cbdd937af01edd8f"
+        }
+      ]
+    },
+    "ultimate": {
+      "row": 19,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.03,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            964,
+            164,
+            188
+          ],
+          "source_body_bounds": [
+            29,
+            41,
+            142,
+            143
+          ],
+          "source_root": [
+            81.21428571428571,
+            107.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            77,
+            64,
+            194,
+            169
+          ],
+          "transformed_visible_bounds": [
+            77.04,
+            63.793,
+            193.818,
+            169.204
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_1.png",
+          "atlas_rect": [
+            0,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            64,
+            194,
+            169
+          ],
+          "sha256": "c8ed098d4deb0f7be9aefa2a810c6c15b223581ae87099f8a3826aecc6887610"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            164,
+            964,
+            156,
+            188
+          ],
+          "source_body_bounds": [
+            21,
+            37,
+            140,
+            149
+          ],
+          "source_root": [
+            76.77777777777777,
+            107.44444444444444
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            59,
+            196,
+            175
+          ],
+          "transformed_visible_bounds": [
+            73.357,
+            59.2,
+            196.336,
+            174.945
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_2.png",
+          "atlas_rect": [
+            256,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            59,
+            196,
+            175
+          ],
+          "sha256": "16bc2b53677b9128e3c73fed6292360afe707b76c16bb75748a98c22593a311c"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            320,
+            964,
+            157,
+            188
+          ],
+          "source_body_bounds": [
+            15,
+            31,
+            150,
+            156
+          ],
+          "source_root": [
+            93.29277566539923,
+            98.24334600760456
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            50,
+            63,
+            190,
+            192
+          ],
+          "transformed_visible_bounds": [
+            50.09,
+            61.475,
+            189.603,
+            191.688
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_3.png",
+          "atlas_rect": [
+            512,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            50,
+            61,
+            190,
+            192
+          ],
+          "sha256": "ca2147b3172281c6685fe3e4170f192d434969cf52ee20a3062f321d207f31f4"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            477,
+            964,
+            185,
+            188
+          ],
+          "source_body_bounds": [
+            10,
+            41,
+            164,
+            154
+          ],
+          "source_root": [
+            78.5,
+            107.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            60,
+            64,
+            219,
+            181
+          ],
+          "transformed_visible_bounds": [
+            57.109,
+            42.091,
+            230.726,
+            199.173
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_4.png",
+          "atlas_rect": [
+            768,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            57,
+            42,
+            231,
+            199
+          ],
+          "sha256": "deba0076b86d290450690ec1e40dcd939e174e96b24eaee40c41c11a49cf249e"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            662,
+            964,
+            148,
+            188
+          ],
+          "source_body_bounds": [
+            10,
+            40,
+            125,
+            143
+          ],
+          "source_root": [
+            61.833333333333336,
+            107.83333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            77,
+            62,
+            196,
+            168
+          ],
+          "transformed_visible_bounds": [
+            77.434,
+            61.899,
+            196.279,
+            168.342
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_5.png",
+          "atlas_rect": [
+            1024,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            77,
+            62,
+            196,
+            168
+          ],
+          "sha256": "e49a0108d6ebe84c491959c688f07a3f2a875eda7857b4ce2c88bab439cf04de"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            810,
+            964,
+            161,
+            188
+          ],
+          "source_body_bounds": [
+            23,
+            42,
+            135,
+            142
+          ],
+          "source_root": [
+            75.92307692307692,
+            106.84615384615384
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            65,
+            192,
+            168
+          ],
+          "transformed_visible_bounds": [
+            76.307,
+            64.986,
+            192.052,
+            168.329
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_6.png",
+          "atlas_rect": [
+            1280,
+            4864,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            65,
+            192,
+            168
+          ],
+          "sha256": "14784e134d4bf39eb5698bdcc6f4d943d4b8d0cffde349bf240cc35290f4365c"
+        }
+      ]
+    },
+    "new_skill": {
+      "row": 20,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            1152,
+            164,
+            150
+          ],
+          "source_body_bounds": [
+            30,
+            17,
+            139,
+            115
+          ],
+          "source_root": [
+            81.125,
+            81.875
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            78,
+            65,
+            191,
+            166
+          ],
+          "transformed_visible_bounds": [
+            78.166,
+            64.956,
+            190.81,
+            166.233
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_1.png",
+          "atlas_rect": [
+            0,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            78,
+            65,
+            191,
+            166
+          ],
+          "sha256": "c1664623b1d30a3696b132fc43a1a6c18bbf04c236affccd85114617657fdc17"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            164,
+            1152,
+            158,
+            150
+          ],
+          "source_body_bounds": [
+            25,
+            17,
+            131,
+            122
+          ],
+          "source_root": [
+            88.6923076923077,
+            76.84615384615384
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            65,
+            70,
+            175,
+            179
+          ],
+          "transformed_visible_bounds": [
+            65.178,
+            70.153,
+            174.722,
+            178.664
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_2.png",
+          "atlas_rect": [
+            256,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            65,
+            70,
+            175,
+            179
+          ],
+          "sha256": "572dcdb0ef048eaba02fe7c404612758bc944afc14392ea31644bc9dda1b65b9"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            322,
+            1152,
+            182,
+            150
+          ],
+          "source_body_bounds": [
+            26,
+            22,
+            152,
+            122
+          ],
+          "source_root": [
+            83.0,
+            77.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            72,
+            75,
+            202,
+            178
+          ],
+          "transformed_visible_bounds": [
+            72.094,
+            74.644,
+            220.909,
+            177.988
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_3.png",
+          "atlas_rect": [
+            512,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            72,
+            75,
+            221,
+            178
+          ],
+          "sha256": "2a359bcbb41e2cbfafba53abc920301a546628ff4aa8f4e66bbe3619261bebad"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            504,
+            1152,
+            162,
+            150
+          ],
+          "source_body_bounds": [
+            11,
+            32,
+            124,
+            129
+          ],
+          "source_root": [
+            67.0,
+            78.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            73,
+            84,
+            190,
+            185
+          ],
+          "transformed_visible_bounds": [
+            73.128,
+            68.96,
+            215.742,
+            185.739
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_4.png",
+          "atlas_rect": [
+            768,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            69,
+            216,
+            186
+          ],
+          "sha256": "cb432688bc72da339af9df3e5cf3de177d15b0f387bb348317336aae880c55f7"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            666,
+            1152,
+            146,
+            150
+          ],
+          "source_body_bounds": [
+            14,
+            27,
+            109,
+            117
+          ],
+          "source_root": [
+            54.666666666666664,
+            84.33333333333333
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            89,
+            73,
+            187,
+            166
+          ],
+          "transformed_visible_bounds": [
+            88.974,
+            72.75,
+            200.585,
+            165.759
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_5.png",
+          "atlas_rect": [
+            1024,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            89,
+            73,
+            201,
+            166
+          ],
+          "sha256": "55273753172fe5d49a7b15efde286dfe6414d687bf1f1e9ffcc21ceca93c71f2"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            812,
+            1152,
+            159,
+            150
+          ],
+          "source_body_bounds": [
+            23,
+            18,
+            133,
+            116
+          ],
+          "source_root": [
+            73.4,
+            82.7
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            65,
+            193,
+            166
+          ],
+          "transformed_visible_bounds": [
+            78.915,
+            65.137,
+            192.593,
+            166.413
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_6.png",
+          "atlas_rect": [
+            1280,
+            5120,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            65,
+            193,
+            166
+          ],
+          "sha256": "b2591e54433b10c5fabb73584c5b58242829cbcc9280d71765f4ebeca4898a41"
+        }
+      ]
+    },
+    "knockdown": {
+      "row": 21,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            0,
+            1302,
+            162,
+            158
+          ],
+          "source_body_bounds": [
+            26,
+            19,
+            140,
+            117
+          ],
+          "source_root": [
+            84.66666666666667,
+            85.22222222222223
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            70,
+            64,
+            188,
+            165
+          ],
+          "transformed_visible_bounds": [
+            70.372,
+            63.564,
+            188.183,
+            164.84
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_1.png",
+          "atlas_rect": [
+            0,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            70,
+            64,
+            188,
+            165
+          ],
+          "sha256": "d73b7fb756a1d27b6987225f5a328d8923866f4b01eaf2cb11d93cdf9ee2507b"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            162,
+            1302,
+            169,
+            158
+          ],
+          "source_body_bounds": [
+            33,
+            36,
+            144,
+            125
+          ],
+          "source_root": [
+            81.0909090909091,
+            92.27272727272727
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            81,
+            74,
+            196,
+            166
+          ],
+          "transformed_visible_bounds": [
+            73.034,
+            73.846,
+            196.012,
+            165.821
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_2.png",
+          "atlas_rect": [
+            256,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            73,
+            74,
+            196,
+            166
+          ],
+          "sha256": "16ca6522783ebe6d2fa6c44469669ebafc80f3cd5845991bbcdf7ebc3a4bda78"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            331,
+            1302,
+            151,
+            158
+          ],
+          "source_body_bounds": [
+            25,
+            65,
+            132,
+            141
+          ],
+          "source_root": [
+            83.75,
+            103.25
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            70,
+            92,
+            181,
+            171
+          ],
+          "transformed_visible_bounds": [
+            70.286,
+            92.471,
+            180.863,
+            171.012
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_3.png",
+          "atlas_rect": [
+            512,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            70,
+            92,
+            181,
+            171
+          ],
+          "sha256": "6b850ce898b7eb031f7644d5e17dd92a82e0dba950ef324598c3d0fe6bead103"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            482,
+            1302,
+            172,
+            158
+          ],
+          "source_body_bounds": [
+            35,
+            66,
+            137,
+            142
+          ],
+          "source_root": [
+            88.5,
+            112.5
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            84,
+            181,
+            162
+          ],
+          "transformed_visible_bounds": [
+            59.176,
+            83.945,
+            196.623,
+            162.486
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_4.png",
+          "atlas_rect": [
+            768,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            59,
+            84,
+            197,
+            162
+          ],
+          "sha256": "db618ea7aa559a20c31275dbe450ded5dd0bfbbbed1097227da913edb3d01d32"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            654,
+            1302,
+            150,
+            158
+          ],
+          "source_body_bounds": [
+            19,
+            45,
+            120,
+            136
+          ],
+          "source_root": [
+            72.0,
+            105.0
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            76,
+            70,
+            181,
+            164
+          ],
+          "transformed_visible_bounds": [
+            76.228,
+            69.994,
+            180.605,
+            166.103
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_5.png",
+          "atlas_rect": [
+            1024,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            76,
+            70,
+            181,
+            166
+          ],
+          "sha256": "94a57701fd889e9c599ed9f8fa5da34fd3c6342f9b3e86c219be421b84f536f2"
+        },
+        {
+          "source_file": "art/animations/v4/source/the_void_core-B.png",
+          "source_rect": [
+            804,
+            1302,
+            167,
+            158
+          ],
+          "source_body_bounds": [
+            31,
+            28,
+            137,
+            127
+          ],
+          "source_root": [
+            81.6875,
+            91.625
+          ],
+          "scale": 1.033434650455927,
+          "target_pivot": [
+            128,
+            128
+          ],
+          "art_offset": [
+            3,
+            4
+          ],
+          "target_body_bounds": [
+            79,
+            66,
+            188,
+            169
+          ],
+          "transformed_visible_bounds": [
+            78.618,
+            66.248,
+            188.162,
+            168.558
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_6.png",
+          "atlas_rect": [
+            1280,
+            5376,
+            256,
+            256
+          ],
+          "visible_bounds": [
+            79,
+            66,
+            188,
+            169
+          ],
+          "sha256": "64a1b2d878bdf6d55f1c692012ce00633b925340b9855abb935190b33f05842a"
+        }
+      ]
+    }
+  }
+}

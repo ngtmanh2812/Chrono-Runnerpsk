@@ -54,6 +54,46 @@ public final class SpriteLayout {
         return Boolean.parseBoolean(properties.getProperty(state + ".loop", Boolean.toString(fallback)));
     }
 
+    /** Optional visual frame range, for example take-off through apex in V4.
+     * This maps simulation progress to poses without changing jump physics.
+     * Older packs retain the caller's original sampling behavior.
+     */
+    public double frameProgress(String state, double progress, int frames, double fallback) {
+        String first = properties.getProperty(state + ".startFrame");
+        String last = properties.getProperty(state + ".endFrame");
+        if (first == null && last == null) return fallback;
+        int start = Integer.parseInt(first == null ? "0" : first);
+        int end = Integer.parseInt(last == null ? Integer.toString(frames - 1) : last);
+        if (start < 0 || end < start || end >= frames || !Double.isFinite(progress)) {
+            throw new IllegalStateException("Invalid visual frame range: " + state);
+        }
+        double pose = Math.min(end, start + (end - start + 1) * Math.max(0, Math.min(1, progress)));
+        return pose / frames;
+    }
+
+    /** Map the three gameplay phases onto an authored pose breakdown.
+     * A six-frame V4 strike has three anticipation poses, two contact poses and
+     * one recovery pose. Older banks keep the original equal-third mapping.
+     */
+    public double actionProgress(String state, double progress, int frames) {
+        String contact = properties.getProperty(state + ".activeFrame",
+                properties.getProperty("combat.activeFrame"));
+        String recovery = properties.getProperty(state + ".recoveryFrame",
+                properties.getProperty("combat.recoveryFrame"));
+        if (contact == null && recovery == null) return progress;
+        int activeStart = Integer.parseInt(contact == null ? Integer.toString(frames / 3) : contact);
+        int recoveryStart = Integer.parseInt(recovery == null ? Integer.toString(frames * 2 / 3) : recovery);
+        if (activeStart < 1 || recoveryStart <= activeStart || recoveryStart >= frames
+                || !Double.isFinite(progress)) {
+            throw new IllegalStateException("Invalid combat pose breakdown: " + state);
+        }
+        double staged = Math.max(0, Math.min(1, progress)) * 3;
+        int phase = Math.min(2, (int)staged);
+        int start = phase == 0 ? 0 : phase == 1 ? activeStart : recoveryStart;
+        int end = phase == 0 ? activeStart : phase == 1 ? recoveryStart : frames;
+        return Math.min(end - 1, start + (staged - phase) * (end - start)) / frames;
+    }
+
     public void draw(PixelSprite sprite, Graphics2D g, int cx, int feetY, int centerY,
                      boolean flip, PixelSprite.Mode mode, float alpha) {
         int rootY = (centerAnchor ? centerY : feetY) + offsetY;

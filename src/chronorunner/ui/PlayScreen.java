@@ -26,6 +26,7 @@ import chronorunner.entity.FloatingText;
 import chronorunner.entity.Particle;
 import chronorunner.entity.Player;
 import chronorunner.entity.Projectile;
+import chronorunner.entity.SwordVisualEffect;
 import chronorunner.entity.boss.Boss;
 import chronorunner.entity.character.CharacterFactory;
 import chronorunner.entity.enemy.Enemy;
@@ -256,19 +257,19 @@ public class PlayScreen extends Screen implements CombatWorld {
             h.syncOwner();
             if (h.friendly) {
                 if (boss != null && !boss.isDead() && !h.hasHit(boss)
-                        && h.rect.intersects(boss.hurtbox().rect())) {
+                        && h.intersects(boss.hurtbox().rect())) {
                     resolveMeleeHit(h, boss);
                 }
                 for (Enemy e : enemies) {
                     if (e.isDead() || h.hasHit(e)) continue;
-                    if (h.rect.intersects(e.hurtbox().rect())) {
+                    if (h.intersects(e.hurtbox().rect())) {
                         resolveMeleeHit(h, e);
                     }
                 }
             } else {
                 for (Player p : players) {
                     if (p.isDead() || h.hasHit(p)) continue;
-                    if (h.rect.intersects(p.hurtbox().rect())) {
+                    if (h.intersects(p.hurtbox().rect())) {
                         resolveMeleeHit(h, p);
                     }
                 }
@@ -292,13 +293,14 @@ public class PlayScreen extends Screen implements CombatWorld {
 
             boolean blocked = false;
             for (Platform p : level.platforms()) {
-                if (pr.bounds().intersects(p.bounds())) {
+                if (pr.collidesWithPlatform(p)) {
                     blocked = true;
                     break;
                 }
             }
             if (blocked) {
                 pr.alive = false;
+                pr.onImpact(this);
                 burst(pr);
                 continue;
             }
@@ -321,7 +323,8 @@ public class PlayScreen extends Screen implements CombatWorld {
             } else {
                 for (Player p : players) {
                     if (!p.isDead() && pr.bounds().intersects(p.hurtbox().rect())) {
-                        applyDamage(p, pr.damage());
+                        if (pr.damagesOnContact()) applyDamage(p, pr.damage());
+                        pr.onImpact(this);
                         pr.alive = false;
                         burst(pr);
                         break;
@@ -394,17 +397,45 @@ public class PlayScreen extends Screen implements CombatWorld {
         Color color = info.fromPlayer ? new Color(255, 240, 130) : new Color(255, 130, 150);
         texts.add(new FloatingText(target.centerX() - 6, target.y + 2,
                 String.valueOf(dealt), color, 20, 0.7));
-        for (int i = 0; i < 8; i++) {
-            particles.add(new Particle(target.centerX() - 4, target.centerY() - 4,
-                    (Math.random() - 0.5) * 280, (Math.random() - 0.5) * 280, 5,
-                    color, 0.35, 0.6));
-        }
-        if (info.fromPlayer) {
-            shake(0.15);
+        if (target instanceof Boss boss && info.fromPlayer && info.feedback != DamageInfo.Feedback.NONE) {
+            swordImpact(boss, info.feedback);
         } else {
-            shake(0.22);
+            for (int i = 0; i < 8; i++) {
+                particles.add(new Particle(target.centerX() - 4, target.centerY() - 4,
+                        (Math.random() - 0.5) * 280, (Math.random() - 0.5) * 280, 5,
+                        color, 0.35, 0.6));
+            }
+            shake(info.fromPlayer ? 0.15 : 0.22);
         }
         return new CombatHitResult(CombatHitResult.Kind.HIT, dealt);
+    }
+
+    /** Only actual tagged HP loss reaches this path, including the killing hit. */
+    private void swordImpact(Boss target, DamageInfo.Feedback feedback) {
+        double size = switch (feedback) {
+            case PHAN_SWORD_LIGHT -> 110;
+            case PHAN_SWORD_MEDIUM -> 140;
+            case PHAN_SWORD_ULTIMATE -> 190;
+            default -> throw new IllegalArgumentException("Not a sword-impact profile");
+        };
+        double intensity = switch (feedback) {
+            case PHAN_SWORD_LIGHT -> .24;
+            case PHAN_SWORD_MEDIUM -> .30;
+            case PHAN_SWORD_ULTIMATE -> .40;
+            default -> 0;
+        };
+        // Core's vulnerable reactor is offset from its physics box. Anchor the
+        // smoke to the receiving torso, never the halo, cape or a projectile.
+        var torso = target.hurtbox().rect();
+        double cx = torso.x + torso.w / 2, cy = torso.y + torso.h / 2;
+        particles.add(SwordVisualEffect.impact(cx, cy, size));
+        Color spark = new Color(130, 240, 255);
+        for (int i = 0; i < 6; i++) {
+            particles.add(new Particle(cx - 2, cy - 2,
+                    (Math.random() - .5) * 320, (Math.random() - .5) * 320,
+                    3, spark, .24, .25));
+        }
+        shake(intensity);
     }
 
     /** A horizontal pushbox keeps melee approaches out of passive body overlap. */

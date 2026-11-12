@@ -1,0 +1,4 @@
+V4 runtime bank: ronaldo
+192x192; pivot=(96, 172); anchor=feet; scale=1.
+20 V4 authored clips; runtime aliases included. New_skill and knockdown reserved; no new gameplay logic.
+Source coordinates/roots/palette/body calibration are in manifest.json.

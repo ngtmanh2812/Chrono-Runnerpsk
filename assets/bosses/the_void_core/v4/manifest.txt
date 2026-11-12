@@ -1,0 +1,4 @@
+V4 runtime bank: the_void_core
+256x256; pivot=(128, 128); anchor=center; scale=2.
+20 V4 authored clips; runtime aliases included. New_skill and knockdown reserved; no new gameplay logic.
+Source coordinates/roots/palette/body calibration are in manifest.json.

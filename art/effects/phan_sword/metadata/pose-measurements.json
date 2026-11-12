@@ -1,0 +1,65 @@
+[
+  {
+    "file": "art/effects/phan_sword/source/skill-poses.png",
+    "width": 1774,
+    "height": 887,
+    "columns": 6,
+    "rows": 3,
+    "x_cuts": [
+      0,
+      299,
+      568,
+      855,
+      1195,
+      1500,
+      1774
+    ],
+    "y_cuts": [
+      0,
+      317,
+      593,
+      887
+    ],
+    "sha256": "777686e7a6e823f83e0a625ecaa29af440969feca7dc46aa42ef9b38034c4cba",
+    "alpha_cutoff": 128,
+    "removed_speck_pixels": 9,
+    "upright_body_heights": [
+      176,
+      175,
+      175
+    ],
+    "body_reference_height": 175.0,
+    "uniform_scale": 0.3657142857142857
+  },
+  {
+    "file": "art/effects/phan_sword/source/skill-inbetweens.png",
+    "width": 1619,
+    "height": 971,
+    "columns": 5,
+    "rows": 3,
+    "x_cuts": [
+      0,
+      322,
+      614,
+      925,
+      1290,
+      1619
+    ],
+    "y_cuts": [
+      0,
+      340,
+      645,
+      971
+    ],
+    "sha256": "f1ac8c96082d691eb0a3a97ece3fefdf4daaffd9c0ed32eefa5e88626550eafc",
+    "alpha_cutoff": 128,
+    "removed_speck_pixels": 22,
+    "upright_body_heights": [
+      207,
+      200,
+      201
+    ],
+    "body_reference_height": 201.0,
+    "uniform_scale": 0.31840796019900497
+  }
+]

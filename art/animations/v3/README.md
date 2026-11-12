@@ -1,5 +1,8 @@
 # Chrono Runner — bản sắc nhân vật và kỹ năng v3
 
+> Game hiện ưu tiên [bank V4](../v4/README.md). V3 được giữ làm nguồn/dự phòng;
+> [báo cáo V4](../../../docs/animation-v4-integration.md) mô tả cách tải và mapping mới.
+
 Đã tích hợp ba bank v3 và bộ U/I/O riêng vào game Java hiện tại. Ronaldo và Độ Mixi có thiết kế cùng animation mới; Phan Sĩ Kiên giữ thiết kế cũ và bổ sung tư thế chiến đấu. Cập nhật 30/10: **W nhảy, K dash, J nối thường → Heavy → Launcher** bằng animation có sẵn. Chi tiết runtime và phạm vi combo: [identity-runtime-v3.md](../../../docs/identity-runtime-v3.md).
 
 ## Bản sắc và bộ chiêu đã chạy trong game

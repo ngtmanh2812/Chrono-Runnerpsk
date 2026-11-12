@@ -1,0 +1,8486 @@
+{
+  "version": 4,
+  "status": "runtime-v4",
+  "actor": "ronaldo",
+  "frame_width": 192,
+  "frame_height": 192,
+  "columns": 6,
+  "rows": 24,
+  "pivot": [
+    96,
+    172
+  ],
+  "anchor": "feet",
+  "render_scale": 1,
+  "offset_y": 0,
+  "uniform_source_scale": 0.5182186234817814,
+  "idle_body_reference_height": 123.5,
+  "target_body_height": 64,
+  "resampling": "nearest-neighbour uniform",
+  "alpha_cutoff": 128,
+  "palette_colors": 128,
+  "reserved_clips": [
+    "new_skill",
+    "knockdown"
+  ],
+  "retained_distinct_v3_clips": [
+    "light_2",
+    "light_3"
+  ],
+  "sources": [
+    {
+      "file": "art/animations/v4/source/ronaldo-A.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "b15d209a6ceb69304040897d09f48f302732a223a669b779b3de76a43a9ccaed",
+      "removed_alpha_speck_pixels": 66,
+      "y_cuts": [
+        0,
+        179,
+        344,
+        492,
+        658,
+        831,
+        993,
+        1144,
+        1305,
+        1468,
+        1619
+      ]
+    },
+    {
+      "file": "art/animations/v4/source/ronaldo-B.png",
+      "width": 971,
+      "height": 1619,
+      "sha256": "3270f22d4af18e7ec49f32b3a8b389cdfcb47a36439b23c6d2390eb93cdc27b6",
+      "removed_alpha_speck_pixels": 35,
+      "y_cuts": [
+        0,
+        174,
+        326,
+        491,
+        662,
+        822,
+        974,
+        1133,
+        1304,
+        1460,
+        1619
+      ]
+    }
+  ],
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            0,
+            170,
+            179
+          ],
+          "source_body_bounds": [
+            48,
+            37,
+            130,
+            160
+          ],
+          "source_root": [
+            82.0835734870317,
+            160.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            108,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.337,
+            108.259,
+            120.831,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_1.png",
+          "atlas_rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            108,
+            121,
+            172
+          ],
+          "sha256": "905853ed966c859efce0fdc497ecc21cfa3de424608b96eaf9e4dc86973044ee"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            170,
+            0,
+            161,
+            179
+          ],
+          "source_body_bounds": [
+            40,
+            35,
+            120,
+            160
+          ],
+          "source_root": [
+            74.5204081632653,
+            160.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            107,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.111,
+            107.223,
+            119.568,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_2.png",
+          "atlas_rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            107,
+            120,
+            172
+          ],
+          "sha256": "0d32dd56aebc35b6688f934616d333d3e5c39a74abf6a94bb176cead26c3dc39"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            331,
+            0,
+            162,
+            179
+          ],
+          "source_body_bounds": [
+            41,
+            33,
+            121,
+            159
+          ],
+          "source_root": [
+            73.262100456621,
+            159.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            107,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.281,
+            106.704,
+            120.739,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_3.png",
+          "atlas_rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            107,
+            121,
+            172
+          ],
+          "sha256": "d78ed74558e56309e17eb285c4de49a4a22a664de44a1f490969ada454dd1a6e"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            493,
+            0,
+            161,
+            179
+          ],
+          "source_body_bounds": [
+            41,
+            35,
+            119,
+            159
+          ],
+          "source_root": [
+            72.52385496183206,
+            159.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            108,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.664,
+            107.741,
+            120.085,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_4.png",
+          "atlas_rect": [
+            576,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            108,
+            120,
+            172
+          ],
+          "sha256": "e07eb1d241c83e81bc7879f4bf0e9b958abd6c42b4d9f186ad2b2d1c400a5c3d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            654,
+            0,
+            162,
+            179
+          ],
+          "source_body_bounds": [
+            42,
+            37,
+            121,
+            158
+          ],
+          "source_root": [
+            74.14464802314369,
+            158.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            109,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.342,
+            109.296,
+            120.281,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_5.png",
+          "atlas_rect": [
+            768,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            109,
+            120,
+            172
+          ],
+          "sha256": "c9aefcffc86ee829795269d2040aa2a37e5a957931f5e236a4d001b37be8daa8"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            816,
+            0,
+            155,
+            179
+          ],
+          "source_body_bounds": [
+            41,
+            37,
+            119,
+            159
+          ],
+          "source_root": [
+            72.54638218923934,
+            159.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            109,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.652,
+            108.777,
+            120.073,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "idle_6.png",
+          "atlas_rect": [
+            960,
+            0,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            109,
+            120,
+            172
+          ],
+          "sha256": "02c754d4f5bb8de88ab6b5e737c0f7e15930bad22a61e133568cb843aaf81743"
+        }
+      ]
+    },
+    "run": {
+      "row": 1,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.075,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            344,
+            162,
+            148
+          ],
+          "source_body_bounds": [
+            34,
+            30,
+            117,
+            133
+          ],
+          "source_root": [
+            82.00356294536817,
+            133.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            71,
+            119,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.124,
+            118.623,
+            121.391,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_1.png",
+          "atlas_rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            119,
+            121,
+            173
+          ],
+          "sha256": "9fd64e12d8f9dbd822f6b3127e9b0cdf96771d93a4b97ade62b61a2a893125ec"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            162,
+            344,
+            164,
+            148
+          ],
+          "source_body_bounds": [
+            31,
+            28,
+            119,
+            131
+          ],
+          "source_root": [
+            83.82254196642685,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            69,
+            119,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            68.626,
+            118.623,
+            124.076,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_2.png",
+          "atlas_rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            69,
+            119,
+            124,
+            173
+          ],
+          "sha256": "1df929006199f3331efe50823f1873b309fe180f1dfba031d7c302b4aa984b2c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            326,
+            344,
+            158,
+            148
+          ],
+          "source_body_bounds": [
+            27,
+            26,
+            118,
+            131
+          ],
+          "source_root": [
+            81.455919395466,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            118,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.78,
+            117.587,
+            123.748,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_3.png",
+          "atlas_rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            118,
+            124,
+            172
+          ],
+          "sha256": "fd544801f4d6928804efc25c7a709483fefd47503343649de0fa153d28c2d1e1"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            484,
+            344,
+            165,
+            148
+          ],
+          "source_body_bounds": [
+            24,
+            22,
+            127,
+            121
+          ],
+          "source_root": [
+            88.51273532668881,
+            121.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            63,
+            121,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            62.568,
+            120.696,
+            120.091,
+            176.664
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_4.png",
+          "atlas_rect": [
+            576,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            63,
+            121,
+            120,
+            177
+          ],
+          "sha256": "df88a91c4709c25ded96c96eddbc65dff994d6e817fe902ed62fd39a38c8414d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            649,
+            344,
+            162,
+            148
+          ],
+          "source_body_bounds": [
+            30,
+            22,
+            120,
+            129
+          ],
+          "source_root": [
+            85.33014354066985,
+            129.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            67,
+            117,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.327,
+            116.551,
+            120.703,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_5.png",
+          "atlas_rect": [
+            768,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            117,
+            121,
+            173
+          ],
+          "sha256": "c731f3c05af156d03078e4524a42eaca2ee561efcc564721fd8a59d73f5da37b"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            811,
+            344,
+            160,
+            148
+          ],
+          "source_body_bounds": [
+            29,
+            26,
+            120,
+            129
+          ],
+          "source_root": [
+            84.9487951807229,
+            129.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            67,
+            119,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.006,
+            118.623,
+            120.383,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "run_6.png",
+          "atlas_rect": [
+            960,
+            192,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            119,
+            120,
+            173
+          ],
+          "sha256": "20c09b84e72724fb8eef22e07a8a54c978cae2da53c2d240db3d81c20a091679"
+        }
+      ]
+    },
+    "jump": {
+      "row": 2,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            492,
+            162,
+            166
+          ],
+          "source_body_bounds": [
+            41,
+            52,
+            126,
+            153
+          ],
+          "source_root": [
+            77.01320528211285,
+            153.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            120,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.337,
+            119.66,
+            121.386,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_1.png",
+          "atlas_rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            120,
+            121,
+            172
+          ],
+          "sha256": "1893891d8dc43c15505aaaa4afcffb79fd980d81e4a3a5743f3402f24797d455"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            162,
+            492,
+            158,
+            166
+          ],
+          "source_body_bounds": [
+            35,
+            59,
+            117,
+            153
+          ],
+          "source_root": [
+            76.13151658767772,
+            153.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            123,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.685,
+            123.287,
+            117.179,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_2.png",
+          "atlas_rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            123,
+            117,
+            172
+          ],
+          "sha256": "24c56b8b5ebfc30a234406fd2f5dbef89ad634b190d875bdbabeca6d73f779b4"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            320,
+            492,
+            158,
+            166
+          ],
+          "source_body_bounds": [
+            42,
+            34,
+            118,
+            143
+          ],
+          "source_root": [
+            82.1953385127636,
+            143.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            116,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.17,
+            115.514,
+            114.555,
+            176.146
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_3.png",
+          "atlas_rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            116,
+            115,
+            172
+          ],
+          "sha256": "7fe7d1eb77d5a63244616eb007dbb4abca32973c7b1b6e3954a2397d6acd3369"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            478,
+            492,
+            158,
+            166
+          ],
+          "source_body_bounds": [
+            40,
+            27,
+            119,
+            133
+          ],
+          "source_root": [
+            84.87234042553192,
+            133.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            117,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.746,
+            117.069,
+            113.686,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_4.png",
+          "atlas_rect": [
+            576,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            117,
+            114,
+            172
+          ],
+          "sha256": "f163e2ecfa69d7ab8b4812c9f5366cec479c92590b86b40bca757b3106801d06"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            636,
+            492,
+            166,
+            166
+          ],
+          "source_body_bounds": [
+            39,
+            20,
+            130,
+            119
+          ],
+          "source_root": [
+            86.68693693693693,
+            119.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            71,
+            121,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.288,
+            120.696,
+            118.446,
+            177.182
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_5.png",
+          "atlas_rect": [
+            768,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            121,
+            118,
+            177
+          ],
+          "sha256": "39dd1ddeffd6cbeb7132887dca96f8329860ac2297abdd8973fd911242ac0390"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            802,
+            492,
+            169,
+            166
+          ],
+          "source_body_bounds": [
+            37,
+            13,
+            128,
+            116
+          ],
+          "source_root": [
+            81.27302631578948,
+            116.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            119,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.057,
+            118.623,
+            120.215,
+            175.628
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "jump_6.png",
+          "atlas_rect": [
+            960,
+            384,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            119,
+            120,
+            176
+          ],
+          "sha256": "0b456773e30b83ba9a6f9f5c881a90f065f6278a129e8b20a7842a76343e63fb"
+        }
+      ]
+    },
+    "attack": {
+      "row": 3,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            0,
+            174,
+            174
+          ],
+          "source_body_bounds": [
+            55,
+            39,
+            138,
+            152
+          ],
+          "source_root": [
+            90.94201605709188,
+            152.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.374,
+            113.441,
+            120.386,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_1.png",
+          "atlas_rect": [
+            0,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "sha256": "d208811cea0d2ae6aecb2bd76877a4fdcb3adbe8f3c4f17459125a7f6649bf3b"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            174,
+            0,
+            155,
+            174
+          ],
+          "source_body_bounds": [
+            37,
+            39,
+            119,
+            152
+          ],
+          "source_root": [
+            76.19718309859155,
+            152.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            113,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.687,
+            113.441,
+            118.181,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_2.png",
+          "atlas_rect": [
+            192,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            113,
+            118,
+            172
+          ],
+          "sha256": "61b03933863def24046ac4c85546819e6559950fdc01b2ea0dcae431eceb2947"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            329,
+            0,
+            165,
+            174
+          ],
+          "source_body_bounds": [
+            36,
+            41,
+            111,
+            150
+          ],
+          "source_root": [
+            74.64573110893032,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            116,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.973,
+            115.514,
+            123.131,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_3.png",
+          "atlas_rect": [
+            384,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            116,
+            123,
+            173
+          ],
+          "sha256": "d40102c8a33bd4cae0a23e41740a7e1e60bc5df59592a969c073dd13846c9d34"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            494,
+            0,
+            159,
+            174
+          ],
+          "source_body_bounds": [
+            37,
+            42,
+            119,
+            151
+          ],
+          "source_root": [
+            65.39465570400822,
+            151.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            81,
+            116,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            81.285,
+            115.514,
+            129.48,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_4.png",
+          "atlas_rect": [
+            576,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            81,
+            116,
+            129,
+            172
+          ],
+          "sha256": "a4731f9763043e266e5ee7f52ce2ac4240dfc05896c77c577c4db3d6b618caa2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            653,
+            0,
+            163,
+            174
+          ],
+          "source_body_bounds": [
+            29,
+            39,
+            131,
+            150
+          ],
+          "source_root": [
+            71.5961145194274,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            114,
+            127,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.926,
+            114.478,
+            126.784,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_5.png",
+          "atlas_rect": [
+            768,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            114,
+            127,
+            172
+          ],
+          "sha256": "8f32c3f098ab305bcd6974908add8b05c79e95eda4c7e09d02f762bdacf01ceb"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            816,
+            0,
+            155,
+            174
+          ],
+          "source_body_bounds": [
+            31,
+            39,
+            106,
+            150
+          ],
+          "source_root": [
+            73.7748502994012,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            114,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.833,
+            114.478,
+            119.955,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "light_1",
+          "file": "attack_6.png",
+          "atlas_rect": [
+            960,
+            576,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            114,
+            120,
+            173
+          ],
+          "sha256": "5a326ef11ea522adb490b6c5e23b6a9e3db8a853d5e95ef3c5b0363f50cf7f25"
+        }
+      ]
+    },
+    "hurt": {
+      "row": 4,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            1468,
+            160,
+            151
+          ],
+          "source_body_bounds": [
+            34,
+            25,
+            125,
+            138
+          ],
+          "source_root": [
+            74.173786407767,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            113,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.181,
+            113.441,
+            122.339,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_1.png",
+          "atlas_rect": [
+            0,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            113,
+            122,
+            172
+          ],
+          "sha256": "ec782b0cdacf9c7e0f54a23400e2e22e6ae38cd37a88b61cfad9e6f6c1223fd1"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            160,
+            1468,
+            166,
+            151
+          ],
+          "source_body_bounds": [
+            35,
+            25,
+            126,
+            137
+          ],
+          "source_root": [
+            74.71512195121952,
+            137.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            114,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.419,
+            113.96,
+            128.795,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_2.png",
+          "atlas_rect": [
+            192,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            114,
+            129,
+            172
+          ],
+          "sha256": "53e2b276feaec5a5916c0939e739f4f2435a59a8d88ffcd76d45f23703a2d932"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            326,
+            1468,
+            166,
+            151
+          ],
+          "source_body_bounds": [
+            29,
+            31,
+            111,
+            136
+          ],
+          "source_root": [
+            62.65415244596132,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            118,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.56,
+            117.587,
+            140.746,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_3.png",
+          "atlas_rect": [
+            384,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            118,
+            141,
+            172
+          ],
+          "sha256": "1717968aa313bf905b27b0e69d09ef9876dcdf2097f50a46f83c6feb150ce751"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            492,
+            1468,
+            156,
+            151
+          ],
+          "source_body_bounds": [
+            18,
+            33,
+            91,
+            137
+          ],
+          "source_root": [
+            52.70011402508552,
+            137.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            118,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.018,
+            118.105,
+            135.022,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_4.png",
+          "atlas_rect": [
+            576,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            118,
+            135,
+            173
+          ],
+          "sha256": "b6bb9f97239637573b42371e9dc1410666d577841e8e57c27d66c81d9f6a0e41"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            648,
+            1468,
+            164,
+            151
+          ],
+          "source_body_bounds": [
+            29,
+            33,
+            128,
+            138
+          ],
+          "source_root": [
+            70.05526036131775,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            118,
+            126,
+            171
+          ],
+          "transformed_visible_bounds": [
+            74.724,
+            117.587,
+            126.028,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_5.png",
+          "atlas_rect": [
+            768,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            118,
+            126,
+            171
+          ],
+          "sha256": "e5233418374b474686fbeca4ebc6039826783e5f4af81372cf30df24a62b6739"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            812,
+            1468,
+            159,
+            151
+          ],
+          "source_body_bounds": [
+            35,
+            30,
+            124,
+            138
+          ],
+          "source_root": [
+            71.3699481865285,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            116,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.152,
+            116.032,
+            123.274,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "hurt_6.png",
+          "atlas_rect": [
+            960,
+            768,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            116,
+            123,
+            172
+          ],
+          "sha256": "5afe8f3c684378ee5e32cf2cccc5e77354f12078674dc1c4692b907b6922f264"
+        }
+      ]
+    },
+    "death": {
+      "row": 5,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.14,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            1460,
+            170,
+            159
+          ],
+          "source_body_bounds": [
+            46,
+            22,
+            120,
+            130
+          ],
+          "source_root": [
+            76.6949720670391,
+            130.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            116,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            80.093,
+            116.032,
+            128.288,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_1.png",
+          "atlas_rect": [
+            0,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            116,
+            128,
+            173
+          ],
+          "sha256": "1c3bbf3b830ee6828cbd03df3c2473d9befc886ea81dfb82d70680f3d2ee5d09"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            170,
+            1460,
+            156,
+            159
+          ],
+          "source_body_bounds": [
+            31,
+            44,
+            103,
+            130
+          ],
+          "source_root": [
+            69.23137254901961,
+            130.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            127,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.188,
+            127.433,
+            129.564,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_2.png",
+          "atlas_rect": [
+            192,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            127,
+            130,
+            173
+          ],
+          "sha256": "946d9a77c6e46b27f1f451cab783fabe63321ab7db1663fc426d6ca524388800"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            326,
+            1460,
+            144,
+            159
+          ],
+          "source_body_bounds": [
+            21,
+            57,
+            110,
+            130
+          ],
+          "source_root": [
+            70.7814871016692,
+            130.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            134,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.202,
+            129.506,
+            125.652,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_3.png",
+          "atlas_rect": [
+            384,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            130,
+            126,
+            173
+          ],
+          "sha256": "b991b7e6bfd2b077718c54942636dee99c4a0182eebac2546b70ac6ea06c5e4d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            470,
+            1460,
+            166,
+            159
+          ],
+          "source_body_bounds": [
+            16,
+            87,
+            130,
+            129
+          ],
+          "source_root": [
+            88.79573712255772,
+            129.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            58,
+            150,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            58.276,
+            150.235,
+            131.345,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_4.png",
+          "atlas_rect": [
+            576,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            58,
+            150,
+            131,
+            172
+          ],
+          "sha256": "61b8207b1a005594d774b08876fcbeb79413d87722452e7cbc7865f499b37a04"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            636,
+            1460,
+            166,
+            159
+          ],
+          "source_body_bounds": [
+            9,
+            94,
+            132,
+            128
+          ],
+          "source_root": [
+            74.76114081996435,
+            128.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            62,
+            154,
+            126,
+            172
+          ],
+          "transformed_visible_bounds": [
+            61.921,
+            154.381,
+            138.618,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_5.png",
+          "atlas_rect": [
+            768,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            62,
+            154,
+            139,
+            172
+          ],
+          "sha256": "723b3bc091e3d94ba45d0c4b1513a55c40a97731510e99b74542f9c767b89677"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            802,
+            1460,
+            169,
+            159
+          ],
+          "source_body_bounds": [
+            8,
+            97,
+            155,
+            130
+          ],
+          "source_root": [
+            76.0,
+            130.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            61,
+            155,
+            137,
+            172
+          ],
+          "transformed_visible_bounds": [
+            60.761,
+            154.899,
+            136.939,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "death_6.png",
+          "atlas_rect": [
+            960,
+            960,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            61,
+            155,
+            137,
+            172
+          ],
+          "sha256": "67a55c0784048a2a9b01a9118291a45890ff7cf5cf00d16fea3e5dc6c5be486c"
+        }
+      ]
+    },
+    "walk": {
+      "row": 6,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.12,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            179,
+            168,
+            165
+          ],
+          "source_body_bounds": [
+            45,
+            23,
+            125,
+            144
+          ],
+          "source_root": [
+            80.33298429319372,
+            144.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            109,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.69,
+            109.296,
+            119.147,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_1.png",
+          "atlas_rect": [
+            0,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            109,
+            119,
+            172
+          ],
+          "sha256": "94a92a0669967c309ac213ac1bbf6c46d27c150d7fbe4552929428023f1f5bf7"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            168,
+            179,
+            164,
+            165
+          ],
+          "source_body_bounds": [
+            44,
+            21,
+            121,
+            141
+          ],
+          "source_root": [
+            73.46520618556701,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            81,
+            110,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            80.731,
+            109.814,
+            120.633,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_2.png",
+          "atlas_rect": [
+            192,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            81,
+            110,
+            121,
+            172
+          ],
+          "sha256": "4c30e665a4f7fd717612698e689d00ca37fa2b2112ad4c17106911c8451797dc"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            332,
+            179,
+            160,
+            165
+          ],
+          "source_body_bounds": [
+            42,
+            19,
+            110,
+            141
+          ],
+          "source_root": [
+            74.20496894409938,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            109,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.311,
+            108.777,
+            114.55,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_3.png",
+          "atlas_rect": [
+            384,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            109,
+            115,
+            172
+          ],
+          "sha256": "eb655b78ec4f1a6bf483d6b4e64feef13bb08da49409ee2ca963fdd2494f019f"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            492,
+            179,
+            162,
+            165
+          ],
+          "source_body_bounds": [
+            49,
+            19,
+            104,
+            141
+          ],
+          "source_root": [
+            75.33333333333333,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            82,
+            109,
+            111,
+            172
+          ],
+          "transformed_visible_bounds": [
+            82.354,
+            108.777,
+            118.629,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_4.png",
+          "atlas_rect": [
+            576,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            82,
+            109,
+            119,
+            173
+          ],
+          "sha256": "a74f6f10ac1091625220ca7a8baa7e1c621942e4301f8c7aa60edad31e4d62fa"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            654,
+            179,
+            156,
+            165
+          ],
+          "source_body_bounds": [
+            42,
+            20,
+            112,
+            142
+          ],
+          "source_root": [
+            72.46016646848989,
+            142.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            109,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            80.215,
+            108.777,
+            116.49,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_5.png",
+          "atlas_rect": [
+            768,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            109,
+            116,
+            172
+          ],
+          "sha256": "c121d90e2852982540998e700472848ab326c4cddb2e96685320b9317750f736"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            810,
+            179,
+            161,
+            165
+          ],
+          "source_body_bounds": [
+            43,
+            22,
+            122,
+            142
+          ],
+          "source_root": [
+            80.97401129943503,
+            142.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            110,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.321,
+            109.814,
+            117.26,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "walk_6.png",
+          "atlas_rect": [
+            960,
+            1152,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            110,
+            117,
+            172
+          ],
+          "sha256": "ed4d5eeb3c5003e5e65c5aea0dede9751db710cedf06fc716475fb6db9b36bb9"
+        }
+      ]
+    },
+    "special": {
+      "row": 7,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.06666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            662,
+            166,
+            160
+          ],
+          "source_body_bounds": [
+            55,
+            23,
+            138,
+            136
+          ],
+          "source_root": [
+            89.92356687898089,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            113,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.902,
+            113.441,
+            120.914,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_1.png",
+          "atlas_rect": [
+            0,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            113,
+            121,
+            172
+          ],
+          "sha256": "a21abfdb8cfcbd1fb8328d83d7279ce0db91225820b3bbd7f491db98f4278763"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            166,
+            662,
+            160,
+            160
+          ],
+          "source_body_bounds": [
+            28,
+            27,
+            132,
+            136
+          ],
+          "source_root": [
+            67.32600732600733,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            116,
+            130,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.621,
+            115.514,
+            129.515,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_2.png",
+          "atlas_rect": [
+            192,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            116,
+            130,
+            172
+          ],
+          "sha256": "00400a9a65eff0f28e3c86d7280070d71da290077725d8447aa13ae66ee100f2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            326,
+            662,
+            149,
+            160
+          ],
+          "source_body_bounds": [
+            29,
+            27,
+            113,
+            135
+          ],
+          "source_root": [
+            72.85923753665689,
+            135.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            116,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.271,
+            116.032,
+            124.575,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_3.png",
+          "atlas_rect": [
+            384,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            116,
+            125,
+            172
+          ],
+          "sha256": "6457fef47e848b0446e40c08acfdc6ccf67fa14b3f964bd8371b0e690ed09a0b"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            475,
+            662,
+            173,
+            160
+          ],
+          "source_body_bounds": [
+            21,
+            28,
+            143,
+            136
+          ],
+          "source_root": [
+            63.26797385620915,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            116,
+            137,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.096,
+            116.032,
+            145.61,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_4.png",
+          "atlas_rect": [
+            576,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            116,
+            146,
+            172
+          ],
+          "sha256": "12e6657dceb2bf6e067cdd7a34c150e484304d4cd01895eefcd6b1d8e703c324"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            648,
+            662,
+            162,
+            160
+          ],
+          "source_body_bounds": [
+            15,
+            21,
+            136,
+            132
+          ],
+          "source_root": [
+            54.8988988988989,
+            132.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            114,
+            138,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.324,
+            114.478,
+            138.028,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_5.png",
+          "atlas_rect": [
+            768,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            114,
+            138,
+            172
+          ],
+          "sha256": "401781ac6a5dfbb07fba6632aa5d7f96802d2a8c4f88299f82edb015637a208c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            810,
+            662,
+            161,
+            160
+          ],
+          "source_body_bounds": [
+            27,
+            27,
+            94,
+            134
+          ],
+          "source_root": [
+            60.21499013806706,
+            134.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            117,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.787,
+            116.551,
+            126.463,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "alias_of": "skill_u",
+          "file": "special_6.png",
+          "atlas_rect": [
+            960,
+            1344,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            117,
+            126,
+            173
+          ],
+          "sha256": "3e18fcd16c4a743e99bd43ce996acf0876811802c99890f1d8b3ae0adb883250"
+        }
+      ]
+    },
+    "block": {
+      "row": 8,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.08333333,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            1305,
+            161,
+            163
+          ],
+          "source_body_bounds": [
+            38,
+            24,
+            123,
+            138
+          ],
+          "source_root": [
+            75.62471131639722,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            113,
+            121,
+            171
+          ],
+          "transformed_visible_bounds": [
+            76.502,
+            112.923,
+            120.551,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_1.png",
+          "atlas_rect": [
+            0,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            113,
+            121,
+            171
+          ],
+          "sha256": "16c70059a0457911ec1272eaa1ce901959edd2844e4316754ed04b1276dc2044"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            161,
+            1305,
+            164,
+            163
+          ],
+          "source_body_bounds": [
+            38,
+            24,
+            129,
+            137
+          ],
+          "source_root": [
+            78.02287166454892,
+            137.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            113,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.259,
+            113.441,
+            122.417,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_2.png",
+          "atlas_rect": [
+            192,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            113,
+            122,
+            172
+          ],
+          "sha256": "63d07bef4ef96231e18163d6b3366a83aab74e992a946351d9bc30cae26089f2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            325,
+            1305,
+            161,
+            163
+          ],
+          "source_body_bounds": [
+            35,
+            27,
+            127,
+            138
+          ],
+          "source_root": [
+            72.87587168758716,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            114,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.372,
+            114.478,
+            124.048,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_3.png",
+          "atlas_rect": [
+            384,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            114,
+            124,
+            172
+          ],
+          "sha256": "e14c4e4ea3cb1f750ddfb4b409a440d54052d990cf7c6719446bff01cb08af57"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            486,
+            1305,
+            162,
+            163
+          ],
+          "source_body_bounds": [
+            33,
+            28,
+            128,
+            138
+          ],
+          "source_root": [
+            72.51763046544428,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            125,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.521,
+            114.996,
+            124.752,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_4.png",
+          "atlas_rect": [
+            576,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            125,
+            172
+          ],
+          "sha256": "b95713221a6dca3702a263d613ca4a72a39daa60e90af4a616f8c8a574cd1993"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            648,
+            1305,
+            162,
+            163
+          ],
+          "source_body_bounds": [
+            33,
+            31,
+            127,
+            137
+          ],
+          "source_root": [
+            73.08225806451613,
+            137.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            117,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.229,
+            117.069,
+            123.941,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_5.png",
+          "atlas_rect": [
+            768,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            117,
+            124,
+            172
+          ],
+          "sha256": "289450b55c9dcc6543d3ceaf918f8971479d6b6308ede83e71fd074e5540380e"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            810,
+            1305,
+            161,
+            163
+          ],
+          "source_body_bounds": [
+            34,
+            31,
+            122,
+            138
+          ],
+          "source_root": [
+            76.32175226586102,
+            138.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            117,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.068,
+            116.551,
+            119.671,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "block_6.png",
+          "atlas_rect": [
+            960,
+            1536,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            117,
+            120,
+            172
+          ],
+          "sha256": "3be5e28ef0475249543dcbec624d24fc8b0778768de890d2af06568890700793"
+        }
+      ]
+    },
+    "dash": {
+      "row": 9,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.02166667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            993,
+            152,
+            151
+          ],
+          "source_body_bounds": [
+            27,
+            37,
+            119,
+            128
+          ],
+          "source_root": [
+            86.3688524590164,
+            128.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            65,
+            125,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            65.234,
+            124.842,
+            114.465,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_1.png",
+          "atlas_rect": [
+            0,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            65,
+            125,
+            114,
+            173
+          ],
+          "sha256": "ac30a11a8c0c754012a57458c9639b56a9d15ad765e90a5818ac7f0c0248ad82"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            152,
+            993,
+            160,
+            151
+          ],
+          "source_body_bounds": [
+            33,
+            30,
+            137,
+            128
+          ],
+          "source_root": [
+            100.21284634760706,
+            128.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            61,
+            121,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            60.133,
+            121.215,
+            115.064,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_2.png",
+          "atlas_rect": [
+            192,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            60,
+            121,
+            115,
+            173
+          ],
+          "sha256": "653fc368093f4918144b52b87fdb3a07f6be114b47f8ee68b4ed94efd1548ba8"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            312,
+            993,
+            164,
+            151
+          ],
+          "source_body_bounds": [
+            47,
+            27,
+            145,
+            128
+          ],
+          "source_root": [
+            106.91621327529924,
+            128.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            65,
+            120,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            52.513,
+            119.66,
+            115.736,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_3.png",
+          "atlas_rect": [
+            384,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            53,
+            120,
+            116,
+            172
+          ],
+          "sha256": "b414f64f1ece8322449948e154f847e3b0c8ae030014ddf4df6f1745c25141b5"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            476,
+            993,
+            164,
+            151
+          ],
+          "source_body_bounds": [
+            42,
+            27,
+            142,
+            120
+          ],
+          "source_root": [
+            100.38251986379115,
+            120.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            66,
+            124,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            53.826,
+            123.806,
+            117.567,
+            176.146
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_4.png",
+          "atlas_rect": [
+            576,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            54,
+            124,
+            117,
+            176
+          ],
+          "sha256": "7105e14092899d1755465109943713fb766bcf5b95a743233b50a63e330465a7"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            640,
+            993,
+            162,
+            151
+          ],
+          "source_body_bounds": [
+            42,
+            26,
+            139,
+            129
+          ],
+          "source_root": [
+            96.29027962716378,
+            129.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            119,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            58.02,
+            118.623,
+            118.133,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_5.png",
+          "atlas_rect": [
+            768,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            58,
+            119,
+            118,
+            172
+          ],
+          "sha256": "a1d5e3e8a53156ca7e03541a5dd235d7505eee90cd3375ad219196e283a0ea13"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            802,
+            993,
+            169,
+            151
+          ],
+          "source_body_bounds": [
+            41,
+            21,
+            132,
+            130
+          ],
+          "source_root": [
+            83.29826732673267,
+            130.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            116,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.007,
+            115.514,
+            121.238,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "dash_6.png",
+          "atlas_rect": [
+            960,
+            1728,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            116,
+            121,
+            172
+          ],
+          "sha256": "a7a3ec1d6011012d3de39b56f83d8b2226f86836f88e37685b680b84bbb02c9e"
+        }
+      ]
+    },
+    "fall": {
+      "row": 10,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            658,
+            156,
+            173
+          ],
+          "source_body_bounds": [
+            29,
+            12,
+            123,
+            107
+          ],
+          "source_root": [
+            76.3226571767497,
+            107.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            71,
+            123,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.477,
+            122.769,
+            120.189,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_1.png",
+          "atlas_rect": [
+            0,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            123,
+            120,
+            172
+          ],
+          "sha256": "c2b4e236f8359aeeba07590ad5aa24f89c2fbb886c1a58651d9cd4a1177c73f3"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            156,
+            658,
+            160,
+            173
+          ],
+          "source_body_bounds": [
+            32,
+            24,
+            128,
+            131
+          ],
+          "source_root": [
+            79.12845010615712,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            117,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.577,
+            116.551,
+            121.326,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_2.png",
+          "atlas_rect": [
+            192,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            117,
+            121,
+            172
+          ],
+          "sha256": "b126c2fd423bdac354b50fc4fd60f784230162d3b334d5bbd43d5a557eaf7b85"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            316,
+            658,
+            160,
+            173
+          ],
+          "source_body_bounds": [
+            31,
+            34,
+            124,
+            141
+          ],
+          "source_root": [
+            79.96078431372548,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            71,
+            117,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.628,
+            116.551,
+            118.822,
+            175.628
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_3.png",
+          "atlas_rect": [
+            384,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            117,
+            119,
+            176
+          ],
+          "sha256": "c65de431099d9a783b51f77d4920a93ff5f99a0a06d5bedfffc33c6f744eda0e"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            476,
+            658,
+            164,
+            173
+          ],
+          "source_body_bounds": [
+            35,
+            46,
+            123,
+            152
+          ],
+          "source_root": [
+            81.23634336677814,
+            152.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            117,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.039,
+            117.069,
+            119.716,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_4.png",
+          "atlas_rect": [
+            576,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            117,
+            120,
+            172
+          ],
+          "sha256": "df4d2efbb3468fbf2504e8b97ed68fd1ab22e85d1bb2531bf96264a6250a9851"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            640,
+            658,
+            163,
+            173
+          ],
+          "source_body_bounds": [
+            36,
+            53,
+            127,
+            151
+          ],
+          "source_root": [
+            80.56638246041413,
+            151.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            121,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.905,
+            121.215,
+            120.063,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_5.png",
+          "atlas_rect": [
+            768,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            121,
+            120,
+            172
+          ],
+          "sha256": "c097d69c88bcd21d6f77cffabe45df42b3e2cc5ff0167fef60b290f1a637a05c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            803,
+            658,
+            168,
+            173
+          ],
+          "source_body_bounds": [
+            36,
+            62,
+            128,
+            151
+          ],
+          "source_root": [
+            76.8110964332893,
+            151.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            126,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.851,
+            125.879,
+            122.527,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "fall_6.png",
+          "atlas_rect": [
+            960,
+            1920,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            126,
+            123,
+            172
+          ],
+          "sha256": "4ed1a063bf1b2b5341dd6fe19ff9212300552b9973b7f4c1983463dd8bb4bc5b"
+        }
+      ]
+    },
+    "land": {
+      "row": 11,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            831,
+            156,
+            162
+          ],
+          "source_body_bounds": [
+            28,
+            34,
+            117,
+            140
+          ],
+          "source_root": [
+            71.90298507462687,
+            140.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            117,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.249,
+            117.069,
+            119.37,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_1.png",
+          "atlas_rect": [
+            0,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            117,
+            119,
+            172
+          ],
+          "sha256": "8ef9c27f58aff82ae6973022d6486e33aabd49c1dfd1bf80aa4a4730975d104e"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            156,
+            831,
+            164,
+            162
+          ],
+          "source_body_bounds": [
+            38,
+            48,
+            123,
+            140
+          ],
+          "source_root": [
+            78.11942098914355,
+            140.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            124,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.209,
+            124.324,
+            119.258,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_2.png",
+          "atlas_rect": [
+            192,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            124,
+            119,
+            172
+          ],
+          "sha256": "0324a2bacebf13e0a9505d18eacde0382d732123b6ca033604645fcca499993f"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            320,
+            831,
+            164,
+            162
+          ],
+          "source_body_bounds": [
+            40,
+            54,
+            121,
+            141
+          ],
+          "source_root": [
+            74.80722891566265,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            127,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.962,
+            126.915,
+            119.938,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_3.png",
+          "atlas_rect": [
+            384,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            127,
+            120,
+            172
+          ],
+          "sha256": "8f619f547537a81af1a387cf4ea27404c7c4c401de527b3d0404da79221cca21"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            484,
+            831,
+            160,
+            162
+          ],
+          "source_body_bounds": [
+            42,
+            43,
+            119,
+            141
+          ],
+          "source_root": [
+            75.53348467650397,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            121,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.622,
+            121.215,
+            118.525,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_4.png",
+          "atlas_rect": [
+            576,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            121,
+            119,
+            172
+          ],
+          "sha256": "2f5942f60b46b840ea7ea6108acbe7a52932455dc0132ed861db0fb4553a8900"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            644,
+            831,
+            165,
+            162
+          ],
+          "source_body_bounds": [
+            42,
+            32,
+            122,
+            141
+          ],
+          "source_root": [
+            78.52596685082872,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            116,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.072,
+            115.514,
+            118.529,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_5.png",
+          "atlas_rect": [
+            768,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            116,
+            119,
+            172
+          ],
+          "sha256": "38a637b5f433c7c8a2867e7129a41cd746b3592efe54c5f8d3d52cbc9ce34b7f"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            809,
+            831,
+            162,
+            162
+          ],
+          "source_body_bounds": [
+            43,
+            21,
+            126,
+            140
+          ],
+          "source_root": [
+            76.31686046511628,
+            140.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            110,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.735,
+            110.332,
+            121.747,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "land_6.png",
+          "atlas_rect": [
+            960,
+            2112,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            110,
+            122,
+            172
+          ],
+          "sha256": "8ebd04b7b88f311e1a0ae4a0bcf97279b9f9b31d33b618332964d30ac9339692"
+        }
+      ]
+    },
+    "light_1": {
+      "row": 12,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            0,
+            174,
+            174
+          ],
+          "source_body_bounds": [
+            55,
+            39,
+            138,
+            152
+          ],
+          "source_root": [
+            90.94201605709188,
+            152.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.374,
+            113.441,
+            120.386,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_1.png",
+          "atlas_rect": [
+            0,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "sha256": "d208811cea0d2ae6aecb2bd76877a4fdcb3adbe8f3c4f17459125a7f6649bf3b"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            174,
+            0,
+            155,
+            174
+          ],
+          "source_body_bounds": [
+            37,
+            39,
+            119,
+            152
+          ],
+          "source_root": [
+            76.19718309859155,
+            152.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            113,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.687,
+            113.441,
+            118.181,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_2.png",
+          "atlas_rect": [
+            192,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            113,
+            118,
+            172
+          ],
+          "sha256": "61b03933863def24046ac4c85546819e6559950fdc01b2ea0dcae431eceb2947"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            329,
+            0,
+            165,
+            174
+          ],
+          "source_body_bounds": [
+            36,
+            41,
+            111,
+            150
+          ],
+          "source_root": [
+            74.64573110893032,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            116,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.973,
+            115.514,
+            123.131,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_3.png",
+          "atlas_rect": [
+            384,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            116,
+            123,
+            173
+          ],
+          "sha256": "d40102c8a33bd4cae0a23e41740a7e1e60bc5df59592a969c073dd13846c9d34"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            494,
+            0,
+            159,
+            174
+          ],
+          "source_body_bounds": [
+            37,
+            42,
+            119,
+            151
+          ],
+          "source_root": [
+            65.39465570400822,
+            151.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            81,
+            116,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            81.285,
+            115.514,
+            129.48,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_4.png",
+          "atlas_rect": [
+            576,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            81,
+            116,
+            129,
+            172
+          ],
+          "sha256": "a4731f9763043e266e5ee7f52ce2ac4240dfc05896c77c577c4db3d6b618caa2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            653,
+            0,
+            163,
+            174
+          ],
+          "source_body_bounds": [
+            29,
+            39,
+            131,
+            150
+          ],
+          "source_root": [
+            71.5961145194274,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            114,
+            127,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.926,
+            114.478,
+            126.784,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_5.png",
+          "atlas_rect": [
+            768,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            114,
+            127,
+            172
+          ],
+          "sha256": "8f32c3f098ab305bcd6974908add8b05c79e95eda4c7e09d02f762bdacf01ceb"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            816,
+            0,
+            155,
+            174
+          ],
+          "source_body_bounds": [
+            31,
+            39,
+            106,
+            150
+          ],
+          "source_root": [
+            73.7748502994012,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            114,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.833,
+            114.478,
+            119.955,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "light_1_6.png",
+          "atlas_rect": [
+            960,
+            2304,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            114,
+            120,
+            173
+          ],
+          "sha256": "5a326ef11ea522adb490b6c5e23b6a9e3db8a853d5e95ef3c5b0363f50cf7f25"
+        }
+      ]
+    },
+    "light_2": {
+      "row": 13,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_1.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_1.png",
+          "atlas_rect": [
+            0,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            108,
+            127,
+            172
+          ],
+          "sha256": "a38093948efe35a3cd76b54b2598d53843e9e7ccc14ff4dac3dd940958a477f6"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_2.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_2.png",
+          "atlas_rect": [
+            192,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            106,
+            120,
+            172
+          ],
+          "sha256": "c3e12029540d31f8cca8e4992675edc6f6f6621335d77b543560012b41a83606"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_3.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_3.png",
+          "atlas_rect": [
+            384,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            104,
+            133,
+            172
+          ],
+          "sha256": "6f994f931d6a839ecbcd9c0b8e55f9b7deb34da4cc54d098dc1df51caa5a3fdb"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_4.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_4.png",
+          "atlas_rect": [
+            576,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            103,
+            137,
+            172
+          ],
+          "sha256": "026e9b32eb917a5ca1a94b2e400d55792d5307f8710b6189ad17cd41500de285"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_5.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_5.png",
+          "atlas_rect": [
+            768,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            81,
+            101,
+            137,
+            172
+          ],
+          "sha256": "25b903f36b1dd11afd284d8c70725db32b3696d4061dd630652b6197505bef08"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_2_6.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_2_6.png",
+          "atlas_rect": [
+            960,
+            2496,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            108,
+            119,
+            172
+          ],
+          "sha256": "009fb75a6535eb58174b59d2e36819eb04ae3973d7f17edac32ee58c295bd6da"
+        }
+      ]
+    },
+    "light_3": {
+      "row": 14,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_1.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_1.png",
+          "atlas_rect": [
+            0,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            65,
+            109,
+            125,
+            172
+          ],
+          "sha256": "a0ac8970932fb5d0dabaf0e4204626a6e04eafd652de277b111e45081fc34e79"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_2.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_2.png",
+          "atlas_rect": [
+            192,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            109,
+            130,
+            172
+          ],
+          "sha256": "808270a5e82e3bc9964228313811ed29afb5a349c3493f9473266b5001f24658"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_3.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_3.png",
+          "atlas_rect": [
+            384,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            110,
+            143,
+            172
+          ],
+          "sha256": "8888f36429e2c866590fff8d5236b8f85b2414b384ef2a68e7d07e780e13a9fe"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_4.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_4.png",
+          "atlas_rect": [
+            576,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            109,
+            148,
+            172
+          ],
+          "sha256": "80419cc52e2c261bf157d5b634b0b04f0d28f4987935725c11c6016072f37d8c"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_5.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_5.png",
+          "atlas_rect": [
+            768,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            110,
+            146,
+            172
+          ],
+          "sha256": "9b39149c331b0eee56e11e6845d7a0a4201052c032d31dc3549d2ef6803270a1"
+        },
+        {
+          "source_file": "assets/players/ronaldo/v3/light_3_6.png",
+          "source_kind": "retained-distinct-v3",
+          "scale": 1,
+          "source_root": [
+            64,
+            116
+          ],
+          "padding_offset": [
+            32,
+            56
+          ],
+          "source_rect": [
+            0,
+            0,
+            128,
+            128
+          ],
+          "file": "light_3_6.png",
+          "atlas_rect": [
+            960,
+            2688,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            107,
+            118,
+            172
+          ],
+          "sha256": "7c719decc23999746fe504b6f5d56f146b652743d74cacd1ad338b01ee03d9c4"
+        }
+      ]
+    },
+    "heavy": {
+      "row": 15,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.11111111,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            174,
+            173,
+            152
+          ],
+          "source_body_bounds": [
+            55,
+            23,
+            139,
+            140
+          ],
+          "source_root": [
+            90.98153034300792,
+            140.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            111,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.354,
+            111.368,
+            120.884,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_1.png",
+          "atlas_rect": [
+            0,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            111,
+            121,
+            172
+          ],
+          "sha256": "50ba1da763e247c746f70dd61b54d84fb9d38eede1125c0186028671842310a3"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            173,
+            174,
+            153,
+            152
+          ],
+          "source_body_bounds": [
+            34,
+            48,
+            126,
+            140
+          ],
+          "source_root": [
+            75.343961352657,
+            140.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            124,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.575,
+            124.324,
+            122.251,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_2.png",
+          "atlas_rect": [
+            192,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            124,
+            122,
+            172
+          ],
+          "sha256": "661763c6982cd7d67edcdefe22f18bc5b9b8a56a93aab7a68a2128fee900d00d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            326,
+            174,
+            157,
+            152
+          ],
+          "source_body_bounds": [
+            27,
+            29,
+            126,
+            139
+          ],
+          "source_root": [
+            64.26388888888889,
+            139.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            115,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.689,
+            114.996,
+            133.693,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_3.png",
+          "atlas_rect": [
+            384,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            115,
+            134,
+            172
+          ],
+          "sha256": "891934ffdff2a46b676efab007ad0a84bf2f66323d5c6cbdb25974aa6406d875"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            483,
+            174,
+            167,
+            152
+          ],
+          "source_body_bounds": [
+            20,
+            29,
+            144,
+            139
+          ],
+          "source_root": [
+            65.706132879046,
+            139.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            72,
+            115,
+            137,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.314,
+            114.996,
+            140.201,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_4.png",
+          "atlas_rect": [
+            576,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            115,
+            140,
+            172
+          ],
+          "sha256": "7f728651af396dfa0ea94725f794b71495d429cce8558e571bc379e4540beda2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            650,
+            174,
+            161,
+            152
+          ],
+          "source_body_bounds": [
+            16,
+            29,
+            136,
+            139
+          ],
+          "source_root": [
+            55.85051067780873,
+            139.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            115,
+            138,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.349,
+            114.996,
+            137.535,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_5.png",
+          "atlas_rect": [
+            768,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            115,
+            138,
+            172
+          ],
+          "sha256": "5f7a5561ac14e02ff0566076ce9c6bf45b6ad8b9c422de653f23db73934b0563"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            811,
+            174,
+            160,
+            152
+          ],
+          "source_body_bounds": [
+            25,
+            39,
+            109,
+            139
+          ],
+          "source_root": [
+            70.067067927773,
+            139.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            120,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.645,
+            120.178,
+            124.467,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "heavy_6.png",
+          "atlas_rect": [
+            960,
+            2880,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            120,
+            124,
+            172
+          ],
+          "sha256": "503d39051cf54261ad71a45610d89dd60bf65765edc87e1bb2b28368da6e2ed9"
+        }
+      ]
+    },
+    "launcher": {
+      "row": 16,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.10277778,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            326,
+            172,
+            165
+          ],
+          "source_body_bounds": [
+            55,
+            34,
+            139,
+            150
+          ],
+          "source_root": [
+            89.31705069124423,
+            150.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            112,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.216,
+            111.887,
+            121.747,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_1.png",
+          "atlas_rect": [
+            0,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            112,
+            122,
+            172
+          ],
+          "sha256": "0257e28caa3e5259a84a2e524a731a96b82b2b9bbfc1caf675a51f5a62115417"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            172,
+            326,
+            150,
+            165
+          ],
+          "source_body_bounds": [
+            33,
+            63,
+            116,
+            149
+          ],
+          "source_root": [
+            72.53995157384988,
+            149.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            127,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.51,
+            127.433,
+            118.522,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_2.png",
+          "atlas_rect": [
+            192,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            127,
+            119,
+            172
+          ],
+          "sha256": "405d64e7c54de5d0a55aa2fa0d1ab143bd82f63d980031842aa66a3ad18cc375"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            322,
+            326,
+            158,
+            165
+          ],
+          "source_body_bounds": [
+            35,
+            48,
+            103,
+            149
+          ],
+          "source_root": [
+            69.63501144164759,
+            149.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            120,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.051,
+            119.66,
+            126.764,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_3.png",
+          "atlas_rect": [
+            384,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            120,
+            127,
+            172
+          ],
+          "sha256": "b08e8bade434630f4db0e7e62b2403f7491fa7eed589febd8305b6f2969b0d2c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            480,
+            326,
+            161,
+            165
+          ],
+          "source_body_bounds": [
+            30,
+            41,
+            98,
+            141
+          ],
+          "source_root": [
+            65.96438746438747,
+            141.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            120,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.363,
+            120.178,
+            130.739,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_4.png",
+          "atlas_rect": [
+            576,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            120,
+            131,
+            172
+          ],
+          "sha256": "b47f04af348b1b2ee7fe5acc5379fdaa94a8f51ac770e2fe01ee684fa7b3e4b4"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            641,
+            326,
+            159,
+            165
+          ],
+          "source_body_bounds": [
+            28,
+            41,
+            95,
+            148
+          ],
+          "source_root": [
+            65.33224043715848,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            117,
+            111,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.654,
+            102.04,
+            128.994,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_5.png",
+          "atlas_rect": [
+            768,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            102,
+            129,
+            172
+          ],
+          "sha256": "2cd36a240a7c42a6d2cb80091e39b8c863e4852b62e8c4da55089ae7f1dccf88"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            800,
+            326,
+            171,
+            165
+          ],
+          "source_body_bounds": [
+            31,
+            43,
+            101,
+            148
+          ],
+          "source_root": [
+            65.55282817502668,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            118,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.094,
+            103.077,
+            132.507,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "launcher_6.png",
+          "atlas_rect": [
+            960,
+            3072,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            103,
+            133,
+            172
+          ],
+          "sha256": "e92ac03db69f01d9e59646d8a19fb5d2463946b8b352f4b849a3a42c0ab28084"
+        }
+      ]
+    },
+    "air_attack": {
+      "row": 17,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.05,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            491,
+            170,
+            171
+          ],
+          "source_body_bounds": [
+            46,
+            34,
+            120,
+            145
+          ],
+          "source_root": [
+            84.59680638722556,
+            145.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            114,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.998,
+            114.478,
+            123.156,
+            175.109
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_1.png",
+          "atlas_rect": [
+            0,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            114,
+            123,
+            175
+          ],
+          "sha256": "c2c73957e3bbe84bd7f06b33849a8e897205967d25b8e772e5c7e25af2500eca"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            170,
+            491,
+            148,
+            171
+          ],
+          "source_body_bounds": [
+            33,
+            34,
+            108,
+            145
+          ],
+          "source_root": [
+            72.79154658981749,
+            145.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            114,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.379,
+            114.478,
+            119.946,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_2.png",
+          "atlas_rect": [
+            192,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            114,
+            120,
+            173
+          ],
+          "sha256": "52accb371cc33ed90accb2e540d2e14245668527b97890d6ac363a2c1b0ea88d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            318,
+            491,
+            145,
+            171
+          ],
+          "source_body_bounds": [
+            30,
+            15,
+            122,
+            124
+          ],
+          "source_root": [
+            73.0560593569662,
+            124.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            116,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.688,
+            115.514,
+            121.364,
+            185.992
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_3.png",
+          "atlas_rect": [
+            384,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            116,
+            121,
+            186
+          ],
+          "sha256": "b7b02dab237746428f079a6d00ed87ce408b2bd717026b4d9e5e3c984750ecb2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            463,
+            491,
+            181,
+            171
+          ],
+          "source_body_bounds": [
+            23,
+            15,
+            166,
+            103
+          ],
+          "source_root": [
+            77.57987072945522,
+            103.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            68,
+            126,
+            142,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.716,
+            126.397,
+            141.821,
+            179.773
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_4.png",
+          "atlas_rect": [
+            576,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            68,
+            126,
+            142,
+            180
+          ],
+          "sha256": "dde65cc7395f283d7728b5e9e28094d0151d95fbccea37317517e75de882e936"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            644,
+            491,
+            162,
+            171
+          ],
+          "source_body_bounds": [
+            15,
+            23,
+            95,
+            116
+          ],
+          "source_root": [
+            56.12630359212051,
+            116.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            124,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.688,
+            123.806,
+            138.947,
+            179.773
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_5.png",
+          "atlas_rect": [
+            768,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            124,
+            139,
+            180
+          ],
+          "sha256": "cc2ba9c8f7cfca0e8de41accf7d0484ff6a3af8db07b2406e2aa9ecaf660b3ed"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            806,
+            491,
+            165,
+            171
+          ],
+          "source_body_bounds": [
+            22,
+            43,
+            117,
+            149
+          ],
+          "source_root": [
+            66.8220802919708,
+            149.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            117,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.772,
+            117.069,
+            129.258,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "air_attack_6.png",
+          "atlas_rect": [
+            960,
+            3264,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            117,
+            129,
+            173
+          ],
+          "sha256": "745e51b0ae4fb0f1a805e34f91f6dfc4245f45a3c27516cab129e514888039e4"
+        }
+      ]
+    },
+    "charge": {
+      "row": 18,
+      "frames": 6,
+      "loop": true,
+      "hold_last": false,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            0,
+            1144,
+            164,
+            161
+          ],
+          "source_body_bounds": [
+            46,
+            28,
+            125,
+            137
+          ],
+          "source_root": [
+            78.51425438596492,
+            137.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            116,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.151,
+            115.514,
+            120.09,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_1.png",
+          "atlas_rect": [
+            0,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            116,
+            120,
+            172
+          ],
+          "sha256": "f1fb572bca9971dc89ffa340b8dc0b2d9c7647694c552d52031383d2a31b5502"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            164,
+            1144,
+            161,
+            161
+          ],
+          "source_body_bounds": [
+            40,
+            26,
+            124,
+            136
+          ],
+          "source_root": [
+            77.83710895361381,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.392,
+            114.996,
+            119.922,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_2.png",
+          "atlas_rect": [
+            192,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            115,
+            120,
+            172
+          ],
+          "sha256": "a6e4cda8454b8c19d81301e7340428e4f963257a22b7c23eb247247fe3aa3a15"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            325,
+            1144,
+            155,
+            161
+          ],
+          "source_body_bounds": [
+            41,
+            23,
+            122,
+            136
+          ],
+          "source_root": [
+            75.35091496232508,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.126,
+            113.441,
+            120.174,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_3.png",
+          "atlas_rect": [
+            384,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            113,
+            120,
+            172
+          ],
+          "sha256": "30f0aef34f4750eb8706961647559d4ed5ed52621ba39695e537229cf68d57c7"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            480,
+            1144,
+            162,
+            161
+          ],
+          "source_body_bounds": [
+            46,
+            22,
+            127,
+            136
+          ],
+          "source_root": [
+            80.24526198439241,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            70.998,
+            112.923,
+            124.893,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_4.png",
+          "atlas_rect": [
+            576,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            71,
+            113,
+            125,
+            172
+          ],
+          "sha256": "06127598d47ee6eb348be1a428b0c55669017aca19cfb0e9f867a0e4b7b33e8c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            642,
+            1144,
+            161,
+            161
+          ],
+          "source_body_bounds": [
+            45,
+            22,
+            129,
+            136
+          ],
+          "source_root": [
+            81.42235294117647,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            67.279,
+            112.923,
+            126.356,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_5.png",
+          "atlas_rect": [
+            768,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            67,
+            113,
+            126,
+            172
+          ],
+          "sha256": "768ed3dd0bb14efe9c76dd38693cb320b0d3e742b3ac641890d2d310a1281b99"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-A.png",
+          "source_rect": [
+            803,
+            1144,
+            168,
+            161
+          ],
+          "source_body_bounds": [
+            46,
+            23,
+            129,
+            136
+          ],
+          "source_root": [
+            82.41522491349481,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            113,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            64.173,
+            113.441,
+            128.433,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "charge_6.png",
+          "atlas_rect": [
+            960,
+            3456,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            64,
+            113,
+            128,
+            172
+          ],
+          "sha256": "06f96e96003b3219c57296b5057805e319eef4ed5e92b83429265c4287670266"
+        }
+      ]
+    },
+    "skill_u": {
+      "row": 19,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.06666667,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            662,
+            166,
+            160
+          ],
+          "source_body_bounds": [
+            55,
+            23,
+            138,
+            136
+          ],
+          "source_root": [
+            89.92356687898089,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            113,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.902,
+            113.441,
+            120.914,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_1.png",
+          "atlas_rect": [
+            0,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            113,
+            121,
+            172
+          ],
+          "sha256": "a21abfdb8cfcbd1fb8328d83d7279ce0db91225820b3bbd7f491db98f4278763"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            166,
+            662,
+            160,
+            160
+          ],
+          "source_body_bounds": [
+            28,
+            27,
+            132,
+            136
+          ],
+          "source_root": [
+            67.32600732600733,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            116,
+            130,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.621,
+            115.514,
+            129.515,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_2.png",
+          "atlas_rect": [
+            192,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            116,
+            130,
+            172
+          ],
+          "sha256": "00400a9a65eff0f28e3c86d7280070d71da290077725d8447aa13ae66ee100f2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            326,
+            662,
+            149,
+            160
+          ],
+          "source_body_bounds": [
+            29,
+            27,
+            113,
+            135
+          ],
+          "source_root": [
+            72.85923753665689,
+            135.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            116,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.271,
+            116.032,
+            124.575,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_3.png",
+          "atlas_rect": [
+            384,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            116,
+            125,
+            172
+          ],
+          "sha256": "6457fef47e848b0446e40c08acfdc6ccf67fa14b3f964bd8371b0e690ed09a0b"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            475,
+            662,
+            173,
+            160
+          ],
+          "source_body_bounds": [
+            21,
+            28,
+            143,
+            136
+          ],
+          "source_root": [
+            63.26797385620915,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            74,
+            116,
+            137,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.096,
+            116.032,
+            145.61,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_4.png",
+          "atlas_rect": [
+            576,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            116,
+            146,
+            172
+          ],
+          "sha256": "12e6657dceb2bf6e067cdd7a34c150e484304d4cd01895eefcd6b1d8e703c324"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            648,
+            662,
+            162,
+            160
+          ],
+          "source_body_bounds": [
+            15,
+            21,
+            136,
+            132
+          ],
+          "source_root": [
+            54.8988988988989,
+            132.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            114,
+            138,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.324,
+            114.478,
+            138.028,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_5.png",
+          "atlas_rect": [
+            768,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            114,
+            138,
+            172
+          ],
+          "sha256": "401781ac6a5dfbb07fba6632aa5d7f96802d2a8c4f88299f82edb015637a208c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            810,
+            662,
+            161,
+            160
+          ],
+          "source_body_bounds": [
+            27,
+            27,
+            94,
+            134
+          ],
+          "source_root": [
+            60.21499013806706,
+            134.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            117,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.787,
+            116.551,
+            126.463,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_u_6.png",
+          "atlas_rect": [
+            960,
+            3648,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            117,
+            126,
+            173
+          ],
+          "sha256": "3e18fcd16c4a743e99bd43ce996acf0876811802c99890f1d8b3ae0adb883250"
+        }
+      ]
+    },
+    "skill_i": {
+      "row": 20,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.125,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            822,
+            170,
+            152
+          ],
+          "source_body_bounds": [
+            56,
+            25,
+            137,
+            136
+          ],
+          "source_root": [
+            88.85901639344263,
+            136.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            79,
+            114,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.972,
+            114.478,
+            120.948,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_1.png",
+          "atlas_rect": [
+            0,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            79,
+            114,
+            121,
+            172
+          ],
+          "sha256": "4182d173d9fac62d9f7d45e2d691f71f429458166c08bfdde24f983578738f02"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            170,
+            822,
+            152,
+            152
+          ],
+          "source_body_bounds": [
+            32,
+            24,
+            116,
+            134
+          ],
+          "source_root": [
+            66.46759720837487,
+            134.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            115,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.138,
+            114.996,
+            124.26,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_2.png",
+          "atlas_rect": [
+            192,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            115,
+            124,
+            172
+          ],
+          "sha256": "f7bcac3fbb9ebdb0f9282279f19e660d2efbef45905e8294d7168d5147ad8dae"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            322,
+            822,
+            144,
+            152
+          ],
+          "source_body_bounds": [
+            30,
+            28,
+            114,
+            133
+          ],
+          "source_root": [
+            70.66401590457257,
+            133.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            118,
+            118,
+            172
+          ],
+          "transformed_visible_bounds": [
+            74.927,
+            117.587,
+            118.458,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_3.png",
+          "atlas_rect": [
+            384,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            118,
+            118,
+            172
+          ],
+          "sha256": "48ddc7b14f2156ae8a5a0a72aa57fe0fe05ec7964795f4e12ee7c74a16644aca"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            466,
+            822,
+            157,
+            152
+          ],
+          "source_body_bounds": [
+            29,
+            37,
+            129,
+            131
+          ],
+          "source_root": [
+            91.84118438761777,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            64,
+            123,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            63.435,
+            123.287,
+            119.92,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_4.png",
+          "atlas_rect": [
+            576,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            64,
+            123,
+            120,
+            173
+          ],
+          "sha256": "c61ed3c56a19ca91dd9fff19e17b60eb09e266043a66a6358c210af574428bde"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            623,
+            822,
+            174,
+            152
+          ],
+          "source_body_bounds": [
+            41,
+            36,
+            136,
+            131
+          ],
+          "source_root": [
+            98.54465270121278,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            66,
+            123,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            54.778,
+            122.769,
+            124.738,
+            173.036
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_5.png",
+          "atlas_rect": [
+            768,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            55,
+            123,
+            125,
+            173
+          ],
+          "sha256": "c62d9cb65757d6215aafaf1cb39b1b6f4d15fa750bdb441b5fe44f7fd42fa0f7"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            797,
+            822,
+            174,
+            152
+          ],
+          "source_body_bounds": [
+            41,
+            36,
+            141,
+            128
+          ],
+          "source_root": [
+            106.46641791044776,
+            128.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            62,
+            124,
+            114,
+            171
+          ],
+          "transformed_visible_bounds": [
+            51.191,
+            124.324,
+            119.596,
+            174.591
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "skill_i_6.png",
+          "atlas_rect": [
+            960,
+            3840,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            52,
+            124,
+            120,
+            175
+          ],
+          "sha256": "f37cdbaf7552628850788f2a9472350138f54def089d87ff3d27d56c3a46e9df"
+        }
+      ]
+    },
+    "ultimate": {
+      "row": 21,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.18333333,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            974,
+            168,
+            159
+          ],
+          "source_body_bounds": [
+            52,
+            33,
+            139,
+            149
+          ],
+          "source_root": [
+            86.74017857142857,
+            149.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            112,
+            123,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.997,
+            111.887,
+            123.082,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_1.png",
+          "atlas_rect": [
+            0,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            112,
+            123,
+            172
+          ],
+          "sha256": "eaed6ad0ac0b74d16ea43865df30448108d616e0c576b3aba58deb7e6ae0750f"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            168,
+            974,
+            158,
+            159
+          ],
+          "source_body_bounds": [
+            30,
+            34,
+            103,
+            139
+          ],
+          "source_root": [
+            67.57700421940929,
+            139.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            118,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.527,
+            117.587,
+            129.903,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_2.png",
+          "atlas_rect": [
+            192,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            118,
+            130,
+            173
+          ],
+          "sha256": "aff67c3fdec2512fe460ce7900bdde42d412967d2ccf74af2e1bd2f191787b66"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            326,
+            974,
+            144,
+            159
+          ],
+          "source_body_bounds": [
+            25,
+            42,
+            112,
+            126
+          ],
+          "source_root": [
+            64.66432748538011,
+            126.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            128,
+            121,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.445,
+            119.66,
+            125.194,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_3.png",
+          "atlas_rect": [
+            384,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            120,
+            125,
+            172
+          ],
+          "sha256": "3a714fa26fb1c796e76de51ccbafe74e25230a947d2b4cead5caae50d8db038f"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            470,
+            974,
+            172,
+            159
+          ],
+          "source_body_bounds": [
+            24,
+            15,
+            139,
+            123
+          ],
+          "source_root": [
+            64.45411764705882,
+            123.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            116,
+            135,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.036,
+            116.032,
+            139.295,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_4.png",
+          "atlas_rect": [
+            576,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            116,
+            139,
+            172
+          ],
+          "sha256": "32a4678952a37bd958de9cbd379b025a7380aab63e05b8d3ab05af0857eee09d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            642,
+            974,
+            170,
+            159
+          ],
+          "source_body_bounds": [
+            24,
+            46,
+            117,
+            122
+          ],
+          "source_root": [
+            62.73245614035088,
+            122.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            133,
+            124,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.928,
+            116.551,
+            142.26,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_5.png",
+          "atlas_rect": [
+            768,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            117,
+            142,
+            172
+          ],
+          "sha256": "f87b1a9a8450559b56a518a5847f4cd0a52695d085363f0bfa6fd114dd0c09f9"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            812,
+            974,
+            159,
+            159
+          ],
+          "source_body_bounds": [
+            17,
+            50,
+            98,
+            148
+          ],
+          "source_root": [
+            56.644839067702556,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            75,
+            121,
+            117,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.455,
+            121.215,
+            130.905,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "ultimate_6.png",
+          "atlas_rect": [
+            960,
+            4032,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            75,
+            121,
+            131,
+            173
+          ],
+          "sha256": "0f6a7d140c0b3b68f3359f555c3289e84c3f4b80c0731a01ed34bb1f21f64ff4"
+        }
+      ]
+    },
+    "new_skill": {
+      "row": 22,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            1133,
+            160,
+            171
+          ],
+          "source_body_bounds": [
+            51,
+            36,
+            121,
+            148
+          ],
+          "source_root": [
+            85.05893019038984,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            114,
+            115,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.35,
+            113.96,
+            114.625,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_1.png",
+          "atlas_rect": [
+            0,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            114,
+            115,
+            172
+          ],
+          "sha256": "08d96978742c721abc7cf91c9be2a87e361a22bec91a123d6215b4baa9c3d2a0"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            160,
+            1133,
+            157,
+            171
+          ],
+          "source_body_bounds": [
+            39,
+            39,
+            115,
+            148
+          ],
+          "source_root": [
+            70.04959514170041,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            116,
+            119,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.91,
+            115.514,
+            126.031,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_2.png",
+          "atlas_rect": [
+            192,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            116,
+            125,
+            172
+          ],
+          "sha256": "f437d58c4daa338ab38847f47a29507086c93c695349189e4b97aff076f2d98c"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            317,
+            1133,
+            165,
+            171
+          ],
+          "source_body_bounds": [
+            29,
+            40,
+            98,
+            148
+          ],
+          "source_root": [
+            60.36208991494532,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            80,
+            116,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            79.748,
+            116.032,
+            135.197,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_3.png",
+          "atlas_rect": [
+            384,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            80,
+            116,
+            135,
+            172
+          ],
+          "sha256": "dae49b19dd995b19bf8c8ad8101807dde46ace294881f3212a9a6d051c2d9632"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            482,
+            1133,
+            141,
+            171
+          ],
+          "source_body_bounds": [
+            42,
+            40,
+            106,
+            148
+          ],
+          "source_root": [
+            71.11111111111111,
+            148.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            81,
+            116,
+            114,
+            172
+          ],
+          "transformed_visible_bounds": [
+            73.659,
+            100.486,
+            115.117,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_4.png",
+          "atlas_rect": [
+            576,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            74,
+            100,
+            115,
+            172
+          ],
+          "sha256": "64a5c54c8689f3ce455fee9e1d4b7927b521f310ad25cef73e058506d9392b8d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            623,
+            1133,
+            186,
+            171
+          ],
+          "source_body_bounds": [
+            33,
+            22,
+            158,
+            112
+          ],
+          "source_root": [
+            72.08256880733946,
+            112.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            76,
+            125,
+            141,
+            172
+          ],
+          "transformed_visible_bounds": [
+            75.747,
+            125.36,
+            140.524,
+            177.182
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_5.png",
+          "atlas_rect": [
+            768,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            76,
+            125,
+            141,
+            177
+          ],
+          "sha256": "67aaec4580f5fe36534faf7141e7a0bdd8598cca7dcd9ef5e486e9a1e89f1b0a"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            809,
+            1133,
+            162,
+            171
+          ],
+          "source_body_bounds": [
+            28,
+            41,
+            96,
+            144
+          ],
+          "source_root": [
+            62.45954356846473,
+            144.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            119,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.142,
+            118.623,
+            129.446,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "new_skill_6.png",
+          "atlas_rect": [
+            960,
+            4224,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            119,
+            129,
+            172
+          ],
+          "sha256": "f6f909bb72295c82ceadad16e37eefc0e3e71ea40dd7ebf6d30ceb0e28d9e4f3"
+        }
+      ]
+    },
+    "knockdown": {
+      "row": 23,
+      "frames": 6,
+      "loop": false,
+      "hold_last": true,
+      "seconds_per_frame": 0.1,
+      "frame_metadata": [
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            0,
+            1304,
+            162,
+            156
+          ],
+          "source_body_bounds": [
+            54,
+            24,
+            138,
+            133
+          ],
+          "source_root": [
+            87.87535145267104,
+            133.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            78,
+            116,
+            122,
+            172
+          ],
+          "transformed_visible_bounds": [
+            78.445,
+            115.514,
+            121.976,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_1.png",
+          "atlas_rect": [
+            0,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            78,
+            116,
+            122,
+            172
+          ],
+          "sha256": "6235c152132cb19e10fcad617058f423ac8e48c78e696a88448598baa89d394d"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            162,
+            1304,
+            154,
+            156
+          ],
+          "source_body_bounds": [
+            25,
+            29,
+            108,
+            131
+          ],
+          "source_root": [
+            61.91717417783191,
+            131.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            119,
+            120,
+            172
+          ],
+          "transformed_visible_bounds": [
+            76.869,
+            119.142,
+            136.464,
+            172.518
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_2.png",
+          "atlas_rect": [
+            192,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            119,
+            136,
+            173
+          ],
+          "sha256": "6572052c63fa5398fbe045a025f2983b7f722dc9ef49980c489df3e8801c5598"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            316,
+            1304,
+            156,
+            156
+          ],
+          "source_body_bounds": [
+            15,
+            29,
+            127,
+            106
+          ],
+          "source_root": [
+            59.80562347188264,
+            106.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            132,
+            131,
+            172
+          ],
+          "transformed_visible_bounds": [
+            72.781,
+            132.097,
+            136.522,
+            185.992
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_3.png",
+          "atlas_rect": [
+            384,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            73,
+            132,
+            137,
+            186
+          ],
+          "sha256": "30664ed56a404416a9cf558f707661c7ac89abde7c60eb8692c247d3fec32fc2"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            472,
+            1304,
+            176,
+            156
+          ],
+          "source_body_bounds": [
+            22,
+            58,
+            129,
+            125
+          ],
+          "source_root": [
+            66.7248407643312,
+            125.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            73,
+            137,
+            128,
+            172
+          ],
+          "transformed_visible_bounds": [
+            71.268,
+            137.279,
+            144.337,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_4.png",
+          "atlas_rect": [
+            576,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            72,
+            137,
+            144,
+            172
+          ],
+          "sha256": "04211db06f386b2098003025f5d1d4e35071f33d656f2303a7c6eb90fea31246"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            648,
+            1304,
+            159,
+            156
+          ],
+          "source_body_bounds": [
+            17,
+            52,
+            101,
+            126
+          ],
+          "source_root": [
+            67.7165932452276,
+            126.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            70,
+            134,
+            113,
+            172
+          ],
+          "transformed_visible_bounds": [
+            69.718,
+            133.652,
+            128.276,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_5.png",
+          "atlas_rect": [
+            768,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            70,
+            134,
+            128,
+            172
+          ],
+          "sha256": "ab75cacc9c4ee519d015e9e3f1b02997e65059204dd80efc5248eb7668b32b75"
+        },
+        {
+          "source_file": "art/animations/v4/source/ronaldo-B.png",
+          "source_rect": [
+            807,
+            1304,
+            164,
+            156
+          ],
+          "source_body_bounds": [
+            29,
+            38,
+            103,
+            126
+          ],
+          "source_root": [
+            65.00647668393782,
+            126.0
+          ],
+          "scale": 0.5182186234817814,
+          "target_pivot": [
+            96,
+            172
+          ],
+          "art_offset": [
+            0,
+            0
+          ],
+          "target_body_bounds": [
+            77,
+            126,
+            116,
+            172
+          ],
+          "transformed_visible_bounds": [
+            77.341,
+            126.397,
+            128.644,
+            172.0
+          ],
+          "fractional_edge_adjustment": [
+            0,
+            0
+          ],
+          "source_kind": "v4-authored",
+          "file": "knockdown_6.png",
+          "atlas_rect": [
+            960,
+            4416,
+            192,
+            192
+          ],
+          "visible_bounds": [
+            77,
+            126,
+            129,
+            172
+          ],
+          "sha256": "0a194d7f1bde5a7ae288761e42583a744036d219f89147735beb7d096f306e03"
+        }
+      ]
+    }
+  }
+}

@@ -7,6 +7,7 @@ import java.lang.reflect.*;
 import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import javax.imageio.ImageIO;
 import chronorunner.animation.AnimationController;
 import chronorunner.combat.*;
@@ -16,6 +17,8 @@ import chronorunner.entity.Player;
 import chronorunner.entity.boss.*;
 import chronorunner.entity.character.PhanSiKien;
 import chronorunner.entity.enemy.*;
+import chronorunner.gfx.Art;
+import chronorunner.gfx.SpriteLayout;
 import chronorunner.obstacle.*;
 import chronorunner.ui.PlayScreen;
 import chronorunner.world.*;
@@ -37,6 +40,14 @@ public final class BossCombatFixCheck {
     static void set(Object o,String name,double value)throws Exception{field(o,name).setDouble(o,value);}
     static AnimationController anim(Object o)throws Exception{return (AnimationController)get(o,"anim");}
     static Attack action(Boss b)throws Exception{return (Attack)get(b,"action");}
+    static int poseBoundary(Boss b,String key,int fallback)throws Exception {
+        String state=anim(b).currentName();
+        SpriteLayout layout=Art.bossAnimation(b.getName(),state).layout();
+        if(layout==null)return fallback;
+        Properties metadata=(Properties)get(layout,"properties");
+        return Integer.parseInt(metadata.getProperty(state+"."+key,
+                metadata.getProperty("combat."+key,Integer.toString(fallback))));
+    }
     static Boss boss(boolean core){Boss b=core?new TheVoidCore(500,460):new TimeGuardian(500,476);b.grounded=true;return b;}
     static class World implements CombatWorld {
         final List<Player> players=new ArrayList<>();final List<Platform> platforms=new ArrayList<>();
@@ -59,10 +70,13 @@ public final class BossCombatFixCheck {
             int direction=b.getFacing();boolean sawActive=false,sawRecovery=false;
             for(int i=0;i<120&&action(b)!=null;i++) {
                 Attack move=action(b);Attack.Phase phase=move.phase();int frame=anim(b).current().frame();
+                int frameCount=anim(b).current().frameCount();
+                int firstActive=poseBoundary(b,"activeFrame",frameCount/3);
+                int firstRecovery=poseBoundary(b,"recoveryFrame",frameCount*2/3);
                 check(b.getFacing()==direction,"Facing changed during committed move");
-                if(phase==Attack.Phase.STARTUP)check(frame<2&&w.hits.isEmpty(),"Startup strike pose/damage");
-                if(phase==Attack.Phase.ACTIVE){sawActive=true;check(frame>=2&&frame<4,"Active pose wrong");}
-                if(phase==Attack.Phase.RECOVERY){sawRecovery=true;check(frame>=4&&!b.isContactDamageEnabled(),"Recovery damages");
+                if(phase==Attack.Phase.STARTUP)check(frame<firstActive&&w.hits.isEmpty(),"Startup strike pose/damage");
+                if(phase==Attack.Phase.ACTIVE){sawActive=true;check(frame>=firstActive&&frame<firstRecovery,"Active pose wrong");}
+                if(phase==Attack.Phase.RECOVERY){sawRecovery=true;check(frame>=firstRecovery&&!b.isContactDamageEnabled(),"Recovery damages");
                     for(Hitbox hit:w.hits)check(!hit.isAlive(),"Melee survived Active");}
                 p.x=430; // Cross behind while the same action is committed.
                 b.specialAttack(w);check(action(b)==move,"Special interrupted a committed attack");
@@ -118,7 +132,7 @@ public final class BossCombatFixCheck {
             b.takeDamage(new DamageInfo(99999,0,0,true));double timer=(double)get(b,"attackTimer");
             for(int i=0;i<90;i++)b.update(DT,w);
             check(b.grounded&&near(b.bottom(),600),"Corpse stayed airborne/fell through floor");
-            check(anim(b).current().finished()&&anim(b).current().frame()==5,"Death pose did not settle");
+            check(anim(b).current().finished()&&anim(b).current().frame()==Art.bossAnimation(b.getName(),"death").count()-1,"Death pose did not settle");
             check((double)get(b,"attackTimer")==timer&&w.hits.isEmpty()&&w.shots.isEmpty(),"Dead boss ran AI");
             check(b.getMaxHealth()==(core?1600:700),"HP changed");
         }
@@ -268,7 +282,7 @@ public final class BossCombatFixCheck {
     public static void main(String[] args)throws Exception {
         Files.createDirectories(OUTPUT);basicWindows();rangedHeightAndTargets();hurtAndDeath();dash();staggerBudget();coreFlight();endingsAndPause();
         check(!Boolean.getBoolean("chronorunner.debugCollision"),"Debug left enabled");
-        String result="PASS: "+checks+" boss regression checks; assets/HP preserved; saves intercepted; debug OFF.\n";
+        String result="PASS: "+checks+" boss regression checks; combat windows/HP preserved; saves intercepted; debug OFF.\n";
         Files.writeString(OUTPUT.resolve("results.txt"),result);System.out.print(result);
     }
 }

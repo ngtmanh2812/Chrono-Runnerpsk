@@ -38,8 +38,8 @@ import javax.imageio.ImageIO;
  * is missing, the shared {@code assets/players/chrono_runner} folder is used.
  * That lets every selectable character share the same time-traveller art while
  * keeping their individual stats and skills.
- * Versioned {@code v3/} packs with {@code animation.properties} take precedence,
- * followed by {@code v2/};
+ * The newest versioned pack ({@code v4/}, then {@code v3/}, {@code v2/}, ...)
+ * with {@code animation.properties} and an idle frame takes precedence;
  * their actual frame counts, explicit pivots and timing drive the shared player
  * and boss animation systems. Original assets remain available as fallbacks.
  */
@@ -52,7 +52,7 @@ public final class Art {
     private static final File ASSET_ROOT = new File("assets");
 
     /** Upper bound on {@code _1.png, _2.png, ...} frames read per entity. */
-    private static final int MAX_ASSET_FRAMES = 16;
+    private static final int MAX_ASSET_FRAMES = 32;
 
     /** Folder used when a selected character has no art folder of its own. */
     private static final String SHARED_PLAYER_ART = "chrono_runner";
@@ -60,7 +60,14 @@ public final class Art {
     /** Animation names a player sprite set can provide. */
     public static final String[] PLAYER_ANIMATIONS = {
             "idle", "walk", "run", "jump", "attack", "special", "hurt", "death", "dash", "block", "fall", "land",
-            "light_1", "light_2", "light_3", "heavy", "launcher", "air_attack", "charge", "skill_u", "skill_i", "ultimate"
+            "light_1", "light_2", "light_3", "heavy", "launcher", "air_attack", "charge", "skill_u", "skill_i", "ultimate",
+            "new_skill", "knockdown"
+    };
+
+    /** Visual clips are independent of a boss's attack IDs and damage windows. */
+    public static final String[] BOSS_ANIMATIONS = {
+            "idle", "run", "jump", "attack", "hurt", "death", "walk", "special", "block", "dash", "fall", "land",
+            "light", "heavy", "launcher", "air_attack", "charge", "skill_u", "skill_i", "ultimate", "new_skill", "knockdown"
     };
 
     /** Outline / near-black / eye / white / grey, shared by every sprite. */
@@ -521,7 +528,9 @@ public final class Art {
             if (!sets.containsKey(animation) && !"dash".equals(animation)) {
                 String alias = animation.startsWith("light_") || "heavy".equals(animation)
                         || "launcher".equals(animation) || "air_attack".equals(animation) ? "attack"
-                        : animation.startsWith("skill_") || "ultimate".equals(animation) ? "special" : "idle";
+                        : animation.startsWith("skill_") || "ultimate".equals(animation)
+                        || "new_skill".equals(animation) ? "special"
+                        : "knockdown".equals(animation) ? "hurt" : "idle";
                 sets.put(animation, sets.getOrDefault(alias, fallback));
             }
         }
@@ -582,10 +591,18 @@ public final class Art {
         File dir = new File(new File(ASSET_ROOT, "bosses"), slug(name));
         dir = animationDirectory(dir);
         PixelSprite[] frames = animationFrames(dir, animation);
+        if (frames.length == 0) {
+            // Legacy packs have only attack/special; newer named actions must
+            // retain their old combat pose instead of falling back to Idle.
+            String alias = switch (animation) {
+                case "light", "light_1", "light_2", "light_3", "heavy", "launcher", "skill_u" -> "attack";
+                case "air_attack", "skill_i", "ultimate", "new_skill" -> "special";
+                case "knockdown" -> "hurt";
+                default -> "idle";
+            };
+            frames = animationFrames(dir, alias);
+        }
         if (frames.length == 0 && !"idle".equals(animation)) {
-            // Some concept-sheet rows contain only standalone attack effects,
-            // not boss poses. Keep the boss visible while its existing combat
-            // effects continue through the gameplay systems.
             frames = animationFrames(dir, "idle");
         }
         SpriteSet built = frames.length > 0 ? new SpriteSet(SpriteLayout.load(dir), frames)
@@ -645,10 +662,27 @@ public final class Art {
 
     /** Prefer the newest complete bank while keeping previous packs intact. */
     private static File animationDirectory(File directory) {
-        File v3 = new File(directory, "v3");
-        if (new File(v3, "animation.properties").isFile()) return v3;
-        File upgraded = new File(directory, "v2");
-        return new File(upgraded, "animation.properties").isFile() ? upgraded : directory;
+        File selected = directory;
+        int selectedVersion = 1;
+        File[] children = directory.listFiles(File::isDirectory);
+        if (children == null) return selected;
+        for (File candidate : children) {
+            String name = candidate.getName();
+            if (!name.matches("v[1-9][0-9]*")) continue;
+            int version;
+            try {
+                version = Integer.parseInt(name.substring(1));
+            } catch (NumberFormatException tooLarge) {
+                continue;
+            }
+            if (version > selectedVersion
+                    && new File(candidate, "animation.properties").isFile()
+                    && new File(candidate, "idle_1.png").isFile()) {
+                selected = candidate;
+                selectedVersion = version;
+            }
+        }
+        return selected;
     }
 
     /** File-name form of an entity name: lowercase, other runs collapse to '_'. */
@@ -668,14 +702,13 @@ public final class Art {
      * than on the first frame a boss happens to spawn.
      */
     public static void validateAll() {
+        SwordEffects.validateAll();
         for (String id : new String[] {"phan_si_kien", "ronaldo", "do_mixi"}) {
             for (String animation : PLAYER_ANIMATIONS) {
                 playerAnim(id, animation);
             }
         }
-        for (String animation : new String[] {
-                "idle", "run", "jump", "attack", "hurt", "death", "walk", "special", "block", "dash", "fall", "land"
-        }) {
+        for (String animation : BOSS_ANIMATIONS) {
             bossAnimation("The Time Guardian", animation);
             bossAnimation("The Void Core", animation);
         }

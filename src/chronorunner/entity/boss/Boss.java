@@ -41,6 +41,7 @@ public abstract class Boss extends Character {
     private double landingAnimTimer;
     private Attack action;
     private String actionAnimation;
+    private String actionWindupAnimation;
     private Hitbox actionHitbox;
     private final Map<DamageInfo.MeleeChain, Integer> acceptedMeleeSteps = new WeakHashMap<>();
     private static final double MAX_CONTINUOUS_STAGGER = .90;
@@ -72,6 +73,16 @@ public abstract class Boss extends Character {
         addAnimation("special", .09, false);
         // A visual bank for future use; no boss guarding behavior is introduced.
         addAnimation("block", .08, false);
+        // Distinct V4 poses share the existing combat windows. Art resolves
+        // missing clips to the older attack/special banks on legacy packs.
+        addAnimation("light", .075, false);
+        addAnimation("heavy", .09, false);
+        addAnimation("launcher", .08, false);
+        addAnimation("air_attack", .09, false);
+        addAnimation("charge", .10, true);
+        addAnimation("skill_u", .075, false);
+        addAnimation("skill_i", .09, false);
+        addAnimation("ultimate", .10, false);
     }
 
     private void addAnimation(String state, double seconds, boolean loop) {
@@ -164,6 +175,7 @@ public abstract class Boss extends Character {
             if (action.isReady()) {
                 action = null;
                 actionAnimation = null;
+                actionWindupAnimation = null;
             }
         } else if (dashTimer > 0) {
             dashTimer = Math.max(0, dashTimer - dt);
@@ -201,16 +213,29 @@ public abstract class Boss extends Character {
     /** Reuse Attack's windows for melee, projectile volleys and scripted motion. */
     protected final boolean beginAction(CombatWorld world, String clip, double startup,
                                          double active, double recovery, Runnable effect) {
+        return beginAction(world, clip, null, clip, startup, active, recovery, effect);
+    }
+
+    /** Visual selection does not rename or retime the gameplay action. */
+    protected final boolean beginAction(CombatWorld world, String actionId, String clip,
+                                         double startup, double active, double recovery, Runnable effect) {
+        return beginAction(world, actionId, null, clip, startup, active, recovery, effect);
+    }
+
+    /** Optional dedicated telegraph, then the strike/recovery pose bank. */
+    protected final boolean beginAction(CombatWorld world, String actionId, String windupClip, String clip,
+                                         double startup, double active, double recovery, Runnable effect) {
         if (!canBeginAction(world)) return false;
-        AttackData data = new AttackData(clip, 0, 0, 0,
+        AttackData data = new AttackData(actionId, 0, 0, 0,
                 Math.max(1, (int)Math.round(startup * 60)),
                 Math.max(1, (int)Math.round(active * 60)),
                 Math.max(1, (int)Math.round(recovery * 60)), 0);
         action = new Attack(data, effect, this::stopAttackMotion);
         actionAnimation = clip;
+        actionWindupAnimation = windupClip;
         vx = 0;
         action.start(this, facing, false, world);
-        anim.restart(clip);
+        anim.restart(windupClip == null ? clip : windupClip);
         return true;
     }
 
@@ -226,7 +251,7 @@ public abstract class Boss extends Character {
 
     private void cancelAction() {
         if (action != null) action.reset();
-        action = null; actionAnimation = null;
+        action = null; actionAnimation = null; actionWindupAnimation = null;
         stopAttackMotion();
     }
 
@@ -360,8 +385,13 @@ public abstract class Boss extends Character {
         double angle = Math.atan2(dy, dx) + angleOffset;
         double px = Math.cos(angle);
         double py = Math.sin(angle);
-        world.addProjectile(new Projectile(centerX(), centerY(), px * speed, py * speed, radius,
-                new DamageInfo(damage, px * 150, -140, false), false, secondary, 3.0));
+        world.addProjectile(aimedProjectile(px * speed, py * speed, radius,
+                new DamageInfo(damage, px * 150, -140, false)));
+    }
+
+    /** Visual factory; trajectory, damage and lifetime remain owned by combat. */
+    protected Projectile aimedProjectile(double vx, double vy, double radius, DamageInfo damage) {
+        return new Projectile(centerX(), centerY(), vx, vy, radius, damage, false, secondary, 3.0);
     }
 
     protected void shootRadial(CombatWorld world, int count, int damage, double speed, double radius) {
@@ -388,8 +418,23 @@ public abstract class Boss extends Character {
         }
 
         if (action != null) {
-            anim.play(actionAnimation);
-            anim.current().setProgress(action.animationProgress());
+            boolean windup = action.isStartup() && actionWindupAnimation != null;
+            anim.play(windup ? actionWindupAnimation : actionAnimation);
+            // The dedicated telegraph spans Startup only. Strike poses follow
+            // the bank's visual breakdown, never the reverse: Attack still
+            // owns the existing damage/contact gate and movement timing.
+            double progress = action.animationProgress();
+            var layout = Art.bossAnimation(name, actionAnimation).layout();
+            if (windup) {
+                var windupLayout = Art.bossAnimation(name, actionWindupAnimation).layout();
+                double local = progress * 3;
+                anim.current().setProgress(windupLayout == null ? local
+                        : windupLayout.frameProgress(actionWindupAnimation, local,
+                                anim.current().frameCount(), local));
+            } else {
+                anim.current().setProgress(layout == null ? progress
+                        : layout.actionProgress(actionAnimation, progress, anim.current().frameCount()));
+            }
             return;
         }
 

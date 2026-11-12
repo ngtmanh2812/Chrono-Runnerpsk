@@ -69,25 +69,32 @@ public final class IdentitySkillsCheck {
         void capture(String name)throws Exception{BufferedImage image=new BufferedImage(Game.WIDTH,Game.HEIGHT,BufferedImage.TYPE_INT_RGB);Graphics2D g=image.createGraphics();game.render(g);g.dispose();ImageIO.write(image,"png",OUTPUT.resolve(name+".png").toFile());}
     }
     static int skillKey(int player,int slot){return Player.keysFor(player)[slot==0?5:slot==1?10:11];}
-    static void bankProof(boolean required)throws Exception{
+    static void bankProof(int requiredVersion)throws Exception{
         for(String hero:new String[]{"phan_si_kien","ronaldo","do_mixi"}){
-            Path bank=Path.of("assets/players",hero,"v3");
-            boolean installed=Files.isRegularFile(bank.resolve("animation.properties"));
-            check(!required||installed,"v3 bank not installed: "+hero);
-            if(!installed)continue;
+            Path bank=null; int version=0;
+            for(int candidate:new int[]{4,3,2}){
+                Path directory=Path.of("assets/players",hero,"v"+candidate);
+                if(Files.isRegularFile(directory.resolve("animation.properties"))){bank=directory;version=candidate;break;}
+            }
+            check(version>=requiredVersion,"Required v"+requiredVersion+" bank not installed: "+hero);
+            if(bank==null)continue;
+            Properties metadata=new Properties();try(var in=Files.newInputStream(bank.resolve("animation.properties"))){metadata.load(in);}
             for(String clip:Art.PLAYER_ANIMATIONS){
                 SpriteSet set=Art.playerAnim(hero,clip);
-                check(set.layout()!=null&&"3".equals(((Properties)get(set.layout(),"properties")).getProperty("version")),"Runtime did not prefer v3: "+hero+"/"+clip);
-                check(set.count()==(clip.equals("fall")||clip.equals("land")?2:6),"Wrong installed frame count: "+hero+"/"+clip);
-                Path authored=bank.resolve(clip+"_1.png");check(Files.isRegularFile(authored),"Missing v3 clip: "+authored);
-                BufferedImage expected=ImageIO.read(authored.toFile());BufferedImage actual=new BufferedImage(128,128,BufferedImage.TYPE_INT_ARGB);
+                check(set.layout()!=null&&Integer.toString(version).equals(((Properties)get(set.layout(),"properties")).getProperty("version")),"Runtime did not prefer latest bank: "+hero+"/"+clip);
+                int expectedFrames=Integer.parseInt(metadata.getProperty(clip+".frames",Integer.toString(version>=4?6:clip.equals("fall")||clip.equals("land")?2:6)));
+                check(set.count()==expectedFrames,"Wrong installed frame count: "+hero+"/"+clip);
+                Path authored=bank.resolve(clip+"_1.png");check(Files.isRegularFile(authored),"Missing installed clip: "+authored);
+                BufferedImage expected=ImageIO.read(authored.toFile());BufferedImage actual=new BufferedImage(set.layout().width,set.layout().height,BufferedImage.TYPE_INT_ARGB);
                 Graphics2D g=actual.createGraphics();set.frame(0).draw(g,0,0,1,false);g.dispose();boolean same=true;
-                for(int y=0;y<128&&same;y++)for(int x=0;x<128;x++){
+                check(actual.getWidth()==expected.getWidth()&&actual.getHeight()==expected.getHeight(),"Loaded layout disagrees with PNG dimensions");
+                for(int y=0;y<actual.getHeight()&&same;y++)for(int x=0;x<actual.getWidth();x++){
                     int a=actual.getRGB(x,y),b=expected.getRGB(x,y);
                     if((a>>>24)!=(b>>>24)||((b>>>24)!=0&&a!=b)){same=false;break;}
                 }
-                check(same,"Runtime rendered fallback instead of installed v3 frame: "+hero+"/"+clip);
-                check(set.layout().pivotX==64&&set.layout().pivotY==116&&set.layout().scale==1,"v3 anchor/scale changed");
+                check(same,"Runtime rendered fallback instead of latest installed frame: "+hero+"/"+clip);
+                check(set.layout().width==(version>=4?192:128)&&set.layout().height==(version>=4?192:128),"Unexpected player pack canvas");
+                check(set.layout().pivotX==(version>=4?96:64)&&set.layout().pivotY==(version>=4?172:116)&&set.layout().scale==1,"Player padding changed authored world anchor/scale");
             }
         }
     }
@@ -167,7 +174,8 @@ public final class IdentitySkillsCheck {
         System.out.println("Real Game 1P/2P, both chapters: pause/resume, restart, ending/death guards, HUD and select rendering PASS");
     }
     public static void main(String[] args)throws Exception{
-        Files.createDirectories(OUTPUT);bankProof(args.length>0&&args[0].equals("--require-v3"));casts();energy();controlsAndInterruptions();enterLocations();realScreens();check(!Boolean.getBoolean("chronorunner.debugCollision"),"Debug overlay enabled");
+        int requiredVersion=java.util.Arrays.asList(args).contains("--require-v4")?4:java.util.Arrays.asList(args).contains("--require-v3")?3:0;
+        Files.createDirectories(OUTPUT);bankProof(requiredVersion);casts();energy();controlsAndInterruptions();enterLocations();realScreens();check(!Boolean.getBoolean("chronorunner.debugCollision"),"Debug overlay enabled");
         String result="PASS: "+checks+" identity skill checks; actual controls/collisions; saves intercepted; debug OFF.\n";
         Files.writeString(OUTPUT.resolve("results.txt"),result);System.out.print(result);
     }

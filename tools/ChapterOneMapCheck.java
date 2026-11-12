@@ -21,6 +21,8 @@ import chronorunner.world.*;
  *  java -Djava.awt.headless=true -cp out ChapterOneMapCheck
  *  --live opens the real game directly in Chapter 1 for desktop inspection. */
 public final class ChapterOneMapCheck {
+    /** Screen/outcome scenarios must not write the player's real save. */
+    static class NoSaveGame extends Game { @Override public void saveProgress() { } }
     static int checks;
     static final double DT = 1.0 / 120;
     static final Canvas KEYS = new Canvas();
@@ -182,7 +184,7 @@ public final class ChapterOneMapCheck {
     }
 
     static void rendering() throws Exception {
-        Game game = new Game();
+        Game game = new NoSaveGame();
         PlayScreen screen = new PlayScreen(game); screen.onEnter();
         check(near(screen.players().get(0).bottom(), LevelFactory.create(1).groundY()), "Player spawn");
         Field field = PlayScreen.class.getDeclaredField("camera"); field.setAccessible(true);
@@ -205,7 +207,7 @@ public final class ChapterOneMapCheck {
     public static void main(String[] args) throws Exception {
         if (args.length > 0 && args[0].equals("--live")) {
             SwingUtilities.invokeLater(() -> {
-                Game game = new Game(); game.start();
+                Game game = new NoSaveGame(); game.start();
                 // Build before publishing PLAYING to the running game loop.
                 game.screen(GameState.PLAYING).onEnter();
                 game.resumeState(GameState.PLAYING);

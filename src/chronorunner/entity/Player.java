@@ -19,6 +19,7 @@ import chronorunner.gfx.Art;
 import chronorunner.gfx.PixelArt;
 import chronorunner.gfx.PixelSprite;
 import chronorunner.gfx.SpriteSet;
+import chronorunner.gfx.SpriteLayout;
 import chronorunner.world.CombatWorld;
 
 /**
@@ -293,6 +294,7 @@ public abstract class Player extends Character {
                 skillFlash = .25;
                 announceSkill(actionWorld, name);
                 performSkill(slot, actionWorld);
+                emitActionParticles(actionWorld, facing, slot + 2);
             }
         }, this::finishSkillActive);
     }
@@ -385,9 +387,12 @@ public abstract class Player extends Character {
             if (attack != null) {
                 // Pin the strike frame to the hitbox window instead of letting
                 // elapsed animation time drift away from the damage event.
-                // Each authored window owns a third of its clip, even when
-                // gameplay windows have unequal lengths. Damage timing is untouched.
-                attack.setProgress(action.animationProgress());
+                // The bank maps anticipation/contact/recovery poses separately;
+                // damage windows and input timing remain owned by Attack.
+                double progress = action.animationProgress();
+                SpriteLayout layout = Art.playerAnim(characterId(), actionClip).layout();
+                attack.setProgress(layout == null ? progress
+                        : layout.actionProgress(actionClip, progress, attack.frameCount()));
             }
             return;
         }
@@ -433,6 +438,10 @@ public abstract class Player extends Character {
         if (vy < 0) {
             double rising = Math.min(1.0, -vy / Math.max(1.0, jumpSpeed));
             progress = (1 + Math.min(1, (1 - rising) * 2)) / jump.frameCount();
+            SpriteLayout layout = Art.playerAnim(characterId(), "jump").layout();
+            if (layout != null) {
+                progress = layout.frameProgress("jump", 1 - rising, jump.frameCount(), progress);
+            }
         } else {
             progress = Math.min(1.0, vy / Physics.MAX_FALL);
         }
@@ -462,6 +471,32 @@ public abstract class Player extends Character {
     }
 
     protected abstract void performSkill(int slot, CombatWorld world);
+
+    /** Called exactly once when a committed player melee hitbox opens. */
+    public final void onMeleeActive(CombatWorld world, int direction, int step) {
+        if (isDead() || !world.isCombatActive()) return;
+        emitActionParticles(world, direction, Math.max(1, step));
+        emitMeleeTrail(world, direction, step);
+    }
+
+    /** Optional authored trail; the shared particles never own a damage region. */
+    protected void emitMeleeTrail(CombatWorld world, int direction, int step) { }
+
+    private void emitActionParticles(CombatWorld world, int direction, int force) {
+        int count=6+Math.min(4,force)*2;
+        double startX=centerX()+direction*(width*.5+10), startY=centerY()-5;
+        for(int i=0;i<count;i++) {
+            double spread=(i-(count-1)/2.0)*6;
+            Color identity = characterId().equals("do_mixi") ? accentColor : skillEffectColor;
+            Color tint=i%3==0?new Color(220,250,255):identity;
+            world.addParticle(new Particle(startX+direction*(i%4)*8,startY+spread,
+                    direction*(90+i*11+force*12),spread*2-40,2+i%2,tint,.16+(i%4)*.035,0));
+        }
+        if(grounded && force>=2) for(int i=0;i<4;i++) {
+            world.addParticle(new Particle(centerX()-direction*(6+i*5),bottom()-3,
+                    -direction*(35+i*18),-25-i*8,3,new Color(125,132,142),.20,.35));
+        }
+    }
     public abstract String characterId();
     public String getSkillName() { return getSkillName(0); }
     public String getSkillName(int slot) { return skillNames[slot]; }

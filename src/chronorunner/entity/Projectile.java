@@ -84,6 +84,15 @@ public class Projectile extends GameObject {
         return damage;
     }
 
+    public boolean collidesWithPlatform(chronorunner.obstacle.Platform platform) {
+        return bounds().intersects(platform.bounds());
+    }
+
+    /** Collision-only callback, separate from lifetime expiration. */
+    public void onImpact(CombatWorld world) { }
+
+    public boolean damagesOnContact() { return true; }
+
     public boolean isFriendly() {
         return friendly;
     }
