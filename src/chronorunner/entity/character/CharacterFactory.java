@@ -44,7 +44,7 @@ public final class CharacterFactory {
             case 1:
                 return "Siuu Bicycle Kick";
             case 2:
-                return "Đại Hội Tộc";
+                return DoMixi.CALL_SKILL_NAME;
             default:
                 return "Timeline Break";
         }
@@ -53,7 +53,7 @@ public final class CharacterFactory {
     public static String[] skillsOf(int index) {
         switch (index) {
             case 1: return new String[]{"U Power Shot", "I Step-over Burst", "O Siuu Bicycle Kick"};
-            case 2: return new String[]{"U Sóng Âm", "I Đập Bàn", "O Đại Hội Tộc"};
+            case 2: return new String[]{"U " + DoMixi.JAR_SKILL_NAME, "I " + DoMixi.SMOKE_SKILL_NAME, "O " + DoMixi.CALL_SKILL_NAME};
             default: return new String[]{"U Chrono Shot", "I Time Slash", "O Timeline Break"};
         }
     }

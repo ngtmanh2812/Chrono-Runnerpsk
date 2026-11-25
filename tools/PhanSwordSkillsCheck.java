@@ -57,7 +57,8 @@ public final class PhanSwordSkillsCheck {
                 hashes.add(java.util.Arrays.hashCode(image.getRGB(0,0,image.getWidth(),image.getHeight(),null,0,image.getWidth())));
             }
             check(hashes.size()==11,"Expanded skill bank repeats raster frames instead of added drawings: "+clip);
-            check(Art.playerAnim("ronaldo",clip).count()==6&&Art.playerAnim("do_mixi",clip).count()==6,"Phan-only frame upgrade changed other character banks");
+            int mixiFrames = clip.equals("skill_i") ? 6 : 7;
+            check(Art.playerAnim("ronaldo",clip).count()==6&&Art.playerAnim("do_mixi",clip).count()==mixiFrames,"Unexpected frame count for other character banks");
         }
         for(SwordEffects.Kind kind:SwordEffects.Kind.values())check(SwordEffects.count(kind)==11,"Effect bank did not load +5 frames: "+kind);
         System.out.println("Phan U/I/O and four effect banks: 11 loaded frames, distinct drawings, preserved visual durations and contact mapping PASS");
@@ -173,6 +174,9 @@ public final class PhanSwordSkillsCheck {
         for(int hero=0;hero<3;hero++)for(int slot=0;slot<3;slot++){
             var f=new IdentitySkillsCheck.Fixture(1,hero,1);target(f,0,1,350);
             Player p=f.p(0);Boss boss=f.level.boss();boss.y=30;int hp=boss.getHealth();
+            // A targeted call cannot miss geography. Use an immune boss to
+            // keep this fixture about shared release particles.
+            if (hero == 2 && slot == 2) IdentitySkillsCheck.set(boss, "invuln", 10);
             f.press(skillKey(0,slot));Attack action=((Attack[])IdentitySkillsCheck.get(p,"skills"))[slot];
             check(action.isStartup(),"Skill did not retain its startup for hero "+hero+" slot "+slot);
             for(int n=0;n<90&&action.isStartup();n++){

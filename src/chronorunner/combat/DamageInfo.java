@@ -7,7 +7,10 @@ public class DamageInfo {
     public static final class MeleeChain { }
 
     /** Presentation identity travels with a hit; it never changes damage rules. */
-    public enum Feedback { NONE, PHAN_SWORD_LIGHT, PHAN_SWORD_MEDIUM, PHAN_SWORD_ULTIMATE }
+    public enum Feedback {
+        NONE, PHAN_SWORD_LIGHT, PHAN_SWORD_MEDIUM, PHAN_SWORD_ULTIMATE,
+        DO_MIXI_JAR, DO_MIXI_SMOKE, DO_MIXI_CALL
+    }
 
     public final int amount;
     public final double knockbackX;

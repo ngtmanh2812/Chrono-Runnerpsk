@@ -1,0 +1,58 @@
+{
+  "status": "design-only",
+  "suggested_key": "I",
+  "actor_frame_size": [
+    192,
+    192
+  ],
+  "actor_feet": [
+    96,
+    172
+  ],
+  "actor_frames": 6,
+  "prop_frame_size": [
+    96,
+    96
+  ],
+  "prop_feet": [
+    48,
+    86
+  ],
+  "hose_tips_relative_to_feet": [
+    [
+      -4,
+      -18
+    ],
+    [
+      7,
+      -32
+    ],
+    [
+      8,
+      -36
+    ],
+    [
+      3,
+      -22
+    ],
+    [
+      -2,
+      -18
+    ],
+    [
+      -5,
+      -17
+    ]
+  ],
+  "prop_outlet_relative_to_feet": [
+    4,
+    -37
+  ],
+  "mouth_relative_to_feet": [
+    11,
+    -39
+  ],
+  "release_seconds": 0.7,
+  "preview_hit_seconds": 1.14,
+  "shake_seconds": 0.2
+}

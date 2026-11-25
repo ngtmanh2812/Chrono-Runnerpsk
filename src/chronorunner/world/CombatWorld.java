@@ -2,6 +2,7 @@ package chronorunner.world;
 
 import java.util.List;
 
+import chronorunner.combat.DamageInfo;
 import chronorunner.combat.Hitbox;
 import chronorunner.entity.FloatingText;
 import chronorunner.entity.Particle;
@@ -32,6 +33,9 @@ public interface CombatWorld {
     void addFloatingText(FloatingText text);
 
     void addEnemy(Enemy enemy);
+
+    /** A targeted attack in arenas that have a chapter boss. */
+    default void strikeChapterBoss(DamageInfo damage) {}
 
     void shake(double amount);
 

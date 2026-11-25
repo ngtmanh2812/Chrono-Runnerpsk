@@ -23,12 +23,14 @@ import chronorunner.core.InputHandler;
 import chronorunner.core.Screen;
 import chronorunner.entity.Character;
 import chronorunner.entity.FloatingText;
+import chronorunner.entity.LightningStrike;
 import chronorunner.entity.Particle;
 import chronorunner.entity.Player;
 import chronorunner.entity.Projectile;
 import chronorunner.entity.SwordVisualEffect;
 import chronorunner.entity.boss.Boss;
 import chronorunner.entity.character.CharacterFactory;
+import chronorunner.entity.character.DoMixi;
 import chronorunner.entity.enemy.Enemy;
 import chronorunner.gfx.PixelArt;
 import chronorunner.gfx.CollisionDebug;
@@ -397,7 +399,13 @@ public class PlayScreen extends Screen implements CombatWorld {
         Color color = info.fromPlayer ? new Color(255, 240, 130) : new Color(255, 130, 150);
         texts.add(new FloatingText(target.centerX() - 6, target.y + 2,
                 String.valueOf(dealt), color, 20, 0.7));
-        if (target instanceof Boss boss && info.fromPlayer && info.feedback != DamageInfo.Feedback.NONE) {
+        if (info.fromPlayer && info.feedback == DamageInfo.Feedback.DO_MIXI_JAR) {
+            jarImpact(target, info.knockbackX);
+        } else if (info.fromPlayer && info.feedback == DamageInfo.Feedback.DO_MIXI_SMOKE) {
+            smokeImpact(target, info.knockbackX);
+        } else if (info.fromPlayer && info.feedback == DamageInfo.Feedback.DO_MIXI_CALL) {
+            lightningImpact(target);
+        } else if (target instanceof Boss boss && info.fromPlayer && info.feedback != DamageInfo.Feedback.NONE) {
             swordImpact(boss, info.feedback);
         } else {
             for (int i = 0; i < 8; i++) {
@@ -408,6 +416,50 @@ public class PlayScreen extends Screen implements CombatWorld {
             shake(info.fromPlayer ? 0.15 : 0.22);
         }
         return new CombatHitResult(CombatHitResult.Kind.HIT, dealt);
+    }
+
+    private void lightningImpact(Character target) {
+        var torso = target.hurtbox().rect();
+        double cx = torso.x + torso.w / 2, cy = torso.y + torso.h * .29;
+        particles.add(SwordVisualEffect.graySmoke(cx, cy + 19, 182));
+        particles.add(new LightningStrike(cx, cy));
+        Color gold = new Color(255, 219, 103);
+        Color white = new Color(255, 249, 212);
+        for (int i = 0; i < 12; i++) {
+            double angle = i * Math.PI / 6;
+            particles.add(new Particle(cx, cy, Math.cos(angle) * 205, Math.sin(angle) * 142,
+                    3 + i % 3, i % 2 == 0 ? gold : white, .24 + .025 * (i % 4), .18));
+        }
+        shake(.68);
+    }
+
+    private void smokeImpact(Character target, double knockbackX) {
+        var torso = target.hurtbox().rect();
+        double cx = torso.x + torso.w * (.5 - .27 * Math.signum(knockbackX));
+        double cy = torso.y + torso.h * .66;
+        particles.add(SwordVisualEffect.graySmoke(cx, cy, 160));
+        for (int i = 0; i < 8; i++) {
+            double angle = i * Math.PI / 4;
+            Color tint = i % 2 == 0 ? new Color(220, 232, 238) : new Color(143, 157, 170);
+            particles.add(new Particle(cx, cy, Math.cos(angle) * 170, Math.sin(angle) * 130,
+                    3 + i % 3, tint, .24, .13));
+        }
+        shake(.55);
+    }
+
+    private void jarImpact(Character target, double knockbackX) {
+        var torso = target.hurtbox().rect();
+        double direction = Math.signum(knockbackX);
+        double cx = torso.x + torso.w * (.5 - .27 * direction);
+        double cy = torso.y + torso.h * .43;
+        particles.add(SwordVisualEffect.graySmoke(cx, cy, 172));
+        for (int i = 0; i < 16; i++) {
+            double angle = i * 2 * Math.PI / 16;
+            Color spark = i % 3 == 0 ? new Color(255, 241, 201) : new Color(246, 175, 84);
+            particles.add(new Particle(cx, cy, 215 * Math.cos(angle), 165 * Math.sin(angle) - 38,
+                    3 + i % 3, spark, .25 + (i % 4) * .03, .32));
+        }
+        shake(.60);
     }
 
     /** Only actual tagged HP loss reaches this path, including the killing hit. */
@@ -488,6 +540,12 @@ public class PlayScreen extends Screen implements CombatWorld {
 
         world.dispose();
 
+        for (Player player : players) {
+            if (player instanceof DoMixi mixi && mixi.isCallPhotoVisible()) {
+                PhoneCallOverlay.draw(g);
+                break;
+            }
+        }
         hud.render(g, level, players);
     }
 
@@ -700,6 +758,11 @@ public class PlayScreen extends Screen implements CombatWorld {
         if (isCombatActive() && enemies.size() < MAX_SUMMONED_ENEMIES) {
             enemies.add(enemy);
         }
+    }
+
+    @Override
+    public void strikeChapterBoss(DamageInfo damage) {
+        applyDamage(level.boss(), damage);
     }
 
     @Override

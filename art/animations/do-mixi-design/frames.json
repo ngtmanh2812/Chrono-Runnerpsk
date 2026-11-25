@@ -1,0 +1,900 @@
+{
+  "status": "design-only",
+  "authoring_facing": "right",
+  "frame_size": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    172
+  ],
+  "columns": 16,
+  "rows": 10,
+  "clips": {
+    "idle": {
+      "row": 0,
+      "frame_count": 6,
+      "source": "demo-source.png",
+      "preview_frame_ms": 135,
+      "loop": true,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            65,
+            11,
+            139,
+            176
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            277,
+            11,
+            352,
+            177
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            489,
+            10,
+            561,
+            176
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            700,
+            10,
+            772,
+            176
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            911,
+            18,
+            985,
+            176
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            0,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1123,
+            18,
+            1197,
+            176
+          ]
+        }
+      ]
+    },
+    "walk": {
+      "row": 1,
+      "frame_count": 8,
+      "source": "walk-strip.png",
+      "preview_frame_ms": 100,
+      "loop": true,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1152,
+            192,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1344,
+            192,
+            192,
+            192
+          ]
+        }
+      ]
+    },
+    "run": {
+      "row": 2,
+      "frame_count": 16,
+      "source": "run-strip.png",
+      "preview_frame_ms": 40,
+      "loop": true,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1152,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1344,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1536,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1728,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            1920,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            2112,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            2304,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            2496,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            2688,
+            384,
+            192,
+            192
+          ]
+        },
+        {
+          "atlas_rect": [
+            2880,
+            384,
+            192,
+            192
+          ]
+        }
+      ]
+    },
+    "jump_land": {
+      "row": 3,
+      "frame_count": 6,
+      "source": "demo-source.png",
+      "preview_frame_ms": 100,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            54,
+            422,
+            151,
+            543
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            275,
+            385,
+            362,
+            537
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            478,
+            364,
+            577,
+            512
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            684,
+            364,
+            788,
+            503
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            897,
+            388,
+            992,
+            537
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            576,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1111,
+            423,
+            1205,
+            543
+          ]
+        }
+      ]
+    },
+    "dash": {
+      "row": 4,
+      "frame_count": 5,
+      "source": "supplemental-source.png",
+      "preview_frame_ms": 60,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            768,
+            192,
+            192
+          ],
+          "source_bbox": [
+            98,
+            347,
+            240,
+            540
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            768,
+            192,
+            192
+          ],
+          "source_bbox": [
+            354,
+            328,
+            513,
+            536
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            768,
+            192,
+            192
+          ],
+          "source_bbox": [
+            606,
+            322,
+            800,
+            536
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            768,
+            192,
+            192
+          ],
+          "source_bbox": [
+            901,
+            330,
+            1059,
+            538
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            768,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1192,
+            322,
+            1320,
+            543
+          ]
+        }
+      ]
+    },
+    "light_1": {
+      "row": 5,
+      "frame_count": 6,
+      "source": "demo-source.png",
+      "preview_frame_ms": 75,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            56,
+            555,
+            144,
+            717
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            266,
+            557,
+            355,
+            717
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            468,
+            552,
+            587,
+            717
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            678,
+            553,
+            804,
+            716
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            895,
+            555,
+            990,
+            717
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            960,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1111,
+            558,
+            1198,
+            717
+          ]
+        }
+      ]
+    },
+    "heavy": {
+      "row": 6,
+      "frame_count": 5,
+      "source": "supplemental-source.png",
+      "preview_frame_ms": 95,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            1152,
+            192,
+            192
+          ],
+          "source_bbox": [
+            98,
+            588,
+            218,
+            815
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            1152,
+            192,
+            192
+          ],
+          "source_bbox": [
+            349,
+            588,
+            497,
+            815
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            1152,
+            192,
+            192
+          ],
+          "source_bbox": [
+            605,
+            588,
+            794,
+            815
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            1152,
+            192,
+            192
+          ],
+          "source_bbox": [
+            897,
+            593,
+            1041,
+            816
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            1152,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1184,
+            587,
+            1303,
+            815
+          ]
+        }
+      ]
+    },
+    "launcher": {
+      "row": 7,
+      "frame_count": 5,
+      "source": "supplemental-source.png",
+      "preview_frame_ms": 95,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            1344,
+            192,
+            192
+          ],
+          "source_bbox": [
+            98,
+            859,
+            222,
+            1093
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            1344,
+            192,
+            192
+          ],
+          "source_bbox": [
+            343,
+            895,
+            486,
+            1093
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            1344,
+            192,
+            192
+          ],
+          "source_bbox": [
+            602,
+            843,
+            751,
+            1093
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            1344,
+            192,
+            192
+          ],
+          "source_bbox": [
+            890,
+            865,
+            1044,
+            1094
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            1344,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1182,
+            863,
+            1308,
+            1094
+          ]
+        }
+      ]
+    },
+    "hurt": {
+      "row": 8,
+      "frame_count": 4,
+      "source": "demo-source.png",
+      "preview_frame_ms": 85,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            1536,
+            192,
+            192
+          ],
+          "source_bbox": [
+            56,
+            731,
+            158,
+            898
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            1536,
+            192,
+            192
+          ],
+          "source_bbox": [
+            259,
+            734,
+            368,
+            898
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            1536,
+            192,
+            192
+          ],
+          "source_bbox": [
+            475,
+            745,
+            585,
+            899
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            1536,
+            192,
+            192
+          ],
+          "source_bbox": [
+            693,
+            760,
+            786,
+            897
+          ]
+        }
+      ]
+    },
+    "death": {
+      "row": 9,
+      "frame_count": 6,
+      "source": "demo-source.png",
+      "preview_frame_ms": 125,
+      "loop": false,
+      "frames": [
+        {
+          "atlas_rect": [
+            0,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            56,
+            910,
+            167,
+            1076
+          ]
+        },
+        {
+          "atlas_rect": [
+            192,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            245,
+            915,
+            387,
+            1075
+          ]
+        },
+        {
+          "atlas_rect": [
+            384,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            445,
+            929,
+            595,
+            1071
+          ]
+        },
+        {
+          "atlas_rect": [
+            576,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            648,
+            966,
+            814,
+            1073
+          ]
+        },
+        {
+          "atlas_rect": [
+            768,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            853,
+            1001,
+            1032,
+            1070
+          ]
+        },
+        {
+          "atlas_rect": [
+            960,
+            1728,
+            192,
+            192
+          ],
+          "source_bbox": [
+            1066,
+            1010,
+            1247,
+            1073
+          ]
+        }
+      ]
+    }
+  }
+}

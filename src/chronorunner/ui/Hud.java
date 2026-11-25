@@ -2,7 +2,12 @@ package chronorunner.ui;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
+import javax.imageio.ImageIO;
 
 import chronorunner.core.Game;
 import chronorunner.entity.Player;
@@ -13,6 +18,67 @@ import chronorunner.world.Level;
 
 /** In-game overlay: health, guard, energy, per-slot skill cooldowns and controls. */
 public class Hud {
+
+    // Measured against the supplied 2172 × 724 PNG. The crop removes its transparent margin.
+    private static final int BOSS_ART_X = 80, BOSS_ART_Y = 158;
+    private static final int BOSS_TRACK_LEFT = 395 - BOSS_ART_X, BOSS_TRACK_RIGHT = 2005 - BOSS_ART_X;
+    private static final int BOSS_TRACK_TOP = 301 - BOSS_ART_Y, BOSS_TRACK_BOTTOM = 431 - BOSS_ART_Y;
+    private static final BufferedImage BOSS_BAR = loadBossBar();
+    private static final BufferedImage BOSS_BAR_EMPTY = emptyBossBar();
+
+    private static BufferedImage loadBossBar() {
+        File file = new File("assets/ui/boss_health_bar.png");
+        try {
+            BufferedImage image = ImageIO.read(file);
+            if (image == null || image.getWidth() != 2172 || image.getHeight() != 724) {
+                throw new IOException("Expected a 2172 x 724 boss health bar");
+            }
+            return image.getSubimage(BOSS_ART_X, BOSS_ART_Y, 2028, 377);
+        } catch (IOException e) {
+            throw new IllegalStateException("Cannot load " + file, e);
+        }
+    }
+
+    private static BufferedImage emptyBossBar() {
+        BufferedImage empty = new BufferedImage(BOSS_BAR.getWidth(), BOSS_BAR.getHeight(), BufferedImage.TYPE_INT_ARGB);
+        empty.setData(BOSS_BAR.getRaster());
+        for (int y = BOSS_TRACK_TOP; y < BOSS_TRACK_BOTTOM; y++) {
+            for (int x = BOSS_TRACK_LEFT; x < BOSS_TRACK_RIGHT; x++) {
+                int argb = BOSS_BAR.getRGB(x, y);
+                int brightness = Math.max((argb >>> 16) & 255, Math.max((argb >>> 8) & 255, argb & 255));
+                // Preserve the dark dividers and the bevel at the far right.
+                if (brightness <= 70) continue;
+                int shade = brightness / 12;
+                empty.setRGB(x, y, (argb & 0xff000000) | ((17 + shade) << 16) | ((12 + shade) << 8) | (22 + shade));
+            }
+        }
+        return empty;
+    }
+
+    private static void drawBossBar(Graphics2D g, Boss boss) {
+        int width = 640;
+        double scale = width / (double) BOSS_BAR.getWidth();
+        int height = (int) Math.round(BOSS_BAR.getHeight() * scale);
+        int x = (Game.WIDTH - width) / 2, y = 12;
+        double ratio = Math.max(0, Math.min(1, boss.healthRatio()));
+        int split = x + (int) Math.round((BOSS_TRACK_LEFT + ratio * (BOSS_TRACK_RIGHT - BOSS_TRACK_LEFT)) * scale);
+
+        Graphics2D bar = (Graphics2D) g.create();
+        bar.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+        if (ratio < 1) {
+            bar.clipRect(split, y, x + width - split, height);
+            bar.drawImage(BOSS_BAR_EMPTY, x, y, width, height, null);
+            bar.dispose();
+            bar = (Graphics2D) g.create();
+            bar.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
+            bar.clipRect(x, y, split - x, height);
+        }
+        bar.drawImage(BOSS_BAR, x, y, width, height, null);
+        bar.dispose();
+
+        UiKit.centered(g, "PHASE " + boss.getPhase(), UiKit.SMALL, UiKit.MUTED,
+                x + width - 48, y + height + 12);
+    }
 
     public void render(Graphics2D g, Level level, List<Player> players) {
         g.setFont(UiKit.SMALL);
@@ -25,20 +91,7 @@ public class Hud {
 
         Boss boss = level.boss();
         if (boss != null) {
-            int barW = 560;
-            int x = (Game.WIDTH - barW) / 2;
-            int y = 62;
-            UiKit.bar(g, x, y, barW, 22, boss.healthRatio(),
-                    new Color(220, 70, 90), new Color(24, 16, 26, 210));
-            g.setColor(new Color(255, 255, 255, 130));
-            for (double marker : new double[]{0.7, 0.4}) {
-                int mx = x + (int) (barW * marker);
-                g.drawLine(mx, y, mx, y + 22);
-            }
-            UiKit.centered(g, boss.getName(), UiKit.H2, Color.WHITE,
-                    Game.WIDTH / 2, y - 8);
-            UiKit.centered(g, "PHASE " + boss.getPhase(), UiKit.SMALL, UiKit.MUTED,
-                    x + barW - 44, y - 8);
+            drawBossBar(g, boss);
         }
 
         for (int i = 0; i < players.size(); i++) {
@@ -60,7 +113,7 @@ public class Hud {
                     guardColor, new Color(0, 0, 0, 160));
             UiKit.panel(g, px, py, 300, 136, new Color(8, 12, 26, 225), new Color(255, 255, 255, 45));
 
-            Art.player(p.characterId()).frame(0)
+            Art.playerPortrait(p.characterId())
                     .drawPreview(g, px + 24, py + 32, 38, 42);
 
             g.setFont(UiKit.BODY);

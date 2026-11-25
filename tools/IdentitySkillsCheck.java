@@ -72,7 +72,7 @@ public final class IdentitySkillsCheck {
     static void bankProof(int requiredVersion)throws Exception{
         for(String hero:new String[]{"phan_si_kien","ronaldo","do_mixi"}){
             Path bank=null; int version=0;
-            for(int candidate:new int[]{4,3,2}){
+            for(int candidate:new int[]{5,4,3,2}){
                 Path directory=Path.of("assets/players",hero,"v"+candidate);
                 if(Files.isRegularFile(directory.resolve("animation.properties"))){bank=directory;version=candidate;break;}
             }
@@ -107,7 +107,8 @@ public final class IdentitySkillsCheck {
             check(anim(p).equals(clips[slot]),"Wrong cast animation");
             check(f.shots().isEmpty()&&f.hits().isEmpty()&&boss.getHealth()==hp,"Cast damaged during startup");
             check(f.p(1-index).getEnergy()==100,"Cast energy leaked across player slots");
-            for(int n=0;n<48;n++){set(boss,"invuln",0);f.tick();if(chapter==1&&index==0&&n==(slot==0?8:slot==1?12:24))f.capture("hero-"+hero+"-skill-"+slot+"-active");}
+            int startup = ((Attack[]) get(p, "skills"))[slot].getData().startupFrames;
+            for(int n=0;n<Math.max(48,startup+20);n++){set(boss,"invuln",0);f.tick();if(chapter==1&&index==0&&n==startup)f.capture("hero-"+hero+"-skill-"+slot+"-active");}
             check(boss.getHealth()==hp-damage[slot],"Wrong/doubled skill damage: chapter="+chapter+" hero="+hero+" P="+index+" slot="+slot+" got="+(hp-boss.getHealth()));
             check(near(p.getEnergy(),100-costs[slot]),"Holding skill repeated the energy cost");
             check(((List<?>)get(f.screen,"enemies")).isEmpty(),"Skill created enemy minions");
@@ -126,7 +127,10 @@ public final class IdentitySkillsCheck {
         p.takeDamage(new DamageInfo(1,0,0,false));check(!p.isCharging(),"Hit failed to stop charge");double hitEnergy=p.getEnergy();f.ticks(40);check(near(p.getEnergy(),hitEnergy),"Charge resumed after hurt while held");key(f.input,KeyEvent.VK_L,false);
         f.press(KeyEvent.VK_W);key(f.input,KeyEvent.VK_L,true);f.tick();check(!p.isCharging()&&near(p.getEnergy(),hitEnergy),"Charge allowed while airborne");key(f.input,KeyEvent.VK_L,false);f.ticks(100);
         key(f.input,KeyEvent.VK_L,true);f.ticks(300);check(near(p.getEnergy(),100),"Charge exceeded/lost max100");key(f.input,KeyEvent.VK_L,false);f.tick();
-        Fixture p2=new Fixture(1,2,2);p2.press(KeyEvent.VK_NUMPAD4);p2.ticks(30);key(p2.input,KeyEvent.VK_ENTER,true);p2.ticks(5);check(!p2.p(1).isCharging()&&near(p2.p(1).getEnergy(),80),"Main Enter charged P2");key(p2.input,KeyEvent.VK_ENTER,false);key(p2.input,InputHandler.NUMPAD_ENTER,true);p2.ticks(30);check(near(p2.p(1).getEnergy(),89)&&near(p2.p(0).getEnergy(),100),"P2 Numpad Enter charge not independent");
+        Fixture p2=new Fixture(1,2,2);p2.press(KeyEvent.VK_NUMPAD4);
+        Attack p2Cast = ((Attack[]) get(p2.p(1), "skills"))[0];
+        p2.ticks(p2Cast.getData().totalFrames());
+        key(p2.input,KeyEvent.VK_ENTER,true);p2.ticks(5);check(!p2.p(1).isCharging()&&near(p2.p(1).getEnergy(),80),"Main Enter charged P2");key(p2.input,KeyEvent.VK_ENTER,false);key(p2.input,InputHandler.NUMPAD_ENTER,true);p2.ticks(30);check(near(p2.p(1).getEnergy(),89)&&near(p2.p(0).getEnergy(),100),"P2 Numpad Enter charge not independent");
         System.out.println("Energy affordability, independent cooldowns, charge18/s, max100 and movement/hurt/air interruption PASS");
     }
     static void controlsAndInterruptions()throws Exception{
@@ -148,7 +152,7 @@ public final class IdentitySkillsCheck {
         check(guarded.p(0).getHealth()==guarded.p(0).getMaxHealth()&&!guarded.p(0).isBlocking(),"Guard failed during committed cast");
         guarded.ticks(8);check(guarded.shots().size()==1,"Absorbed hit interrupted guarded cast");
         Fixture startup=new Fixture(1,0,1);startup.press(KeyEvent.VK_I);startup.p(0).takeDamage(new DamageInfo(1,0,0,false));startup.ticks(30);check(startup.hits().isEmpty(),"Interrupted startup emitted old skill hitbox");
-        Fixture active=new Fixture(1,2,1);active.press(KeyEvent.VK_I);active.ticks(12);check(active.hits().size()==1&&active.hits().get(0).isAlive(),"I active not created");active.p(0).takeDamage(new DamageInfo(1,0,0,false));check(!active.hits().get(0).isAlive(),"Interrupted active hitbox survived");
+        Fixture active=new Fixture(1,0,1);active.press(KeyEvent.VK_I);active.ticks(12);check(active.hits().size()==1&&active.hits().get(0).isAlive(),"I active not created");active.p(0).takeDamage(new DamageInfo(1,0,0,false));check(!active.hits().get(0).isAlive(),"Interrupted active hitbox survived");
         Fixture basic=new Fixture(1,0,1);basic.press(KeyEvent.VK_J);basic.ticks(9);check(basic.hits().size()==1,"Normal active missing");basic.p(0).takeDamage(new DamageInfo(1,0,0,false));check(!basic.hits().get(0).isAlive(),"Old basic hitbox survived hurt");
         Fixture simultaneous=new Fixture(1,0,1);simultaneous.press(KeyEvent.VK_J,KeyEvent.VK_U,KeyEvent.VK_I,KeyEvent.VK_O);check(near(simultaneous.p(0).getEnergy(),100),"Simultaneous skill escaped committed normal");
         System.out.println("1P/2P bindings, Heavy/Launcher, one-hit guard, committed actions and interruption cleanup PASS");

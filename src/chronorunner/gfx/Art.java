@@ -465,6 +465,7 @@ public final class Art {
     // ----- Cache ------------------------------------------------------------
 
     private static final Map<String, Map<String, SpriteSet>> PLAYER_ANIMS = new HashMap<>();
+    private static final Map<String, PixelSprite> PLAYER_PORTRAITS = new HashMap<>();
     private static final Map<String, SpriteSet> BOSSES = new HashMap<>();
     private static final Map<String, Map<String, SpriteSet>> BOSS_ANIMS = new HashMap<>();
     private static final Map<String, SpriteSet> ENEMIES = new HashMap<>();
@@ -472,6 +473,15 @@ public final class Art {
     /** Idle sprites for a playable character, keyed by {@code characterId()}. */
     public static SpriteSet player(String id) {
         return playerAnim(id, "idle");
+    }
+
+    /** Small HUD portrait from the same bank as the full-body sprite. */
+    public static PixelSprite playerPortrait(String id) {
+        return PLAYER_PORTRAITS.computeIfAbsent(id, key -> {
+            File dir = new File(new File(ASSET_ROOT, "players"), slug(key));
+            PixelSprite portrait = loadSprite(new File(animationDirectory(dir), "portrait.png"));
+            return portrait == null ? player(key).frame(0) : portrait;
+        });
     }
 
     /**

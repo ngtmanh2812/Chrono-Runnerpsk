@@ -1,0 +1,1593 @@
+{
+  "actor": "do_mixi",
+  "version": 5,
+  "frame_size": [
+    192,
+    192
+  ],
+  "pivot": [
+    96,
+    172
+  ],
+  "source_atlas": "art/animations/do-mixi-design/do-mixi-sprites-v4.png",
+  "animations": {
+    "idle": {
+      "row": 0,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "idle_1.png",
+          "atlas_rect": [
+            0,
+            0,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        },
+        {
+          "file": "idle_2.png",
+          "atlas_rect": [
+            192,
+            0,
+            192,
+            192
+          ],
+          "sha256": "77a88a7a403fbca33d9bfd2ce2e593b16ca119a0ee11a853c233726d27d159cb"
+        },
+        {
+          "file": "idle_3.png",
+          "atlas_rect": [
+            384,
+            0,
+            192,
+            192
+          ],
+          "sha256": "722e4261f53631aebac4e8c717f73168cba07ec9ba01d75a4763192f34eddcfc"
+        },
+        {
+          "file": "idle_4.png",
+          "atlas_rect": [
+            576,
+            0,
+            192,
+            192
+          ],
+          "sha256": "267710fa509dd9b2a2f54289ad818eced67226ea571f57d267bd4329c497b23f"
+        },
+        {
+          "file": "idle_5.png",
+          "atlas_rect": [
+            768,
+            0,
+            192,
+            192
+          ],
+          "sha256": "17de6007166061a82c929d7ac921612753ed8eeed73fdced92152e4b174a4532"
+        },
+        {
+          "file": "idle_6.png",
+          "atlas_rect": [
+            960,
+            0,
+            192,
+            192
+          ],
+          "sha256": "3ff10118ca1c57de4cc85cb35f3b9227beceed1f5f209a4593ec43b60b086e9d"
+        }
+      ]
+    },
+    "run": {
+      "row": 1,
+      "frame_count": 16,
+      "source": "design",
+      "frames": [
+        {
+          "file": "run_1.png",
+          "atlas_rect": [
+            0,
+            192,
+            192,
+            192
+          ],
+          "sha256": "3ec71ea4f8c6f306e657266879a287a2110c8cff61bcb56d7c61bd0cc022c7c0"
+        },
+        {
+          "file": "run_2.png",
+          "atlas_rect": [
+            192,
+            192,
+            192,
+            192
+          ],
+          "sha256": "0f6ed50ebe8d56769ea981e779fc7e116e855c47229f9d981e97111de0549ed6"
+        },
+        {
+          "file": "run_3.png",
+          "atlas_rect": [
+            384,
+            192,
+            192,
+            192
+          ],
+          "sha256": "1a6262c04f85578849e52164d45256b1334d2c52f6400f662e869fea6c4a788d"
+        },
+        {
+          "file": "run_4.png",
+          "atlas_rect": [
+            576,
+            192,
+            192,
+            192
+          ],
+          "sha256": "771b6938d65faa8267090154e24f5d2114392ba3aac8ae4e307568d2d86154c6"
+        },
+        {
+          "file": "run_5.png",
+          "atlas_rect": [
+            768,
+            192,
+            192,
+            192
+          ],
+          "sha256": "1ae341ab752d8c5fb6f84198cc3478cd504ed4349424baca1329875a61cfb60b"
+        },
+        {
+          "file": "run_6.png",
+          "atlas_rect": [
+            960,
+            192,
+            192,
+            192
+          ],
+          "sha256": "8d8a45c311fa5b96a83460f3da60e52632b34aa46958f62df1d5a3ba8d3f34fd"
+        },
+        {
+          "file": "run_7.png",
+          "atlas_rect": [
+            1152,
+            192,
+            192,
+            192
+          ],
+          "sha256": "266db34bdf717e2937fa73988ec9254e158a13a7e1393c5005f723ea42a23760"
+        },
+        {
+          "file": "run_8.png",
+          "atlas_rect": [
+            1344,
+            192,
+            192,
+            192
+          ],
+          "sha256": "0b7502a0a93387388643e2f48f7703c79b2c471a2f9e2fd2943199abecd98b3c"
+        },
+        {
+          "file": "run_9.png",
+          "atlas_rect": [
+            1536,
+            192,
+            192,
+            192
+          ],
+          "sha256": "6918d2cef78af42f18afc012454aff4fd4dea678e299e20147c8dd216d839844"
+        },
+        {
+          "file": "run_10.png",
+          "atlas_rect": [
+            1728,
+            192,
+            192,
+            192
+          ],
+          "sha256": "8fd9cbcfa33f5a8c9dd1f8dc6ef35a0974cbf5a1601edbd651d1ed3e18a074e2"
+        },
+        {
+          "file": "run_11.png",
+          "atlas_rect": [
+            1920,
+            192,
+            192,
+            192
+          ],
+          "sha256": "4bfc5b0a8fcf56d33e2acae6d012fe7ee7aca0b1992b6706c1b7791741c2f466"
+        },
+        {
+          "file": "run_12.png",
+          "atlas_rect": [
+            2112,
+            192,
+            192,
+            192
+          ],
+          "sha256": "cdeb8f3632cb656af246bb6ae73569af9ff75f6add2c3e86875e9915204062aa"
+        },
+        {
+          "file": "run_13.png",
+          "atlas_rect": [
+            2304,
+            192,
+            192,
+            192
+          ],
+          "sha256": "51cd29ee4f6c932ad10675e7efaf08f8f667b7c30d06bc31db311371c281b8d5"
+        },
+        {
+          "file": "run_14.png",
+          "atlas_rect": [
+            2496,
+            192,
+            192,
+            192
+          ],
+          "sha256": "a378f4e6bc472a148f308d5d0ac49a0517967ee7847868e2bc76b7f1783ed08f"
+        },
+        {
+          "file": "run_15.png",
+          "atlas_rect": [
+            2688,
+            192,
+            192,
+            192
+          ],
+          "sha256": "e4de400e9ee1fdf8c757bce8b4202cd7dcc2e5c0e8167a10a82e63f65d909b42"
+        },
+        {
+          "file": "run_16.png",
+          "atlas_rect": [
+            2880,
+            192,
+            192,
+            192
+          ],
+          "sha256": "5123eafe3cfef72c4acf1e85ea4f4a64320b568f9bef2fc292d1fd174c115948"
+        }
+      ]
+    },
+    "jump": {
+      "row": 2,
+      "frame_count": 3,
+      "source": "design",
+      "frames": [
+        {
+          "file": "jump_1.png",
+          "atlas_rect": [
+            0,
+            384,
+            192,
+            192
+          ],
+          "sha256": "4d6d962464f27e28187e46bd302dbc5cd7aa66afd27ab1c48b5347b916340fa4"
+        },
+        {
+          "file": "jump_2.png",
+          "atlas_rect": [
+            192,
+            384,
+            192,
+            192
+          ],
+          "sha256": "92fb9bf7cc24b93bc2281eeb5cf058d4d9c734ebf4496377080323123e314463"
+        },
+        {
+          "file": "jump_3.png",
+          "atlas_rect": [
+            384,
+            384,
+            192,
+            192
+          ],
+          "sha256": "1507c4160d87a679309d6df518b1d4b186efa23a6650c82cdd26a13fc24648cf"
+        }
+      ]
+    },
+    "attack": {
+      "row": 3,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "attack_1.png",
+          "atlas_rect": [
+            0,
+            576,
+            192,
+            192
+          ],
+          "sha256": "7fefb8bf412d9dfbd16d1f7da1d2571164f0c3ea4c1bedd8aba53d2a9fefd346"
+        },
+        {
+          "file": "attack_2.png",
+          "atlas_rect": [
+            192,
+            576,
+            192,
+            192
+          ],
+          "sha256": "cbcbb3d89dff315aa8bd9d14791eef548df20137cce75121e409f824f421563e"
+        },
+        {
+          "file": "attack_3.png",
+          "atlas_rect": [
+            384,
+            576,
+            192,
+            192
+          ],
+          "sha256": "19ef3f1d919094e61829d9e1c418b940ca51313e9f71a365e1131665c48eeeaa"
+        },
+        {
+          "file": "attack_4.png",
+          "atlas_rect": [
+            576,
+            576,
+            192,
+            192
+          ],
+          "sha256": "e8b7355975aadf80f2b430060d6ed3421642c01cffba7a74fcc91759bd28328b"
+        },
+        {
+          "file": "attack_5.png",
+          "atlas_rect": [
+            768,
+            576,
+            192,
+            192
+          ],
+          "sha256": "7d07119e40219abf735318f062f028fc778b0c19cc83ee4a9634158095ad775e"
+        },
+        {
+          "file": "attack_6.png",
+          "atlas_rect": [
+            960,
+            576,
+            192,
+            192
+          ],
+          "sha256": "d069fedeaa792be8462a14e4d18ed830c2166c171d72b0bd7398b76ab66581b4"
+        }
+      ]
+    },
+    "hurt": {
+      "row": 4,
+      "frame_count": 4,
+      "source": "design",
+      "frames": [
+        {
+          "file": "hurt_1.png",
+          "atlas_rect": [
+            0,
+            768,
+            192,
+            192
+          ],
+          "sha256": "d64f9f108633b36bc777571ca3eaa76689de7d03b073d7226e8627cef35e3683"
+        },
+        {
+          "file": "hurt_2.png",
+          "atlas_rect": [
+            192,
+            768,
+            192,
+            192
+          ],
+          "sha256": "0b9cae7309dcfdce40c3cc3ae4611f94da346378ff06f1cdae92940f83d1a27f"
+        },
+        {
+          "file": "hurt_3.png",
+          "atlas_rect": [
+            384,
+            768,
+            192,
+            192
+          ],
+          "sha256": "daa4cd171760c12c61b879e0a996cbd8cde200ef7056c05b34db5b8286ed5503"
+        },
+        {
+          "file": "hurt_4.png",
+          "atlas_rect": [
+            576,
+            768,
+            192,
+            192
+          ],
+          "sha256": "db3f182cd140eb2d9d1b0b9d90040b8fee85c7ce6707dda390a52f0168eb07ff"
+        }
+      ]
+    },
+    "death": {
+      "row": 5,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "death_1.png",
+          "atlas_rect": [
+            0,
+            960,
+            192,
+            192
+          ],
+          "sha256": "8c8bef7fc2560441649e8bbc19dcbe5ef537276581a2c0d7c65e6f63e1efe1a5"
+        },
+        {
+          "file": "death_2.png",
+          "atlas_rect": [
+            192,
+            960,
+            192,
+            192
+          ],
+          "sha256": "98d01817c33cc3cb4ab0710a6a98a0a4ecdfb0270a3a05f8e2ce699f0b551012"
+        },
+        {
+          "file": "death_3.png",
+          "atlas_rect": [
+            384,
+            960,
+            192,
+            192
+          ],
+          "sha256": "b75a52ef9f7bccdcf3c68f7d0111ef4a73dbe0d7282c70c5c098f676dfdeb726"
+        },
+        {
+          "file": "death_4.png",
+          "atlas_rect": [
+            576,
+            960,
+            192,
+            192
+          ],
+          "sha256": "db4e5ae69e13a002d7dd74c09b6d7c443a5c2feaae7f49607d6159eca4eab49c"
+        },
+        {
+          "file": "death_5.png",
+          "atlas_rect": [
+            768,
+            960,
+            192,
+            192
+          ],
+          "sha256": "a1e20161d281dc5846c0877ad7a2e86a9a71d71ddac7ac77ad8561b832e66608"
+        },
+        {
+          "file": "death_6.png",
+          "atlas_rect": [
+            960,
+            960,
+            192,
+            192
+          ],
+          "sha256": "62a1ad9a47705b18ebd280b5687cef81d28333513840672789f4b9864817e788"
+        }
+      ]
+    },
+    "walk": {
+      "row": 6,
+      "frame_count": 8,
+      "source": "design",
+      "frames": [
+        {
+          "file": "walk_1.png",
+          "atlas_rect": [
+            0,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "5627132b4a162857f4f46a5b86b1a396e733896ebd3f671de22298fd0401c405"
+        },
+        {
+          "file": "walk_2.png",
+          "atlas_rect": [
+            192,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "65b5fad062a9bcb042eb197599c1d8a50522054a7baa38cb4be77b5f4454f487"
+        },
+        {
+          "file": "walk_3.png",
+          "atlas_rect": [
+            384,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "461a9f494badba0f0393fe8e4a40ad74fe369608fff2b40d909d60130c67b62e"
+        },
+        {
+          "file": "walk_4.png",
+          "atlas_rect": [
+            576,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "9cb77bd8e5e75aed373d596338f0210bfda5a5d4d0bc2963551bcbb8d3542888"
+        },
+        {
+          "file": "walk_5.png",
+          "atlas_rect": [
+            768,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "fe715681efa7788e96f96aa190368f80f92ca3886306818a13f33e3a219ebd45"
+        },
+        {
+          "file": "walk_6.png",
+          "atlas_rect": [
+            960,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "c6063ba788ea8efcc9f4ac72106a0f2597db9ed321d7e0a7e00e0d4850b5add2"
+        },
+        {
+          "file": "walk_7.png",
+          "atlas_rect": [
+            1152,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "d1dda2320a4a15d4b5ead9f7ec20f08e61f9aa43c4128052e2012026da4d7011"
+        },
+        {
+          "file": "walk_8.png",
+          "atlas_rect": [
+            1344,
+            1152,
+            192,
+            192
+          ],
+          "sha256": "113bd209edd3b59b64b66f464837f3c3365d3e11fb678217ce1e28ed93a4945a"
+        }
+      ]
+    },
+    "special": {
+      "row": 7,
+      "frame_count": 7,
+      "source": "design",
+      "frames": [
+        {
+          "file": "special_1.png",
+          "atlas_rect": [
+            0,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        },
+        {
+          "file": "special_2.png",
+          "atlas_rect": [
+            192,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "special_3.png",
+          "atlas_rect": [
+            384,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "7fce7cea54515e665b749e7161fe641877ed0c8aff95565066692032bf1a856d"
+        },
+        {
+          "file": "special_4.png",
+          "atlas_rect": [
+            576,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "52a7ad46356aff3519f574594a8fd36ed64ba10345ec7a03af7d2177c80ed2e4"
+        },
+        {
+          "file": "special_5.png",
+          "atlas_rect": [
+            768,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "e0d73cc0011c87be06f05cd6d38ffb8601719ef51c10781e11c1b16bb2bad350"
+        },
+        {
+          "file": "special_6.png",
+          "atlas_rect": [
+            960,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "bd728a0732da802351eca24258263431a6a17a8c430a9c820d585d9b1d39c5f4"
+        },
+        {
+          "file": "special_7.png",
+          "atlas_rect": [
+            1152,
+            1344,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        }
+      ]
+    },
+    "block": {
+      "row": 8,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "block_1.png",
+          "atlas_rect": [
+            0,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        },
+        {
+          "file": "block_2.png",
+          "atlas_rect": [
+            192,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "47730d3b889923ee08f936f3177d7966730cde867f10d9f3776cf5181cb6a69f"
+        },
+        {
+          "file": "block_3.png",
+          "atlas_rect": [
+            384,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "7fefb8bf412d9dfbd16d1f7da1d2571164f0c3ea4c1bedd8aba53d2a9fefd346"
+        },
+        {
+          "file": "block_4.png",
+          "atlas_rect": [
+            576,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "block_5.png",
+          "atlas_rect": [
+            768,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "7d07119e40219abf735318f062f028fc778b0c19cc83ee4a9634158095ad775e"
+        },
+        {
+          "file": "block_6.png",
+          "atlas_rect": [
+            960,
+            1536,
+            192,
+            192
+          ],
+          "sha256": "fd0942ee185f1bb4cf5d902ea3f93ef32234e34f451193dbda579923f1a873c6"
+        }
+      ]
+    },
+    "dash": {
+      "row": 9,
+      "frame_count": 5,
+      "source": "design",
+      "frames": [
+        {
+          "file": "dash_1.png",
+          "atlas_rect": [
+            0,
+            1728,
+            192,
+            192
+          ],
+          "sha256": "36dc61e8cf871c843436c1ae931e2a1f0c2507fe5f57222186cc7f186ecc7fc0"
+        },
+        {
+          "file": "dash_2.png",
+          "atlas_rect": [
+            192,
+            1728,
+            192,
+            192
+          ],
+          "sha256": "0f543f28a0b80db219094da82510b4c6ebbb07d392cdb6f07000bb6ff85f4311"
+        },
+        {
+          "file": "dash_3.png",
+          "atlas_rect": [
+            384,
+            1728,
+            192,
+            192
+          ],
+          "sha256": "15929edf9e89cf5a80c8a53f3d0c0bcc4b468fd1572f9cd728e485877473a5cd"
+        },
+        {
+          "file": "dash_4.png",
+          "atlas_rect": [
+            576,
+            1728,
+            192,
+            192
+          ],
+          "sha256": "8e616fc0b78c2bff4a43a6b80eb7c94c78ea3d7cf28e8f3c040046156bf80dd3"
+        },
+        {
+          "file": "dash_5.png",
+          "atlas_rect": [
+            768,
+            1728,
+            192,
+            192
+          ],
+          "sha256": "20408cd1c3678e7b621cff907a095eb77986e2f3f103aad6906d7234a07e6d28"
+        }
+      ]
+    },
+    "fall": {
+      "row": 10,
+      "frame_count": 2,
+      "source": "design",
+      "frames": [
+        {
+          "file": "fall_1.png",
+          "atlas_rect": [
+            0,
+            1920,
+            192,
+            192
+          ],
+          "sha256": "1507c4160d87a679309d6df518b1d4b186efa23a6650c82cdd26a13fc24648cf"
+        },
+        {
+          "file": "fall_2.png",
+          "atlas_rect": [
+            192,
+            1920,
+            192,
+            192
+          ],
+          "sha256": "ce5c532a1eb7e0083fe1f9a43bc79123e062d0c12816ff61901cf1b1e94a27d7"
+        }
+      ]
+    },
+    "land": {
+      "row": 11,
+      "frame_count": 2,
+      "source": "design",
+      "frames": [
+        {
+          "file": "land_1.png",
+          "atlas_rect": [
+            0,
+            2112,
+            192,
+            192
+          ],
+          "sha256": "038247a4b984d672cea41a0426ca4a1b835c4e45772337fb01ab42ed7e1f0433"
+        },
+        {
+          "file": "land_2.png",
+          "atlas_rect": [
+            192,
+            2112,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        }
+      ]
+    },
+    "light_1": {
+      "row": 12,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "light_1_1.png",
+          "atlas_rect": [
+            0,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "7fefb8bf412d9dfbd16d1f7da1d2571164f0c3ea4c1bedd8aba53d2a9fefd346"
+        },
+        {
+          "file": "light_1_2.png",
+          "atlas_rect": [
+            192,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "cbcbb3d89dff315aa8bd9d14791eef548df20137cce75121e409f824f421563e"
+        },
+        {
+          "file": "light_1_3.png",
+          "atlas_rect": [
+            384,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "19ef3f1d919094e61829d9e1c418b940ca51313e9f71a365e1131665c48eeeaa"
+        },
+        {
+          "file": "light_1_4.png",
+          "atlas_rect": [
+            576,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "e8b7355975aadf80f2b430060d6ed3421642c01cffba7a74fcc91759bd28328b"
+        },
+        {
+          "file": "light_1_5.png",
+          "atlas_rect": [
+            768,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "7d07119e40219abf735318f062f028fc778b0c19cc83ee4a9634158095ad775e"
+        },
+        {
+          "file": "light_1_6.png",
+          "atlas_rect": [
+            960,
+            2304,
+            192,
+            192
+          ],
+          "sha256": "d069fedeaa792be8462a14e4d18ed830c2166c171d72b0bd7398b76ab66581b4"
+        }
+      ]
+    },
+    "light_2": {
+      "row": 13,
+      "frame_count": 5,
+      "source": "design",
+      "frames": [
+        {
+          "file": "light_2_1.png",
+          "atlas_rect": [
+            0,
+            2496,
+            192,
+            192
+          ],
+          "sha256": "47730d3b889923ee08f936f3177d7966730cde867f10d9f3776cf5181cb6a69f"
+        },
+        {
+          "file": "light_2_2.png",
+          "atlas_rect": [
+            192,
+            2496,
+            192,
+            192
+          ],
+          "sha256": "f8c2e9ed862c8c3d448b9bbac1b516bd38d48b4f91324cca49e4f6c9bb2843d9"
+        },
+        {
+          "file": "light_2_3.png",
+          "atlas_rect": [
+            384,
+            2496,
+            192,
+            192
+          ],
+          "sha256": "e0d73cc0011c87be06f05cd6d38ffb8601719ef51c10781e11c1b16bb2bad350"
+        },
+        {
+          "file": "light_2_4.png",
+          "atlas_rect": [
+            576,
+            2496,
+            192,
+            192
+          ],
+          "sha256": "bd728a0732da802351eca24258263431a6a17a8c430a9c820d585d9b1d39c5f4"
+        },
+        {
+          "file": "light_2_5.png",
+          "atlas_rect": [
+            768,
+            2496,
+            192,
+            192
+          ],
+          "sha256": "fd0942ee185f1bb4cf5d902ea3f93ef32234e34f451193dbda579923f1a873c6"
+        }
+      ]
+    },
+    "light_3": {
+      "row": 14,
+      "frame_count": 5,
+      "source": "design",
+      "frames": [
+        {
+          "file": "light_3_1.png",
+          "atlas_rect": [
+            0,
+            2688,
+            192,
+            192
+          ],
+          "sha256": "0128d79d98a57bcf34639418a30c18ae9ae84fc3c464990e354a9fec384829e7"
+        },
+        {
+          "file": "light_3_2.png",
+          "atlas_rect": [
+            192,
+            2688,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "light_3_3.png",
+          "atlas_rect": [
+            384,
+            2688,
+            192,
+            192
+          ],
+          "sha256": "7fce7cea54515e665b749e7161fe641877ed0c8aff95565066692032bf1a856d"
+        },
+        {
+          "file": "light_3_4.png",
+          "atlas_rect": [
+            576,
+            2688,
+            192,
+            192
+          ],
+          "sha256": "52a7ad46356aff3519f574594a8fd36ed64ba10345ec7a03af7d2177c80ed2e4"
+        },
+        {
+          "file": "light_3_5.png",
+          "atlas_rect": [
+            768,
+            2688,
+            192,
+            192
+          ],
+          "sha256": "e5d7ded15a8e95c2dea5b72c031dfda1173352a0d22ad729bd2877d50f55745a"
+        }
+      ]
+    },
+    "heavy": {
+      "row": 15,
+      "frame_count": 5,
+      "source": "design",
+      "frames": [
+        {
+          "file": "heavy_1.png",
+          "atlas_rect": [
+            0,
+            2880,
+            192,
+            192
+          ],
+          "sha256": "47730d3b889923ee08f936f3177d7966730cde867f10d9f3776cf5181cb6a69f"
+        },
+        {
+          "file": "heavy_2.png",
+          "atlas_rect": [
+            192,
+            2880,
+            192,
+            192
+          ],
+          "sha256": "f8c2e9ed862c8c3d448b9bbac1b516bd38d48b4f91324cca49e4f6c9bb2843d9"
+        },
+        {
+          "file": "heavy_3.png",
+          "atlas_rect": [
+            384,
+            2880,
+            192,
+            192
+          ],
+          "sha256": "e0d73cc0011c87be06f05cd6d38ffb8601719ef51c10781e11c1b16bb2bad350"
+        },
+        {
+          "file": "heavy_4.png",
+          "atlas_rect": [
+            576,
+            2880,
+            192,
+            192
+          ],
+          "sha256": "bd728a0732da802351eca24258263431a6a17a8c430a9c820d585d9b1d39c5f4"
+        },
+        {
+          "file": "heavy_5.png",
+          "atlas_rect": [
+            768,
+            2880,
+            192,
+            192
+          ],
+          "sha256": "fd0942ee185f1bb4cf5d902ea3f93ef32234e34f451193dbda579923f1a873c6"
+        }
+      ]
+    },
+    "launcher": {
+      "row": 16,
+      "frame_count": 5,
+      "source": "design",
+      "frames": [
+        {
+          "file": "launcher_1.png",
+          "atlas_rect": [
+            0,
+            3072,
+            192,
+            192
+          ],
+          "sha256": "0128d79d98a57bcf34639418a30c18ae9ae84fc3c464990e354a9fec384829e7"
+        },
+        {
+          "file": "launcher_2.png",
+          "atlas_rect": [
+            192,
+            3072,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "launcher_3.png",
+          "atlas_rect": [
+            384,
+            3072,
+            192,
+            192
+          ],
+          "sha256": "7fce7cea54515e665b749e7161fe641877ed0c8aff95565066692032bf1a856d"
+        },
+        {
+          "file": "launcher_4.png",
+          "atlas_rect": [
+            576,
+            3072,
+            192,
+            192
+          ],
+          "sha256": "52a7ad46356aff3519f574594a8fd36ed64ba10345ec7a03af7d2177c80ed2e4"
+        },
+        {
+          "file": "launcher_5.png",
+          "atlas_rect": [
+            768,
+            3072,
+            192,
+            192
+          ],
+          "sha256": "e5d7ded15a8e95c2dea5b72c031dfda1173352a0d22ad729bd2877d50f55745a"
+        }
+      ]
+    },
+    "air_attack": {
+      "row": 17,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "air_attack_1.png",
+          "atlas_rect": [
+            0,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "4d6d962464f27e28187e46bd302dbc5cd7aa66afd27ab1c48b5347b916340fa4"
+        },
+        {
+          "file": "air_attack_2.png",
+          "atlas_rect": [
+            192,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "92fb9bf7cc24b93bc2281eeb5cf058d4d9c734ebf4496377080323123e314463"
+        },
+        {
+          "file": "air_attack_3.png",
+          "atlas_rect": [
+            384,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "19ef3f1d919094e61829d9e1c418b940ca51313e9f71a365e1131665c48eeeaa"
+        },
+        {
+          "file": "air_attack_4.png",
+          "atlas_rect": [
+            576,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "e8b7355975aadf80f2b430060d6ed3421642c01cffba7a74fcc91759bd28328b"
+        },
+        {
+          "file": "air_attack_5.png",
+          "atlas_rect": [
+            768,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "ce5c532a1eb7e0083fe1f9a43bc79123e062d0c12816ff61901cf1b1e94a27d7"
+        },
+        {
+          "file": "air_attack_6.png",
+          "atlas_rect": [
+            960,
+            3264,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        }
+      ]
+    },
+    "charge": {
+      "row": 18,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "charge_1.png",
+          "atlas_rect": [
+            0,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "47730d3b889923ee08f936f3177d7966730cde867f10d9f3776cf5181cb6a69f"
+        },
+        {
+          "file": "charge_2.png",
+          "atlas_rect": [
+            192,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "f8c2e9ed862c8c3d448b9bbac1b516bd38d48b4f91324cca49e4f6c9bb2843d9"
+        },
+        {
+          "file": "charge_3.png",
+          "atlas_rect": [
+            384,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "charge_4.png",
+          "atlas_rect": [
+            576,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "f8c2e9ed862c8c3d448b9bbac1b516bd38d48b4f91324cca49e4f6c9bb2843d9"
+        },
+        {
+          "file": "charge_5.png",
+          "atlas_rect": [
+            768,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "0128d79d98a57bcf34639418a30c18ae9ae84fc3c464990e354a9fec384829e7"
+        },
+        {
+          "file": "charge_6.png",
+          "atlas_rect": [
+            960,
+            3456,
+            192,
+            192
+          ],
+          "sha256": "fd0942ee185f1bb4cf5d902ea3f93ef32234e34f451193dbda579923f1a873c6"
+        }
+      ]
+    },
+    "skill_u": {
+      "row": 19,
+      "frame_count": 7,
+      "source": "design",
+      "frames": [
+        {
+          "file": "skill_u_1.png",
+          "atlas_rect": [
+            0,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        },
+        {
+          "file": "skill_u_2.png",
+          "atlas_rect": [
+            192,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "d466c930a0b6ba0b2d47cb6c8f632d8d4a19ae0c229844e34c9aaf212f7e5d96"
+        },
+        {
+          "file": "skill_u_3.png",
+          "atlas_rect": [
+            384,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "7fce7cea54515e665b749e7161fe641877ed0c8aff95565066692032bf1a856d"
+        },
+        {
+          "file": "skill_u_4.png",
+          "atlas_rect": [
+            576,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "52a7ad46356aff3519f574594a8fd36ed64ba10345ec7a03af7d2177c80ed2e4"
+        },
+        {
+          "file": "skill_u_5.png",
+          "atlas_rect": [
+            768,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "e0d73cc0011c87be06f05cd6d38ffb8601719ef51c10781e11c1b16bb2bad350"
+        },
+        {
+          "file": "skill_u_6.png",
+          "atlas_rect": [
+            960,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "bd728a0732da802351eca24258263431a6a17a8c430a9c820d585d9b1d39c5f4"
+        },
+        {
+          "file": "skill_u_7.png",
+          "atlas_rect": [
+            1152,
+            3648,
+            192,
+            192
+          ],
+          "sha256": "e504fc546574f1dc4666116a8e4495ee6ca2f6ee30f9dc91d1d523ef10e5afc1"
+        }
+      ]
+    },
+    "skill_i": {
+      "row": 20,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "skill_i_1.png",
+          "atlas_rect": [
+            0,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "d898c6233a3a0d4dd6d12ee94623507a0be113364f1e5d4f950a84f7e5e9d77b"
+        },
+        {
+          "file": "skill_i_2.png",
+          "atlas_rect": [
+            192,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "6b232bbe57279c4c592c118101e55c92a8727bb345f3dd4c049f835c8a13feff"
+        },
+        {
+          "file": "skill_i_3.png",
+          "atlas_rect": [
+            384,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "074e23b1988dc1a9d418d57e192f48d56b849ccf4fef0e479d5481a32691dcce"
+        },
+        {
+          "file": "skill_i_4.png",
+          "atlas_rect": [
+            576,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "e3af7363ce45cba7f5ed56fff01f5c2ed6cbdca3765ab0239a77ac15c6663e62"
+        },
+        {
+          "file": "skill_i_5.png",
+          "atlas_rect": [
+            768,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "7b72edd58b60d15637b83273450ca5a4949126dcd60bc8b31caf986e586ace48"
+        },
+        {
+          "file": "skill_i_6.png",
+          "atlas_rect": [
+            960,
+            3840,
+            192,
+            192
+          ],
+          "sha256": "64f06936b407de9ab263da8741fe9358befef53641d1d64361a5fd86c293034b"
+        }
+      ]
+    },
+    "ultimate": {
+      "row": 21,
+      "frame_count": 7,
+      "source": "design",
+      "frames": [
+        {
+          "file": "ultimate_1.png",
+          "atlas_rect": [
+            0,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "bfd9d5cd4a3ebdf6a79ba4bb33bc04f9a92cc80200668ba372131ea3cbfd08a1"
+        },
+        {
+          "file": "ultimate_2.png",
+          "atlas_rect": [
+            192,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "d0abd7dc67c9c97ac7c5f8a1b157329b3a09e476f8986622f902bd8e24da2bbb"
+        },
+        {
+          "file": "ultimate_3.png",
+          "atlas_rect": [
+            384,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "3ef878556fb38a40d9d89be9992fabc8f450216c4c54d6e36aaa779f66e41ae3"
+        },
+        {
+          "file": "ultimate_4.png",
+          "atlas_rect": [
+            576,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "3ef878556fb38a40d9d89be9992fabc8f450216c4c54d6e36aaa779f66e41ae3"
+        },
+        {
+          "file": "ultimate_5.png",
+          "atlas_rect": [
+            768,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "3ef878556fb38a40d9d89be9992fabc8f450216c4c54d6e36aaa779f66e41ae3"
+        },
+        {
+          "file": "ultimate_6.png",
+          "atlas_rect": [
+            960,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "3ef878556fb38a40d9d89be9992fabc8f450216c4c54d6e36aaa779f66e41ae3"
+        },
+        {
+          "file": "ultimate_7.png",
+          "atlas_rect": [
+            1152,
+            4032,
+            192,
+            192
+          ],
+          "sha256": "f3fc619d51cc6a37ef80acb1897942c6f59f4a31d76197f39c5ecb95f169c53e"
+        }
+      ]
+    },
+    "new_skill": {
+      "row": 22,
+      "frame_count": 6,
+      "source": "v4",
+      "frames": [
+        {
+          "file": "new_skill_1.png",
+          "atlas_rect": [
+            0,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "f9d675f1f909a224cee50be4ce66b8c1048ada5ee85090371be5330cdb2fd11a"
+        },
+        {
+          "file": "new_skill_2.png",
+          "atlas_rect": [
+            192,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "98e8bc1ece7849d451b7ec37a4f558c68ca2323783c79991c5f8700fb0a7fcc2"
+        },
+        {
+          "file": "new_skill_3.png",
+          "atlas_rect": [
+            384,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "ac05c20d3f8dc9ef751a610fe7558071f3a5f0dd2b5648085bca168470d97ad1"
+        },
+        {
+          "file": "new_skill_4.png",
+          "atlas_rect": [
+            576,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "e10c6b04b0af53e26ec969b40d457526c8b9d4bb15447b18049a4c45b5e027f5"
+        },
+        {
+          "file": "new_skill_5.png",
+          "atlas_rect": [
+            768,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "27f4db207b9ad69d0938e3d39df1459e7a522c37b378e8809ed01e7348fef989"
+        },
+        {
+          "file": "new_skill_6.png",
+          "atlas_rect": [
+            960,
+            4224,
+            192,
+            192
+          ],
+          "sha256": "c5551ef43f3eda9c4a7f1496781ba838862cb10324b4704692c6e32b8f4da6e1"
+        }
+      ]
+    },
+    "knockdown": {
+      "row": 23,
+      "frame_count": 6,
+      "source": "design",
+      "frames": [
+        {
+          "file": "knockdown_1.png",
+          "atlas_rect": [
+            0,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "8c8bef7fc2560441649e8bbc19dcbe5ef537276581a2c0d7c65e6f63e1efe1a5"
+        },
+        {
+          "file": "knockdown_2.png",
+          "atlas_rect": [
+            192,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "98d01817c33cc3cb4ab0710a6a98a0a4ecdfb0270a3a05f8e2ce699f0b551012"
+        },
+        {
+          "file": "knockdown_3.png",
+          "atlas_rect": [
+            384,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "b75a52ef9f7bccdcf3c68f7d0111ef4a73dbe0d7282c70c5c098f676dfdeb726"
+        },
+        {
+          "file": "knockdown_4.png",
+          "atlas_rect": [
+            576,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "db4e5ae69e13a002d7dd74c09b6d7c443a5c2feaae7f49607d6159eca4eab49c"
+        },
+        {
+          "file": "knockdown_5.png",
+          "atlas_rect": [
+            768,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "a1e20161d281dc5846c0877ad7a2e86a9a71d71ddac7ac77ad8561b832e66608"
+        },
+        {
+          "file": "knockdown_6.png",
+          "atlas_rect": [
+            960,
+            4416,
+            192,
+            192
+          ],
+          "sha256": "62a1ad9a47705b18ebd280b5687cef81d28333513840672789f4b9864817e788"
+        }
+      ]
+    }
+  }
+}
